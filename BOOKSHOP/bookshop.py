@@ -97,7 +97,7 @@ def look_for_id(bookid):
 
 def update_book(book):
     for k,v in list(book.items())[1:]:
-        new_book = input(f"{k}: ")
+        new_book = input(f"{k.capitalize()}: ")
         if new_book:
             book[k] = new_book
 
@@ -174,7 +174,3 @@ def remove_menu():
 #             print("Número no válido")
     
 #     input("")
-
-    
-
-

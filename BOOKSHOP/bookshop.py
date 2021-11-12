@@ -89,6 +89,9 @@ def search_by_terms(term, term2search): #Encontrar el libro por el término sele
             print(" ")
             pretty_book(book)
             print(" ")
+            with open("./History.txt", mode="a") as file: #añadimos el libro encontrado al historial
+                file.write(f"El {term} buscado ha sido '{term2search}' con este resultado:\n {book}\n")
+    
 
 def look_for_id(bookid):
     for book in DB:
@@ -107,70 +110,3 @@ def remove_book(book):
 def remove_menu():
     print("1. Continuar con el libro seleccionado")
     print("2. Detener acción y volver al menú principal")
-
-
-# while user.lower() != "q":
-#     #Menú standard
-#     print("LIBRERÍA".center(30,"-"))
-#     menu()
-#     user = input("Escriba su elección: ")
-
-#     #Búsqueda por número introducido
-#     if user == str(1): #Id
-#         enter_id = input("Escriba el id del libro: ").lower()
-#         search_by_terms("id",enter_id)  
-
-#     elif user == str(2): #Título
-#         enter_title = input("Escribe el título del libro: ").capitalize()
-
-#         search_by_terms("title", enter_title)
-
-#     elif user == str(3): #Autor
-#         enter_author = input("Escribe el autor del libro: ").title()
-#         search_by_terms("author", enter_author)
-
-#     elif user == str(4): #Género
-#         print(f"Estos son los géneros disponibles: {genre}")
-#         enter_genre = input("Escribe el género deseado: ").capitalize()
-#         search_by_terms("genre", enter_genre)
-
-#     elif user == str(5):
-#         bookid_to_search = input("Introduzca el id del libro a modificar: ")
-#         print(" ")
-#         print("Libro a modificar:")
-#         print(" ")
-#         book_to_search = look_for_id(bookid_to_search)
-#         pretty_book(book_to_search)
-#         print(" ")
-#         print("Presione enter si no quiere modificar nada")
-#         update_book(book_to_search)
-#         print(" ")
-#         print("Las modificaciones han quedado así:")
-#         print(" ")
-#         pretty_book(book_to_search)
-    
-#     elif user == str(6):
-#         bookid_to_remove = input("Introduzca el id del libro a eliminar: ")
-#         print(" ")
-#         print("Libro a eliminar: ")
-#         print(" ")
-#         book_to_remove = look_for_id(bookid_to_remove)
-#         pretty_book(book_to_remove)
-#         print(" ")
-#         print("¿Está seguro que quiere eliminar este libro de la base de datos?")
-#         remove_menu()
-#         user = input("Escriba su elección: ")
-#         if user == str(1):
-#             remove_book(book_to_remove)
-#             print(" ")
-#             print(DB)
-#         elif user == str(2):
-#             pass
-
-#     else: #Función quit para terminar el programa
-#         if user.lower() == "q":
-#             print("¡Hasta pronto!")
-#         else:
-#             print("Número no válido")
-    
-#     input("")

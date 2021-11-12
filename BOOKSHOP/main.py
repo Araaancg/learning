@@ -4,16 +4,19 @@ import bookshop as bs
 
 user = "0"
 
+with open("./History.txt", mode = "w") as file: 
+    file.write("HISTORIAL DE BÚSQUEDA: \n") #reseteamos el historia cada vez que ejecutemos el programa
+
 while user.lower() != "q":
     #Menú standard
-    print("LIBRERÍA".center(30,"-"))
+    print(" LIBRERÍA ".center(30,"-"))
     bs.menu()
     user = input("Escriba su elección: ")
 
     #Búsqueda por número introducido
     if user == str(1): #Id
         enter_id = input("Escriba el id del libro: ").lower()
-        bs.search_by_terms("id",enter_id)  
+        bs.search_by_terms("id",enter_id)
 
     elif user == str(2): #Título
         enter_title = input("Escribe el título del libro: ").capitalize()

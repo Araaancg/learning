@@ -1,3 +1,5 @@
+#App de la librería, sin base de datos ni funciones que cogemos desde el fichero bookshop
+
 import bookshop as bs
 
 user = "0"

@@ -1,4 +1,4 @@
-#Crear como una app de terminal en la que se pueda buscar por los diferentes libros en base a diferentes parámetros
+#Base de datos y funciones para la app de la librería
 
 DB = [{
     "id": "cf_1",

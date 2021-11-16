@@ -1,5 +1,7 @@
 #Base de datos y funciones para la app de la librería
 
+import csv
+
 DB = [{
     "id": "cf_1",
     "title": "El hombre bicentenario",
@@ -110,3 +112,13 @@ def remove_book(book):
 def remove_menu():
     print("1. Continuar con el libro seleccionado")
     print("2. Detener acción y volver al menú principal")
+
+#Función para reescribir la base de datos en un excel
+
+def write_excel(data_base):
+    with open("./BOOKSHOP/data.csv", mode="a+") as file:
+        for book in data_base: 
+            csv_writer = csv.writer(file)
+            csv_writer.writerow(book.values())
+
+write_excel(DB)

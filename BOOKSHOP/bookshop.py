@@ -111,7 +111,8 @@ def remove_book(book):
 
 def remove_menu():
     print("1. Continuar con el libro seleccionado")
-    print("2. Detener acción y volver al menú principal")
+    print("2. Elegir otro libro a eliminar")
+    print("3. Detener acción y volver al menú principal")
 
 #Función para reescribir la base de datos en un excel
 

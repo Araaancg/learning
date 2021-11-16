@@ -11,7 +11,7 @@ while user.lower() != "q":
     #Menú standard
     print(" LIBRERÍA ".center(30,"-"))
     bs.menu()
-    user = input("Escriba su elección: ")
+    user = input("Introduzca el nº: ")
 
     #Búsqueda por número introducido
     if user == str(1): #Id
@@ -64,6 +64,20 @@ while user.lower() != "q":
             print(bs.DB)
         elif user == str(2):
             pass
+
+    # elif user == str(6):
+    #     bookid_to_remove = input("Introduzca el id del libro a eliminar: ")
+    #     print("Libro a eliminar: ")
+    #     book_to_remove = bs.look_for_id(bookid_to_remove)
+    #     bs.remove_menu()
+    #     user = ""
+    #     while user != str(2):
+    #         user = input("Introduzca el nº: ")
+    #         if user == (1):
+    #             bs.remove_book(book_to_remove)
+    #             print(f" \n {bs.DB}")
+    #         elif user == str(3):
+    #             pass
 
     else: #Función quit para terminar el programa
         if user.lower() == "q":

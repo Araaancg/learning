@@ -1,5 +1,6 @@
 import requests as req
 import csv
+import json
 
 
 # url = "https://datos.comunidad.madrid/catalogo/dataset/032474a0-bf11-4465-bb92-392052962866/resource/ee750429-1e05-411a-b026-a57ea452a34a/download/municipio_comunidad_madrid.csv"
@@ -67,3 +68,43 @@ with open("./data_municipios.csv", mode="r", encoding="utf8") as file:
 # poblacion_media = get_pobl_total(data) / len(data)
 # print(poblacion_media)
 
+#Ley de benhorf
+
+
+#Ejercicio 8. convertir el csv en json
+
+# función de conversión y luego le aplico el data set
+
+def csv_to_dict(data_base):
+    with open("data.csv", mode="r") as file:
+        csv_reader = csv.reader(file, delimiter=";")
+        next(csv_reader)
+        for i, row in enumerate(csv_reader):
+            # print(i, row)
+            book = {
+                "id": row[0],
+                "title": row[1],
+                "author":row[2],
+                "genre":row[3]
+            }
+            data_base.append(book)
+
+data_dict = []
+
+def csv_to_json(new_dict):
+    with open("data_municipios.csv", mode="r", encoding="utf8") as file:
+        csv_reader = csv.reader(file, delimiter=";")
+        next(csv_reader)
+        for i, row in enumerate(csv_reader):
+            mun = {
+                "municipio_codigo":row[0],
+                "municipio_nombre":row[1],
+                "municipio_codigo_ine":row[2],
+                "nuts4_nombre":row[3],
+                "superficie_km2":row[4],
+                "densidad_por_km2":row[5],
+            }
+            new_dict.append(mun)
+        json.dump(dict(new_dict),"data_municipios.json")
+
+csv_to_json(data_dict)

@@ -104,10 +104,25 @@ def add_book(new_dict, data_base):
     }
     data_base.append(new_dict)
 
-def pretty_book(lista):
+# def pretty_book(lista):
+#     print("-"*50)
+#     print("LIBRO(S) ENCONTRADO(S)")
+#     print(" ")
+#     for book in lista:
+#         for k, v in book.items():
+#             print(f"{k.capitalize()}: {v}")
+#         print(" ")
+
+def pretty_search_book(lista):
     print("-"*50)
     print("LIBRO(S) ENCONTRADO(S)")
     print(" ")
+    for book in lista:
+        for k, v in book.items():
+            print(f"{k.capitalize()}: {v}")
+        print(" ")
+
+def pretty_book(lista):
     for book in lista:
         for k, v in book.items():
             print(f"{k.capitalize()}: {v}")

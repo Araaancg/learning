@@ -20,14 +20,17 @@ while user.lower() != "q":
     wf.menu()
     user = input(": ")
     if user in options:
+
+        # Buscar por ciudad
         if user == "1":
             user = input("Introduzca el nombre de una ciudad: ").lower()
-            # info_city = wf.search_by_city(user)
             info_city = wf.get_forcast(user,city=True)
             print("-"*50)
             wf.pretty_print(user,info_city)
             print("-"*50)
             user = input("Presione enter para volver al menu principal ")
+        
+        # Buscar por coordenadas
         if user == "2":
             lattlong = input("Introduzca la latitud y la longitud deseadadeseada (latt,long): ")
             info_city = wf.get_forcast(lattlong, coordinates=True)[0]
@@ -36,6 +39,8 @@ while user.lower() != "q":
             wf.pretty_print(city_name, info_city)
             print("-"*50)
             user = input("Presione enter para volver al menú principal ")
+
+        # Buscar por fecha y ciudad
         if user == "3":
             user = input("Introduzca el nombre de una ciudad: ").lower()
             print("A continuación introduzca la fecha")
@@ -44,8 +49,15 @@ while user.lower() != "q":
             day = input("Day: ")
             print("-"*50)
             info_city = wf.get_forcast(user,date=(year,month,day))
-            wf.pretty_print_date(user,info_city)
-    else:
+
+            # Manejo del error
+            if info_city:
+                wf.pretty_print_date(user,info_city,f"{day}/{month}/{year}")
+            else:
+                print("Datos no encontrados en la base de datos")
+            
+    
+    else: # Input en el menú inválido
         print("Input inválido, por favor introduzca de nuevo la opción deseada")
         
 print("Hasta pronto!")

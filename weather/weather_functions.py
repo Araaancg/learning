@@ -45,73 +45,39 @@ def menu():
     print("Q. Terminar programa")
     print("-"*50)
 
-def get_forecast(method,**kwargs):
-    if kwargs.get("date"):
-        woeid = woeids_dic.get(method)
-        if not woeid:
-            try:
-                woeid = req.get(f"https://www.metaweather.com/api/location/search/?query={method}").json()[0]["woeid"]
-                woeids_dic[method] = woeid
-                write_data(woeids_dic,"woeids.json")
-            except IndexError:
-                return None
-        res = req.get(f"https://www.metaweather.com/api/location/{woeid}/{kwargs.get('date')[0]}/{kwargs.get('date')[1]}/{kwargs.get('date')[2]}").json()
-        return res
-    else:
-        if kwargs.get("city"):
-            woeid = woeids_dic.get(method)
-            if not woeid:
-                try: 
-                    woeid = req.get(f"https://www.metaweather.com/api/location/search/?query={method}").json()[0]["woeid"]
-                    woeids_dic[method] = woeid
-                    write_data(woeids_dic,"woeids.json")
-                except IndexError:
-                    return None
-            res = req.get(f"https://www.metaweather.com/api/location/{woeid}").json()
-            return res
+
+def get_forecast(location, **kwargs):
+    # PRIMER PASO: encontrar el woeid
+    term = "query"
+    woeid = woeids_dic.get("location") # Lo buscamos en el diccionario de woeids
+    if not woeid:
         if kwargs.get("coords"):
-            res = req.get(f"https://www.metaweather.com/api/location/search/?lattlong={method}").json()
-            woeid = res[0]["woeid"]
-            city_name = res[0]["title"]
-            res = req.get(f"https://www.metaweather.com/api/location/{woeid}").json()
-            if woeid not in woeids_dic:
-                woeids_dic[city_name.lower()] = woeid
-                write_data(woeids_dic,"woeids.json")
-            return res, city_name
+            term = "lattlong"
+
+        try: # Manejo de errores al consultar a la base de datos
+            request = req.get(f"https://www.metaweather.com/api/location/search/?{term}={location}").json()
+        except:
+            return None
+
+        # Meter todos los woeids posibles en el dicc
+        for city in request:
+            woeids_dic[city["title"].lower()] = city["woeid"]
+            write_data(woeids_dic,"woeids.json")
+        woeid = request[0]["woeid"]
+    
+    # SEGUNDO PASO: buscar la info de la ciudad
+    url = f"https://www.metaweather.com/api/location/{woeid}/"
+    if kwargs.get("date"): # Si nos dan una fecha se añade a la url. Formato = year/month/day
+        url += kwargs.get("date")
+    try: # Manejo de errores al consultar a la base de datos
+        request = req.get(url).json()
+    except:
+        return None
+    return request
 
 
-# def get_forecast(location, **kwargs):
-#     # PRIMER PASO: encontrar el woeid
-#     term = "query"
-#     woeid = woeids_dic.get("location")
-#     if not woeid:
-#         if kwargs.get("coords"):
-#             term = "lattlong"
-
-#         try: # Manejo de errores consultando la base de datos
-#             woeid = req.get(f"https://www.metaweather.com/api/location/search/?{term}={location}").json()[0]["woeid"]
-#         except:
-#             return None
-
-
-#     # SEGUNDO PASO: valorar si nos han pasado una fecha o no
-#     if kwargs.get("date"): # Fecha SI
-#         try: # Manejo de errores
-#             date = f"{kwargs.get('date')[0]}/{kwargs.get('date')[1]}/{kwargs.get('date')[2]}"
-#             res = req.get(f"https://www.metaweather.com/api/location/{woeid}/{date}").json()
-#             return res
-#         except:
-#             return None
-#     # Fecha NO
-#     try: # Manejo de errores
-#         res = req.get(f"https://www.metaweather.com/api/location/{woeid}").json()
-#         return res
-#     except:
-#         return None
-
-
-def pretty_print(city_name, city_list):
-    print(city_name.upper().center(45))
+def pretty_print_list(city_list): # Para cuando me pasan una lista
+    print(city_list['title'].upper().center(45))
     print(f"Descripción del tiempo: {city_list['consolidated_weather'][0]['weather_state_name']}")
     print(f"    Temperatura máxima: {city_list['consolidated_weather'][0]['max_temp']}°")
     print(f"    Temperatura mínima: {city_list['consolidated_weather'][0]['min_temp']}°")
@@ -119,7 +85,8 @@ def pretty_print(city_name, city_list):
     print(f"               Humedad: {city_list['consolidated_weather'][0]['humidity']} %")
     print(f"  Velocidad del viento: {city_list['consolidated_weather'][0]['wind_speed']} m/s")
 
-def pretty_print_date(city_name, city_list, date):
+
+def pretty_print_dic(city_name, city_list, date): # Para cuando me pasan un diccionario (al buscar por fecha)
     print(f"{city_name.upper()}   {date}".center(50))
     print(f"Descripción del tiempo: {city_list[0]['weather_state_name']}")
     print(f"    Temperatura máxima: {city_list[0]['max_temp']}°")
@@ -137,28 +104,45 @@ def warning_bad_weather(city_list):
         if prediction_weather in bad_weather:
             weather_state = weather_abbreviation_dic[prediction_weather]
             print(f"WARNING: en {city_name} va a hacer mal tiempo ({weather_state})")
-        else:
-            print(f"Yay, en {city_name} va a hacer buen tiempo")
+        # else:
+        #     print(f"Yay, en {city_name} va a hacer buen tiempo")
 
+def plan_trip(city_1,city_2):
+    # PRIMER PASO: Buscamos las coordenadas de la ciudad origen
+    try: # Of course manejo de errores :)
+        request = req.get(f"https://www.metaweather.com/api/location/search/?query={city_1}").json()
+        coords = request[0]["latt_long"]
 
+        # Buscamos las coords de nuevo para que salga la lista de ciudades "cercanas"
+        request = req.get(f"https://www.metaweather.com/api/location/search/?lattlong={coords}").json()
+
+        # SEGUNDO PASO: Metemos los nuevos woeids en el diccionario porque nunca seran suficientes
+        # ya de paso usamos el bucle para buscar la city_2 y en su defecto la distancia
+        distance = 0
+        for city in request:
+            woeids_dic[city["title"].lower()] = city["woeid"]
+            write_data(woeids_dic,"woeids.json")
+            if city["title"].lower() == city_2:
+                distance = city["distance"]
+
+        # TERCER PASO: calculamos el tiempo en base al viento de la ciudad origen (i guess)
+        woeid = request[0]["woeid"]
+        # con el woeid requesteamos (+ manejo de errores) la lista del weather
+        request = req.get(f"https://www.metaweather.com/api/location/{woeid}/").json()
+        velocity = 100 #km/h por defecto
+        if request['consolidated_weather'][0]['wind_speed'] >= 10: 
+            velocity = 90 #km/h cambiamos la velocidad si hay mucho viento
+
+        #v=d/t --> t=d/v
+        time = (int(distance)/velocity)/1000
+
+        return time,distance
+
+    except:
+        return None
 
 
 '''
-Optimizar la función de forcast añadiendo manejo del error y sin quitar lo de los woeids
-def forecast(location, **kwargs) siendo kwargs date=fecha_a_elegir y coords=True/False
-- Empezar por buscar el woeids
-    primero en el json, si no está en el json es posible que hayn puesto la clave de coords
-    en ese caso cambiar term a lattlong. si no han puesto la clave de coords no cambiar term
-    pero si que tenemos que buscar el woeid
-    poner manejo de error para esa búsqueda
-    añadir los woeids que no estén el json y cuando se busque por coords añadir todos los que
-    te salgan
-- Un vez tengamos el woeid comprobar que no nos han pedido una fecha
-    en caso de que sea así, o sea que no tengamos fecha, continuamos con el programa buscando
-    toda la info del pronóstico
-    en caso de que tengamos una fecha a elegir pues se comprueba y se añade a la url
-    añadir manejo del error en la búsqueda no vaya a ser...
-
 Añadir lo de que te salgan los pronósticos de los tres siguientes dias, no sé si hacerlo 
 una opción voluntaria a gusto del consumidor o que se joday que le salga siempre
 Añadir también lo de los viajes, con lo de las distancias etc

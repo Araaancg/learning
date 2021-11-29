@@ -3,10 +3,10 @@ import json
 
 def menu():
     print("-"*30)
-    print("LOS PAÍSES".center(50))
+    print("LOS PAÍSES".center(30))
     print("1. Buscar información de un país")
     # print("2. Descargar la bandera de un país")
-    # print("3. Jugar")
+    print("3. Jugar")
     print("Q. Terminar programa")
     print("-"*30)
 
@@ -26,6 +26,20 @@ def pretty_print(country_info):
     print(f"       Capital: {country_info[0]['capital'][0]}")
     print(f"     Población: {country_info[0]['population']} habitantes")
     print(f"    Superficie: {country_info[0]['area']} km2")
-    languages = list(country_info[0]['languages'].values()[0])
+    languages = list(country_info[0]['languages'].values())
     print(f"        Idioma: {languages}")
 
+def choose_continents():
+    continents = ["Asia","Europe","Oceania","Africa","Americas"]
+    print("Continentes".center(30))
+    for i, continent in enumerate(continents):
+        print(f"{i+1}: {continent}")
+    user = input("Elija un continente: ")
+    if int(user) > 0 and int(user) <= len(continents):
+        user_cont = continents[int(user)-1]
+        return user_cont
+    else:
+        return None 
+
+test = choose_continents()
+print(test)

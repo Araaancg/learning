@@ -10,6 +10,7 @@ características
 
 import c_functions as cf
 
+
 user = "0"
 
 while user != "q".lower():
@@ -27,4 +28,21 @@ while user != "q".lower():
         print("-"*30)
         input("Presione enter para volver al menú principal ")
 
+    if user == "3":
+        print("-"*30)
+        user = cf.choose_continents()
+
+        
+        '''
+        Salen 10 preguntas en total
+        Damos opciones
+        ¿Cuál es la capital de {country}?
+        ¿Población aproximada de {country}?
+        ¿País más pequeño del {continente}?
+        ¿País más grande del continente?
+        ¿En qué lado conducen en {country}
+        '''
+
+
 print("¡Hasta pronto!")
+

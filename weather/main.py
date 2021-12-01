@@ -24,10 +24,10 @@ while user.lower() != "q":
         # Buscar por ciudad
         if user == "1":
             user = input("Introduzca el nombre de una ciudad: ").lower()
-            info_city = wf.get_forecast(user,city=True)
+            info_city = wf.get_forecast(user)
             if info_city: 
                 print("-"*50)
-                wf.pretty_print(user,info_city)
+                wf.pretty_print_list(info_city)
                 print("-"*50)
             else:
                 print("-"*50)
@@ -38,38 +38,40 @@ while user.lower() != "q":
         # Buscar por coordenadas
         if user == "2":
             lattlong = input("Introduzca la latitud y la longitud deseadadeseada (latt,long): ")
-            info_city = wf.get_forecast(lattlong, coords=True)[0]
-            city_name = wf.get_forecast(lattlong, coords=True)[1]   
+            info_city = wf.get_forecast(lattlong, coords=True)  
             print("-"*50)
-            wf.pretty_print(city_name, info_city)
+            wf.pretty_print_list(info_city)
             print("-"*50)
             user = input("Presione enter para volver al menú principal ")
 
         # Buscar por fecha y ciudad
         if user == "3":
             user = input("Introduzca el nombre de una ciudad: ").lower()
-            print("A continuación introduzca la fecha")
-            year = input("Año: ")
-            month = input("Mes: ")
-            day = input("Day: ")
+            date = input("A continuación introduzca la fecha (y/m/d): ")
             print("-"*50)
-            info_city = wf.get_forecast(user,date=(year,month,day))
+            info_city = wf.get_forecast(user,date=date)
 
             # Manejo del error
             if info_city:
-                wf.pretty_print_date(user,info_city,f"{day}/{month}/{year}")
+                wf.pretty_print_dic(user,info_city,date)
             else:
                 print("Datos no encontrados en la base de datos")
         
         if user == "4":
             city_1 = input("Introduza el origen: ")
-            city_1 = wf.get_forecast(city_1, city=True)
             city_2 = input("Introduzca el destino: ")
-            city_2 = wf.get_forecast(city_2, city=True)
-            cities = [city_1,city_2]
+            city_1_info = wf.get_forecast(city_1)
+            city_2_info = wf.get_forecast(city_2)
+            cities = [city_1_info,city_2_info]
             print("-"*50)
+            travel_planning = wf.plan_trip(city_1,city_2)
             wf.warning_bad_weather(cities)
-            print("-"*50)
+            if travel_planning:
+                print(f"Distancia entre {city_1.capitalize()} y {city_2.capitalize()}: {travel_planning[1]}")
+                print(f"Duración del viaje: {travel_planning[0]}")
+                print("-"*50)
+            else: 
+                print("Datos no encontrados en nuestra base")
             user = input("Presione enter para volver al menú principal ")
 
     else: # Input en el menú inválido

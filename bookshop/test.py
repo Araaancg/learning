@@ -4,11 +4,6 @@
 
 import csv
 
-id_list = []
-title_list = []
-author_list = []
-genre_list = []
-
 
 user = "0"
 
@@ -17,7 +12,6 @@ def csv_to_dict(data_base):
         csv_reader = csv.reader(file, delimiter=";")
         next(csv_reader)
         for i, row in enumerate(csv_reader):
-            # print(i, row)
             book = {
                 "id": row[0],
                 "title": row[1],
@@ -70,8 +64,6 @@ def write_excel(data_base):
         for book in data_base: 
             csv_writer.writerow(book.values())
 
-# write_excel(DB)
-
 def update_book(book):
     print("Reescriba la información a su gusto")
     for k,v in list(book[0].items())[1:]:
@@ -79,7 +71,7 @@ def update_book(book):
         if user:    
             book[0][k] = user
 
-def add_book(new_dict, data_base):
+def add_book(new_dict, data_base,genre_list):
     new_book_id = input("id: ")
     new_book_title = input("title: ")
     new_book_author = input("author: ")
@@ -104,15 +96,6 @@ def add_book(new_dict, data_base):
     }
     data_base.append(new_dict)
 
-# def pretty_book(lista):
-#     print("-"*50)
-#     print("LIBRO(S) ENCONTRADO(S)")
-#     print(" ")
-#     for book in lista:
-#         for k, v in book.items():
-#             print(f"{k.capitalize()}: {v}")
-#         print(" ")
-
 def pretty_search_book(lista):
     print("-"*50)
     print("LIBRO(S) ENCONTRADO(S)")
@@ -128,37 +111,14 @@ def pretty_book(lista):
             print(f"{k.capitalize()}: {v}")
         print(" ")
 
-def generar_lista(term, lista_to_generate, database):
+def generar_lista(term, database):
+    lista = []
     for book in database:
-        if book[term] not in lista_to_generate:
-            lista_to_generate.append(book[term])
-    return lista_to_generate
+        if book[term] not in lista:
+            lista.append(book[term])
+    return lista
 
-
-
-
-
-# lista1 = ["ID", "TÍTULO", "AUTOR", "GÉNERO"]
-# lista_fruit = [{"fruta":"apple", "fruta2":"apple2","fruta3":"apple45","fruta4":"apple4"},{"fruta":"apple", "fruta2":"apple2","fruta3":"apple3","fruta4":"apple4"}]
-# from sys import stdout
-
-# def pretty_book(lista1, lista2): 
-#     print(lista1[0].center(20), lista1[1].center(20), lista1[2].center(20), lista1[3].center(20))
-#     for element in lista2:
-#         for k,v in lista2[]:
-#             stdout.write(v.center(20))
-
-# pretty_book(lista_head,lista_fruit)
-
-# from sys import stdout 
-
-# print(lista1[0].center(20), lista1[1].center(20), lista1[2].center(20), lista1[3].center(20))
-# for element in lista_fruit:
-#     print("\n")
-#     for k,v in lista_fruit[1].items():
-#         stdout.write(v.center(20))
-    
-
-
-
-
+def history(lista):
+    for book in lista:
+        with open("./history.txt", mode="a") as file:
+            file.write(f"{book}\n")

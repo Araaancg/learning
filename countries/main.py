@@ -1,3 +1,5 @@
+import requests as req
+
 '''
 APP DE TERMINAL
 características
@@ -19,7 +21,7 @@ while user != "q".lower():
 
     if user == "1":
         user = input("Introduzca el país: ").lower()
-        country_to_search = cf.search_country(user)
+        country_to_search = cf.get_by_term(user)
         print("-"*30)
         if country_to_search:
             cf.pretty_print(country_to_search)
@@ -28,21 +30,30 @@ while user != "q".lower():
         print("-"*30)
         input("Presione enter para volver al menú principal ")
 
+    if user == "2":
+        user = input("Introduzca un país: ").lower()
+        country_to_search = cf.get_by_term(user)
+        if country_to_search:
+            flag_url = country_to_search[0]["flags"]["svg"]
+            print(flag_url)
+            flag = req.get(flag_url).content
+            with open(f"./img/{country_to_search[0]['name']['common'].lower()}.svg", mode="wb") as file:
+                file.write(flag)
+        else:
+            print(f"El país {user.capitalize()} no existe en nuestra base de datos")
+        print("-"*30)
+        input("Presione enter para volver al menú principal ")
+
     if user == "3":
+        # #PASO 1: Elegir continente, creamos una lista para evitar errores de transcripción
         print("-"*30)
         user = cf.choose_continents()
-
-        
-        '''
-        Salen 10 preguntas en total
-        Damos opciones
-        ¿Cuál es la capital de {country}?
-        ¿Población aproximada de {country}?
-        ¿País más pequeño del {continente}?
-        ¿País más grande del continente?
-        ¿En qué lado conducen en {country}
-        '''
-
-
+        print("_"*30)
+        if user:
+            continent = cf.get_by_term(user,continent=True) #devuleve una lista con todos los países y ya trabajamos con esto
+            print(continent)
+        else:
+            print("Número no válido")
+            
 print("¡Hasta pronto!")
 

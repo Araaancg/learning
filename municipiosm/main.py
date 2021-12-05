@@ -79,11 +79,36 @@ def get_average_population(dataset):
 
 # EJERCICIO 7: Comprobar la ley de benford
 def benford(dataset):
-    pass
+    densities = [mun[-2] for mun in dataset[1:]]
+    result = {}
+    for num in range(1,10):
+        result[str(num)] = []
+    for num in result.keys():
+        for density in densities:
+            if density.startswith(num):
+                result[num].append(density)
+        result[num] = len(result[num])*(1/len(densities))
+    return result
+
+# EJERCICIO 8. Convertir un csv en json
+def to_json(dataset):
+# municipio_codigo;municipio_nombre;municipio_codigo_ine;nuts4_codigo;nuts4_nombre;superficie_km2;densidad_por_km2
+    result = {"muns":[]}
+    dict_keys = dataset[0]
+    for mun in dataset[1:]:
+        pre_dict = {}
+        for i, key in enumerate(dict_keys):
+            if i == 5 or i == 6:
+                pre_dict[key] = float(mun[i])
+            else:
+                pre_dict[key] = mun[i]
+        result["muns"].append(pre_dict)
+    return result
 
 with open("data_municipios.csv", mode="r", encoding="utf8") as file:
     data = list(csv.reader(file, delimiter=";"))
     # lo convertimos en lista para que se pueda sacar de la indentación del open
+print(data)
 
 # Ejercicio 1
 mun_to_search = get_by_ine(data,"280014")
@@ -109,7 +134,20 @@ print(f"EJERCICIO 5: {total_population}")
 average_population = get_average_population(data)
 print(f"EJERCICIO 6: {average_population}")
 
+#Ejercicio 7
+benford = benford(data)
+print("EJERCICIO 7: ")
+for k,v in benford.items():
+    print(f"{k}: {v}")
 
-'''
-Falta benhorf y la conversión de csv a json
-'''
+
+#Ejercicio 8
+dict_json = to_json(data)
+with open("./municipios.json", mode="w",encoding="utf8") as file:
+    json.dump(dict_json,file,indent=4,ensure_ascii=False)
+        
+
+
+
+        
+            

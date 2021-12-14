@@ -2,6 +2,7 @@
 Objeto estadística para poder analizar datos, en este caso los casos de covid confirmados en la c. Madrid
 Términos de estadística
 '''
+import datetime as dt
 
 class Std:
     def __init__(self, x, y):
@@ -41,7 +42,7 @@ class Std:
         return de/self.n
     
     @property    
-    def y_variance(self): # Se calcula con x porque es la variable independiente, la y viene de la x
+    def y_variance(self): 
         de = sum([(yi - self.y_avg)**2 for yi in self.y])
         return de/self.n
     
@@ -67,7 +68,7 @@ class Std:
     la dependencia lineal entre dos variables.
     Ecuación: cov(x,y)/σ(x)*σ(y)
     σ -> es el símbolo para la desviación típica, el cual se calcula haciendo la raíz
-    cuadrada a la varianza
+    cuadrada a la varianza, más bien la varianza es el cuadrado de la desviación típica
     '''
     @property
     def r(self):
@@ -77,7 +78,7 @@ class Std:
 
 
     '''
-    B -> PEDIENTE
+    B
     Ecuación:  (nΣXY-ΣX*ΣY) / (nΣ(X^2)-(ΣX)^2)
     '''
     @property
@@ -98,9 +99,21 @@ class Std:
     def y_prediction(self,x_value):
         return self.B * x_value + self.B0
 
+
+
+
     @property
-    def lineals(self):
+    def lineals(self): 
         return [self.y_prediction(week) for week in self.x]
+    
+    def specific_date(self,wanted_date,last_known_date):
+        last_known_date = dt.datetime.fromisoformat(last_known_date)
+        wanted_date = dt.datetime.fromisoformat(wanted_date)
+        difference = wanted_date - last_known_date
+        weeks = difference.days / 7
+        total = self.n + weeks
+        return self.y_prediction(total)
+
 
     def __str__(self):
         return f"x: {self.x }\ny: {self.y }\nn: {self.n}\n"

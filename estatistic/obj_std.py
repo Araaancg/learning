@@ -49,6 +49,31 @@ class Std:
 
 
     '''
+    CUASIVARIANZA: es semejante a la Varianza, excepto que la división es por n-1 (tamaño de la muestra).
+    medida estadística de la dispersión de los datos de una muestra respecto a la media.
+
+    Con frecuencia se desea conocer las características de una población cualquiera: de personas, animales, 
+    plantas y en general cualquier tipo de objetos. Pero analizar la población entera puede no ser tarea fácil, 
+    sobre todo si el número de elementos es muy grande.
+    Entonces se toman muestras, con la esperanza de que el comportamiento de ellas refleje al de la población y así 
+    poder realizar inferencias sobre la misma, gracias a las cuales se optimizan los recursos. 
+    A esto se le conoce como inferencia estadística.
+
+    La cuasivarianza lo que hace es poner el listón más alto por así decirlo, ya que es una estimación en base a una muestra
+    '''
+    @property
+    def x_cuasivar(self):
+        de = sum([(xi - self.x_avg)**2 for xi in self.x])
+        return de/(self.n - 1)
+    
+    @property
+    def y_cuasivar(self):
+        de = sum([(yi - self.y_avg)**2 for yi in self.y])
+        return de/(self.n - 1)
+
+
+
+    '''
     COVARIANZA: La covarianza es el valor que refleja en qué cuantía dos variables aleatorias varían 
     de forma conjunta respecto a sus medias. 
     Nos permite saber cómo se comporta una variable en función de lo que hace otra variable
@@ -98,9 +123,6 @@ class Std:
     '''
     def y_prediction(self,x_value):
         return self.B * x_value + self.B0
-
-
-
 
     @property
     def lineals(self): 

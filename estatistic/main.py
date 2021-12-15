@@ -46,17 +46,35 @@ y.reverse()
 analyze_cct = Std(x,y)
 predicted_y = analyze_cct.lineals
 
-# predecir los casos en un día concreto
+# Predecir los casos en un día concreto
 day_to_predict = analyze_cct.specific_date("2021-12-31",last_date)
 
 
 
 # SAN SILVESTRE: Incidencia acumulada de el 2021/12/14 menor que el 2020/12/15
-y_2020 = [zone["tasa_incidencia_acumulada_ultimos_14dias"] for zone in data_by_date["2020/12/15"]] 
-y_2021 = [zone["tasa_incidencia_acumulada_ultimos_14dias"] for zone in data_by_date["2021/12/14"]]
+y_2020 = tuple([zone["tasa_incidencia_acumulada_ultimos_14dias"] for zone in data_by_date["2020/12/15"]])
+y_2021 = tuple([zone["tasa_incidencia_acumulada_ultimos_14dias"] for zone in data_by_date["2021/12/14"]])
+x = tuple(num for num in range(0, len(y_2020)))
 
-year_2020 = Std(x,y_2020)
-year_2021 = Std(x,y_2021)
+# print(len(y_2020) == len(y_2021))
+
+tia_year_2020 = Std(x,y_2020)
+tia_year_2021 = Std(x,y_2021)
+
+# print(f"MEDIA 2020: {tia_year_2020.y_avg}")
+# print(f"MEDIA 2021: {tia_year_2021.y_avg}")
 
 
+def ec_student(sample_1,sample_2):
+        # NUMERADOR
+        nu = sample_1.y_avg - sample_2.y_avg
+        #DENOMINADOR
+        raiz_first_piece = ((sample_1.n - 1) * sample_1.y_cuasivar + (sample_2.n - 1) * sample_2.y_cuasivar) / (sample_1.n + sample_2.n - 2)
+        raiz_end_piece = ((1 / sample_1.n) + (1 / sample_2.n))
+        de = (raiz_first_piece * raiz_end_piece) ** 0.5
+        return nu / de
 
+print(f"ec_student: {ec_student(tia_year_2021,tia_year_2020)}")
+
+# print(f"CUASI 2021: {tia_year_2021.y_cuasivar}")
+# print(f"CUASI 2020: {tia_year_2020.y_cuasivar}")

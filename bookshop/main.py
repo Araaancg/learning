@@ -1,6 +1,6 @@
 #programa de la librería
 
-import test as bs
+import b_funcs as bs
 
 db = []
 bs.csv_to_dict(db)
@@ -21,9 +21,9 @@ while user.lower() != "q":
             book = bs.get_by_term("id",user, db)
             if book:
                 bs.pretty_search_book(book)
-                bs.history(book)
+                bs.history(book, "Search")
             else:
-                print("No hemos encontrado ninguna coincidencia en nuestra base de datos")
+                print("\nNo hemos encontrado ninguna coincidencia en nuestra base de datos\n")
             input("Presione enter para volver al menu")
             
         elif user == "2":
@@ -31,9 +31,9 @@ while user.lower() != "q":
             book = bs.get_by_term("title", user, db)
             if book:
                 bs.pretty_search_book(book)
-                bs.history(book)
+                bs.history(book, "Search")
             else:
-                print("No hemos encontrado ninguna coincidencia en nuestra base de datos")
+                print("\nNo hemos encontrado ninguna coincidencia en nuestra base de datos\n")
             input("Presione enter para volver al menu")
         
         elif user == "3":
@@ -41,9 +41,9 @@ while user.lower() != "q":
             book = bs.get_by_term("author", user, db)
             if book:
                 bs.pretty_search_book(book)
-                bs.history(book)
+                bs.history(book, "Search")
             else:
-                print("No hemos encontrado ninguna coincidencia en nuestra base de datos")
+                print("\nNo hemos encontrado ninguna coincidencia en nuestra base de datos\n")
             input("Presione enter para volver al menu")
         
         elif user == "4":
@@ -52,34 +52,41 @@ while user.lower() != "q":
             for i, genre in enumerate(genre_list):
                 print(f"{i+1}: {genre}")
             user = input(": ")
-            choosen_genre = genre_list[int(user)-1]
-            book = bs.get_by_term("genre", choosen_genre, db)
-            bs.pretty_search_book(book)
-            bs.history(book)
+            if int(user) in [num for num in range(1,len(genre_list))]:
+                choosen_genre = genre_list[int(user)-1]
+                book = bs.get_by_term("genre", choosen_genre, db)
+                bs.pretty_search_book(book)
+                bs.history(book, "Search")
+            else:
+                print("Input no válido")
+                print("-"*50)
             input("Presione enter para volver al menu")
 
         elif user == "5":
-            user = input("Introduzca id:" ).lower()
+            user = input("Introduzca id: " ).lower()
             book = bs.get_by_term("id", user, db)
             if book:
                 print("-"*50)
-                print("Libro a modificar")
+                print("LIBRO A MODIFICAR\n")
                 bs.pretty_book(book)
                 print("-"*50)
-                bs.update_book(book)
+                bs.update_book(book,genre_list)
                 print("-"*50)
-                print("El libro modificado:")
+                print("LIBRO MODIFICADO\n")
                 bs.pretty_book(book)
+                bs.history(book, "Update")
             else:
-                print("No hemos encontrado ninguna coincidencia en nuestra base de datos")
+                print("\nNo hemos encontrado ninguna coincidencia en nuestra base de datos\n")
             input("Presione enter para volver al menu")
 
         elif user == "6":
             user = input("Introduzca id: ").lower()
+            print("-"*50)
             book = bs.get_by_term("id", user, db)
             if book:
-                print("Libro a eliminar")
+                print("LIBRO A ELIMINAR\n")
                 bs.pretty_book(book)
+                print(" ")
                 user = "0"
                 bs.menu_remove()
                 while user != "3": #Terminar acción
@@ -87,38 +94,43 @@ while user.lower() != "q":
                     if user == "2": #Elegir otro libro
                         user = input("Introduzca id: ")
                         book = bs.get_by_term("id", user)
-                        print("Libro a eliminar")
+                        print("LIBRO A ELIMINAR\n")
                         bs.pretty_book(book)
                         user = "0"
                         bs.menu_remove()
                     if user == "1": #Eliminar libro
+                        # print(book)
+                        # bs.history(book, "Removal") 
                         bs.remove_book(book[0], db)
                         user = "3"
             else:
-                print("No hemos encontrado ninguna coincidencia en nuestra base de datos")
+                print("\nNo hemos encontrado ninguna coincidencia en nuestra base de datos\n")
             input("Presione enter para volver al menu")
 
         elif user == "7":
-            new_book = {}
-            bs.add_book(new_book, db,genre_list)
+            # new_book = {}
+            new_book = [bs.add_book(db,genre_list)]
+            # print(new_book)
+            bs.history(new_book, "Insertion")
+            print(" ")
             bs.pretty_book(new_book)
-            input("Presione enter para volver al menu")
+            input("\nPresione enter para volver al menu")
 
         elif user == "8":
             print("-"*50)
             bs.pretty_book(db)
             print("-"*50)
-            input("Presione enter para volver al menu")
+            input("\nPresione enter para volver al menu")
 
-        elif user.lower() == "q":             # Mensaje final programa y guardar los cambios
-            user = input("¿Desea guardar los cambios? (y/n): ").lower()
-            while user != "n":    
-                if user == "y":
-                    bs.export_db(db, "data.csv")
-                    print("Cambios guardados")
-                    user = "n"
-                else:
-                    user = input("Opción inexistente, por favor elija de nuevo (y/n): ")
+        # elif user.lower() == "q":             # Mensaje final programa y guardar los cambios
+            # user = input("¿Desea guardar los cambios? (y/n): ").lower()
+            # while user != "n":    
+            #     if user == "y":
+            #         bs.export_db(db, "data.csv")
+            #         print("Cambios guardados")
+            #         user = "n"
+            #     else:
+            #         user = input("Opción inexistente, por favor elija de nuevo (y/n): ")
             
             print("¡Hasta pronto!")
             user = "q"

@@ -3,6 +3,7 @@
 #Base de datos libros
 
 import csv
+import datetime as dt
 
 
 user = "0"
@@ -64,17 +65,33 @@ def write_excel(data_base):
         for book in data_base: 
             csv_writer.writerow(book.values())
 
-def update_book(book):
-    print("Reescriba la información a su gusto")
-    for k,v in list(book[0].items())[1:]:
-        user = input(f"{k}: ")
-        if user:    
+def update_book(book,genre_list):
+    print("Reescriba la información a su gusto\nPresione enter en lo que no quiera modificar\n")
+    for k,v in list(book[0].items())[1:3]:
+        user = input(f"{k.capitalize()}: ")
+    if user:    
             book[0][k] = user
+    print("Escoga un género: ")
+    print("0. Añadir un género nuevo")
+    for i, genre in enumerate(genre_list):
+        print(f"{i+1}. {genre}")
+    user = input(": ")
+    if user:
+        while int(user) not in [num for num in range(0, len(genre_list))]:
+            print("Número no válido, vuelva a elegir")
+            user = input(": ")
+        if user == "0":
+            book[0]["genre"] = input("Introduzca el nuevo género: ")
+        elif int(user) <= len(genre_list) and int(user) > 0:
+            book[0]["genre"] = genre_list[int(user)-1]
 
-def add_book(new_dict, data_base,genre_list):
-    new_book_id = input("id: ")
-    new_book_title = input("title: ")
-    new_book_author = input("author: ")
+        
+
+def add_book(data_base,genre_list):
+    print("NUEVO LIBRO\n")
+    new_book_id = input("Id: ")
+    new_book_title = input("Title: ")
+    new_book_author = input("Author: ")
     new_book_genre = None
     print("Elija un género: ")
     print("0. Añadir un género nuevo")
@@ -82,7 +99,7 @@ def add_book(new_dict, data_base,genre_list):
         print(f"{i+1}: {genre}")
     user = input(": ")
     if user == "0":
-        new_book_genre = input("Introduzca el nuevo género: ")
+        new_book_genre = input("\nIntroduzca el nuevo género: ")
     elif int(user) <= len(genre_list) and int(user) > 0:
         new_book_genre = genre_list[int(user)-1]
     else:
@@ -95,6 +112,7 @@ def add_book(new_dict, data_base,genre_list):
         "genre": new_book_genre
     }
     data_base.append(new_dict)
+    return new_dict
 
 def pretty_search_book(lista):
     print("-"*50)
@@ -118,7 +136,7 @@ def generar_lista(term, database):
             lista.append(book[term])
     return lista
 
-def history(lista):
+def history(lista, sentence):
     for book in lista:
-        with open("./history.txt", mode="a") as file:
-            file.write(f"{book}\n")
+        with open("./history.log", mode="a", encoding="utf8") as file:
+            file.write(f"{dt.datetime.now()} | {sentence}: {book}\n")

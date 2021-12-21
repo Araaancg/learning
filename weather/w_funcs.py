@@ -76,17 +76,18 @@ def get_forecast(location, **kwargs):
     return request
 
 
-def pretty_print_list(city_list): # Para cuando me pasan una lista
-    print(city_list['title'].upper().center(45))
-    print(f"Descripción del tiempo: {city_list['consolidated_weather'][0]['weather_state_name']}")
-    print(f"    Temperatura máxima: {city_list['consolidated_weather'][0]['max_temp']}°")
-    print(f"    Temperatura mínima: {city_list['consolidated_weather'][0]['min_temp']}°")
-    print(f"     Sensación térmica: {city_list['consolidated_weather'][0]['the_temp']}°")
-    print(f"               Humedad: {city_list['consolidated_weather'][0]['humidity']} %")
-    print(f"  Velocidad del viento: {city_list['consolidated_weather'][0]['wind_speed']} m/s")
+def pretty_print_list(city_dicc): # Para cuando me pasan un diccionario
+    print(city_dicc['title'].upper().center(45))
+    print(f"Descripción del tiempo: {city_dicc['consolidated_weather'][0]['weather_state_name']}")
+    print(f"    Temperatura máxima: {city_dicc['consolidated_weather'][0]['max_temp']}°")
+    print(f"    Temperatura mínima: {city_dicc['consolidated_weather'][0]['min_temp']}°")
+    print(f"     Sensación térmica: {city_dicc['consolidated_weather'][0]['the_temp']}°")
+    print(f"               Humedad: {city_dicc['consolidated_weather'][0]['humidity']} %")
+    print(f"  Velocidad del viento: {city_dicc['consolidated_weather'][0]['wind_speed']} m/s")
+    print(f"  Dirección del viento: {city_dicc['consolidated_weather'][0]['wind_direction_compass'].upper()}")
 
 
-def pretty_print_dic(city_name, city_list, date): # Para cuando me pasan un diccionario (al buscar por fecha)
+def pretty_print_dic(city_name, city_list, date): # Para cuando me pasan una lista (al buscar por fecha)
     print(f"{city_name.upper()}   {date}".center(50))
     print(f"Descripción del tiempo: {city_list[0]['weather_state_name']}")
     print(f"    Temperatura máxima: {city_list[0]['max_temp']}°")
@@ -94,6 +95,7 @@ def pretty_print_dic(city_name, city_list, date): # Para cuando me pasan un dicc
     print(f"     Sensación térmica: {city_list[0]['the_temp']}°")
     print(f"               Humedad: {city_list[0]['humidity']} %")
     print(f"  Velocidad del viento: {city_list[0]['wind_speed']} m/s")
+    print(f"  Dirección del viento: {city_list[0]['wind_direction_compass'].upper()}")
 
 def warning_bad_weather(city_list):
     bad_weather = ["sn","sl","h","t","hr","lr"]

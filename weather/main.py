@@ -10,7 +10,7 @@ hacer lo de si mete un numero que no esta que de un mensaje erroneo y vuelva al 
 '''
 
 import requests as req
-import weather_functions as wf
+import w_funcs as wf
 
 options = ["1","2","3","4","q"]
 
@@ -19,6 +19,7 @@ user = "0"
 while user.lower() != "q":
     wf.menu()
     user = input(": ")
+    print("-"*50)
     if user in options:
 
         # Buscar por ciudad
@@ -37,11 +38,14 @@ while user.lower() != "q":
         
         # Buscar por coordenadas
         if user == "2":
-            lattlong = input("Introduzca la latitud y la longitud deseadadeseada (latt,long): ")
-            info_city = wf.get_forecast(lattlong, coords=True)  
-            print("-"*50)
-            wf.pretty_print_list(info_city)
-            print("-"*50)
+            lattlong = input("Introduzca la latitud y la longitud deseada (latt,long): ")
+            if info_city: 
+                info_city = wf.get_forecast(lattlong, coords=True)  
+                print("-"*50)
+                wf.pretty_print_list(info_city)
+                print("-"*50)
+            else:
+                print("Datos no encontrados en nuestra base de datos")
             user = input("Presione enter para volver al menú principal ")
 
         # Buscar por fecha y ciudad
@@ -56,6 +60,7 @@ while user.lower() != "q":
                 wf.pretty_print_dic(user,info_city,date)
             else:
                 print("Datos no encontrados en la base de datos")
+            user = input("Presione enter paravolver al menu principal ")
         
         if user == "4":
             city_1 = input("Introduza el origen: ")

@@ -17,6 +17,8 @@ Obtener:
 - Convertir el csv en un json
 '''
 
+separador = "-"*50
+
 # Primero importamos la data de la pag web oficial de la c. de Madrid (en csv)
 
 url = "https://datos.comunidad.madrid/catalogo/dataset/032474a0-bf11-4465-bb92-392052962866/resource/ee750429-1e05-411a-b026-a57ea452a34a/download/municipio_comunidad_madrid.csv"
@@ -78,16 +80,22 @@ def get_average_population(dataset):
     return average_population
 
 # EJERCICIO 7: Comprobar la ley de benford
-def benford(dataset):
-    densities = [mun[-2] for mun in dataset[1:]]
+def benford(term,dataset): #Term representa en que datos queremos comprobar la L. de Benford: densidad, superficie, población
+    data_list = []
+    if term == "density":
+        data_list = [mun[-1] for mun in dataset[1:]] # lista de densidades
+    if term == "area":
+        data_list = [mun[-2] for mun in dataset[1:]] # lista de superficies
+    if term == "population":
+        data_list = [str(float(mun[-2])*float(mun[-1])) for mun in dataset[1:]] # lista de habitantes por mun
     result = {}
     for num in range(1,10):
         result[str(num)] = []
     for num in result.keys():
-        for density in densities:
-            if density.startswith(num):
-                result[num].append(density)
-        result[num] = len(result[num])*(1/len(densities))
+        for data in data_list:
+            if data.startswith(num):
+                result[num].append(data)
+        result[num] = len(result[num])*(1/len(data_list))
     return result
 
 # EJERCICIO 8. Convertir un csv en json
@@ -105,41 +113,64 @@ def to_json(dataset):
         result["muns"].append(pre_dict)
     return result
 
+
+#ABRIMOS EL ARCHIVO Y COMPROBAMOS LAS FUNCIONES
+
 with open("data_municipios.csv", mode="r", encoding="utf8") as file:
     data = list(csv.reader(file, delimiter=";"))
     # lo convertimos en lista para que se pueda sacar de la indentación del open
-print(data)
+# print(data)
 
 # Ejercicio 1
 mun_to_search = get_by_ine(data,"280014")
 print(f"EJERCICIO 1: {mun_to_search}")
 
+print(separador)
+
 # Ejercicio 2
 biggest_mun = get_biggest_mun(data)
 print(f"EJERCICIO 2: {biggest_mun}")
+
+print(separador)
 
 # Ejercicio 3
 sup_total = get_sup_total(data)
 print(f"EJERCICIO 3: {sup_total}")
 
+print(separador)
+
 #Ejercicio 4
 total_density = get_total_density(data)
 print(f"EJERCICIO 4: {total_density}")
+
+print(separador)
 
 #Ejercicio 5
 total_population = get_total_population(data)
 print(f"EJERCICIO 5: {total_population}")
 
+print(separador)
+
 #Ejercicio 6
 average_population = get_average_population(data)
 print(f"EJERCICIO 6: {average_population}")
 
-#Ejercicio 7
-benford = benford(data)
-print("EJERCICIO 7: ")
-for k,v in benford.items():
-    print(f"{k}: {v}")
+print(separador)
 
+#Ejercicio 7
+benford_area = benford("area",data)
+benford_densities = benford("density",data)
+benford_population = benford("population",data)
+print("EJERCICIO 7: BENFORD")
+print("\nDENSIDAD")
+for k,v in benford_densities.items():
+    print(f"{k}: {v}")
+print("\nAREA")
+for k,v in benford_area.items():
+    print(f"{k}: {v}")
+print("\nPOPULATION")
+for k,v in benford_densities.items():
+    print(f"{k}: {v}")
 
 #Ejercicio 8
 dict_json = to_json(data)

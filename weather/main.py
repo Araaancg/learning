@@ -10,88 +10,73 @@ hacer lo de si mete un numero que no esta que de un mensaje erroneo y vuelva al 
 '''
 
 import requests as req
-import w_funcs as wf
-
-options = ["1","2","3","4","q"]
+from w_funcs import *
 
 user = "0"
+separador = "-"*50
+
 
 while user.lower() != "q":
-    wf.menu()
+    menu()
     user = input(": ")
-    print("-"*50)
-    if user in options:
+    print(separador)
 
-        # Buscar por ciudad
-        if user == "1":
-            user = input("Introduzca el nombre de una ciudad: ").lower()
-            info_city = wf.get_forecast(user)
-            if info_city: 
-                print("-"*50)
-                wf.pretty_print_list(info_city)
-                print("-"*50)
+    if user == "1": # Search by city
+        location = input("Enter city's name: ")
+        print(separador)
+        forecast = get_forecast(location)
+        if forecast:
+            user = input("Do you want to see the forecast for the next three days too? (y/n): ")
+            print(separador)
+            if user.lower() != "n": 
+                pretty_print(forecast, see_next_three_days=True) # Muestra HOY y los tres siguientes días
             else:
-                print("-"*50)
-                print("Localización no encontrada en la base de datos")
-                # print("-"*50)
-            user = input("Presione enter para volver al menu principal ")
-        
-        # Buscar por coordenadas
-        if user == "2":
-            lattlong = input("Introduzca la latitud y la longitud deseada (latt,long): ")
-            if info_city: 
-                info_city = wf.get_forecast(lattlong, coords=True)  
-                print("-"*50)
-                wf.pretty_print_list(info_city)
-                print("-"*50)
+                pretty_print(forecast)
+        else:
+            print("Data not found in our database")
+        print(separador)
+        input("Press enter to return to the main menu ")
+
+    if user == "2": # Search by coordinates
+        location = input("Enter coordinates (latt,long): ")
+        print(separador)
+        forecast = get_forecast(location, coords=True)
+        if forecast:
+            user = input("Do you want to see the forecast for the next three days too? (y/n): ")
+            print(separador)
+            if user.lower() != "n": 
+                pretty_print(forecast, see_next_three_days=True) # Muestra HOY y los tres siguientes días
             else:
-                print("Datos no encontrados en nuestra base de datos")
-            user = input("Presione enter para volver al menú principal ")
-
-        # Buscar por fecha y ciudad
-        if user == "3":
-            user = input("Introduzca el nombre de una ciudad: ").lower()
-            date = input("A continuación introduzca la fecha (y/m/d): ")
-            print("-"*50)
-            info_city = wf.get_forecast(user,date=date)
-
-            # Manejo del error
-            if info_city:
-                wf.pretty_print_dic(user,info_city,date)
-            else:
-                print("Datos no encontrados en la base de datos")
-            user = input("Presione enter paravolver al menu principal ")
-        
-        if user == "4":
-            city_1 = input("Introduza el origen: ")
-            city_2 = input("Introduzca el destino: ")
-            city_1_info = wf.get_forecast(city_1)
-            city_2_info = wf.get_forecast(city_2)
-            cities = [city_1_info,city_2_info]
-            print("-"*50)
-            travel_planning = wf.plan_trip(city_1,city_2)
-            wf.warning_bad_weather(cities)
-            if travel_planning:
-                print(f"Distancia entre {city_1.capitalize()} y {city_2.capitalize()}: {travel_planning[1]}")
-                print(f"Duración del viaje: {travel_planning[0]}")
-                print("-"*50)
-            else: 
-                print("Datos no encontrados en nuestra base")
-            user = input("Presione enter para volver al menú principal ")
-
-    else: # Input en el menú inválido
-        print("Input inválido, por favor introduzca de nuevo la opción deseada")
-        
-print("Hasta pronto!")
-
-
-
-'''
-Nueva parte del programa: VIAJES
-
-La misma permitirá elegir un origen y un destino e indicará, en base al clima lo siguiente:
-- Aviso de mal clima (sn, sl, h, t hr)
-- Distancia a recorrer (km.)
-- Duración del trayecto (100 km/h)
-- Si la velocidad del viento supera los 10 nudos, reducir la velocidad media a 90 km/h
-'''
+                pretty_print(forecast)
+        else:
+            print("Data not found in our database")
+        print(separador)
+        input("Press enter to return to the main menu ")
+    
+    if user == "3": # Search by an especific date
+        location = input("Enter city's name: ")
+        date = input("Enter date (yyyy/mm/dd): ")
+        print(separador)
+        try:
+            forecast = get_forecast(location, date=date)
+            pretty_print(forecast, date=date, location=location)
+        except:
+            print("Data not found in our database")
+        print(separador)
+        input("Press enter to return to the main menu ")
+    
+    if user == "4": # Plan your trip
+        locationA = input("Enter origin city: ")
+        locationB = input("Enter destination city: ")
+        print(separador)
+        plan_trip(locationA,locationB)
+        print(separador)
+        input("Press enter to return to the main menu")
+        '''
+        La función lo primero que hace es ver si las ciudades están muy lejos, si lo están dejará de funcionar e imprimirá un mensaje
+        tipo "las ciudades están muy lejos, viaje no posible"
+        Lo segundo que hace es ver el tiempo, si en alguna de las dos ciudades hay mal tiempo también dejará de funcionar ya que 
+        el viaje no será posible, imprimirá por supuesto un warning
+        Si todo sale bien y las ciudades están medianamente cerca y además hay buen tiempo, imprimirá la distancia y la duración
+        del trayecto además de un mensaje diciendo que hace buen tiempo
+        '''

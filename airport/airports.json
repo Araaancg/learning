@@ -1,0 +1,36 @@
+{
+    "ARG": {
+        "city": "Buenos Aires",
+        "airport_name": "Ezeiza",
+        "UTC": -3,
+        "PER": {"flight_time": 4.5, "departures": ["9:25", "12:30", "17:45"]},
+        "BRA": {"flight_time": 3, "departures": ["8:00", "11:30", "19:00"]},
+        "SPA": {"flight_time": 13, "departures": ["9:00", "11:30", "17:00"]}
+      
+
+    },
+    "PER": {
+        "city": "Lima",
+        "airport_name": "Jorge Chávez",
+        "UTC": -5,
+        "ARG": {"flight_time": 4.5, "departures": ["9:00", "11:30", "17:00"]},
+        "BRA": {"flight_time": 4.9, "departures": ["6:00", "15:30", "23:00"]},
+        "SPA": {"flight_time": 14.5, "departures": ["4:30", "8:30", "11:00"]}
+    },
+    "SPA": {
+        "city": "Madrid",
+        "airport_name": "Barajas",
+        "UTC": 1,
+        "ARG": {"flight_time": 13, "departures": ["8:00", "11:30", "19:00"]},
+        "BRA": {"flight_time": 11, "departures": ["6:00", "7:30", "9:00"]},
+        "PER": {"flight_time": 14.5, "departures": ["4:00", "12:30", "23:00"]}
+    },
+    "BRA": {
+        "city": "Sao Paulo",
+        "airport_name": "São Paulo-Guarulhos",
+        "UTC": -3,
+        "ARG": {"flight_time": 3, "departures": ["9:00", "11:30", "17:00"]},
+        "SPA": {"flight_time": 11, "departures": ["7:00", "11:30", "17:00"]},
+        "PER": {"flight_time": 4.9, "departures": ["12:00", "16:30", "22:00"]}
+    }
+}

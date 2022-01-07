@@ -45,38 +45,7 @@ while user != "q".lower():
         input("Presione enter para volver al menú principal ")
 
     if user == "3":
-        print("-"*30)
-
-        continents = ["Asia","Europe","Oceania","Africa","Americas"]
-
-        print("Continentes".center(30))
-        for i, continent in enumerate(continents):
-            print(f"{i+1}: {continent}")
-
-        user = input("Elija un continente: ")
-        if int(user) > 0 and int(user) <= len(continents):
-            user = continents[int(user)-1]
-        else:
-            print("Número no válido")
-            break
-
-        print("_"*30)
-
-        continent_list = cf.get_by_term(user,continent=True) #devuleve una lista con todos los países y ya trabajamos con esto
-            # print(continent)
-        print(continent_list[0]["capital"][0])
-
-        countries = list(map(lambda country: {
-            "name":country["name"]["common"],
-            "capital":country["capital"][0],
-            # "capital":country.get("capital"[0]),
-            "area":country["area"],
-            "drive_side":country["car"]["side"],
-            "population":country["population"]
-            },continent_list))
-
-        # countries = cf.countries_list(continent)
-        print(countries)
-            
+        pass 
+        
 print("¡Hasta pronto!")
 

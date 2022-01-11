@@ -151,7 +151,7 @@ def plan_trip(A,B):
         if is_trip_possible: # Solo si el trayecto es posible damos la info, sino no
             print(" ")
             print(f"Distance to go {distance}km")
-            print(f"Trip duration {time} horas")
+            print(f"Trip duration {time} hours")
     else:
         print("Sorry, trip not possible, cities are too far away")
 

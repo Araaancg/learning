@@ -71,7 +71,7 @@ while user.lower() != "q":
         print(separador)
         plan_trip(locationA,locationB)
         print(separador)
-        input("Press enter to return to the main menu")
+        input("Press enter to return to the main menu ")
         '''
         La función lo primero que hace es ver si las ciudades están muy lejos, si lo están dejará de funcionar e imprimirá un mensaje
         tipo "las ciudades están muy lejos, viaje no posible"

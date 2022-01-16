@@ -1,7 +1,6 @@
 from flask import Flask, request
-import json
-from funcs import *
 from flask_cors import CORS
+from funcs import *
 
 app = Flask(__name__)
 CORS(app)
@@ -19,6 +18,7 @@ def all():
 @app.route("/book/<book_id>", methods=["GET","PUT","DELETE"])
 def book_by_id(book_id):
     if request.method == "GET":
+        print(DB)
         book_found = get_by_id(book_id)
         if book_found:
             return {"success":True,"book":book_found}
@@ -37,6 +37,14 @@ def book_by_id(book_id):
             return {"success":True,"book":book_to_update[1]}
         else:
             return {"success":False}
+
+@app.route("/create_book", methods=["POST"])
+def create_book():
+    try:
+        book = new_book(request)
+        return {"success":True,"new_book":book}
+    except:
+        return {"success":False}
 
 if __name__ == "__main__":
     app.run(debug=True)

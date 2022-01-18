@@ -17,4 +17,6 @@ for book in DB["data"]:
     VALUES ("{book["id"]}","{book["title"]}","{book["author"]}","{book["genre"]}",{book["stock"]});
     ''')
 
+# cur.execute('''SELECT * FROM books ORDER BY author DESC;''')
+
 con.commit()

@@ -58,8 +58,8 @@
         },
         {
             "id": "el_1",
-            "title": "Andres Trapiello",
-            "author": "Las armas y las letras",
+            "title": "Las armas y las letras",
+            "author": "Andres Trapiello",
             "genre": "Narrativa extranjera",
             "stock": 12
         },
@@ -67,7 +67,7 @@
             "id": "aa_1",
             "title": "El poder del ahora",
             "author": "Ekhart Tolle",
-            "genre": "Narrativa extranjera",
+            "genre": "Autoayuda",
             "stock": 14
         }
     ]

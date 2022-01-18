@@ -1,19 +1,3244 @@
 {
     "verbs": [
         {
-            "infinitive": "sein"
+            "infinitiv": "sein",
+            "übersetzung": "ser/estar",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "sein"
+            },
+            "präteritum": "waren"
         },
         {
-            "infinitive": "haben"
+            "infinitiv": "haben",
+            "übersetzung": "tener",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "haben"
+            },
+            "präteritum": "hatten"
         },
         {
-            "infinitive": "lesen"
+            "infinitiv": "lesen",
+            "übersetzung": "leer",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "haben"
+            },
+            "präteritum": "las"
         },
         {
-            "infinitive": "trinken"
+            "infinitiv": "trinken",
+            "übersetzung": "beber",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "haben"
+            },
+            "präteritum": "trank"
         },
         {
-            "infinitive": "lesen"
+            "infinitiv": "schreiben",
+            "übersetzung": "escribir",
+            "merkmals": "inrunregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "haben"
+            },
+            "präteritum": "schrieb"
+        },
+        {
+            "infinitiv": "gehen",
+            "übersetzung": "ir",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "sein"
+            },
+            "präteritum": "ging"
+        },
+        {
+            "infinitiv": "essen",
+            "übersetzung": "comer",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "haben"
+            },
+            "präteritum": "aẞ"
+        },
+        {
+            "infinitiv": "beschreiben",
+            "übersetzung": "describir",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "sprechen",
+            "übersetzung": "hablar",
+            "merkmals": null,
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "bleiben",
+            "übersetzung": "quedarse",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "sein"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "kommen",
+            "übersetzung": "venir",
+            "merkmals": null,
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "sein"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "kennen",
+            "übersetzung": "conocer",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "raten",
+            "übersetzung": "adivinar",
+            "merkmals": null,
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "nehmen",
+            "übersetzung": "tomar",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "heißen",
+            "übersetzung": "llamarse",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "schließen",
+            "übersetzung": "cerrar",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "singen",
+            "übersetzung": "cantar",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "spielen",
+            "übersetzung": "jugar",
+            "merkmals": null,
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "reden",
+            "übersetzung": "hablar",
+            "merkmals": null,
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": null
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "schwimmen",
+            "übersetzung": "nadar",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "sein"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "tanzen",
+            "übersetzung": "bailar",
+            "merkmals": null,
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "spülen",
+            "übersetzung": "fregar",
+            "merkmals": null,
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "arbeiten",
+            "übersetzung": "trabajar",
+            "merkmals": null,
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "machen",
+            "übersetzung": "hacer",
+            "merkmals": null,
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "anrufen",
+            "übersetzung": "llamar por telf",
+            "merkmals": null,
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "rufen",
+            "übersetzung": "llamar",
+            "merkmals": null,
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "kochen",
+            "übersetzung": "cocinar",
+            "merkmals": null,
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "pfeifen",
+            "übersetzung": "silbar",
+            "merkmals": null,
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "wohnen",
+            "übersetzung": "vivir",
+            "merkmals": null,
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "lernen",
+            "übersetzung": "aprender",
+            "merkmals": null,
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "buchstabieren",
+            "übersetzung": "deletrear",
+            "merkmals": null,
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "wissen",
+            "übersetzung": "saber",
+            "merkmals": null,
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "antworten",
+            "übersetzung": "contestar/responder",
+            "merkmals": "unrregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "vermieten",
+            "übersetzung": "alquilar",
+            "merkmals": null,
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "kosten",
+            "übersetzung": "costar",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "einkaufen",
+            "übersetzung": "hacer la compra (supermercado)",
+            "merkmals": "regelmäẞige,trennbare",
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "frühstücken",
+            "übersetzung": "desayunar",
+            "merkmals": "regelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "finden",
+            "übersetzung": "encontrar",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "gefallen",
+            "übersetzung": "gustar",
+            "merkmals": null,
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "schmecken",
+            "übersetzung": "saber/tener sabor",
+            "merkmals": null,
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "besuchen",
+            "übersetzung": "visitar",
+            "merkmals": null,
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "spazieren gehen",
+            "übersetzung": "pasear",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "sein"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "möchten",
+            "übersetzung": "querer (deseo)",
+            "merkmals": "modal",
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "schneiden",
+            "übersetzung": "cortar",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "fernsehen",
+            "übersetzung": "ver la tv",
+            "merkmals": "unregelmäẞige,trennbare",
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "ergänzen",
+            "übersetzung": "completar/añadir",
+            "merkmals": null,
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "aufstehen",
+            "übersetzung": "ponerse de pie/levantarse",
+            "merkmals": "unregelmäẞige,trennbare",
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "sein"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "bezahlen",
+            "übersetzung": "pagar",
+            "merkmals": null,
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "erzählen",
+            "übersetzung": "contar/narrar",
+            "merkmals": "u: regelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "anfangen",
+            "übersetzung": "empezar",
+            "merkmals": "unregelmäẞige,trennbare",
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "kaufen",
+            "übersetzung": "comprar",
+            "merkmals": "regelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "ausgehen",
+            "übersetzung": "salir (por ahí)",
+            "merkmals": "regelmäẞige,trennbare",
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "sein"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "beginnen",
+            "übersetzung": "empezar",
+            "merkmals": null,
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "bedienen",
+            "übersetzung": "atender/servir",
+            "merkmals": null,
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "bestellen",
+            "übersetzung": "pedir/encargar",
+            "merkmals": null,
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "entwickeln",
+            "übersetzung": "desarrollar",
+            "merkmals": null,
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "unterrichten",
+            "übersetzung": "dar clase/educar",
+            "merkmals": null,
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "untersuchen",
+            "übersetzung": "investigar/indagar",
+            "merkmals": null,
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "übernachten",
+            "übersetzung": "pernoctar",
+            "merkmals": null,
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "treiben",
+            "übersetzung": "hacer avanzar",
+            "merkmals": null,
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "feiern",
+            "übersetzung": "celebrar",
+            "merkmals": null,
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "hören",
+            "übersetzung": "oír",
+            "merkmals": "regelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "fahren",
+            "übersetzung": "conducir/ir en tpte",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "sein"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "analysieren",
+            "übersetzung": "analizar",
+            "merkmals": "regelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "daueren",
+            "übersetzung": "durar/tardar",
+            "merkmals": null,
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "stehen",
+            "übersetzung": "estar de pie",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "passen",
+            "übersetzung": "sentar (o estar) bien",
+            "merkmals": null,
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "helfen",
+            "übersetzung": "ayudar",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "gehören",
+            "übersetzung": "pertenecer",
+            "merkmals": "regelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "lieben",
+            "übersetzung": "querer/amar",
+            "merkmals": null,
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "verstehen",
+            "übersetzung": "entender/comprender",
+            "merkmals": null,
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "sehen",
+            "übersetzung": "ver/mirar",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "abholen",
+            "übersetzung": "recoger",
+            "merkmals": null,
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "können",
+            "übersetzung": "poder/saber",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "vereinbaren",
+            "übersetzung": "concertar",
+            "merkmals": null,
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "habe"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "erwarten",
+            "übersetzung": "esperar",
+            "merkmals": null,
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "brauchen",
+            "übersetzung": "necesitar",
+            "merkmals": "regelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "warten",
+            "übersetzung": "esperar",
+            "merkmals": null,
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "organisieren",
+            "übersetzung": "organizar",
+            "merkmals": "regelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "führen",
+            "übersetzung": "dirigir/llevar",
+            "merkmals": null,
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "präsentieren",
+            "übersetzung": "presentar",
+            "merkmals": "regelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "diskutieren",
+            "übersetzung": "discutir",
+            "merkmals": "regelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "müssen",
+            "übersetzung": "tener que/deber (obligación)",
+            "merkmals": "modal",
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "beantworten",
+            "übersetzung": "contestar/responder",
+            "merkmals": null,
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "studieren",
+            "übersetzung": "studiar",
+            "merkmals": "regelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "unternehmen",
+            "übersetzung": "realizar/hacer",
+            "merkmals": null,
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "rauchen",
+            "übersetzung": "fumar",
+            "merkmals": null,
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "schlafen",
+            "übersetzung": "dormir",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "verbringen",
+            "übersetzung": "None",
+            "merkmals": null,
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "sollen",
+            "übersetzung": "deber (should)",
+            "merkmals": "modal",
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "bringen",
+            "übersetzung": "traer",
+            "merkmals": null,
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "traumen",
+            "übersetzung": "soñar",
+            "merkmals": null,
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "messen",
+            "übersetzung": "medir",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "anziehen",
+            "übersetzung": "vestir",
+            "merkmals": "unregelmäẞige,trennbare",
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "ausziehen",
+            "übersetzung": "desvestir",
+            "merkmals": "unregelmäẞige,trennbare",
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "treffen",
+            "übersetzung": "quedar",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "backen",
+            "übersetzung": "hornear",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "befehlen",
+            "übersetzung": "dar una orden",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "betrügen",
+            "übersetzung": "engañar",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "bieten",
+            "übersetzung": "ofrecer",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "bitten",
+            "übersetzung": "pedir un favor",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "braten",
+            "übersetzung": "asar",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "brechen",
+            "übersetzung": "romper",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "brennen",
+            "übersetzung": "quemar",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "denken",
+            "übersetzung": "pensar",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "dürfen",
+            "übersetzung": "poder/tener permiso",
+            "merkmals": "modal",
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "empfangen",
+            "übersetzung": "recibir",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "empfehlen",
+            "übersetzung": "recomendar",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "empfinden",
+            "übersetzung": "considerar",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "erkennen",
+            "übersetzung": "ver/distinguir",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "fallen",
+            "übersetzung": "caer",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "sein"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "fangen",
+            "übersetzung": "atrapar",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "fliegen",
+            "übersetzung": "volar",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "sein"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "fressen",
+            "übersetzung": "comer (para animales)",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "geben",
+            "übersetzung": "dar",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "gelingen",
+            "übersetzung": "salir bien",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "sein"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "genießen",
+            "übersetzung": "disfrutar",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "geschehen",
+            "übersetzung": "pasar/ocurrir/suceder",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "sein"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "gewinnen",
+            "übersetzung": "ganar",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "greifen",
+            "übersetzung": "agarrar/tomar",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "halten",
+            "übersetzung": "parar/detenerse",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "hängen",
+            "übersetzung": "colgar",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "klingen",
+            "übersetzung": "sonar",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "laden",
+            "übersetzung": "cargar",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "lassen",
+            "übersetzung": "dejar",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "laufen",
+            "übersetzung": "correr",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "sein"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "leiden",
+            "übersetzung": "sufrir",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "leihen",
+            "übersetzung": "prestar",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "liegen",
+            "übersetzung": "yacer",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "lügen",
+            "übersetzung": "mentir",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "misslingen",
+            "übersetzung": "fracasar",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "sein"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "mögen",
+            "übersetzung": "gustar",
+            "merkmals": "unrmodal",
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "nennen",
+            "übersetzung": "nombrar",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "reißen",
+            "übersetzung": "romperse",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "rennen",
+            "übersetzung": "correr",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "sein"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "riechen",
+            "übersetzung": "oler",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "scheiden",
+            "übersetzung": "divorciarse",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "schieben",
+            "übersetzung": "empujar/arrastrar",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "schlagen",
+            "übersetzung": "disparar",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "schwören",
+            "übersetzung": "jurar",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "senden",
+            "übersetzung": "mandar/enviar",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "sitzen",
+            "übersetzung": "estar sentado",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "springen",
+            "übersetzung": "saltar",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "sein"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "stehlen",
+            "übersetzung": "robar",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "steigen",
+            "übersetzung": "subir",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "sterben",
+            "übersetzung": "morir",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "sein"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "stinken",
+            "übersetzung": "oler mal/apestar",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "streichen",
+            "übersetzung": "pintar",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "streiten",
+            "übersetzung": "pelearse",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "tragen",
+            "übersetzung": "llevar puesto/llevar consigo",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "tun",
+            "übersetzung": "hacer",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "verlieren",
+            "übersetzung": "perder",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "wachsen",
+            "übersetzung": "crecer",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "waschen",
+            "übersetzung": "lavar",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "werden",
+            "übersetzung": "llegar a ser",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "sein"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "werfen",
+            "übersetzung": "tirar",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "wiegen",
+            "übersetzung": "pesar",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "wollen",
+            "übersetzung": "querer  (aquí y ahora)",
+            "merkmals": "unrmodalunr",
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "ziehen",
+            "übersetzung": "tirar de algo",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "zwingen",
+            "übersetzung": "obligar",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er/sie/es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "surfen",
+            "übersetzung": null,
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er,sie,es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": null
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "einladen",
+            "übersetzung": null,
+            "merkmals": "unregelmäẞige,trennbare",
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er,sie,es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": null
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "wehtun",
+            "übersetzung": null,
+            "merkmals": "unregelmäẞige,trennbare",
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er,sie,es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": null
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "übergeben",
+            "übersetzung": null,
+            "merkmals": null,
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er,sie,es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": null
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "kotzen",
+            "übersetzung": null,
+            "merkmals": null,
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er,sie,es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": null
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "meinen",
+            "übersetzung": null,
+            "merkmals": null,
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er,sie,es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": null
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "zeigen",
+            "übersetzung": null,
+            "merkmals": null,
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er,sie,es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": null
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "erklären",
+            "übersetzung": null,
+            "merkmals": "regelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er,sie,es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": null
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "leben",
+            "übersetzung": null,
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er,sie,es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": null
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "putzen",
+            "übersetzung": null,
+            "merkmals": null,
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er,sie,es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": null
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "boxen",
+            "übersetzung": null,
+            "merkmals": null,
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er,sie,es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": null
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "abschließen",
+            "übersetzung": null,
+            "merkmals": "unregelmäẞige,trennbare",
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er,sie,es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": null
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "gehorchen",
+            "übersetzung": null,
+            "merkmals": null,
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er,sie,es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": null
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "zerreißen",
+            "übersetzung": null,
+            "merkmals": null,
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er,sie,es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": null
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "zuhören",
+            "übersetzung": null,
+            "merkmals": "regelmäẞige,trennbare",
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er,sie,es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": null
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "aufmachen",
+            "übersetzung": null,
+            "merkmals": "regelmäẞige,trennbare",
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er,sie,es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": null
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "herstellen",
+            "übersetzung": null,
+            "merkmals": null,
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er,sie,es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": null
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "mitbringen",
+            "übersetzung": null,
+            "merkmals": null,
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er,sie,es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": null
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "zurückkommen",
+            "übersetzung": null,
+            "merkmals": "unregelmäẞige,trennbare",
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er,sie,es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": null
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "einsteigen",
+            "übersetzung": null,
+            "merkmals": "unregelmäẞige,trennbare",
+            "präsens": {
+                "ich": null,
+                "du": null,
+                "er,sie,es": null,
+                "wir": null,
+                "ihr": null,
+                "sie/Sie": null
+            },
+            "perfekt": {
+                "konjugation": null,
+                "verb": null
+            },
+            "präteritum": null
         }
     ]
 }

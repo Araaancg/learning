@@ -2,7 +2,7 @@ import json
 
 
 def get_data(json_file):
-    with open(json_file, encoding="utf8") as file:
+    with open(json_file) as file:
         return json.load(file)
 
 DB = get_data("./verbs.json")
@@ -53,23 +53,29 @@ user = ""
 #     }
 #     verb["präteritum"] = None
 
-
+count = 0
 #INSERTAR MAS INFO
 for verb in DB["verbs"]:
-    print(f"Deutsch: {verb['infinitiv']}")
-    for k,v in verb.items():
-        if k == "merkmals" and not verb["merkmals"]:
-            v = input(f"{k}: ")
-            if v:
-                verb[k] = v    
+    # print(count)
+    print(f"\n{count}. Deutsch: {verb['infinitiv']}")
+    konj = {
+        "ich": None,
+        "du": None,
+        "er/sie/es": None,
+        "wir": None,
+        "ihr": None,
+        "sie/Sie": None
+    }
+    if not verb["präsens"]["er/sie/es"]:
+        for k,v in konj.items():
+            konj[k] = input(f"{k}: ")
+        try:
+            verb["präsens"] = konj
+        except:
+            print(None)
+    count += 1
 
-    #     # if k == "präsens" or k == "perfekt":
-    #     #     for k,v in verb[k].items():
-    #     #         # print(f"Deutsch: {verb['infinitiv']}")
-    #     if not v:
-    #         v = input(f"{k}: ")
-    #         if v:
-    #             verb[k] = v
+
 
     write_data("./verbs.json",DB)
         

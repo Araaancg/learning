@@ -53,31 +53,31 @@ user = ""
 #     }
 #     verb["präteritum"] = None
 
-count = 0
-#INSERTAR MAS INFO
-for verb in DB["verbs"]:
-    # print(count)
-    print(f"\n{count}. Deutsch: {verb['infinitiv']}")
-    konj = {
-        "ich": None,
-        "du": None,
-        "er/sie/es": None,
-        "wir": None,
-        "ihr": None,
-        "sie/Sie": None
-    }
-    if not verb["präsens"]["er/sie/es"]:
-        for k,v in konj.items():
-            konj[k] = input(f"{k}: ")
-        try:
-            verb["präsens"] = konj
-        except:
-            print(None)
-    count += 1
+# count = 0
+# #INSERTAR MAS INFO
+# for verb in DB["verbs"]:
+#     # print(count)
+#     print(f"\n{count}. Deutsch: {verb['infinitiv']}")
+#     konj = {
+#         "ich": None,
+#         "du": None,
+#         "er/sie/es": None,
+#         "wir": None,
+#         "ihr": None,
+#         "sie/Sie": None
+#     }
+#     if not verb["präsens"]["er/sie/es"]:
+#         for k,v in konj.items():
+#             konj[k] = input(f"{k}: ")
+#         try:
+#             verb["präsens"] = konj
+#         except:
+#             print(None)
+#     count += 1
 
 
 
-    write_data("./verbs.json",DB)
+#     write_data("./verbs.json",DB)
         
 
 #CHANGE/ADD KEYS

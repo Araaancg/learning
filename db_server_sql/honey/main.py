@@ -1,5 +1,6 @@
-from flask import Flask,g
+from flask import Flask,g,request
 import sqlite3
+from funcs import *
 
 app = Flask(__name__)
 
@@ -11,8 +12,43 @@ def con():
         db = g._database = sqlite3.connect(DB)
     return db
 
+@app.route("/honey")
+def home():
+    return "Working on it, be patient :)"
 
-# @app.route("/honey/")
+@app.route("/honey/collectors", methods=["GET","POST"])
+def collectors():
+    if request.method == "GET":
+        return get_all(con, "collectors")
+
+    if request.method == "POST":
+        new_row = insert_new_row(con,request,"collectors")
+        if new_row:
+            return {"success":True}
+
+@app.route("/honey/providers", methods=["GET","POST"])
+def providers():
+    if request.method == "GET":
+        return get_all(con, "providers")
+    
+    if request.method == "POST":
+        new_row = insert_new_row(con,request,"providers")
+        if new_row:
+            return {"success":True}
+
+@app.route("/honey/purchases", methods=["GET","POST"])
+def pruchases():
+    if request.method == "GET":
+        return get_all(con, "purchases")
+    
+    if request.method == "POST":
+        new_row = insert_new_row(con,request,"purchases")
+        if new_row:
+            return {"success":True}
+
+
+
+
 
 
 

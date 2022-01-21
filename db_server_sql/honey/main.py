@@ -22,6 +22,7 @@ def collectors():
         return get_all(con, "collectors")
 
     if request.method == "POST":
+        create_id(con,"collectors")
         new_row = insert_new_row(con,request,"collectors")
         if new_row:
             return {"success":True}
@@ -36,15 +37,10 @@ def providers():
         if new_row:
             return {"success":True}
 
-@app.route("/honey/purchases", methods=["GET","POST"])
+@app.route("/honey/purchases", methods=["GET"])
 def pruchases():
-    if request.method == "GET":
-        return get_all(con, "purchases")
+    return get_all(con, "purchases")
     
-    if request.method == "POST":
-        new_row = insert_new_row(con,request,"purchases")
-        if new_row:
-            return {"success":True}
 
 
 

@@ -13,7 +13,7 @@
                 "sie/Sie": "sind"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": ": ",
                 "verb": "sein"
             },
             "präteritum": "waren"
@@ -31,7 +31,7 @@
                 "sie/Sie": "haben"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "gehabt",
                 "verb": "haben"
             },
             "präteritum": "hatten"
@@ -49,7 +49,7 @@
                 "sie/Sie": "lesen"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "gelesen",
                 "verb": "haben"
             },
             "präteritum": "las"
@@ -67,7 +67,7 @@
                 "sie/Sie": "trinken"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "getrunken",
                 "verb": "haben"
             },
             "präteritum": "trank"
@@ -85,7 +85,7 @@
                 "sie/Sie": "schreiben"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "geschrieben",
                 "verb": "haben"
             },
             "präteritum": "schrieb"
@@ -103,7 +103,7 @@
                 "sie/Sie": "gehen"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "gegangen",
                 "verb": "sein"
             },
             "präteritum": "ging"
@@ -121,7 +121,7 @@
                 "sie/Sie": "essen"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "gegessen",
                 "verb": "haben"
             },
             "präteritum": "aẞ"
@@ -139,7 +139,7 @@
                 "sie/Sie": "beschreiben"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "beschrieben",
                 "verb": "haben"
             },
             "präteritum": null
@@ -157,7 +157,7 @@
                 "sie/Sie": "sprechen"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "gesprochen",
                 "verb": "haben"
             },
             "präteritum": null
@@ -175,7 +175,7 @@
                 "sie/Sie": "bleiben"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "geblieben",
                 "verb": "sein"
             },
             "präteritum": null
@@ -193,7 +193,7 @@
                 "sie/Sie": "kommen"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "gekkommen",
                 "verb": "sein"
             },
             "präteritum": null
@@ -211,7 +211,7 @@
                 "sie/Sie": "kennen"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "gekannt",
                 "verb": "haben"
             },
             "präteritum": null
@@ -229,7 +229,7 @@
                 "sie/Sie": "raten"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "geraten",
                 "verb": "haben"
             },
             "präteritum": null
@@ -247,7 +247,7 @@
                 "sie/Sie": "nehmen"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "genommen",
                 "verb": "haben"
             },
             "präteritum": null
@@ -265,7 +265,7 @@
                 "sie/Sie": "heißen"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "geheißten",
                 "verb": "haben"
             },
             "präteritum": null
@@ -283,7 +283,7 @@
                 "sie/Sie": "schließen"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "geschloßen",
                 "verb": "haben"
             },
             "präteritum": null
@@ -301,7 +301,7 @@
                 "sie/Sie": "singen"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "gesungen",
                 "verb": "haben"
             },
             "präteritum": null
@@ -319,7 +319,7 @@
                 "sie/Sie": "spielen"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "gespielt",
                 "verb": "haben"
             },
             "präteritum": null
@@ -337,8 +337,8 @@
                 "sie/Sie": "reden"
             },
             "perfekt": {
-                "konjugation": null,
-                "verb": null
+                "konjugation": "geredet",
+                "verb": "haben"
             },
             "präteritum": null
         },
@@ -355,7 +355,7 @@
                 "sie/Sie": "schwimmen"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "geschwommen",
                 "verb": "sein"
             },
             "präteritum": null
@@ -373,7 +373,7 @@
                 "sie/Sie": "tanzen"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "getanzt",
                 "verb": "haben"
             },
             "präteritum": null
@@ -391,7 +391,7 @@
                 "sie/Sie": "spülen"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "gespült",
                 "verb": "haben"
             },
             "präteritum": null
@@ -409,7 +409,7 @@
                 "sie/Sie": "arbeiten"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "gearbeitet",
                 "verb": "haben"
             },
             "präteritum": null
@@ -427,7 +427,7 @@
                 "sie/Sie": "machen"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "gemacht",
                 "verb": "haben"
             },
             "präteritum": null
@@ -445,7 +445,7 @@
                 "sie/Sie": "rufen an"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "angerufen",
                 "verb": "haben"
             },
             "präteritum": null
@@ -463,7 +463,7 @@
                 "sie/Sie": "rufen"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "gerufen",
                 "verb": "haben"
             },
             "präteritum": null
@@ -481,7 +481,7 @@
                 "sie/Sie": "kochen"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "gekocht",
                 "verb": "haben"
             },
             "präteritum": null
@@ -499,7 +499,7 @@
                 "sie/Sie": "pfeifen"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "gepfiffen",
                 "verb": "haben"
             },
             "präteritum": null
@@ -517,7 +517,7 @@
                 "sie/Sie": "wohnen"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "gewohnt",
                 "verb": "haben"
             },
             "präteritum": null
@@ -535,7 +535,7 @@
                 "sie/Sie": "lernen"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "gelernt",
                 "verb": "haben"
             },
             "präteritum": null
@@ -553,7 +553,7 @@
                 "sie/Sie": "buchstabieren"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "buchstabiert",
                 "verb": "haben"
             },
             "präteritum": null
@@ -571,7 +571,7 @@
                 "sie/Sie": "wissen"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "gewusst",
                 "verb": "haben"
             },
             "präteritum": null
@@ -589,7 +589,7 @@
                 "sie/Sie": "antworten"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "geantwortet",
                 "verb": "haben"
             },
             "präteritum": null
@@ -607,7 +607,7 @@
                 "sie/Sie": "vermieten"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "vermietet",
                 "verb": "haben"
             },
             "präteritum": null
@@ -625,7 +625,7 @@
                 "sie/Sie": "kosten"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "gekostet",
                 "verb": "haben"
             },
             "präteritum": null
@@ -643,7 +643,7 @@
                 "sie/Sie": "kaufen ein"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "eingekauft",
                 "verb": "haben"
             },
             "präteritum": null
@@ -661,7 +661,7 @@
                 "sie/Sie": "frühstücken"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "gefrühstück",
                 "verb": "haben"
             },
             "präteritum": null
@@ -679,7 +679,7 @@
                 "sie/Sie": "finden"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "gefunden",
                 "verb": "haben"
             },
             "präteritum": null
@@ -697,7 +697,7 @@
                 "sie/Sie": "gefallen"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "gefallen",
                 "verb": "haben"
             },
             "präteritum": null
@@ -715,7 +715,7 @@
                 "sie/Sie": "schmeken"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "geschmeckt",
                 "verb": "haben"
             },
             "präteritum": null
@@ -733,7 +733,7 @@
                 "sie/Sie": "besuchen"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "besucht",
                 "verb": "haben"
             },
             "präteritum": null
@@ -751,7 +751,7 @@
                 "sie/Sie": "gehen spazieren"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "spazieren gegangen",
                 "verb": "sein"
             },
             "präteritum": null
@@ -769,7 +769,7 @@
                 "sie/Sie": "möchten"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "gemocht",
                 "verb": "haben"
             },
             "präteritum": null
@@ -787,7 +787,7 @@
                 "sie/Sie": "schneiden"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "geschnitten",
                 "verb": "haben"
             },
             "präteritum": null
@@ -805,7 +805,7 @@
                 "sie/Sie": "sehen fern"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "ferngesehen",
                 "verb": "haben"
             },
             "präteritum": null
@@ -823,7 +823,7 @@
                 "sie/Sie": "ergänzen"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "ergänzt",
                 "verb": "haben"
             },
             "präteritum": null
@@ -841,7 +841,7 @@
                 "sie/Sie": "stehen auf"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "augestanden",
                 "verb": "sein"
             },
             "präteritum": null
@@ -859,7 +859,7 @@
                 "sie/Sie": "bezahlen"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "bezahlt",
                 "verb": "haben"
             },
             "präteritum": null
@@ -877,7 +877,7 @@
                 "sie/Sie": "erzählen"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "erzählt",
                 "verb": "haben"
             },
             "präteritum": null
@@ -895,7 +895,7 @@
                 "sie/Sie": "fangen an"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "angefangen",
                 "verb": "haben"
             },
             "präteritum": null
@@ -913,7 +913,7 @@
                 "sie/Sie": "kaufen"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "gekauft",
                 "verb": "haben"
             },
             "präteritum": null
@@ -931,7 +931,7 @@
                 "sie/Sie": "gehen aus"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "ausgegangen",
                 "verb": "sein"
             },
             "präteritum": null
@@ -949,7 +949,7 @@
                 "sie/Sie": "beginnen"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "begonnen",
                 "verb": "haben"
             },
             "präteritum": null
@@ -967,7 +967,7 @@
                 "sie/Sie": "bedienen"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "bedient",
                 "verb": "haben"
             },
             "präteritum": null
@@ -985,7 +985,7 @@
                 "sie/Sie": "bestellen"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "bestellt",
                 "verb": "haben"
             },
             "präteritum": null
@@ -1003,7 +1003,7 @@
                 "sie/Sie": "entwickeln"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "entwickelt",
                 "verb": "haben"
             },
             "präteritum": null
@@ -1021,7 +1021,7 @@
                 "sie/Sie": "unterrichten"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "unterrichtet",
                 "verb": "haben"
             },
             "präteritum": null
@@ -1039,7 +1039,7 @@
                 "sie/Sie": "untesuchen"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "untersucht",
                 "verb": "haben"
             },
             "präteritum": null
@@ -1052,7 +1052,7 @@
                 "er/sie/es": "übernachtet"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "übernachtet",
                 "verb": "haben"
             },
             "präteritum": null
@@ -1070,7 +1070,7 @@
                 "sie/Sie": "treiben"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "getrieben",
                 "verb": "haben"
             },
             "präteritum": null
@@ -1088,7 +1088,7 @@
                 "sie/Sie": "feieren"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "gefeiert",
                 "verb": "haben"
             },
             "präteritum": null
@@ -1106,7 +1106,7 @@
                 "sie/Sie": "hören"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "gehört",
                 "verb": "haben"
             },
             "präteritum": null
@@ -1124,7 +1124,7 @@
                 "sie/Sie": "fahren"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "gefahren",
                 "verb": "sein"
             },
             "präteritum": null
@@ -1142,7 +1142,7 @@
                 "sie/Sie": "analysieren"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "analysiert",
                 "verb": "haben"
             },
             "präteritum": null
@@ -1160,7 +1160,7 @@
                 "sie/Sie": "dauern"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "gedauert",
                 "verb": "haben"
             },
             "präteritum": null
@@ -1178,7 +1178,7 @@
                 "sie/Sie": "stehen"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "gestanden",
                 "verb": "haben"
             },
             "präteritum": null
@@ -1196,7 +1196,7 @@
                 "sie/Sie": "passen"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "gepasst",
                 "verb": "haben"
             },
             "präteritum": null
@@ -1214,7 +1214,7 @@
                 "sie/Sie": "helfen"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "geholfen",
                 "verb": "haben"
             },
             "präteritum": null
@@ -1232,7 +1232,7 @@
                 "sie/Sie": "gehören"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "gehört",
                 "verb": "haben"
             },
             "präteritum": null
@@ -1250,7 +1250,7 @@
                 "sie/Sie": "lieben"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "geliebt",
                 "verb": "haben"
             },
             "präteritum": null
@@ -1268,7 +1268,7 @@
                 "sie/Sie": "verstehen"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "verstanden",
                 "verb": "haben"
             },
             "präteritum": null
@@ -1286,7 +1286,7 @@
                 "sie/Sie": "sehen"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "gesehen",
                 "verb": "haben"
             },
             "präteritum": null
@@ -1304,7 +1304,7 @@
                 "sie/Sie": "holen ab"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "abgeholt",
                 "verb": "haben"
             },
             "präteritum": null
@@ -1322,7 +1322,7 @@
                 "sie/Sie": "können"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "gekonnt",
                 "verb": "haben"
             },
             "präteritum": null
@@ -1340,7 +1340,7 @@
                 "sie/Sie": "vereinbaren"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "vereinbart",
                 "verb": "habe"
             },
             "präteritum": null
@@ -1358,7 +1358,7 @@
                 "sie/Sie": "erwarten"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "erwartet",
                 "verb": "haben"
             },
             "präteritum": null
@@ -1376,7 +1376,7 @@
                 "sie/Sie": "brauchen"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "gebraucht",
                 "verb": "haben"
             },
             "präteritum": null
@@ -1394,7 +1394,7 @@
                 "sie/Sie": "warten"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "gewartet",
                 "verb": "haben"
             },
             "präteritum": null
@@ -1412,7 +1412,7 @@
                 "sie/Sie": "organisieren"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "organisiert",
                 "verb": "haben"
             },
             "präteritum": null
@@ -1430,7 +1430,7 @@
                 "sie/Sie": "führen"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "geführt",
                 "verb": "haben"
             },
             "präteritum": null
@@ -1448,7 +1448,7 @@
                 "sie/Sie": "präsentieren"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "präsentiert",
                 "verb": "haben"
             },
             "präteritum": null
@@ -1466,7 +1466,7 @@
                 "sie/Sie": "diskutierst"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "diskutiert",
                 "verb": "haben"
             },
             "präteritum": null
@@ -1484,7 +1484,7 @@
                 "sie/Sie": "müssen"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "gemusst",
                 "verb": "haben"
             },
             "präteritum": null
@@ -1502,7 +1502,7 @@
                 "sie/Sie": "beantworten"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "beantwortet",
                 "verb": "haben"
             },
             "präteritum": null
@@ -1520,7 +1520,7 @@
                 "sie/Sie": "studieren"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "studiert",
                 "verb": "haben"
             },
             "präteritum": null
@@ -1538,7 +1538,7 @@
                 "sie/Sie": "unternehmen"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "unternommen",
                 "verb": "haben"
             },
             "präteritum": null
@@ -1556,7 +1556,7 @@
                 "sie/Sie": "rauchen"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "geraucht",
                 "verb": "haben"
             },
             "präteritum": null
@@ -1574,7 +1574,7 @@
                 "sie/Sie": "schlafen"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "geschlafen",
                 "verb": "haben"
             },
             "präteritum": null
@@ -1592,7 +1592,7 @@
                 "sie/Sie": "verbringen"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "verbracht",
                 "verb": "haben"
             },
             "präteritum": null
@@ -1610,7 +1610,7 @@
                 "sie/Sie": "sollen"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "gesollt",
                 "verb": "haben"
             },
             "präteritum": null
@@ -1628,7 +1628,7 @@
                 "sie/Sie": "bringen"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "gebracht",
                 "verb": "haben"
             },
             "präteritum": null
@@ -1646,7 +1646,7 @@
                 "sie/Sie": "träumen"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "geträumt",
                 "verb": "haben"
             },
             "präteritum": null
@@ -1664,7 +1664,7 @@
                 "sie/Sie": "messen"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "gemessen",
                 "verb": "haben"
             },
             "präteritum": null
@@ -1682,7 +1682,7 @@
                 "sie/Sie": "ziehen an"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "angezogen",
                 "verb": "haben"
             },
             "präteritum": null
@@ -1700,7 +1700,7 @@
                 "sie/Sie": "ziehen aus"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "ausgezogen",
                 "verb": "haben"
             },
             "präteritum": null
@@ -1718,7 +1718,7 @@
                 "sie/Sie": "treffen"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "getroffen",
                 "verb": "haben"
             },
             "präteritum": null
@@ -1736,7 +1736,7 @@
                 "sie/Sie": "backen"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "gebacken",
                 "verb": "haben"
             },
             "präteritum": null
@@ -1754,7 +1754,7 @@
                 "sie/Sie": "befehlen"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "befohlen",
                 "verb": "haben"
             },
             "präteritum": null
@@ -1772,7 +1772,7 @@
                 "sie/Sie": "betrügen"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "betrogen",
                 "verb": "haben"
             },
             "präteritum": null
@@ -1790,7 +1790,7 @@
                 "sie/Sie": "bieten"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "geboten",
                 "verb": "haben"
             },
             "präteritum": null
@@ -1808,7 +1808,7 @@
                 "sie/Sie": "bitten"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "gebeten",
                 "verb": "haben"
             },
             "präteritum": null
@@ -1826,7 +1826,7 @@
                 "sie/Sie": "braten"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "gebraten",
                 "verb": "haben"
             },
             "präteritum": null
@@ -1844,7 +1844,7 @@
                 "sie/Sie": "brechen"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "gebrochen",
                 "verb": "haben"
             },
             "präteritum": null
@@ -1862,7 +1862,7 @@
                 "sie/Sie": "brennen"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "gebrannt",
                 "verb": "haben"
             },
             "präteritum": null
@@ -1880,7 +1880,7 @@
                 "sie/Sie": "denken"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "gedacht",
                 "verb": "haben"
             },
             "präteritum": null
@@ -1898,7 +1898,7 @@
                 "sie/Sie": "dürfen"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "gedurft",
                 "verb": "haben"
             },
             "präteritum": null
@@ -1916,7 +1916,7 @@
                 "sie/Sie": "empfangen"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "empfangen",
                 "verb": "haben"
             },
             "präteritum": null
@@ -1934,7 +1934,7 @@
                 "sie/Sie": "empfehlen"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "empfohlen",
                 "verb": "haben"
             },
             "präteritum": null
@@ -1952,7 +1952,7 @@
                 "sie/Sie": "empfinden"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "empfunden",
                 "verb": "haben"
             },
             "präteritum": null
@@ -1970,7 +1970,7 @@
                 "sie/Sie": "erknennen"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "erkannt",
                 "verb": "haben"
             },
             "präteritum": null
@@ -1988,7 +1988,7 @@
                 "sie/Sie": "fallen"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "gefallen",
                 "verb": "sein"
             },
             "präteritum": null
@@ -2006,7 +2006,7 @@
                 "sie/Sie": "fangen"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "gefangen",
                 "verb": "haben"
             },
             "präteritum": null
@@ -2024,7 +2024,7 @@
                 "sie/Sie": "fliegen"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "geflogen",
                 "verb": "sein"
             },
             "präteritum": null
@@ -2042,7 +2042,7 @@
                 "sie/Sie": "fressen"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "gefressen",
                 "verb": "haben"
             },
             "präteritum": null
@@ -2060,7 +2060,7 @@
                 "sie/Sie": "geben"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "gegeben",
                 "verb": "haben"
             },
             "präteritum": null
@@ -2078,7 +2078,7 @@
                 "sie/Sie": "gelingen"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "gelungen",
                 "verb": "sein"
             },
             "präteritum": null
@@ -2096,7 +2096,7 @@
                 "sie/Sie": "genießen"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "genossen",
                 "verb": "haben"
             },
             "präteritum": null
@@ -2110,7 +2110,7 @@
                 "sie/Sie": "geschehen"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "geschehen",
                 "verb": "sein"
             },
             "präteritum": null
@@ -2128,7 +2128,7 @@
                 "sie/Sie": "gewinnen"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "gewonnen",
                 "verb": "haben"
             },
             "präteritum": null
@@ -2146,7 +2146,7 @@
                 "sie/Sie": "greifen"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "gegriffen",
                 "verb": "haben"
             },
             "präteritum": null
@@ -2164,7 +2164,7 @@
                 "sie/Sie": "halten"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "gehalten",
                 "verb": "haben"
             },
             "präteritum": null
@@ -2182,7 +2182,7 @@
                 "sie/Sie": "hängen"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "gehangen",
                 "verb": "haben"
             },
             "präteritum": null
@@ -2200,7 +2200,7 @@
                 "sie/Sie": "klingen"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "geklungen",
                 "verb": "haben"
             },
             "präteritum": null
@@ -2218,7 +2218,7 @@
                 "sie/Sie": "laden"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "geladen",
                 "verb": "haben"
             },
             "präteritum": null
@@ -2236,7 +2236,7 @@
                 "sie/Sie": "lassen"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "gelassen",
                 "verb": "haben"
             },
             "präteritum": null
@@ -2254,7 +2254,7 @@
                 "sie/Sie": "laufen"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "gelaufen",
                 "verb": "sein"
             },
             "präteritum": null
@@ -2272,7 +2272,7 @@
                 "sie/Sie": "leiden"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "gelitten",
                 "verb": "haben"
             },
             "präteritum": null
@@ -2290,7 +2290,7 @@
                 "sie/Sie": "leihen"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "geliehen",
                 "verb": "haben"
             },
             "präteritum": null
@@ -2308,7 +2308,7 @@
                 "sie/Sie": "liegen"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "gelegen",
                 "verb": "haben"
             },
             "präteritum": null
@@ -2326,7 +2326,7 @@
                 "sie/Sie": "lügen"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "gelogen",
                 "verb": "haben"
             },
             "präteritum": null
@@ -2344,7 +2344,7 @@
                 "sie/Sie": "mißlingen"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "mißlungen",
                 "verb": "sein"
             },
             "präteritum": null
@@ -2362,7 +2362,7 @@
                 "sie/Sie": "mögen"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "gemocht",
                 "verb": "haben"
             },
             "präteritum": null
@@ -2380,7 +2380,7 @@
                 "sie/Sie": "nennen"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "genannt",
                 "verb": "haben"
             },
             "präteritum": null
@@ -2398,7 +2398,7 @@
                 "sie/Sie": "reißen"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "gerissen",
                 "verb": "haben"
             },
             "präteritum": null
@@ -2416,7 +2416,7 @@
                 "sie/Sie": "rennen"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "gerannt",
                 "verb": "sein"
             },
             "präteritum": null
@@ -2434,7 +2434,7 @@
                 "sie/Sie": "riechen"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "gerochen",
                 "verb": "haben"
             },
             "präteritum": null
@@ -2452,7 +2452,7 @@
                 "sie/Sie": "scheiden"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "geschieden",
                 "verb": "haben"
             },
             "präteritum": null
@@ -2470,7 +2470,7 @@
                 "sie/Sie": "schieben"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "geschoben",
                 "verb": "haben"
             },
             "präteritum": null
@@ -2488,7 +2488,7 @@
                 "sie/Sie": "schlagen"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "geschlagen",
                 "verb": "haben"
             },
             "präteritum": null
@@ -2506,7 +2506,7 @@
                 "sie/Sie": "schwören"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "geschworen",
                 "verb": "haben"
             },
             "präteritum": null
@@ -2524,7 +2524,7 @@
                 "sie/Sie": "senden"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "gesandt",
                 "verb": "haben"
             },
             "präteritum": null
@@ -2542,7 +2542,7 @@
                 "sie/Sie": "stizen"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "gesessen",
                 "verb": "haben"
             },
             "präteritum": null
@@ -2560,7 +2560,7 @@
                 "sie/Sie": "springen"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "gesprugen",
                 "verb": "sein"
             },
             "präteritum": null
@@ -2578,7 +2578,7 @@
                 "sie/Sie": "stehlen"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "gestohlen",
                 "verb": "haben"
             },
             "präteritum": null
@@ -2596,7 +2596,7 @@
                 "sie/Sie": "steigen"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "gestiegen",
                 "verb": "haben"
             },
             "präteritum": null
@@ -2614,7 +2614,7 @@
                 "sie/Sie": "sterben"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "gestorben",
                 "verb": "sein"
             },
             "präteritum": null
@@ -2632,7 +2632,7 @@
                 "sie/Sie": "stinken"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "gestunken",
                 "verb": "haben"
             },
             "präteritum": null
@@ -2642,15 +2642,15 @@
             "übersetzung": "pintar",
             "merkmals": "unregelmäẞige,nicht_trennbare",
             "präsens": {
-                "ich": null,
-                "du": null,
-                "er/sie/es": null,
-                "wir": null,
-                "ihr": null,
-                "sie/Sie": null
+                "ich": "ssteriche",
+                "du": "streichst",
+                "er/sie/es": "streicht",
+                "wir": "streichen",
+                "ihr": "streicht",
+                "sie/Sie": "streichen"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "gestrichen",
                 "verb": "haben"
             },
             "präteritum": null
@@ -2660,15 +2660,15 @@
             "übersetzung": "pelearse",
             "merkmals": "unregelmäẞige,nicht_trennbare",
             "präsens": {
-                "ich": null,
-                "du": null,
-                "er/sie/es": null,
-                "wir": null,
-                "ihr": null,
-                "sie/Sie": null
+                "ich": "streite",
+                "du": "streitest",
+                "er/sie/es": "streitet",
+                "wir": "streiten",
+                "ihr": "streitet",
+                "sie/Sie": "streiten"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "gestritten",
                 "verb": "haben"
             },
             "präteritum": null
@@ -2678,15 +2678,15 @@
             "übersetzung": "llevar puesto/llevar consigo",
             "merkmals": "unregelmäẞige,nicht_trennbare",
             "präsens": {
-                "ich": null,
-                "du": null,
-                "er/sie/es": null,
-                "wir": null,
-                "ihr": null,
-                "sie/Sie": null
+                "ich": "trage",
+                "du": "trägst",
+                "er/sie/es": "trägt",
+                "wir": "tragen",
+                "ihr": "tragt",
+                "sie/Sie": "tragen"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "getragen",
                 "verb": "haben"
             },
             "präteritum": null
@@ -2696,15 +2696,15 @@
             "übersetzung": "hacer",
             "merkmals": "unregelmäẞige,nicht_trennbare",
             "präsens": {
-                "ich": null,
-                "du": null,
-                "er/sie/es": null,
-                "wir": null,
-                "ihr": null,
-                "sie/Sie": null
+                "ich": "tue",
+                "du": "tust",
+                "er/sie/es": "tut",
+                "wir": "tun",
+                "ihr": "tut",
+                "sie/Sie": "tun"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "getan",
                 "verb": "haben"
             },
             "präteritum": null
@@ -2714,15 +2714,15 @@
             "übersetzung": "perder",
             "merkmals": "unregelmäẞige,nicht_trennbare",
             "präsens": {
-                "ich": null,
-                "du": null,
-                "er/sie/es": null,
-                "wir": null,
-                "ihr": null,
-                "sie/Sie": null
+                "ich": "verliere",
+                "du": "verlierst",
+                "er/sie/es": "verliert",
+                "wir": "verlieren",
+                "ihr": "verliert",
+                "sie/Sie": "verlieren"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "verloren",
                 "verb": "haben"
             },
             "präteritum": null
@@ -2732,15 +2732,15 @@
             "übersetzung": "crecer",
             "merkmals": "unregelmäẞige,nicht_trennbare",
             "präsens": {
-                "ich": null,
-                "du": null,
-                "er/sie/es": null,
-                "wir": null,
-                "ihr": null,
-                "sie/Sie": null
+                "ich": "wachse",
+                "du": "wächst",
+                "er/sie/es": "wächst",
+                "wir": "waschen",
+                "ihr": "wascht",
+                "sie/Sie": "waschen"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "gewachsen",
                 "verb": "haben"
             },
             "präteritum": null
@@ -2750,15 +2750,15 @@
             "übersetzung": "lavar",
             "merkmals": "unregelmäẞige,nicht_trennbare",
             "präsens": {
-                "ich": null,
-                "du": null,
-                "er/sie/es": null,
-                "wir": null,
-                "ihr": null,
-                "sie/Sie": null
+                "ich": "wasche",
+                "du": "waschst",
+                "er/sie/es": "wascht",
+                "wir": "waschen",
+                "ihr": "wascht",
+                "sie/Sie": "waschen"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "gewaschen",
                 "verb": "haben"
             },
             "präteritum": null
@@ -2768,15 +2768,15 @@
             "übersetzung": "llegar a ser",
             "merkmals": "unregelmäẞige,nicht_trennbare",
             "präsens": {
-                "ich": null,
-                "du": null,
-                "er/sie/es": null,
-                "wir": null,
-                "ihr": null,
-                "sie/Sie": null
+                "ich": "werde",
+                "du": "wirst",
+                "er/sie/es": "wird",
+                "wir": "werden",
+                "ihr": "werdet",
+                "sie/Sie": "werden"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "geworden",
                 "verb": "sein"
             },
             "präteritum": null
@@ -2786,15 +2786,15 @@
             "übersetzung": "tirar",
             "merkmals": "unregelmäẞige,nicht_trennbare",
             "präsens": {
-                "ich": null,
-                "du": null,
-                "er/sie/es": null,
-                "wir": null,
-                "ihr": null,
-                "sie/Sie": null
+                "ich": "werfe",
+                "du": "wirfst",
+                "er/sie/es": "wirft",
+                "wir": "werfen",
+                "ihr": "werft",
+                "sie/Sie": "werfen"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "geworfen",
                 "verb": "haben"
             },
             "präteritum": null
@@ -2804,15 +2804,15 @@
             "übersetzung": "pesar",
             "merkmals": "unregelmäẞige,nicht_trennbare",
             "präsens": {
-                "ich": null,
-                "du": null,
-                "er/sie/es": null,
-                "wir": null,
-                "ihr": null,
-                "sie/Sie": null
+                "ich": "wiege",
+                "du": "wiegst",
+                "er/sie/es": "wiegt",
+                "wir": "wiegen",
+                "ihr": "wiegt",
+                "sie/Sie": "wiegen"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "gewogen",
                 "verb": "haben"
             },
             "präteritum": null
@@ -2822,15 +2822,15 @@
             "übersetzung": "querer  (aquí y ahora)",
             "merkmals": "unrmodalunr",
             "präsens": {
-                "ich": null,
-                "du": null,
-                "er/sie/es": null,
-                "wir": null,
-                "ihr": null,
-                "sie/Sie": null
+                "ich": "will",
+                "du": "willst",
+                "er/sie/es": "will",
+                "wir": "wollen",
+                "ihr": "wollt",
+                "sie/Sie": "wollen"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "gewollt",
                 "verb": "haben"
             },
             "präteritum": null
@@ -2840,15 +2840,15 @@
             "übersetzung": "tirar de algo",
             "merkmals": "unregelmäẞige,nicht_trennbare",
             "präsens": {
-                "ich": null,
-                "du": null,
-                "er/sie/es": null,
-                "wir": null,
-                "ihr": null,
-                "sie/Sie": null
+                "ich": "ziehe",
+                "du": "ziehst",
+                "er/sie/es": "zieht",
+                "wir": "ziehen",
+                "ihr": "zieht",
+                "sie/Sie": "ziehen"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "gezogen",
                 "verb": "haben"
             },
             "präteritum": null
@@ -2858,376 +2858,376 @@
             "übersetzung": "obligar",
             "merkmals": "unregelmäẞige,nicht_trennbare",
             "präsens": {
-                "ich": null,
-                "du": null,
-                "er/sie/es": null,
-                "wir": null,
-                "ihr": null,
-                "sie/Sie": null
+                "ich": "zwinge",
+                "du": "zwingst",
+                "er/sie/es": "zwingt",
+                "wir": "zwingen",
+                "ihr": "zwingt",
+                "sie/Sie": "zwingen"
             },
             "perfekt": {
-                "konjugation": null,
+                "konjugation": "gezwungen",
                 "verb": "haben"
             },
             "präteritum": null
         },
         {
             "infinitiv": "surfen",
-            "übersetzung": null,
+            "übersetzung": "surfear",
             "merkmals": "unregelmäẞige,nicht_trennbare",
             "präsens": {
-                "ich": null,
-                "du": null,
-                "er,sie,es": null,
-                "wir": null,
-                "ihr": null,
-                "sie/Sie": null
+                "ich": "surfe",
+                "du": "surfst",
+                "er/sie/es": "surft",
+                "wir": "surfen",
+                "ihr": "surft",
+                "sie/Sie": "surfen"
             },
             "perfekt": {
-                "konjugation": null,
-                "verb": null
+                "konjugation": "gesurft",
+                "verb": "haben"
             },
             "präteritum": null
         },
         {
             "infinitiv": "einladen",
-            "übersetzung": null,
+            "übersetzung": "invitar",
             "merkmals": "unregelmäẞige,trennbare",
             "präsens": {
-                "ich": null,
-                "du": null,
-                "er,sie,es": null,
-                "wir": null,
-                "ihr": null,
-                "sie/Sie": null
+                "ich": "lade ein",
+                "du": "lädst ein",
+                "er/sie/es": "lädt ein",
+                "wir": "laden ein",
+                "ihr": "ladet ein",
+                "sie/Sie": "laden ein"
             },
             "perfekt": {
-                "konjugation": null,
-                "verb": null
+                "konjugation": "eingeladen",
+                "verb": "haben"
             },
             "präteritum": null
         },
         {
             "infinitiv": "wehtun",
-            "übersetzung": null,
+            "übersetzung": "doler",
             "merkmals": "unregelmäẞige,trennbare",
             "präsens": {
-                "ich": null,
-                "du": null,
-                "er,sie,es": null,
-                "wir": null,
-                "ihr": null,
-                "sie/Sie": null
+                "ich": "",
+                "du": "",
+                "er/sie/es": "tut weh",
+                "wir": "",
+                "ihr": "",
+                "sie/Sie": "tun weh"
             },
             "perfekt": {
-                "konjugation": null,
-                "verb": null
+                "konjugation": "wehgetan",
+                "verb": "haben"
             },
             "präteritum": null
         },
         {
             "infinitiv": "übergeben",
-            "übersetzung": null,
+            "übersetzung": "vomitar (formal)",
             "merkmals": null,
             "präsens": {
-                "ich": null,
-                "du": null,
-                "er,sie,es": null,
-                "wir": null,
-                "ihr": null,
-                "sie/Sie": null
+                "ich": "übergebe",
+                "du": "übergibst",
+                "er/sie/es": "übergibt",
+                "wir": "übergebt",
+                "ihr": "übergebt",
+                "sie/Sie": "übergeben"
             },
             "perfekt": {
-                "konjugation": null,
-                "verb": null
+                "konjugation": "übergeben",
+                "verb": "haben"
             },
             "präteritum": null
         },
         {
             "infinitiv": "kotzen",
-            "übersetzung": null,
+            "übersetzung": "vomitar (inforaml)",
             "merkmals": null,
             "präsens": {
-                "ich": null,
-                "du": null,
-                "er,sie,es": null,
-                "wir": null,
-                "ihr": null,
-                "sie/Sie": null
+                "ich": "kotze",
+                "du": "kotzst",
+                "er/sie/es": "kotzt",
+                "wir": "kotzen",
+                "ihr": "kotzt",
+                "sie/Sie": "kotzen"
             },
             "perfekt": {
-                "konjugation": null,
-                "verb": null
+                "konjugation": "gekotzt",
+                "verb": "haben"
             },
             "präteritum": null
         },
         {
             "infinitiv": "meinen",
-            "übersetzung": null,
+            "übersetzung": "decir,pensar,creer",
             "merkmals": null,
             "präsens": {
-                "ich": null,
-                "du": null,
-                "er,sie,es": null,
-                "wir": null,
-                "ihr": null,
-                "sie/Sie": null
+                "ich": "meine",
+                "du": "meinst",
+                "er/sie/es": "meint",
+                "wir": "meinen",
+                "ihr": "meint",
+                "sie/Sie": "meinen"
             },
             "perfekt": {
-                "konjugation": null,
-                "verb": null
+                "konjugation": "gemeint",
+                "verb": "haben"
             },
             "präteritum": null
         },
         {
             "infinitiv": "zeigen",
-            "übersetzung": null,
+            "übersetzung": "demostrar,emnseñar",
             "merkmals": null,
             "präsens": {
-                "ich": null,
-                "du": null,
-                "er,sie,es": null,
-                "wir": null,
-                "ihr": null,
-                "sie/Sie": null
+                "ich": "zeige",
+                "du": "zeigst",
+                "er/sie/es": "zeigt",
+                "wir": "zeigen",
+                "ihr": "zeigt",
+                "sie/Sie": "zeigen"
             },
             "perfekt": {
-                "konjugation": null,
-                "verb": null
+                "konjugation": "gezeigt",
+                "verb": "haben"
             },
             "präteritum": null
         },
         {
             "infinitiv": "erklären",
-            "übersetzung": null,
+            "übersetzung": "aclarar",
             "merkmals": "regelmäẞige,nicht_trennbare",
             "präsens": {
-                "ich": null,
-                "du": null,
-                "er,sie,es": null,
-                "wir": null,
-                "ihr": null,
-                "sie/Sie": null
+                "ich": "erkläre",
+                "du": "erklärst",
+                "er/sie/es": "erklärt",
+                "wir": "erklären",
+                "ihr": "erklärt",
+                "sie/Sie": "erklären"
             },
             "perfekt": {
-                "konjugation": null,
-                "verb": null
+                "konjugation": "erklärt",
+                "verb": "haben"
             },
             "präteritum": null
         },
         {
             "infinitiv": "leben",
-            "übersetzung": null,
+            "übersetzung": "vivir",
             "merkmals": "unregelmäẞige,nicht_trennbare",
             "präsens": {
-                "ich": null,
-                "du": null,
-                "er,sie,es": null,
-                "wir": null,
-                "ihr": null,
-                "sie/Sie": null
+                "ich": "lebe",
+                "du": "lebst",
+                "er/sie/es": "lebt",
+                "wir": "leben",
+                "ihr": "lebt",
+                "sie/Sie": "leben"
             },
             "perfekt": {
-                "konjugation": null,
-                "verb": null
+                "konjugation": "gelebt",
+                "verb": "haben"
             },
             "präteritum": null
         },
         {
             "infinitiv": "putzen",
-            "übersetzung": null,
+            "übersetzung": "limpiar",
             "merkmals": null,
             "präsens": {
-                "ich": null,
-                "du": null,
-                "er,sie,es": null,
-                "wir": null,
-                "ihr": null,
-                "sie/Sie": null
+                "ich": "putze",
+                "du": "putzt",
+                "er/sie/es": "putzt",
+                "wir": "putzen",
+                "ihr": "putzt",
+                "sie/Sie": "putzen"
             },
             "perfekt": {
-                "konjugation": null,
-                "verb": null
+                "konjugation": "geputzt",
+                "verb": "haben"
             },
             "präteritum": null
         },
         {
             "infinitiv": "boxen",
-            "übersetzung": null,
+            "übersetzung": "boxear",
             "merkmals": null,
             "präsens": {
-                "ich": null,
-                "du": null,
-                "er,sie,es": null,
-                "wir": null,
-                "ihr": null,
-                "sie/Sie": null
+                "ich": "boxe",
+                "du": "boxt",
+                "er/sie/es": "boxt",
+                "wir": "boxen",
+                "ihr": "boxt",
+                "sie/Sie": "boxen"
             },
             "perfekt": {
-                "konjugation": null,
-                "verb": null
+                "konjugation": "geboxt",
+                "verb": "haben"
             },
             "präteritum": null
         },
         {
             "infinitiv": "abschließen",
-            "übersetzung": null,
+            "übersetzung": "cerrar con llave",
             "merkmals": "unregelmäẞige,trennbare",
             "präsens": {
-                "ich": null,
-                "du": null,
-                "er,sie,es": null,
-                "wir": null,
-                "ihr": null,
-                "sie/Sie": null
+                "ich": "schlieeße ab",
+                "du": "schließt ab",
+                "er/sie/es": "schließt ab",
+                "wir": "schießen ab",
+                "ihr": "schließt ab",
+                "sie/Sie": "schließen ab"
             },
             "perfekt": {
-                "konjugation": null,
-                "verb": null
+                "konjugation": "abgeschlossen",
+                "verb": "haben"
             },
             "präteritum": null
         },
         {
             "infinitiv": "gehorchen",
-            "übersetzung": null,
+            "übersetzung": "obedecer",
             "merkmals": null,
             "präsens": {
-                "ich": null,
-                "du": null,
-                "er,sie,es": null,
-                "wir": null,
-                "ihr": null,
-                "sie/Sie": null
+                "ich": "gehorche",
+                "du": "gehorchst",
+                "er/sie/es": "gehorcht",
+                "wir": "gehorchen",
+                "ihr": "gehorcht",
+                "sie/Sie": "gehorchen"
             },
             "perfekt": {
-                "konjugation": null,
-                "verb": null
+                "konjugation": "gehorcht",
+                "verb": "haben"
             },
             "präteritum": null
         },
         {
             "infinitiv": "zerreißen",
-            "übersetzung": null,
+            "übersetzung": "romper",
             "merkmals": null,
             "präsens": {
-                "ich": null,
-                "du": null,
-                "er,sie,es": null,
-                "wir": null,
-                "ihr": null,
-                "sie/Sie": null
+                "ich": "zerreiße",
+                "du": "zerreißt",
+                "er/sie/es": "zerreißt",
+                "wir": "zerreißen",
+                "ihr": "zerreißt",
+                "sie/Sie": "zerreißen"
             },
             "perfekt": {
-                "konjugation": null,
-                "verb": null
+                "konjugation": "zerrissen",
+                "verb": "sein/haben"
             },
             "präteritum": null
         },
         {
             "infinitiv": "zuhören",
-            "übersetzung": null,
+            "übersetzung": "escuchar,prestar atención",
             "merkmals": "regelmäẞige,trennbare",
             "präsens": {
-                "ich": null,
-                "du": null,
-                "er,sie,es": null,
-                "wir": null,
-                "ihr": null,
-                "sie/Sie": null
+                "ich": "höre zu",
+                "du": "hörst zu",
+                "er/sie/es": "hört zu",
+                "wir": "hören zu",
+                "ihr": "hört zu",
+                "sie/Sie": "hören zu"
             },
             "perfekt": {
-                "konjugation": null,
-                "verb": null
+                "konjugation": "zegehört",
+                "verb": "haben"
             },
             "präteritum": null
         },
         {
             "infinitiv": "aufmachen",
-            "übersetzung": null,
+            "übersetzung": "abrir,desabrochar",
             "merkmals": "regelmäẞige,trennbare",
             "präsens": {
-                "ich": null,
-                "du": null,
-                "er,sie,es": null,
-                "wir": null,
-                "ihr": null,
-                "sie/Sie": null
+                "ich": "mache auf",
+                "du": "machst auf",
+                "er/sie/es": "macht auf",
+                "wir": "machen auf",
+                "ihr": "macht auf",
+                "sie/Sie": "machen auf"
             },
             "perfekt": {
-                "konjugation": null,
-                "verb": null
+                "konjugation": "aufgemacht",
+                "verb": "haben"
             },
             "präteritum": null
         },
         {
             "infinitiv": "herstellen",
-            "übersetzung": null,
+            "übersetzung": "fabricar",
             "merkmals": null,
             "präsens": {
-                "ich": null,
-                "du": null,
-                "er,sie,es": null,
-                "wir": null,
-                "ihr": null,
-                "sie/Sie": null
+                "ich": "stelle her",
+                "du": "stellst her",
+                "er/sie/es": "stellt her",
+                "wir": "stellen her",
+                "ihr": "stellt her",
+                "sie/Sie": "stellen her"
             },
             "perfekt": {
-                "konjugation": null,
-                "verb": null
+                "konjugation": "hergestellt",
+                "verb": "haben"
             },
             "präteritum": null
         },
         {
             "infinitiv": "mitbringen",
-            "übersetzung": null,
+            "übersetzung": "traer consigo",
             "merkmals": null,
             "präsens": {
-                "ich": null,
-                "du": null,
-                "er,sie,es": null,
-                "wir": null,
-                "ihr": null,
-                "sie/Sie": null
+                "ich": "bringe mit",
+                "du": "bringst",
+                "er/sie/es": "bringt mit",
+                "wir": "bringen mit",
+                "ihr": "bringt mit",
+                "sie/Sie": "bringen mit"
             },
             "perfekt": {
-                "konjugation": null,
-                "verb": null
+                "konjugation": "mitgebracht",
+                "verb": "haben"
             },
             "präteritum": null
         },
         {
             "infinitiv": "zurückkommen",
-            "übersetzung": null,
+            "übersetzung": "volver",
             "merkmals": "unregelmäẞige,trennbare",
             "präsens": {
-                "ich": null,
-                "du": null,
-                "er,sie,es": null,
-                "wir": null,
-                "ihr": null,
-                "sie/Sie": null
+                "ich": "komme zurück",
+                "du": "kommst zurück",
+                "er/sie/es": "kommt zurück",
+                "wir": "kommen zurück",
+                "ihr": "kommt zurück",
+                "sie/Sie": "kommen zurück"
             },
             "perfekt": {
-                "konjugation": null,
-                "verb": null
+                "konjugation": "zurückgekommen",
+                "verb": "sein"
             },
             "präteritum": null
         },
         {
             "infinitiv": "einsteigen",
-            "übersetzung": null,
+            "übersetzung": "subirse a",
             "merkmals": "unregelmäẞige,trennbare",
             "präsens": {
-                "ich": null,
-                "du": null,
-                "er,sie,es": null,
-                "wir": null,
-                "ihr": null,
-                "sie/Sie": null
+                "ich": "steige ein",
+                "du": "steigst ein",
+                "er/sie/es": "steigt ein",
+                "wir": "steigen ein",
+                "ihr": "steigt ein",
+                "sie/Sie": "steigen ein"
             },
             "perfekt": {
-                "konjugation": null,
-                "verb": null
+                "konjugation": "enigesteigen",
+                "verb": "sein"
             },
             "präteritum": null
         }

@@ -54,7 +54,7 @@ user = ""
 #     verb["präteritum"] = None
 
 # count = 0
-# #INSERTAR MAS INFO
+#INSERTAR MAS INFO
 # for verb in DB["verbs"]:
 #     # print(count)
 #     print(f"\n{count}. Deutsch: {verb['infinitiv']}")
@@ -75,9 +75,14 @@ user = ""
 #             print(None)
 #     count += 1
 
+# for verb in DB["verbs"]:
+#     if not verb["übersetzung"]:
+#         user = input(f"{verb['infinitiv']}: ")
+#         if user:
+#             verb["übersetzung"] = user
 
 
-#     write_data("./verbs.json",DB)
+#             write_data("./verbs.json",DB)
         
 
 #CHANGE/ADD KEYS
@@ -88,3 +93,21 @@ user = ""
 # write_data("./verbs.json",DB)
 
 # print(DB["verbs"][0])
+
+
+
+count = 0
+# INSERTAR MAS INFO
+for verb in DB["verbs"]:
+    print(f"\n{count}. Deutsch: {verb['infinitiv']}")
+    # perf = {
+    #     "konjugation":None,
+    #     "verb":None
+    # }
+    if  verb["perfekt"]["konjugation"] == ": ":
+        user = input(": ")
+        if user:
+            verb["perfekt"]["konjugation"] = user
+    count += 1
+    
+    write_data("./verbs.json",DB)

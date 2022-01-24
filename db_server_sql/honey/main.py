@@ -1,4 +1,3 @@
-from venv import create
 from flask import Flask,g,request
 import sqlite3
 from funcs import *

@@ -1,3 +1,4 @@
+from venv import create
 from flask import Flask,g,request
 import sqlite3
 from funcs import *
@@ -37,14 +38,14 @@ def providers():
         if new_row:
             return {"success":True}
 
-@app.route("/honey/purchases", methods=["GET"])
+@app.route("/honey/purchases", methods=["GET","POST"])
 def pruchases():
-    return get_all(con, "purchases")
-    
-
-
-
-
+    if request.method == "GET":
+        return get_all(con, "purchases")
+    if request.method == "POST":
+        # print(create_id(con,"purchases"))
+        if purchase(con,request,"purchases"):
+            return {"success":True}
 
 
 

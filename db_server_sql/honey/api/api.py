@@ -12,11 +12,11 @@ def con():
         db = g._database = sqlite3.connect(DB)
     return db
 
-@app.route("/honey")
+@app.route("/api")
 def home():
     return "Working on it, be patient :)"
 
-@app.route("/honey/collectors", methods=["GET","POST"])
+@app.route("/api/collectors", methods=["GET","POST"])
 def collectors():
     if request.method == "GET":
         return get_all(con, "collectors")
@@ -27,7 +27,7 @@ def collectors():
         if new_row:
             return {"success":True}
 
-@app.route("/honey/providers", methods=["GET","POST"])
+@app.route("/api/providers", methods=["GET","POST"])
 def providers():
     if request.method == "GET":
         return get_all(con, "providers")
@@ -37,7 +37,7 @@ def providers():
         if new_row:
             return {"success":True}
 
-@app.route("/honey/purchases", methods=["GET","POST"])
+@app.route("/api/purchases", methods=["GET","POST"])
 def pruchases():
     if request.method == "GET":
         return get_all(con, "purchases")
@@ -51,4 +51,4 @@ def pruchases():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True,port=3000)

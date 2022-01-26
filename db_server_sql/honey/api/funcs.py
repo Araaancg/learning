@@ -1,4 +1,5 @@
 import datetime as dt
+import json
 
 def get_all(con, table):
     result = {"data":[]}
@@ -8,7 +9,8 @@ def get_all(con, table):
     fields = tuple(field[1] for field in cur.execute(f"PRAGMA table_info ({table});"))
     for element in cur.execute(query):
         result["data"].append(dict(zip(fields, element)))
-    return result
+    # return result
+    return json.dumps(result, sort_keys=False)
 
 def create_id(con,table):
     cur = con().cursor()

@@ -1,4 +1,4 @@
-from flask import Flask,g,request
+from flask import Flask,g,request,Response
 import sqlite3
 from funcs import *
 
@@ -16,10 +16,11 @@ def con():
 def home():
     return "Working on it, be patient :)"
 
-@app.route("/api/collectors", methods=["GET","POST"])
+@app.route("/honey/api/collectors", methods=["GET","POST"])
 def collectors():
     if request.method == "GET":
-        return get_all(con, "collectors")
+        # return get_all(con, "collectors")
+        return Response(get_all(con, "collectors"),content_type="application/json")
 
     if request.method == "POST":
         create_id(con,"collectors")
@@ -27,21 +28,25 @@ def collectors():
         if new_row:
             return {"success":True}
 
-@app.route("/api/providers", methods=["GET","POST"])
+@app.route("/honey/api/providers", methods=["GET","POST"])
 def providers():
     if request.method == "GET":
-        return get_all(con, "providers")
+        # return get_all(con, "providers")
+        return Response(get_all(con, "providers"),content_type="application/json")
     
     if request.method == "POST":
         new_row = insert_new_row(con,request,"providers")
         if new_row:
             return {"success":True}
 
-@app.route("/api/purchases", methods=["GET","POST"])
+@app.route("/honey/api/purchases", methods=["GET","POST"])
 def pruchases():
     if request.method == "GET":
-        return get_all(con, "purchases")
+        # return get_all(con, "purchases")
+        return Response(get_all(con, "purchases"),content_type="application/json")
+
     if request.method == "POST":
+        print(request.form)
         # print(create_id(con,"purchases"))
         if purchase(con,request,"purchases"):
             return {"success":True}

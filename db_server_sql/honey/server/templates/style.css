@@ -1,0 +1,20 @@
+h2 {
+    text-align: center;
+}
+
+table {
+    border-collapse: collapse;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+th {
+    border: 1.5px solid black;
+    padding: 10px;
+    background-color: lightblue;
+}
+
+td {
+    border: 1.5px solid black;
+    padding: 10px;
+}

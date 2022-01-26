@@ -1,27 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <title>honey.com</title>
+    <link href="http://127.0.0.1:5500/server/templates/style.css" rel="stylesheet" type="text/css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
 <body>
-    <h1>Bienvenido a honey</h1>
+    <!-- <h1>Bienvenido a honey</h1> -->
 
-    <h2>Collectors</h2>
+    <h2>{{name.upper()}}</h2>
     <table>
         <thead>
             <tr>
-                <th>Name</th>
-                <th>Email</th>
-                <th>Quantity</th>
-            </tr>
+                {%for k in info[0].keys()%}
+                <th>{{k}}</th>
+                {%endfor%}
+            </tr>  
         </thead>
         <tbody>
+            {%for person in info%}
             <tr>
-                <th></th>
+                {%for v in person.values()%}
+                <td>{{v}}</td>
+                {%endfor%}
             </tr>
+            {%endfor%}
         </tbody>
     </table>
 </body>

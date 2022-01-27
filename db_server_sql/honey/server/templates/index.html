@@ -1,16 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>honey.com</title>
-    <link href="http://127.0.0.1:5500/server/templates/index.css" rel="stylesheet" type="text/css">
+    <title>DB | {{name}}</title>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="{{url_for('static',filename='index.css')}}" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="static/index.css"> -->
 </head>
 <body>
-    <!-- <h1>Bienvenido a honey</h1> -->
-
     <h2>{{name.upper()}}</h2>
     <table>
         <thead>

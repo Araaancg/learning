@@ -26,4 +26,4 @@ def buy():
     return render_template("buy.html", collectors=name_collectors, providers=name_providers)
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True, port=5000)

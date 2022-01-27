@@ -19,19 +19,16 @@ def home():
 @app.route("/honey/api/collectors", methods=["GET","POST"])
 def collectors():
     if request.method == "GET":
-        # return get_all(con, "collectors")
         return Response(get_all(con, "collectors"),content_type="application/json")
 
     if request.method == "POST":
-        create_id(con,"collectors")
         new_row = insert_new_row(con,request,"collectors")
         if new_row:
-            return {"success":True}
+            return Response(get_all(con, "collectors"),content_type="application/json")
 
 @app.route("/honey/api/providers", methods=["GET","POST"])
 def providers():
     if request.method == "GET":
-        # return get_all(con, "providers")
         return Response(get_all(con, "providers"),content_type="application/json")
     
     if request.method == "POST":
@@ -42,12 +39,11 @@ def providers():
 @app.route("/honey/api/purchases", methods=["GET","POST"])
 def pruchases():
     if request.method == "GET":
-        # return get_all(con, "purchases")
         return Response(get_all(con, "purchases"),content_type="application/json")
 
     if request.method == "POST":
-        print(request.form)
-        # print(create_id(con,"purchases"))
+        # print(request.form)
+        # return request.form
         if purchase(con,request,"purchases"):
             return {"success":True}
 

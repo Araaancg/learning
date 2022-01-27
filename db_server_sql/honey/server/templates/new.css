@@ -1,0 +1,22 @@
+h1,h2{
+    text-align: center;
+}
+
+form {
+    text-align: center;
+}
+
+input {
+    width: 20%;
+    padding: 4px;
+    margin: 8px 0;
+}
+
+button {
+    border-color: black;
+    width: 7%;
+    padding: 5px;
+    border-radius: 8px;
+    background-color: lightgrey;
+    border-width: 1px;
+}

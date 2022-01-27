@@ -2,19 +2,21 @@
 <html lang="en">
 <head>
     <title>honey.com</title>
+    <link href="http://127.0.0.1:5500/server/templates/new.css" rel="stylesheet" type="text/css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
 <body>
-    <h1>NEW COLLECTOR</h1>
-    <form action="http://127.0.0.1:5000/honey/api/collectors" methods="POST">
+    <h1>CREATING A NEW</h1>
+    <h2>{{person.upper()}}</h2>
+    <form action={{url}} method="post">
 
         <label for="name">Name</label><br>
         <input type="text" id="name" name="name"><br>
 
-        <label for="email">Email</label><br>
+        <label for="name">Email</label><br>
         <input type="email" id="email" name="email"><br>
         
         <button type="submit">Create</button>

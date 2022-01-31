@@ -17,12 +17,10 @@ def table(table_name):
 def new(person):
     return render_template("new.html", url=f"http://localhost:3000/honey/api/{person}s", person=person)
 
-@app.route("honey/<table_name>/<id>")
+@app.route("/honey/<table_name>/<id>")
 def get_id(table_name,id):
     data = req.get(f"http://localhost:3000/honey/api/{table_name}/{id}").json()["data"]
-    
-
-
+    return render_template("id.html", data=data, table_name=table_name)
 
 
 

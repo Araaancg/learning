@@ -1,4 +1,4 @@
-from flask import Flask,render_template
+from flask import Flask,render_template,request
 import requests as req
 
 app = Flask(__name__)
@@ -11,7 +11,8 @@ def home():
 @app.route("/honey/<table_name>")
 def table(table_name):
     data = req.get(f"http://localhost:3000/honey/api/{table_name}").json()["data"]
-    return render_template("index.html", info=data, name=table_name)
+    return render_template("index.html", info=data, table_name=table_name, type_id=f"id_{table_name[0:-1]}")
+
 
 @app.route("/honey/new/<person>", methods=["GET","POST"])
 def new(person):
@@ -20,7 +21,8 @@ def new(person):
 @app.route("/honey/<table_name>/<id>")
 def get_id(table_name,id):
     data = req.get(f"http://localhost:3000/honey/api/{table_name}/{id}").json()["data"]
-    return render_template("id.html", data=data, table_name=table_name)
+    url_delete = f"http://localhost:3000/honey/api/{table_name}/{id}/delete"
+    return render_template("id.html", data=data, table_name=table_name, url_delete=url_delete)
 
 
 

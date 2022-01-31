@@ -56,5 +56,16 @@ def get_by_id(con,table_name,id):
     else:
         return False
 
-
+def delete_id(con,table_name,id):
+    cur = con().cursor()
+    try:
+        fields = tuple(field[1] for field in cur.execute(f"PRAGMA table_info({table_name})"))
+        type_id = f"id_{table_name[0:-1]}"
+        query = f"DELETE FROM {table_name} WHERE {type_id}= '{id}';"
+        cur.execute(query)
+        con().commit()
+        return True
+    except:
+        return False
+    
 

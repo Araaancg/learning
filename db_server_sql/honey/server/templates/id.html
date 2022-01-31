@@ -27,14 +27,17 @@
               <li class="nav-item">
                 <a class="nav-link" href="http://127.0.0.1:5000/honey/purchases">Purchases</a>
               </li>
+              <li class="nav-item">
+                <a class="nav-link" href="http://127.0.0.1:5000/honey/buy">Shop</a>
+              </li>
             </ul>
           </div>
         </div>
     </nav>
-    <h2>{{data["name"].upper()}}</h2>
+    <h2>{{data["name"].upper().replace("_"," ")}}</h2>
     <hr>
-    <div class="d-flex justifiy-content-center">
-    <table class="table">
+    <div class="d-flex">
+    <table class="table" style="text-align: center;">
         <thead>
             <tr>
                 {%for k in data.keys()%}
@@ -50,7 +53,8 @@
             </tr>
         </tbody>
       </table>
-      </div>
+    </div>
+    <a href={{url_delete}}><button type="button">Delete from {{table_name}}</button></a>
     
 </body>
 </html>

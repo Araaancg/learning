@@ -45,3 +45,7 @@ button {
     background-color: lightgrey;
     border-width: 1px;
 }
+
+.x_gb-primary {
+    background-color: #ffe14c;
+}

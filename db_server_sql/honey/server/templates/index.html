@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>DB | {{name}}</title>
+    <title>DB | {{table_name}}</title>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,21 +22,36 @@
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
               <li class="nav-item">
+                {%if table_name == "collectors"%}
+                <a class="nav-link active" aria-current="page" href="http://127.0.0.1:5000/honey/collectors">Collectors</a>
+                {%else%}
                 <a class="nav-link" aria-current="page" href="http://127.0.0.1:5000/honey/collectors">Collectors</a>
+                {%endif%}
               </li>
               <li class="nav-item">
+                {%if table_name == "providers"%}
+                <a class="nav-link active" href="http://127.0.0.1:5000/honey/providers">Providers</a>
+                {%else%}
                 <a class="nav-link" href="http://127.0.0.1:5000/honey/providers">Providers</a>
+                {%endif%}
               </li>
               <li class="nav-item">
+                {%if table_name == "providers"%}
+                <a class="nav-link active" href="http://127.0.0.1:5000/honey/purchases">Purchases</a>
+                {%else%}
                 <a class="nav-link" href="http://127.0.0.1:5000/honey/purchases">Purchases</a>
+                {%endif%}
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="http://127.0.0.1:5000/honey/buy">Shop</a>
               </li>
             </ul>
           </div>
         </div>
     </nav>
-    <h2>{{name.upper()}}</h2>
+    <h2>{{table_name.upper()}}</h2>
     <hr>
-    <table class="table">
+    <table class="table" style="text-align: center;">
         <thead>
             <tr>
                 {%for k in info[0].keys()%}
@@ -46,9 +61,14 @@
         </thead>
         <tbody>
             {%for person in info%}
+            
             <tr>
-                {%for v in person.values()%}
+                {%for k,v in person.items()%}
+                {%if k !=type_id%}
                 <td>{{v}}</td>
+                {%else%}
+                <td><a href="http://localhost:5000/honey/{{table_name}}/{{v}}">{{v}}</a></td>
+                {%endif%}
                 {%endfor%}
             </tr>
             {%endfor%}

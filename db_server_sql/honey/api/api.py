@@ -1,4 +1,4 @@
-from flask import Flask,g,request,Response
+from flask import Flask,g,request,Response,redirect
 import sqlite3
 from funcs import *
 
@@ -12,7 +12,7 @@ def con():
         db = g._database = sqlite3.connect(DB)
     return db
 
-@app.route("/api")
+@app.route("/honey/api")
 def home():
     return "Working on it, be patient :)"
 
@@ -33,7 +33,13 @@ def get_id(table_name,id):
         return Response(requested_id, content_type="application/json")
     return {"success":False}
 
-
+@app.route("/honey/api/<table_name>/<id>/delete")
+def delete_person(table_name,id):
+    is_deleted = delete_id(con,table_name,id)
+    if is_deleted:
+        return redirect(f"http://localhost:5000/honey/{table_name}")
+        return {"success":True}
+    return {"success":False}
 
 if __name__ == "__main__":
     app.run(debug=True,port=3000)

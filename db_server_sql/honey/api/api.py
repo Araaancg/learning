@@ -16,38 +16,22 @@ def con():
 def home():
     return "Working on it, be patient :)"
 
-@app.route("/honey/api/collectors", methods=["GET","POST"])
-def collectors():
+@app.route("/honey/api/<table_name>", methods=["GET","POST"])
+def get_tn(table_name):
     if request.method == "GET":
-        return Response(get_all(con, "collectors"),content_type="application/json")
+        return Response(get_all(con, table_name),content_type="application/json")
 
     if request.method == "POST":
-        new_row = insert_new_row(con,request,"collectors")
+        new_row = insert_new_row(con,request,table_name)
         if new_row:
-            return Response(get_all(con, "collectors"),content_type="application/json")
+            return Response(get_all(con, table_name),content_type="application/json")
 
-@app.route("/honey/api/providers", methods=["GET","POST"])
-def providers():
-    if request.method == "GET":
-        return Response(get_all(con, "providers"),content_type="application/json")
-    
-    if request.method == "POST":
-        new_row = insert_new_row(con,request,"providers")
-        if new_row:
-            return {"success":True}
-
-@app.route("/honey/api/purchases", methods=["GET","POST"])
-def pruchases():
-    if request.method == "GET":
-        return Response(get_all(con, "purchases"),content_type="application/json")
-
-    if request.method == "POST":
-        # print(request.form)
-        # return request.form
-        if purchase(con,request,"purchases"):
-            return {"success":True}
-
-
+@app.route("/honey/api/<table_name>/<id>")
+def get_id(table_name,id):
+    requested_id = get_by_id(con,table_name,id)
+    if requested_id:
+        return Response(requested_id, content_type="application/json")
+    return {"success":False}
 
 
 

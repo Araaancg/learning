@@ -17,6 +17,15 @@ def table(table_name):
 def new(person):
     return render_template("new.html", url=f"http://localhost:3000/honey/api/{person}s", person=person)
 
+@app.route("honey/<table_name>/<id>")
+def get_id(table_name,id):
+    data = req.get(f"http://localhost:3000/honey/api/{table_name}/{id}").json()["data"]
+    
+
+
+
+
+
 @app.route("/honey/buy", methods=["GET","POST"])
 def buy():
     collectors = req.get("http://localhost:3000/honey/api/collectors").json()["data"]

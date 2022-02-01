@@ -29,7 +29,7 @@ def insert_new_row(con,request,table):
         colle = str(next(cur.execute(f'''SELECT id_collector FROM collectors WHERE name='{request.form["collector"]}';'''), False))
         prov = str(next(cur.execute(f'''SELECT id_provider FROM providers WHERE name='{request.form["provider"]}';'''), False))
         date = request.form["date"] if request.form["date"] else dt.datetime.isoformat(dt.datetime.now()).split("T")[0]
-        query = f'''INSERT INTO {table} VALUES ('{create_id(con,table)}','{date}',{request.form["price"]},{request.form["quantity"]},'{colle[2:8]}','{prov[2:8]}');'''
+        query = f'''INSERT INTO {table} VALUES ('{create_id(con,table)}','{date}',{int(request.form["quantity"])*2},{request.form["quantity"]},'{colle[2:8]}','{prov[2:8]}');'''
         print(query)
         cur.execute(query)
         con().commit()

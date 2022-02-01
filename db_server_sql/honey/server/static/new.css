@@ -1,5 +1,6 @@
 h1,h2{
     text-align: center;
+    padding: 10px;
 }
 
 form {
@@ -19,4 +20,8 @@ button {
     border-radius: 8px;
     background-color: lightgrey;
     border-width: 1px;
+}
+
+.x_gb-primary {
+    background-color: #ffe14c;
 }

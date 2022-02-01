@@ -24,6 +24,7 @@ def get_tn(table_name):
     if request.method == "POST":
         new_row = insert_new_row(con,request,table_name)
         if new_row:
+            return redirect(f"http://localhost:5000/honey/{table_name}")
             return Response(get_all(con, table_name),content_type="application/json")
 
 @app.route("/honey/api/<table_name>/<id>")

@@ -15,7 +15,7 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-light x_gb-primary">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#">HONEY</a>
+          <a class="navbar-brand" href="#">&#127855; HONEY</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -36,7 +36,7 @@
                 {%endif%}
               </li>
               <li class="nav-item">
-                {%if table_name == "providers"%}
+                {%if table_name == "purchases"%}
                 <a class="nav-link active" href="http://127.0.0.1:5000/honey/purchases">Purchases</a>
                 {%else%}
                 <a class="nav-link" href="http://127.0.0.1:5000/honey/purchases">Purchases</a>
@@ -49,8 +49,13 @@
           </div>
         </div>
     </nav>
-    <h2>{{table_name.upper()}}</h2>
-    <hr>
+    <div class=top_part>
+      <h2 class="heading">{{table_name.upper()}}</h2>
+      {%if table_name != "purchases"%}
+      <a href="http://localhost:5000/honey/new/{{table_name[0:-1]}}"><button class="button">Create new</button></a>
+      {%endif%}
+      <hr>
+    </div>
     <table class="table" style="text-align: center;">
         <thead>
             <tr>
@@ -61,14 +66,19 @@
         </thead>
         <tbody>
             {%for person in info%}
-            
             <tr>
                 {%for k,v in person.items()%}
-                {%if k !=type_id%}
-                <td>{{v}}</td>
-                {%else%}
-                <td><a href="http://localhost:5000/honey/{{table_name}}/{{v}}">{{v}}</a></td>
-                {%endif%}
+                  {%if k !=type_id%}
+                    {%if k == "id_collector"%}
+                      <td><a href="http://localhost:5000/honey/collectors/{{person['id_collector']}}">{{v}}</a></td>
+                    {%elif k == "id_provider"%}
+                      <td><a href="http://localhost:5000/honey/providers/{{person['id_provider']}}">{{v}}</a></td>
+                    {%else%}
+                      <td>{{v}}</td>
+                    {%endif%}
+                  {%else%}
+                    <td><a href="http://localhost:5000/honey/{{table_name}}/{{v}}">{{v}}</a></td>
+                  {%endif%}
                 {%endfor%}
             </tr>
             {%endfor%}

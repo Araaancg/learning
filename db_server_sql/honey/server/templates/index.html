@@ -52,10 +52,11 @@
     <div class=top_part>
       <h2 class="heading">{{table_name.upper()}}</h2>
       {%if table_name != "purchases"%}
-      <a href="http://localhost:5000/honey/new/{{table_name[0:-1]}}"><button class="button">Create new</button></a>
+      <a href="http://localhost:5000/honey/new/{{table_name[0:-1]}}"><button class="x_btn">Create new</button></a>
       {%endif%}
       <hr>
     </div>
+    <div>
     <table class="table" style="text-align: center;">
         <thead>
             <tr>
@@ -84,5 +85,6 @@
             {%endfor%}
         </tbody>
       </table>
+    </div>
 </body>
 </html>

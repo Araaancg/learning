@@ -1,37 +1,38 @@
 .top_part {
     display: flex;
-    /* align-items: center; */
+    align-items: center;
     justify-content: center;
     padding: 10px;
 }
 
-.x_gb-primary {
-    background-color: #ffe14c;
-}
-
-a:link {
-    text-decoration: none;
-    color: black;
-}
-
-a:visited {
-    text-decoration: none;
-    color: black;
-}
-
-a:hover {
-    font-weight: bold
-}
-
-/* .arancha {
+/* .top_part {
     display: flex; 
     justify-content: end;
     flex-direction: row;
     align-items: center;
 } */
 
-/* .x_button {
+/* .button {
     align-self: flex-end; comentar
     justify-self: flex-end;
     margin-left: 30%;
 } */
+
+.x_gb-primary {
+    background-color: #ffe14c;
+}
+
+table a:link {
+    text-decoration: none;
+    color: black;
+}
+
+table a:visited {
+    text-decoration: none;
+    color: black;
+}
+
+table a:hover {
+    font-weight: bold
+}
+

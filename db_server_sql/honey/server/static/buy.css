@@ -40,7 +40,7 @@ input[type=number]{
 
 button {
     border-color: black;
-    width: 7%;
+    width:max-content;
     padding: 5px;
     border-radius: 8px;
     background-color: lightgrey;

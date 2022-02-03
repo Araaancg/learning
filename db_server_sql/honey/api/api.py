@@ -1,8 +1,11 @@
 from flask import Flask,g,request,Response,redirect
 import sqlite3
 from funcs import *
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)
+
 
 DB = "./honey.db"
 

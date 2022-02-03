@@ -51,39 +51,17 @@
         </div>
     </nav>
     <div class=top_part>
-      <h2 class="heading">{{table_name.upper()}}</h2>
-      {%if table_name != "purchases"%}
-      <a href="http://localhost:5000/honey/new/{{table_name[0:-1]}}"><button class="x_btn">Create new</button></a>
-      {%endif%}
-      <hr>
+      <h1>Collectors</h1>
     </div>
     <div>
     <table class="table" style="text-align: center;">
-        <thead>
+        <thead id="thead">
             <tr>
-                {%for k in info[0].keys()%}
-                <th>{{k}}</th>
-                {%endfor%}
+
             </tr>
         </thead>
         <tbody>
-            {%for person in info%}
-            <tr>
-                {%for k,v in person.items()%}
-                  {%if k !=type_id%}
-                    {%if k == "id_collector"%}
-                      <td><a href="http://localhost:5000/honey/collectors/{{person['id_collector']}}">{{v}}</a></td>
-                    {%elif k == "id_provider"%}
-                      <td><a href="http://localhost:5000/honey/providers/{{person['id_provider']}}">{{v}}</a></td>
-                    {%else%}
-                      <td>{{v}}</td>
-                    {%endif%}
-                  {%else%}
-                    <td><a href="http://localhost:5000/honey/{{table_name}}/{{v}}">{{v}}</a></td>
-                  {%endif%}
-                {%endfor%}
-            </tr>
-            {%endfor%}
+          
         </tbody>
       </table>
     </div>

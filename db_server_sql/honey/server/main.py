@@ -1,7 +1,9 @@
 from flask import Flask,render_template,request
+from flask_cors import CORS
 import requests as req
 
 app = Flask(__name__)
+CORS(app)
 
 @app.route("/honey")
 def home():
@@ -12,6 +14,10 @@ def home():
 def table(table_name):
     data = req.get(f"http://localhost:3000/honey/api/{table_name}").json()["data"]
     return render_template("index.html", info=data, table_name=table_name, type_id=f"id_{table_name[0:-1]}")
+
+@app.route("/honey/js/<table_name>")
+def test(table_name):
+    return render_template("index_js.html", table_name=table_name)
 
 
 @app.route("/honey/new/<person>", methods=["GET","POST"])

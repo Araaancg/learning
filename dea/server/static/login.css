@@ -1,0 +1,34 @@
+/* body {
+    margin: 0;
+}
+
+h1 {
+    color: #283618;
+    text-align: center;
+}
+
+form {
+    display: inline-block;
+}
+
+/* input, label {
+    display: block;
+} */
+
+body {
+    margin:50px 0px; padding:0px;
+    text-align:center;
+    /* align:center; */
+}
+label,input {
+ display: block;
+ width: 150px;
+ float: left;
+ margin-bottom: 10px;
+}
+
+label {
+ text-align: right;
+ width: 75px;
+ padding-right: 20px;
+}

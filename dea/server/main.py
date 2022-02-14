@@ -29,6 +29,15 @@ def secret():
     print(request.cookies)
     return "secret"
 
+@app.route("/dea/finder", methods=["GET","POST"])
+# @auth.authorize
+def location():
+    if request.method == "GET":
+        # print(request.args)
+        return render_template("position.html")
+    if request.method == "POST":
+        res = req.post(f"http://localhost:3000/dea/api/finder?lat={request.args['lat']}&lon={request.args['lon']}").json()
+        return render_template("position.html")
 
 if __name__ == "__main__":
     app.run(debug=True)

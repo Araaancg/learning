@@ -41,7 +41,7 @@ def token():
         cookie_id = request.args.get("id")
         cookie_token = request.args.get("token")
 
-        print(f"COOKIE_ID: {cookie_id}")
+        # print(f"COOKIE_ID: {cookie_id}")
         user = next(cur.execute(f'''SELECT * FROM users WHERE id='{cookie_id}';'''), {})
         if dict(user).get("token") == cookie_token:
             return {"success": True}
@@ -54,17 +54,32 @@ def api_signup():
     if request.method == "POST":
         email = request.form.get('email')
         pwd = request.form.get('pwd')
-        print(email, pwd)
-        print(request.form)
+        # print(email, pwd)
+        # print(request.form)
         if email and pwd:
             query = f'''INSERT INTO users VALUES ('{create_id(cur)}','{email}','{pwd}','');'''
-            print(query)
+            # print(query)
             cur.execute(f'''INSERT INTO users VALUES ('{create_id(cur)}','{email}','{pwd}','');''')
             con().commit()
             return {"success":True}
         return {"success":False}
     if request.method == "GET":
         return {"success":True}
+
+@app.route("/dea/api/finder", methods=["GET","POST"])
+def finder():
+    if request.method == "POST":
+        # result = position_test(request)
+        print(request.args)
+        x = float(request.args["lat"])
+        y = float(request.args["lon"])
+        if x and y:
+            n_dea = nearest_dea(x,y)
+            print(n_dea)
+            return {"success":True}
+        return {"success":False}
+
+
 
 
 @app.teardown_appcontext

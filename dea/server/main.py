@@ -35,10 +35,13 @@ def location():
     if request.method == "GET":
         return render_template("position.html")
     if request.method == "POST":
-        res = req.post(f"http://localhost:3000/dea/api/finder?lat={request.args['lat']}&lon={request.args['lon']}").json()
+        print(request.args)
+        # res = req.post(f"http://localhost:3000/dea/api/finder?lat={request.args['lat']}&lon={request.args['lon']}").json()
+        res = req.post(f"http://localhost:3000/dea/api/finder?lat=40.4331399&lon=-3.6755304").json()
         if res["success"]:
-            print(res["res"][0])
-        return render_template("position.html")
+            # print(res["res"][0])
+            return render_template("found_dea.html")
+        return res
 
 if __name__ == "__main__":
     app.run(debug=True)

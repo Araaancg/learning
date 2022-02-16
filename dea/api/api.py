@@ -68,18 +68,13 @@ def api_signup():
 @app.route("/dea/api/finder", methods=["GET","POST"])
 def finder():
     if request.method == "POST":
-        # result = position_test(request)
-        print(request.args)
         x = float(request.args["lat"])
         y = float(request.args["lon"])
         if x and y:
             n_dea = nearest_dea(x,y)
-            print(n_dea)
+            print(n_dea[0:2])
             return {"success":True,"res":n_dea}
         return {"success":False}
-
-
-
 
 @app.teardown_appcontext
 def close_connection(exception):

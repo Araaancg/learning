@@ -33,10 +33,11 @@ def secret():
 # @auth.authorize
 def location():
     if request.method == "GET":
-        # print(request.args)
         return render_template("position.html")
     if request.method == "POST":
         res = req.post(f"http://localhost:3000/dea/api/finder?lat={request.args['lat']}&lon={request.args['lon']}").json()
+        if res["success"]:
+            print(res["res"][0])
         return render_template("position.html")
 
 if __name__ == "__main__":

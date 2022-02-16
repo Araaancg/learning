@@ -1,4 +1,3 @@
-from venv import create
 from flask import Flask, request, g, make_response,Response
 from flask_cors import CORS
 import sqlite3
@@ -76,7 +75,7 @@ def finder():
         if x and y:
             n_dea = nearest_dea(x,y)
             print(n_dea)
-            return {"success":True}
+            return {"success":True,"res":n_dea}
         return {"success":False}
 
 

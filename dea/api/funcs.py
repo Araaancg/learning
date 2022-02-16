@@ -1,10 +1,9 @@
 import json
-from operator import attrgetter
-from pickletools import dis
 import requests as req
-import sqlite3
-from flask import g
+# import sqlite3
+# from flask import g
 import utm
+from operator import itemgetter
 
 def get_all(con,table):
     result = {"users":[]}
@@ -58,36 +57,36 @@ def json_data():
 #DEA LOCATION
 def sorter(item):
     nearest_deas = []
-    distances = [dea[1] for dea in item].sort()
+    distances = []
+    for dea in item:
+        distances.append(dea.keys())
+
+    print(distances)
+    print(distances[0])
     top_5 = distances[0:6]
+    print(top_5)
     for dea in item:
         for distance in top_5:
-            if dea[1] == distance:
+            if dea[0] == distance:
                 nearest_deas.append(dea)
     return nearest_deas
 
 def nearest_dea(x,y):
     utm_x, utm_y = utm.from_latlon(x,y)[0:2]
-    distance_to_deas = []
+    distances_to_deas = []
     url = "https://datos.comunidad.madrid/catalogo/dataset/35609dd5-9430-4d2e-8198-3eeb277e5282/resource/c38446ec-ace1-4d22-942f-5cc4979d19ed/download/desfibriladores_externos_fuera_ambito_sanitario.json"
     data = req.get(url).json()
-    # print(data)
     for dea in data["data"]:
         if dea["direccion_coordenada_x"] and dea["direccion_coordenada_y"]:
             base = int(dea["direccion_coordenada_x"]) - utm_x
             height = int(dea["direccion_coordenada_y"]) - utm_y
             hipo = ((base**2) + (height**2))**0.5
-            # distance_to_deas.append({"codigo_dea":dea["codigo_dea"],"distance":hipo})
-            distance_to_deas.append((dea["codigo_dea"],hipo))
-        
-
-    # distance_to_deas.sort(reverse=True)
-    # sorted(distance_to_deas, key=lambda distance_to_deas: distance_to_deas["codigo_dea"], reverse=True)
-    # sorted(distance_to_deas, key=attrgetter(2[]), reverse=True)
-    sorted(distance_to_deas,key=sorter, reverse=True)
-    # for dea in 
-    # nearest_deas = distance_to_deas[0:6]
-    return distance_to_deas
+            distances_to_deas.append({hipo:dea})
+   
+    distances_to_deas.sort(key = lambda x: x.keys())
+    print(distances_to_deas[:5])
+    top_5 = distances_to_deas[:5]
+    return top_5
 
 
 

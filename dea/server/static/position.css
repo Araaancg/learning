@@ -1,16 +1,10 @@
 #heading1 {
     text-align: center;
-    margin-top: 7px;
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
 
-/* #main {
-    width: 300px;
-} */
-
-/* .card {
-    margin-right :5px;
+.card {
+    margin: 10px;
+    width: 30%;
 }
-
-#iframe {
-    margin-left: 50px
-} */

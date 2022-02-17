@@ -93,7 +93,7 @@ def api_finder():
             pass
     result.sort(key = lambda dea:dea["distance"])
     print(result[0])
-    return {"data": result[:5]}
+    return {"data": result[:6]}
 
 
 

@@ -34,8 +34,8 @@ def secret():
 def location():
     if request.method == "POST":
         print(request.args)
-        # res_api = req.get(f"http://localhost:3000/dea/api/finder?lat={request.args['lat']}&lon={request.args['lon']}").json()
-        res_api = req.get(f"http://localhost:3000/dea/api/finder?lat=40.4331399&lon=-3.6755304").json()
+        res_api = req.get(f"http://localhost:3000/dea/api/finder?lat={request.args['lat']}&lon={request.args['lon']}").json()
+        # res_api = req.get(f"http://localhost:3000/dea/api/finder?lat=40.4331399&lon=-3.6755304").json()
         return res_api
     return make_response(render_template("position.html"))
 

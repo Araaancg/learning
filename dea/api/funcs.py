@@ -22,11 +22,11 @@ def create_id(cur):
 
 
 #METER DATOS DEA EN LA BASE DE DATOS
-def json_data():
-    url = "https://datos.comunidad.madrid/catalogo/dataset/35609dd5-9430-4d2e-8198-3eeb277e5282/resource/c38446ec-ace1-4d22-942f-5cc4979d19ed/download/desfibriladores_externos_fuera_ambito_sanitario.json"
-    result = req.get(url).json()
-    with open("./deas.json", mode="w", encoding="utf8") as file:
-        json.dump(result,file, indent=4, ensure_ascii=False)
+# def json_data():
+#     url = "https://datos.comunidad.madrid/catalogo/dataset/35609dd5-9430-4d2e-8198-3eeb277e5282/resource/c38446ec-ace1-4d22-942f-5cc4979d19ed/download/desfibriladores_externos_fuera_ambito_sanitario.json"
+#     result = req.get(url).json()
+#     with open("./deas.json", mode="w", encoding="utf8") as file:
+#         json.dump(result,file, indent=4, ensure_ascii=False)
 
 # # json_data()
 
@@ -37,10 +37,10 @@ def json_data():
 # deas_dicc = get_data("./deas.json")
 # # print(deas_dicc)
 
-DB = "./deas.db"
+# DB = "./deas.db"
 
-con = sqlite3.connect(DB, check_same_thread=False)
-cur = sqlite3.Cursor(con)
+# con = sqlite3.connect(DB, check_same_thread=False)
+# cur = sqlite3.Cursor(con)
 
 # def insert_data():
 #     for dea in deas_dicc["data"]:
@@ -76,11 +76,11 @@ cur = sqlite3.Cursor(con)
 #     # top_5 = distances_to_deas[:5]
 #     return top_5
 
-def hipo(x,y):
-    base = int(dea["direccion_coordenada_x"]) - x
-    height = int(dea["direccion_coordenada_y"]) - y
-    hipo = ((base**2) + (height**2))**0.5
-    return hipo
+def hypo(user_x, user_y, dea_x, dea_y):
+    c_1 = (user_x - dea_x) ** 2
+    c_2 = (user_y - dea_y) ** 2
+    result = (c_1 + c_2)**0.5
+    return result
 
 
 

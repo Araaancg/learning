@@ -65,16 +65,37 @@ def api_signup():
     if request.method == "GET":
         return {"success":True}
 
-@app.route("/dea/api/finder", methods=["GET","POST"])
-def finder():
-    if request.method == "POST":
-        x = float(request.args["lat"])
-        y = float(request.args["lon"])
-        if x and y:
-            n_dea = nearest_dea(x,y)
-            print(n_dea[0:2])
-            return {"success":True,"res":n_dea}
-        return {"success":False}
+# @app.route("/dea/api/finder", methods=["GET","POST"])
+# def finder():
+#     if request.method == "POST":
+#         x = float(request.args["lat"])
+#         y = float(request.args["lon"])
+#         if x and y:
+#             n_dea = nearest_dea(x,y)
+#             print(n_dea[0:2])
+#             return {"success":True,"res":n_dea}
+#         return {"success":False}
+
+@app.route("/dea/api/finder")
+def api_finder():
+    user_lat, user_lon = request.args.values()
+    user_x, user_y, n, l = utm.from_latlon(float(user_lat), float(user_lon))
+    cur = con().cursor()
+    result = []
+    for dea in cur.execute("SELECT * FROM deas;"):
+        dea = dict(dea)
+        dea["distance"] = hypo(user_x, user_y, dea["x"], dea["y"])
+        
+        try:
+            dea["latlon"] = utm.to_latlon(dea["x"], dea["y"],n, l)
+            result.append(dea)
+        except:
+            pass
+    result.sort(key = lambda dea:dea["distance"])
+    print(result[0])
+    return {"data": result[:5]}
+
+
 
 @app.teardown_appcontext
 def close_connection(exception):

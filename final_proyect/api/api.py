@@ -1,22 +1,30 @@
 from flask import Flask, g, Response
-import sqlite3
-from funcs import *
+from flask_sqlalchemy import SQLAlchemy
+# from funcs import *
 
 app = Flask(__name__)
 
 DB = "./vocab.db"
 
-def con():
-    db = getattr(g, '_database', None)
-    if db is None:
-        db = g._database = sqlite3.connect(DB)
-        db.row_factory = sqlite3.Row
-    return db
+app = Flask(__name__)
+DB_URI = "vocab.db"
+app.config["SQLALCHEMY_DATABASE_URI"] = f"sqlite:///{DB_URI}"
+db = SQLAlchemy(app)
 
-@app.route("/api/<table>")
-def api(table):
-    # return "Working on it"
-    return Response(get_all(con,table), content_type="application/json")
+class Owner(db.Model):
+    id = db.Column(db.String(10), primary_key=True)
+    name = db.Column(db.String(60), nullable=False)
+
+
+@app.route("/api/get_packs", methods=["GET"])
+def get_packs():
+    return "Working"
+
+
+
+
+# return "Working on it"
+# return Response(get_all(con,table), content_type="application/json")
 
 if __name__ == "__main__":
     app.run(debug=True, port=3000)

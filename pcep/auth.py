@@ -1,7 +1,7 @@
 from random import random
 from hashlib import sha256
 import requests as req
-from flask import redirect, make_response
+from flask import redirect, make_response, session
 from functools import wraps
 
 
@@ -25,15 +25,16 @@ class Auth:
             res = f()
             email = self.request.args.get("email")
             pwd = self.request.args.get("pwd")
+            print(self.request.args)
             if email and pwd:
                 api_res = req.put(f"{self.api_uri}?email={email}&pwd={sha256(pwd.encode()).hexdigest()}&token={self.gen_token()}").json()
                 if api_res["success"]:
-                    res.set_cookie("token", api_res["token"])
-                    res.set_cookie("id", api_res["id"])
+                    session["token"] = api_res["token"]
+                    session["id"] = api_res["id"]
                     if self.kwargs.get("redirect_uri"):
                         res =  make_response(redirect(self.kwargs.get("redirect_uri")))
-                        res.set_cookie("token", api_res["token"])
-                        res.set_cookie("id", api_res["id"])
+                        # session["token"] = api_res["token"]
+                        # session["id"] = api_res["id"]
                         return res
             return res
         return i

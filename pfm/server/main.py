@@ -6,7 +6,6 @@ import secrets
 from functools import wraps
 import requests as req
 
-
 app = Flask(__name__)
 DB_URI = "test.db"
 app.config["SQLALCHEMY_DATABASE_URI"] = f"sqlite:///{DB_URI}"

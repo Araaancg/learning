@@ -2,7 +2,7 @@ from flask import Flask,request,session,render_template,make_response,redirect, 
 from flask_sqlalchemy import SQLAlchemy
 from uuid import uuid4
 from hashlib import sha256
-from auth import Auth
+# from auth import Auth
 import secrets
 
 app = Flask(__name__)
@@ -11,16 +11,16 @@ app.config["SQLALCHEMY_DATABASE_URI"] = f"sqlite:///{DB_URI}"
 db = SQLAlchemy(app)
 app.secret_key = secrets.token_hex()
 
-SECRET = "4cfa98d37472801305b5d4a85bc98e6a9b4b0213de8762c35336a2b1a586c055"
-api_uri = "http://localhost:5000/api/users"
-auth = Auth(SECRET,request,api_uri,"http://localhost:5000/login", redirect_uri="http://localhost:5000/secret")
+# SECRET = "4cfa98d37472801305b5d4a85bc98e6a9b4b0213de8762c35336a2b1a586c055"
+# api_uri = "http://localhost:5000/api/users"
+# auth = Auth(SECRET,request,api_uri,"http://localhost:5000/login", redirect_uri="http://localhost:5000/secret")
 
 class User(db.Model):
     id = db.Column(db.String(32), primary_key=True, unique=True)
     email = db.Column(db.String(30), nullable=False, unique=True)
     pwd = db.Column(db.String(20), nullable=False, unique=True)
-    token = db.Column(db.String(50))
-    grades = db.Column(db.String)
+    token = db.Column(db.String(50), nullable=True)
+    grades = db.Column(db.String(200), nullable=True)
 
     def __rpr__(self):
         return f"ID: {self.id} NAME: {self.email}"
@@ -28,34 +28,38 @@ class User(db.Model):
 
 @app.route("/signup", methods=["GET","POST"])
 def registration():
-    if request.method == "POST":
+    if request.method == "GET":
         email = request.args.get("email")
-        pwd = request.args.get("pwd")
+        pwd = sha256(request.args.get("pwd").encode()).hexdigest()
 
         if email and pwd:
-            id_u = uuid4()
+            id_u = str(uuid4())
+            # id_u = "bfa0bcd5-cf6a-4ab3-9706-4f6629f2760e"
+            print(id_u)
             token = secrets.token_hex(16)
             new_user = User(id=id_u, email=email, pwd=pwd, token=token)
             db.session.add(new_user)
             db.session.commit()
-            return redirect(url_for("login"), status_code=307)
+            # return {"success":True}
+            return redirect(url_for("login"), code=307)
         else:
             return {"success":False}
     return "Sign up"
 
 @app.route("/login", methods=["GET","POST"])
 def login():
-    if request.method == "POST":
+    if request.method == "GET":
         email = request.args.get("email")
         pwd = request.args.get("pwd")
-        result = User.query.filter_by(email=email).first()
-        print(result.pwd)
+        print(pwd)
+        user = User.query.filter_by(email=email).first()
+        # print(user.pwd)
         print(sha256(pwd.encode()).hexdigest())
-        if result.pwd == sha256(pwd.encode()).hexdigest():
-            print(result.pwd)
-            session["token"] = result.token
-            session["id"] = result.id
-            return {"success":True}
+        if user.pwd == sha256(pwd.encode()).hexdigest():
+            print(user.pwd)
+            session["token"] = user.token
+            session["id"] = user.id
+            # return {"success":True}
             return redirect("http://localhost:5000/secret")
         return {"success":False,"msg":"Incorrect pwd"}
     return "login"

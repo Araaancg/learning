@@ -1,0 +1,47 @@
+.main-parts {
+    /* border: 1px solid #000; */
+    text-align: center;
+    /* margin: fit-content; */
+}
+
+h1,h2 {
+    text-align: center;
+}
+
+h3 {
+    display: inline;
+    margin: 0;
+    margin-left: 9px;
+}
+
+.cards {
+    border: 1px solid #000;
+    width: 75%;
+    margin: auto;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    border-radius: 10px;
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+
+.cards > span {
+    margin-left: .5em;
+    margin-right: .5em;
+    font-size: 120%;
+}
+
+#pack_header > span {
+    margin: 2px;
+    border: 1px solid #000;
+    padding: 1px;
+}
+
+.btn-delete-card {
+    background-color: #e63946;
+}
+
+#btn-delete-pack {
+    background-color: #e63946;
+    border-color: #ff0000;
+}

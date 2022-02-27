@@ -1,113 +1,105 @@
-from flask import Flask,request,session,render_template,make_response,redirect, url_for
-from flask_sqlalchemy import SQLAlchemy
+from mimetypes import init
+from flask import Flask,request,session,render_template
+from models import db, User, Question, Option
 from uuid import uuid4
 from hashlib import sha256
-# from auth import Auth
 import secrets
+import requests as req
+from flask_cors import CORS
+
 
 app = Flask(__name__)
+CORS(app)
 DB_URI = "test.db"
 app.config["SQLALCHEMY_DATABASE_URI"] = f"sqlite:///{DB_URI}"
-db = SQLAlchemy(app)
 app.secret_key = secrets.token_hex()
+db.init_app(app)
 
-# SECRET = "4cfa98d37472801305b5d4a85bc98e6a9b4b0213de8762c35336a2b1a586c055"
-# api_uri = "http://localhost:5000/api/users"
-# auth = Auth(SECRET,request,api_uri,"http://localhost:5000/login", redirect_uri="http://localhost:5000/secret")
-
-class User(db.Model):
-    id = db.Column(db.String(32), primary_key=True, unique=True)
-    email = db.Column(db.String(30), nullable=False, unique=True)
-    pwd = db.Column(db.String(20), nullable=False, unique=True)
-    token = db.Column(db.String(50), nullable=True)
-    grades = db.Column(db.String(200), nullable=True)
-
-    def __rpr__(self):
-        return f"ID: {self.id} NAME: {self.email}"
-
-
-@app.route("/signup", methods=["GET","POST"])
-def registration():
-    if request.method == "GET":
-        email = request.args.get("email")
-        pwd = sha256(request.args.get("pwd").encode()).hexdigest()
-
-        if email and pwd:
-            id_u = str(uuid4())
-            # id_u = "bfa0bcd5-cf6a-4ab3-9706-4f6629f2760e"
-            print(id_u)
-            token = secrets.token_hex(16)
-            new_user = User(id=id_u, email=email, pwd=pwd, token=token)
-            db.session.add(new_user)
-            db.session.commit()
-            # return {"success":True}
-            return redirect(url_for("login"), code=307)
-        else:
-            return {"success":False}
-    return "Sign up"
-
-@app.route("/login", methods=["GET","POST"])
-def login():
-    if request.method == "GET":
-        email = request.args.get("email")
-        pwd = request.args.get("pwd")
-        print(pwd)
-        user = User.query.filter_by(email=email).first()
-        # print(user.pwd)
-        print(sha256(pwd.encode()).hexdigest())
-        if user.pwd == sha256(pwd.encode()).hexdigest():
-            print(user.pwd)
-            session["token"] = user.token
-            session["id"] = user.id
-            # return {"success":True}
-            return redirect("http://localhost:5000/secret")
-        return {"success":False,"msg":"Incorrect pwd"}
-    return "login"
-
-@app.route("/secret", methods=["GET"])
-def secret_url():
-    return "Secret"
+@app.route("/api/questions", methods=["GET"])
+def api_questions():
+    result = {"data":[]}
+    for question in Question.query.all():
+        elem = {}
+        elem["id"], elem["question"], elem["answer"] = question.id, question.q, question.a
+        elem["options"] = []
+        for option in question.options:
+            op = {"id":option.id,"option":option.o}
+            elem["options"].append(op)
+        result["data"].append(elem)
+    return result
 
 
+################# MAIN #################
 
-# @app.route("/dea/api/token", methods=["PUT", "GET"])
-# def token():
-#     cur = con().cursor()
-#     verb = request.method 
-#     if verb == "PUT":
-#         email = request.form.get("email")
-#         pwd = request.form.get("pwd")
-#         token = request.form.get("token")
+@app.route("/test", methods=["GET", "POST"])
+def home():
+    if request.method == "POST":
+        return req.get("http://localhost:5000/api/questions").json()
+    return render_template("index.html")
 
-#         user = next(cur.execute(f'''SELECT * FROM users WHERE email='{email}';'''), {})
-#         if dict(user).get("pwd") == pwd:
-#             cur.execute(f'''UPDATE users SET token='{token}' WHERE email='{email}';''')
-#             con().commit()
-#             return {"success": True, "id": user["id"], "token": token}
-#         return {"success": False, "msg": "User not found!"}
+@app.route("/score", methods=["GET","POST"])
+def score():
+    score = 0
+    n_questions = 0
+    result = {"data":[]}
+    if request.method == "POST":
+        form = request.form
+        # print(dict(form))
+        for k,v in dict(form).items():
+            score_result = {}
 
-#     elif verb == "GET":
-#         cookie_id = request.args.get("id")
-#         cookie_token = request.args.get("token")
+            id_q = v.split(",")[0]
+            id_a = v.split(",")[1]
 
-#         # print(f"COOKIE_ID: {cookie_id}")
-#         user = next(cur.execute(f'''SELECT * FROM users WHERE id='{cookie_id}';'''), {})
-#         if dict(user).get("token") == cookie_token:
-#             return {"success": True}
+            score_result["question"] = id_q
+            score_result["grade"] = "incorrect"
 
-#     return {"success": False}
-# @app.route("/create")
-# def create():
-#     id = uuid4().hex
-#     email = "test1@email.com"
-#     pwd = sha256(b"1234").hexdigest()
-#     token = ""
-#     grades = ""
-#     to_add = User(id=id,email=email,pwd=pwd,token=token,grades=grades)
-#     db.session.add(to_add)
-#     db.session.commit()
-#     return "Create"
+            question = Question.query.filter_by(id=id_q).first()
 
+            if question.a == id_a:
+                score_result["grade"] = "correct"
+                score += 1
+            n_questions += 1
+
+            score_result["a"] = question.a
+            result["data"].append(score_result)
+
+        final_score = f"{score}/{n_questions}"
+        result["final_score"] = final_score
+        
+    print(result)
+    return result
 
 if __name__ == "__main__":
     app.run(debug=True)
+
+
+
+
+
+
+
+
+'''
+count_q = 1
+    count_o = 1
+    while count_q <= 5:
+        id_q = uuid4().hex
+        question = Question(id=id_q, q=f"question_{count_q}")
+        option_1 = Option(id=uuid4().hex, o=f"option_{count_o}", question_id=id_q)
+        count_o += 1
+        option_2 = Option(id=uuid4().hex, o=f"option_{count_o}", question_id=id_q)
+        count_o += 1
+        option_3 = Option(id=uuid4().hex, o=f"option_{count_o}", question_id=id_q)
+        count_o += 1
+        option_4 = Option(id=uuid4().hex, o=f"option_{count_o}", question_id=id_q)
+        count_o += 1
+        question.a = option_1.id
+        db.session.add(question)
+        db.session.add(option_1)
+        db.session.add(option_2)
+        db.session.add(option_3)
+        db.session.add(option_4)
+        count_q += 1
+    db.session.commit()
+'''

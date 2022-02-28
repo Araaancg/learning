@@ -1,19 +1,41 @@
 from mimetypes import init
-from flask import Flask,request,session,render_template
+from flask import Flask,request,session,render_template,redirect,url_for
 from models import db, User, Question, Option
 from uuid import uuid4
 from hashlib import sha256
 import secrets
 import requests as req
-from flask_cors import CORS
-
+import auth
+# from flask_cors import CORS
 
 app = Flask(__name__)
-CORS(app)
+# CORS(app)
+
 DB_URI = "test.db"
 app.config["SQLALCHEMY_DATABASE_URI"] = f"sqlite:///{DB_URI}"
 app.secret_key = secrets.token_hex()
 db.init_app(app)
+
+@app.route("/api/token", methods=["PUT", "GET"])
+def token():
+    if request.method == "PUT":
+        email = request.form.get("email")
+        pwd = request.form.get("pwd")
+        token = request.form.get("token")
+        user = User.query.filter_by(email=email).first()
+        user.token = token
+        db.session.commit()
+        if user.pwd == pwd:
+            return {"success": True, "id": user.id, "token": user.token}
+        return {"success": False, "msg": "User not found!"}
+
+    elif request.method == "GET":
+        cookie_id = request.args.get("id")
+        cookie_token = request.args.get("token")
+        user = User.query.filter_by(id=cookie_id).first()    
+        if user.token == cookie_token:
+            return {"success": True}
+    return {"success": False}
 
 @app.route("/api/questions", methods=["GET"])
 def api_questions():
@@ -28,11 +50,61 @@ def api_questions():
         result["data"].append(elem)
     return result
 
+@app.route("/api/grades",methods=["GET","POST"])
+def api_grades():
+    if request.method == "POST":
+        user = User.query.filter_by(id=request.form['id_user']).first()
+        if user.grades:
+            existing_grades = user.grades
+            user.grades = f"{existing_grades},{request.form['grade']}"
+        else:
+            user.grades= request.form['grade']
+        db.session.commit()
+    
+    if request.args.get('user'):
+        user = User.query.filter_by(id=request.args.get('user')).first()
+        if user.grades:
+            grades = [grade for grade in user.grades.split(",")]
+            return {"grades":grades}
+        return {"grades":None}
+    return "working"
+
 
 ################# MAIN #################
 
-@app.route("/test", methods=["GET", "POST"])
+@app.route("/signup", methods=["GET","POST"])
+def registration():
+    if request.method == "POST":
+        name = request.form.get("name")
+        email = request.form.get("email")
+        pwd = sha256(request.form.get("pwd").encode()).hexdigest()
+
+        if email and pwd:
+            id_u = str(uuid4())
+            token = secrets.token_hex(16)
+            new_user = User(id=id_u, email=email, pwd=pwd, token=token)
+            db.session.add(new_user)
+            db.session.commit()
+            return redirect(url_for("login"), code=307)
+        else:
+            return {"success":False}
+    return render_template("signup.html")
+
+@app.route("/login", methods=["GET","POST"])
+@auth.authenticate
+def login():
+    return render_template("login.html")
+
+@app.route("/home", methods=["GET","POST"])
+@auth.authorize
 def home():
+    if request.method == "POST":
+        return req.get(f"http://localhost:5000/api/grades?user={session['id']}").json()
+    return render_template("home.html")
+
+@app.route("/test", methods=["GET", "POST"])
+@auth.authorize
+def test():
     if request.method == "POST":
         return req.get("http://localhost:5000/api/questions").json()
     return render_template("index.html")
@@ -44,7 +116,6 @@ def score():
     result = {"data":[]}
     if request.method == "POST":
         form = request.form
-        # print(dict(form))
         for k,v in dict(form).items():
             score_result = {}
 
@@ -66,6 +137,7 @@ def score():
 
         final_score = f"{score}/{n_questions}"
         result["final_score"] = final_score
+        req.post("http://localhost:5000/api/grades", data={"id_user":session['id'],"grade":final_score})
         
     print(result)
     return result

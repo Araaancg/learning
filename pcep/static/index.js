@@ -65,10 +65,10 @@ window.onload = async function() {
         for (question of score.data) {
             for (div of document.querySelectorAll(".question")) {
                 if (div.id == question.question && question.grade == "correct") {
-                    div.style.background = "#95d5b2"
+                    div.style.background = "#95d5b2" //greenish
                 }
                 else if (div.id == question.question && question.grade == "incorrect") {
-                    div.style.background = "#ee6055";
+                    div.style.background = "#ee6055"; //redish
                 };
             };
         };
@@ -76,7 +76,10 @@ window.onload = async function() {
         score_span.innerText = `score: ${score.final_score}`;
         div_score.style.display = "block";
     };
-    main.append(form);
+
+    // show grades aside
+
     main.append(div_score);
+    main.append(form);
 
 };

@@ -22,14 +22,15 @@ def authenticate(f):
         return i
     
 def authorize(f):
+    print("//////////// HOLA")
     @wraps(f)
-    def i():
+    def i(*args, **kwargs):
         cookie_id = session.get("id")
         cookie_token = session.get("token")
         if cookie_id and cookie_token:
             api_res = req.get(f"http://localhost:5000/api/token?token={cookie_token}&id={cookie_id}").json()
             if api_res["success"]:
-                return f()
+                return f(*args, **kwargs)
         return redirect(url_for("login"))
     return i
 

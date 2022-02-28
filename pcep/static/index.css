@@ -31,8 +31,6 @@ button {
 }
 
 .score {
-    border: 1px solid #000;
-    border-radius: 25px;
     width: fit-content;
     padding: 3px;
     margin: auto;

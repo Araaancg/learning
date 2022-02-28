@@ -94,7 +94,7 @@ def package():
             result["packages"]["cards"] = [{"id":card.id,"side_a":card.side_a,"side_b":card.side_b} for card in obj.cards]
             return result
 
-        elif request.args.get("filter_by"): # filtered by category or user, ssign a new obj
+        elif request.args.get("filter_by"): # filtered by category or user, asign a new obj
             obj = Pack.query.filter_by(id_category=request.args.get('id')) if request.args.get('filter_by') == "category" else Pack.query.filter_by(id_user=request.args.get('id'))
 
         for pack in obj:
@@ -187,6 +187,7 @@ def my_packages():
     return render_template("my_packs.html")
 
 @app.route("/my_packages/<name>", methods=["GET","POST","PUT"])
+@auth.authorize
 def get_package(name):
     if request.method == "POST":
         id_pack = Pack.query.filter_by(name=name).first().id
@@ -210,9 +211,7 @@ def get_package(name):
         req.put(f"http://localhost:5000/api/packages?new_card={request.args.get('new_card')}", data=request.form)
         return {"success":True}
 
-    if auth.authorize_function():
-        return render_template("one_pack.html")
-    return redirect(url_for("login"))
+    return render_template("one_pack.html")
 
 @app.route("/my_packages/create_new", methods=["GET","POST"])
 @auth.authorize

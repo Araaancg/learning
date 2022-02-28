@@ -45,3 +45,15 @@ h3 {
     background-color: #e63946;
     border-color: #ff0000;
 }
+
+#pack_footer {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+}
+
+#pack_footer > button {
+    width: fit-content;
+    margin: auto;
+    margin-bottom: .5em;
+}

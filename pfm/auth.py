@@ -1,5 +1,7 @@
+from pydoc import render_doc
+from re import template
 import requests as req
-from flask import request, session, redirect, url_for
+from flask import render_template, request, session, redirect, url_for
 import secrets
 from hashlib import sha256
 from functools import wraps
@@ -19,9 +21,9 @@ def authenticate(f):
             return f()
         return i
     
-def authorize(f, **kwargs):
+def authorize(f):
     @wraps(f)
-    def i(**kwargs):
+    def i():
         cookie_id = session.get("id")
         cookie_token = session.get("token")
         if cookie_id and cookie_token:
@@ -30,3 +32,12 @@ def authorize(f, **kwargs):
                 return f()
         return redirect(url_for("login"))
     return i
+
+def authorize_function():
+    cookie_id = session.get("id")
+    cookie_token = session.get("token")
+    if cookie_id and cookie_token:
+        api_res = req.get(f"http://localhost:5000/api/token?token={cookie_token}&id={cookie_id}").json()
+        if api_res["success"]:
+            return True
+    return False

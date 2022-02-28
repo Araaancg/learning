@@ -4,19 +4,13 @@
     width: 20%
 }
 
-.cards {
-    display: flex;
-    flex-direction: row;
-}
-
-#side-a, #side-b {
-    display: flex;
-    flex-direction: column;
-}
-
 .categories {
     display: flex;
+    flex-direction: column;
     justify-content: space-around;
-    margin: auto;
     width: 500px;
+}
+
+.existing-categories {
+    display: flex;
 }

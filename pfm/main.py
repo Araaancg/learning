@@ -1,5 +1,3 @@
-from unicodedata import name
-from unittest import result
 from flask import Flask,request,session,render_template,make_response,redirect, url_for
 from uuid import uuid4
 from hashlib import sha256
@@ -7,7 +5,7 @@ from models import db, User, Category, Pack, Card
 import secrets
 import requests as req
 import auth
-# from funcs import create_package
+
 
 app = Flask(__name__)
 DB_URI = "test.db"
@@ -60,7 +58,7 @@ def category():
             result["categories"].append(category)
         return result
 
-@app.route("/api/packages", methods=["GET","POST","DELETE"])
+@app.route("/api/packages", methods=["GET","POST","DELETE","PUT"])
 def package():
     result = {"packages":[]}
     form = dict(request.form)
@@ -111,6 +109,19 @@ def package():
         pack_to_delete = Pack.query.filter_by(id=request.form['id']).first()
         db.session.delete(pack_to_delete)
         db.session.commit()
+        return {"success":True}
+    
+    if request.method == "PUT":
+        if request.args.get("new_card"):
+            print(form)
+            pack_to_edit = Pack.query.filter_by(id=request.args.get("new_card")).first()
+            side_a = [v for k,v in form.items() if k.find("side") >= 0 and k.find("a") >= 0]
+            side_b = [v for k,v in form.items() if k.find("side") >= 0 and k.find("b") >= 0]
+            for element in zip(side_a,side_b):
+                card_id = uuid4().hex
+                new_card = Card(id=card_id,side_a=element[0],side_b=element[1],id_pack=pack_to_edit.id)
+                db.session.add(new_card)
+            db.session.commit()
         return {"success":True}
 
 @app.route("/api/cards", methods=["GET","PUT","DELETE"])
@@ -175,7 +186,7 @@ def my_packages():
         return req.get(f"http://localhost:5000/api/packages?filter_by=user&id={session.get('id')}").json()
     return render_template("my_packs.html")
 
-@app.route("/my_packages/<name>", methods=["GET","POST"])
+@app.route("/my_packages/<name>", methods=["GET","POST","PUT"])
 def get_package(name):
     if request.method == "POST":
         id_pack = Pack.query.filter_by(name=name).first().id
@@ -194,8 +205,14 @@ def get_package(name):
     if request.args.get("delete_pack"):
         req.delete(f"http://localhost:5000/api/packages", data={"id":request.args.get("delete_pack")})
         return {"succes":True}  
+    
+    if request.args.get("new_card"):
+        req.put(f"http://localhost:5000/api/packages?new_card={request.args.get('new_card')}", data=request.form)
+        return {"success":True}
 
-    return render_template("one_pack.html")
+    if auth.authorize_function():
+        return render_template("one_pack.html")
+    return redirect(url_for("login"))
 
 @app.route("/my_packages/create_new", methods=["GET","POST"])
 @auth.authorize
@@ -204,12 +221,14 @@ def new_pack():
         new_form = {k:v for k,v in request.form.items()}
         new_form["id_user"] = session.get("id")
         req.post("http://localhost:5000/api/packages", data=new_form)
+    if request.args.get("get"):
+        return req.get("http://localhost:5000/api/categories").json()
     return render_template("new_pack.html")
 
-@app.route("/games")
+@app.route("/flash_cards")
 @auth.authorize
 def games():
-    return render_template("games.html")
+    return render_template("flash_cards.html")
 
 @app.route("/test")
 def test():

@@ -1,6 +1,6 @@
 window.onload = async function() {
 
-    const res = await fetch(`http://localhost:5000/api/categories`);
+    const res = await fetch(`http://localhost:5000/my_packages/create_new?get=categories`);
     const cat_list = await res.json();
     console.log(cat_list);
 
@@ -36,12 +36,15 @@ window.onload = async function() {
     div_category.append(label_cat)
     div_category.append(input_cat)
 
+    const div_existing_categories = document.createElement("div");
+    div_existing_categories.className = "existing-categories";
+
     for (let category of cat_list["categories"]) {
         const btn_category = document.createElement("span");
         btn_category.setAttribute("type","button");
         btn_category.innerText = category["name"];
         btn_category.className = "cat-name";
-        div_category.append(btn_category);
+        div_existing_categories.append(btn_category);
 
         btn_category.style.width = "fit-content";
         btn_category.style.height = "fit-content";
@@ -51,55 +54,31 @@ window.onload = async function() {
         btn_category.onclick = function() {
             console.log(category);
             input_cat.setAttribute("value",category["name"])
-            // input_cat.value.changeAttribute = category["name"]
-
         };
     };
+
+    div_category.append(div_existing_categories);
 
     const div_cards = document.createElement("div");
     div_cards.className = "cards";
-    const sides = ["a","b"];
-    for (let side of sides) {
-        const div = document.createElement("div");
-        div.setAttribute("id",`side-${side}`);
-        const span = document.createElement("span");
-        span.innerText = `Side ${side}`;
-        count = 0;
-        div.append(span);
-        while (count < 5){
-            const input_card = document.createElement("input");
-            div.append(input_card);
-            count += 1;
-            input_card.setAttribute("name",`side_${side}_${count}`);
-            input_card.setAttribute("type","text");
-        };
-        div_cards.append(div);
-    };
-
+    let count = 1
     const btn_card = document.createElement("button");
     btn_card.setAttribute("type","button");
     btn_card.setAttribute("id","btn-more-cards");
-    btn_card.innerText = "more cards";
+    btn_card.innerText = "añadir tarjeta";
     console.log(count);
     btn_card.onclick = function() {
-        more_cards = count + 5
-
-        const side_a_div = document.querySelector('#side-a');
-        const side_b_div = document.querySelector('#side-b');
-
-        while (count < more_cards){
-            const input_card_a = document.createElement("input");
-            input_card_a.setAttribute("name",`side_a_${count+1}`);
-            input_card_a.setAttribute("type","text");
-            side_a_div.append(input_card_a);
-            const input_card_b = document.createElement("input");
-            side_b_div.append(input_card_b);
-            input_card_b.setAttribute("name",`side_b_${count+1}`);
-            input_card_b.setAttribute("type","text");
-            count += 1;
-        };
-
-        div_cards.append(side_a_div,side_b_div);
+        const single_card_div = document.createElement("div");
+        single_card_div.setAttribute("id",`card_${count}`);
+        const input_a = document.createElement("input");
+        input_a.setAttribute("placeholder","side_a");
+        input_a.setAttribute("name",`side_a_${count}`);
+        const input_b = document.createElement("input");
+        input_b.setAttribute("placeholder","side_b");
+        input_b.setAttribute("name",`side_b_${count}`);
+        single_card_div.append(input_a,input_b);
+        div_cards.append(single_card_div);
+        count += 1;
     };
 
     const btn_submit = document.createElement("button");
@@ -109,7 +88,6 @@ window.onload = async function() {
         const submit_form = new FormData();
         for (let elem of form) {
             if (elem.value) {
-                // console.log(elem.name, elem.value);
                 submit_form.append(elem.name, elem.value);
             };
         };

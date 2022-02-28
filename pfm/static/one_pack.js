@@ -34,6 +34,7 @@ window.onload = async function() {
     let number_cards = 0;
 
     div_body.append(h2,h3_a,h3_b);
+    // tarjetas
     for (let card of data.data.packages.cards) {
         const section_card = document.createElement("section");
         section_card.setAttribute("id",card.id);
@@ -55,12 +56,12 @@ window.onload = async function() {
         einput_a.setAttribute("id","side_a");
         einput_a.setAttribute("type","text");
         einput_a.setAttribute("name","side_a");
-        einput_a.setAttribute("placeholder","side_a");
+        einput_a.setAttribute("placeholder","cara a");
         //input side_b
         einput_b.setAttribute("id","side_b");
         einput_b.setAttribute("type","text");
         einput_b.setAttribute("name","side_b");
-        einput_b.setAttribute("placeholder","side_b");        
+        einput_b.setAttribute("placeholder","cara b");        
         
         //button for deleting card
         const btn_delete = document.createElement("button");
@@ -107,6 +108,33 @@ window.onload = async function() {
         div_body.append(section_card);
         number_cards += 1;
     };
+    // hidden div to add new cards
+    // const div_new_cards = document.createElement("div");
+    // div_new_cards.className = "new-card";
+    // const form_new_cards = document.createElement("form");
+    // let count_new_cards = 1
+    // const new_side_a = document.createElement("input");
+    // // new_side_a.setAttribute("id","new_side_a");
+    // new_side_a.setAttribute("placeholder","cara a");
+    // new_side_a.setAttribute("name",`side_a_${count_new_cards}`)
+    // new_side_a.className = "new-card";
+    // const new_side_b = document.createElement("input");
+    // // new_side_b.setAttribute("id","new_side_b");
+    // new_side_b.setAttribute("placeholder","cara b");
+    // new_side_b.setAttribute("name",`side_b_${count_new_cards}`)
+    // new_side_b.className = "new-card";
+    // form_new_cards.append(new_side_a,new_side_b);
+    // div_new_cards.append(form_new_cards);
+    // div_body.append(div_new_cards);
+    // div_new_cards.style.display = "none";
+    const div_new_cards = document.createElement("div");
+    div_new_cards.className = "new-card";
+    const form_new_cards = document.createElement("form");
+    div_new_cards.append(form_new_cards);
+    const btn_save_new_cards = document.createElement("button");
+    btn_save_new_cards.setAttribute("type","button");
+    btn_save_new_cards.innerText = "guardar";
+    btn_save_new_cards.style.display = "none";
 
     //footer
     const div_footer = document.createElement("section");
@@ -117,16 +145,53 @@ window.onload = async function() {
     btn_delete_pack.setAttribute("id","btn-delete-pack")
     btn_delete_pack.innerText = "eliminar paquete";
     btn_delete_pack.onclick = async function() {
-        await fetch(`http://localhost:5000/my_packages/${data.data.packages.name}?delete_pack=${data.data.packages.id}`);
-        window.location.assign("http://localhost:5000/my_packages");
+        confirmation = confirm("el paquete se eliminará de la base de datos");
+        if (confirmation) {
+            await fetch(`http://localhost:5000/my_packages/${data.data.packages.name}?delete_pack=${data.data.packages.id}`);
+            window.location.assign("http://localhost:5000/my_packages");
+            console.log("paquete eliminardo");
+        }
+        else {
+            console.log("acción cancelada");
+        };
     };
     // add new cards
     const btn_add_cards = document.createElement("button");
     btn_add_cards.setAttribute("type","button");
     btn_add_cards.setAttribute("id","btn-add-cards");
-    btn_add_cards.innerText = "añadir tarjetas nuevas";
-    
-    div_footer.append(btn_delete_pack,btn_add_cards);
+    btn_add_cards.innerText = "+";
+    let count_new_cards = 1;
+    btn_add_cards.onclick = function() {
+        console.log("button used");
+        btn_save_new_cards.style.display = "block";
+        const new_side_a = document.createElement("input");
+        new_side_a.setAttribute("placeholder","cara a");
+        new_side_a.setAttribute("name",`side_a_${count_new_cards}`)
+        new_side_a.className = "new-card";
+        const new_side_b = document.createElement("input");
+        new_side_b.setAttribute("placeholder","cara b");
+        new_side_b.setAttribute("name",`side_b_${count_new_cards}`)
+        new_side_b.className = "new-card";
+        const single_newcard_div = document.createElement("div");
+        single_newcard_div.append(new_side_a,new_side_b);
+        form_new_cards.append(single_newcard_div);
+        div_body.append(div_new_cards);
+        count_new_cards += 1;
+    };
+
+    //add function btn save new cards
+    btn_save_new_cards.onclick = async function() {
+        const form = new FormData(form_new_cards);
+        await fetch(`http://localhost:5000/my_packages/${data.data.packages.name}?new_card=${data.data.packages.id}`, {
+            method:"PUT",
+            body:form
+        });
+        window.location.reload()
+        console.log("cards added");
+    };
+
+    div_new_cards.append(btn_save_new_cards)
+    div_footer.append(btn_add_cards,btn_delete_pack);
 
     const nc_span = document.createElement("span");
     nc_span.innerText = `nº tarjetas: ${number_cards}`;

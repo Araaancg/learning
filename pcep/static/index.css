@@ -14,7 +14,7 @@ h1 {
     margin-bottom: 5px;
     width: 500px;
     height: auto;
-    border: 1px solid grey;
+    border: 1px solid rgb(78, 76, 76);
     padding: 1%;
     border-radius: 25px;
 }

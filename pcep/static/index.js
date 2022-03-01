@@ -29,12 +29,15 @@ window.onload = async function() {
             o_input.setAttribute("value",`${question.id},${option.id}`);
             o_input.setAttribute("id",`o_${count_o}`);
 
+            const option_div = document.createElement("div");
+            
             const label = document.createElement("label");
             label.setAttribute("for",`o_${count_o}`);
             label.innerText = option.option
             count_o += 1;
-            label.append(o_input)
-            div_o.append(label);
+            // label.append(o_input)
+            option_div.append(o_input,label);
+            div_o.append(option_div);
         };
         
         count_q += 1;
@@ -65,10 +68,11 @@ window.onload = async function() {
         for (question of score.data) {
             for (div of document.querySelectorAll(".question")) {
                 if (div.id == question.question && question.grade == "correct") {
-                    div.style.background = "#95d5b2" //greenish
+                    div.style.background = "#95d5b2" //green
                 }
                 else if (div.id == question.question && question.grade == "incorrect") {
-                    div.style.background = "#ee6055"; //redish
+                    div.style.background = "#ee6055"; //red
+                    // const q = document.querySelector(`#${}`)
                 };
             };
         };

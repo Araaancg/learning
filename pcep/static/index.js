@@ -72,7 +72,7 @@ window.onload = async function() {
                 }
                 else if (div.id == question.question && question.grade == "incorrect") {
                     div.style.background = "#ee6055"; //red
-                    // const q = document.querySelector(`#${}`)
+                    // const q = document.que rySelector(`#${}`)
                 };
             };
         };

@@ -224,9 +224,16 @@ def new_pack():
         return req.get("http://localhost:5000/api/categories").json()
     return render_template("new_pack.html")
 
-@app.route("/flash_cards")
+@app.route("/flash_cards", methods=["GET","POST"])
 @auth.authorize
-def games():
+def choose_pack():
+    if request.method == "POST":
+        return req.get(f"http://localhost:5000/api/packages?filter_by=user&id={session.get('id')}").json()
+    return render_template("fc_choose_pack.html")
+
+@app.route("/flash_cards/<name>")
+@auth.authorize
+def flash_cards(name):
     return render_template("flash_cards.html")
 
 @app.route("/test")

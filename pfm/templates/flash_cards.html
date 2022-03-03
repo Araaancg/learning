@@ -1,9 +1,11 @@
 {%extends "base.html"%}
 
 {%block head%}
-<title>games</title>
+<title>flash cards</title>
+<script src="{{url_for('static',filename='flash_cards.js')}}"></script>
+<link rel="stylesheet" href="{{url_for('static',filename='flash_cards.css')}}">
 {%endblock%}
 
 {%block content%}
-<h1>games</h1>
+<h1>Flash cards</h1>
 {%endblock%}

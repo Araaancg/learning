@@ -14,7 +14,7 @@ window.onload = async function() {
     //header
     const div_header = document.createElement("section");
     div_header.setAttribute("id","pack_header");
-    div_header.className = "main-parts"
+    div_header.className = "main-parts";
     const h1 = document.createElement("h1");
     h1.innerText = data["data"]["packages"].name;
     const cat_span = document.createElement("span");
@@ -108,25 +108,7 @@ window.onload = async function() {
         div_body.append(section_card);
         number_cards += 1;
     };
-    // hidden div to add new cards
-    // const div_new_cards = document.createElement("div");
-    // div_new_cards.className = "new-card";
-    // const form_new_cards = document.createElement("form");
-    // let count_new_cards = 1
-    // const new_side_a = document.createElement("input");
-    // // new_side_a.setAttribute("id","new_side_a");
-    // new_side_a.setAttribute("placeholder","cara a");
-    // new_side_a.setAttribute("name",`side_a_${count_new_cards}`)
-    // new_side_a.className = "new-card";
-    // const new_side_b = document.createElement("input");
-    // // new_side_b.setAttribute("id","new_side_b");
-    // new_side_b.setAttribute("placeholder","cara b");
-    // new_side_b.setAttribute("name",`side_b_${count_new_cards}`)
-    // new_side_b.className = "new-card";
-    // form_new_cards.append(new_side_a,new_side_b);
-    // div_new_cards.append(form_new_cards);
-    // div_body.append(div_new_cards);
-    // div_new_cards.style.display = "none";
+
     const div_new_cards = document.createElement("div");
     div_new_cards.className = "new-card";
     const form_new_cards = document.createElement("form");

@@ -1,0 +1,13 @@
+{%extends "base.html"%}
+
+{%block head%}
+<title>my packs</title>
+<script src="{{url_for('static',filename='fc_choose_pack.js')}}"></script>
+<link rel="stylesheet" href="{{url_for('static',filename='fc_choose_pack.css')}}">
+{%endblock%}
+
+{%block content%}
+<h1>Escoge un paquete</h1>
+<!-- <a href="http://localhost:5000/my_packages/create_new"><button>Create new</button></a> -->
+<main id="main"></main>
+{%endblock%}

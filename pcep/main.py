@@ -6,6 +6,8 @@ from hashlib import sha256
 import secrets
 import requests as req
 import auth
+import json
+from random import shuffle
 # from flask_cors import CORS
 
 app = Flask(__name__)
@@ -15,6 +17,27 @@ DB_URI = "test.db"
 app.config["SQLALCHEMY_DATABASE_URI"] = f"sqlite:///{DB_URI}"
 app.secret_key = secrets.token_hex()
 db.init_app(app)
+
+@app.route("/create")
+def create_qs():
+    def get_data():
+        with open("pcep.json") as file:
+            return json.load(file)
+    qs = get_data()
+    for block in list(qs.values())[1:]:
+        for question in block:
+            q_id = uuid4().hex
+            for i, option in enumerate(question["options"]):
+                o_id = uuid4().hex
+                if i == question["answer"]:
+                    a = o_id
+                option = Option(id=o_id, o=option, question_id=q_id)
+                db.session.add(option)
+                
+            question = Question(id=q_id, q=question["question"], a=a)
+            db.session.add(question)
+            # db.session.commit()
+    return "create"
 
 @app.route("/api/token", methods=["PUT", "GET"])
 def token():
@@ -48,6 +71,9 @@ def api_questions():
             op = {"id":option.id,"option":option.o}
             elem["options"].append(op)
         result["data"].append(elem)
+    shuffle(result["data"])
+    for o in result["data"]:
+        shuffle(o["options"])
     return result
 
 @app.route("/api/grades",methods=["GET","POST"])

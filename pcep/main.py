@@ -74,7 +74,7 @@ def api_questions():
     shuffle(result["data"])
     for o in result["data"]:
         shuffle(o["options"])
-    return result
+    return {"data":result["data"][:5]}
 
 @app.route("/api/grades",methods=["GET","POST"])
 def api_grades():

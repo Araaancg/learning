@@ -11,7 +11,7 @@ window.onload = async function() {
     const form = document.createElement("form");
     let count_q = 1
     let count_o = 1
-    for (question of data["data"]) {
+    for (question of data.data) {
         const div_t = document.createElement("div");
         div_t.className = "question"
         div_t.setAttribute("id", question.id);

@@ -30,8 +30,10 @@ window.onload = async function() {
             o_input.setAttribute("id",`o_${count_o}`);
 
             const option_div = document.createElement("div");
+            option_div.className = "single-option"
             
             const label = document.createElement("label");
+            option_div.setAttribute("id",`${option.id}`);
             label.setAttribute("for",`o_${count_o}`);
             label.innerText = option.option
             count_o += 1;
@@ -59,11 +61,14 @@ window.onload = async function() {
 
     btn_submit.onclick = async function() {
         const submit_form = new FormData(form);
+        submit_form.append("date",data.date);
+        console.log("submiting")
         const res = await fetch(`http://localhost:5000/score`, {
             method: "POST",
             body: submit_form
         });
         const score = await res.json();
+        console.log(score);
 
         for (question of score.data) {
             for (div of document.querySelectorAll(".question")) {
@@ -72,10 +77,16 @@ window.onload = async function() {
                 }
                 else if (div.id == question.question && question.grade == "incorrect") {
                     div.style.background = "#ee6055"; //red
-                    // const q = document.que rySelector(`#${}`)
+                };
+            };
+            for (label of document.querySelectorAll(".single-option")) {
+                if (label.id == question.a) {
+                    label.style.background = "#e9c46a";
                 };
             };
         };
+        
+        
 
         score_span.innerText = `score: ${score.final_score}`;
         div_score.style.display = "block";

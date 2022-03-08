@@ -1,6 +1,7 @@
 from mimetypes import init
+from xxlimited import new
 from flask import Flask,request,session,render_template,redirect,url_for
-from models import db, User, Question, Option
+from models import db, User, Question, Option, Test, Test_question
 from uuid import uuid4
 from hashlib import sha256
 import secrets
@@ -8,10 +9,9 @@ import requests as req
 import auth
 import json
 from random import shuffle
-# from flask_cors import CORS
+import datetime as dt
 
 app = Flask(__name__)
-# CORS(app)
 
 DB_URI = "test.db"
 app.config["SQLALCHEMY_DATABASE_URI"] = f"sqlite:///{DB_URI}"
@@ -60,7 +60,7 @@ def token():
             return {"success": True}
     return {"success": False}
 
-@app.route("/api/questions", methods=["GET"])
+@app.route("/api/questions", methods=["GET","POST"])
 def api_questions():
     result = {"data":[]}
     for question in Question.query.all():
@@ -74,7 +74,19 @@ def api_questions():
     shuffle(result["data"])
     for o in result["data"]:
         shuffle(o["options"])
-    return {"data":result["data"][:5]}
+    
+    # SAVING TEST
+    id_new_test = uuid4().hex
+    date_new_test = dt.datetime.isoformat(dt.datetime.today())
+    new_test = Test(id=id_new_test,user_id=request.args.get("user"),date=date_new_test)
+    print(new_test.date)
+    db.session.add(new_test)
+    for item in result["data"][:5]:
+        new_test_question = Test_question(id=uuid4().hex,test_id=id_new_test,question_id=item['id'])
+        db.session.add(new_test_question)
+    db.session.commit()
+
+    return {"data":result["data"][:5],"date":new_test.date}
 
 @app.route("/api/grades",methods=["GET","POST"])
 def api_grades():
@@ -94,6 +106,38 @@ def api_grades():
             return {"grades":grades}
         return {"grades":None}
     return "working"
+
+@app.route("/api/tests")
+def api_tests():
+    if request.args.get("user"):
+        result = {"tests":[]}
+        for test in Test.query.filter_by(user_id=request.args.get("user")):
+            t = {"date":test.date,"grade":test.grade}
+            result["tests"].append(t)
+        return result
+    
+    if request.args.get("date"):
+        test =  Test.query.filter_by(date=request.args.get("date")).first()
+        t = {"date":test.date,"grade":test.grade,"test":[]}
+        for question in Test_question.query.filter_by(test_id=test.id):
+            quest = Question.query.filter_by(id=question.question_id).first()
+            little = {
+                "question_id":question.question_id,
+                "question":quest.q,
+                "options":[{"id":option.id,"option":option.o} for option in quest.options],
+                "veredict":"incorrect",
+                "user_choice":question.user_choice,
+                "a":quest.a
+            }
+            if question.user_choice == quest.a:
+                little["veredict"] = "correct"
+            t["test"].append(little)
+    
+
+
+        return {"test":t}
+        return {"success":True}
+
 
 
 ################# MAIN #################
@@ -132,8 +176,18 @@ def home():
 @auth.authorize
 def test():
     if request.method == "POST":
-        return req.get("http://localhost:5000/api/questions").json()
+        return req.get(f"http://localhost:5000/api/questions?user={session['id']}").json()
+    
+    if request.args.get("get_all"):
+        return req.get(f"http://localhost:5000/api/tests?user={session['id']}").json()
+
     return render_template("index.html")
+
+@app.route("/test/<date>")
+def get_by_date(date):
+    if request.args.get("get_test"):
+        return req.get(f"http://localhost:5000/api/tests?date={date}").json()
+    return render_template("one_test.html")
 
 @app.route("/score", methods=["GET","POST"])
 def score():
@@ -144,60 +198,43 @@ def score():
         form = request.form
         for k,v in dict(form).items():
             score_result = {}
+            if k != "date":
+                id_q = v.split(",")[0]
+                id_a = v.split(",")[1]
 
-            id_q = v.split(",")[0]
-            id_a = v.split(",")[1]
+                score_result["question"] = id_q
+                score_result["grade"] = "incorrect"
 
-            score_result["question"] = id_q
-            score_result["grade"] = "incorrect"
+                question = Question.query.filter_by(id=id_q).first()
 
-            question = Question.query.filter_by(id=id_q).first()
+                if question.a == id_a:
+                    score_result["grade"] = "correct"
+                    score += 1
+                n_questions += 1
 
-            if question.a == id_a:
-                score_result["grade"] = "correct"
-                score += 1
-            n_questions += 1
+                score_result["a"] = question.a
+                result["data"].append(score_result)
 
-            score_result["a"] = question.a
-            result["data"].append(score_result)
-
-        final_score = f"{score}/{n_questions}"
-        result["final_score"] = final_score
-        req.post("http://localhost:5000/api/grades", data={"id_user":session['id'],"grade":final_score})
+            final_score = f"{score}/{n_questions}"
+            result["final_score"] = final_score
+            result["user_id"] = session['id']
+            req.post("http://localhost:5000/api/grades", data={"id_user":session['id'],"grade":score})
         
-    print(result)
+        # UPDATE TEST WITH GRADE ADN USER_CHOICE
+        print(result)
+        print(request.form)
+        print(request.form['date'])
+        update_test = Test.query.filter_by(date=request.form['date']).first()
+        update_test.grade = score
+
+        for question in Test_question.query.filter_by(test_id=update_test.id):
+            print(question.question_id)
+            for k,v in dict(form).items():
+                if k != "date":
+                    if v.split(',')[0] == question.question_id:
+                        question.user_choice = v.split(',')[1]
+        db.session.commit()
     return result
 
 if __name__ == "__main__":
     app.run(debug=True)
-
-
-
-
-
-
-
-
-'''
-count_q = 1
-    count_o = 1
-    while count_q <= 5:
-        id_q = uuid4().hex
-        question = Question(id=id_q, q=f"question_{count_q}")
-        option_1 = Option(id=uuid4().hex, o=f"option_{count_o}", question_id=id_q)
-        count_o += 1
-        option_2 = Option(id=uuid4().hex, o=f"option_{count_o}", question_id=id_q)
-        count_o += 1
-        option_3 = Option(id=uuid4().hex, o=f"option_{count_o}", question_id=id_q)
-        count_o += 1
-        option_4 = Option(id=uuid4().hex, o=f"option_{count_o}", question_id=id_q)
-        count_o += 1
-        question.a = option_1.id
-        db.session.add(question)
-        db.session.add(option_1)
-        db.session.add(option_2)
-        db.session.add(option_3)
-        db.session.add(option_4)
-        count_q += 1
-    db.session.commit()
-'''

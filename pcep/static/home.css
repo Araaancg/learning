@@ -1,31 +1,70 @@
-h1 {
+h1,h2 {
     text-align: center;
 }
 
 #main {
     display: flex;
+    /* border: 1px solid green; */
+    height: calc(100% - 110px);
+}
+
+html, body {
+    height: 100%;
+    margin: 20px;
+}
+
+.main-divs {
+    /* border: 1px solid black; */
+    flex-direction: row;
+    width: 50%;
+}
+
+#left-div {
+    display: flex;
     flex-direction: column;
+    justify-content: space-around;
     align-items: center;
 }
 
-.action {
-    margin-top: 1em;
-    margin-bottom: 1em;
-}
-
-.action > button {
-    padding: 3px;
-}
-
-.grades-list {
-    margin-top: 2em;
-}
-
-.grades-list > span {
+#left-div > button {
     display: block;
-    text-align: center;
+    width: 20%;
+    padding: 3px;
+    border-style: 0.5px solid #495057;
+    transition: 0.25s;
 }
 
-ul {
-    list-style: none;
+#left-div > button:hover {
+    transform: translateY(-0.25em);
+    box-shadow: 0 0.5em 0.5em -0.4em #575655;
+}
+
+#graph-div {
+    width: 100%;
+}
+
+#graph-div {
+    border: 1px solid grey;
+    border-radius: 5px;
+    height: 60%;
+}
+
+table {
+    border-collapse: collapse;
+    margin: auto;
+    width: 75%;
+}
+
+th,tr,td {
+    text-align: center;
+    width: 50%;
+    padding: 5px;
+}
+
+a {
+    color: black;
+}
+
+.dates:hover {
+    text-decoration: underline;
 }

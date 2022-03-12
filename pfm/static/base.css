@@ -1,0 +1,19 @@
+.nav-item {
+    margin-left: 1em;
+    margin-right: 1em;
+    /* border: 1px solid #404e5c; */
+    /* background-color: #f5f9e9; */
+    border-radius: 7%;
+}
+
+.nav-item:hover {
+    text-decoration: underline #f5f9e9;
+}
+
+.x_nav-color  {
+    background-color: #404e5c;
+}
+
+body {
+    background-color: #4f6272;
+}

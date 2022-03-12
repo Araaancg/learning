@@ -32,12 +32,3 @@ def authorize(f):
                 return f(*args, **kwargs)
         return redirect(url_for("login"))
     return i
-
-# def authorize_function():
-#     cookie_id = session.get("id")
-#     cookie_token = session.get("token")
-#     if cookie_id and cookie_token:
-#         api_res = req.get(f"http://localhost:5000/api/token?token={cookie_token}&id={cookie_id}").json()
-#         if api_res["success"]:
-#             return True
-#     return False

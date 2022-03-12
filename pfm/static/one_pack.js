@@ -5,7 +5,6 @@ window.onload = async function() {
     const res = await fetch(`http://localhost:5000/my_packages/${pack_name}`, {
         method:"POST"
     });
-    // console.log(res)
     const data = await res.json();
     console.log(data)
 
@@ -18,18 +17,18 @@ window.onload = async function() {
     const h1 = document.createElement("h1");
     h1.innerText = data["data"]["packages"].name;
     const cat_span = document.createElement("span");
-    cat_span.innerText = `categoria: ${data.data.packages.category.name}`;
+    cat_span.innerText = `Categoría: ${data.data.packages.category.name}`;
 
     //body
     const div_body = document.createElement("section");
     div_body.setAttribute("id","pack_body");
     div_body.className = "main-parts"
     const h2 = document.createElement("h2");
-    h2.innerText = "CARDS";
+    h2.innerText = "Tarjetas";
     const h3_a = document.createElement("h3");
-    h3_a.innerText = "Side A";
+    h3_a.innerText = "Cara A";
     const h3_b = document.createElement("h3");
-    h3_b.innerText = "Side B";
+    h3_b.innerText = "Cara B";
 
     let number_cards = 0;
 
@@ -38,12 +37,25 @@ window.onload = async function() {
     for (let card of data.data.packages.cards) {
         const section_card = document.createElement("section");
         section_card.setAttribute("id",card.id);
-        section_card.className = "cards"
-        const span_a = document.createElement("span");
-        span_a.innerText = card.side_a;
-        const span_b = document.createElement("span");
-        span_b.innerText = card.side_b;
-        section_card.append(span_a,span_b);
+        section_card.className = "cards";
+        // const span_a = document.createElement("span");
+        // span_a.innerText = card.side_a;
+        // const span_b = document.createElement("span");
+        // span_b.innerText = card.side_b;
+        // section_card.append(span_a,span_b);
+        const s_cards_left = document.createElement("div");
+        const card_a = document.createElement("div");
+        const card_b = document.createElement("div");
+        card_a.className = "left card_a";
+        card_b.className = "left card_b";
+        s_cards_left.className = "cards left";
+        const content_a = document.createElement("p");
+        content_a.innerText = card.side_a;
+        const content_b = document.createElement("p");
+        content_b.innerText = card.side_b;
+        card_a.append(content_a);
+        card_b.append(content_b);
+        s_cards_left.append(card_a,card_b);
 
         //hid div to edit
         const edit_div = document.createElement("div");
@@ -65,7 +77,7 @@ window.onload = async function() {
         
         //button for deleting card
         const btn_delete = document.createElement("button");
-        btn_delete.innerText = "delete";
+        btn_delete.innerText = "x";
         btn_delete.className = "btn-delete-card";
         btn_delete.setAttribute("type","button");
         const delete_form = new FormData();
@@ -103,8 +115,11 @@ window.onload = async function() {
             });
             window.location.reload();
         };
-        
-        section_card.append(span_a,span_b,btn_edit,btn_delete,edit_div);
+        const s_cards_right = document.createElement("div");
+        s_cards_right.className = "cards right";
+        s_cards_right.append(btn_edit,btn_delete);
+        s_cards_left.append(edit_div);
+        section_card.append(s_cards_left,s_cards_right);
         div_body.append(section_card);
         number_cards += 1;
     };
@@ -175,8 +190,10 @@ window.onload = async function() {
     div_new_cards.append(btn_save_new_cards)
     div_footer.append(btn_add_cards,btn_delete_pack);
 
+    const hr = document.createElement("hr");
+
     const nc_span = document.createElement("span");
-    nc_span.innerText = `nº tarjetas: ${number_cards}`;
+    nc_span.innerText = `Nº tarjetas: ${number_cards}`;
     div_header.append(h1,cat_span,nc_span);
-    main.append(div_header,div_body,div_footer);
+    main.append(div_header,hr,div_body,div_footer);
 };

@@ -1,3 +1,4 @@
+from pickle import NONE
 from flask import Flask,request,session,render_template,make_response,redirect, url_for
 from uuid import uuid4
 from hashlib import sha256
@@ -40,18 +41,27 @@ def token():
 @app.route("/api/categories", methods=["GET","POST"])
 def category():
     if request.method == "POST":
-        cat_id = str(uuid4())
-        category = Category(id=cat_id,name=request.args.get("post"))
+        cat_id = uuid4().hex
+        category = Category(id=cat_id,name=request.args.get("post"),id_user=request.args.get("id_user"))
         db.session.add(category)
         db.session.commit()
-        return {"id":cat_id,"name":request.args.get("name")}
+        return {"id":cat_id,"name":request.args.get("post"),"id_user":category.id_user}
 
     if request.method == "GET":
         if request.args.get("get"):
             category = Category.query.filter_by(name=request.args.get("get")).first()
-            return {"id":category.id,"name":category.name} 
-
+            print(category)
+            if category:
+                return {"id":category.id,"name":category.name} 
+            return None
+        
         result = {"categories":[]}
+        
+        if request.args.get("id_user"):
+            for cat in Category.query.filter_by(id_user=request.args.get("id_user")):
+                category = {"id":cat.id,"name":cat.name,"id_user":cat.id_user}
+                result["categories"].append(category)
+            return result
 
         for cat in Category.query.filter_by():
             category = {"id":cat.id,"name":cat.name}
@@ -64,12 +74,14 @@ def package():
     form = dict(request.form)
     if request.method == "POST":
         #CATEGORIA
-        category = req.get(f"http://localhost:5000/api/categories?get={form['category']}").json() #comprobamos si existe la categoria
-        if not category: #si no existe la creamos
-            category = req.post(f"http://localhost:5000/api/categories?post={form['category']}").json()
+        category = req.get(f"http://localhost:5000/api/categories?get={form['category']}") #comprobamos si existe la categoria
+        # if category.get("success"): #si no existe la creamos
+        if not category:
+            category = req.post(f"http://localhost:5000/api/categories?post={form['category']}&id_user={form['id_user']}")
+        category = category.json()
         #PAQUETE
         pack_id = uuid4().hex
-        new_pack = Pack(id=pack_id,name=form["pack_name"],id_category=category["id"],id_user=form["id_user"])
+        new_pack = Pack(id=pack_id,name=form["pack_name"],id_category=category["id"],id_user=form["id_user"],status="private")
         db.session.add(new_pack)
         #TARJETAS
         side_a = [v for k,v in form.items() if k.find("side") >= 0 and k.find("a") >= 0]
@@ -174,17 +186,21 @@ def registration():
 def login():
     return render_template("login.html")
 
+@app.route("/welcome")
+def welcome():
+    return render_template("welcome.html")
+
 @app.route("/home")
 @auth.authorize
 def home():
-    return render_template("home.html")
+    return render_template("home.html", user_name=User.query.filter_by(id=session['id']).first().name)
 
 @app.route("/my_packages", methods=["GET","POST"])
 @auth.authorize
 def my_packages():
     if request.method == "POST":
         return req.get(f"http://localhost:5000/api/packages?filter_by=user&id={session.get('id')}").json()
-    return render_template("my_packs.html")
+    return render_template("my_packs.html", user_name=User.query.filter_by(id=session['id']).first().name)
 
 @app.route("/my_packages/<name>", methods=["GET","POST","PUT"])
 @auth.authorize
@@ -221,24 +237,32 @@ def new_pack():
         new_form["id_user"] = session.get("id")
         req.post("http://localhost:5000/api/packages", data=new_form)
     if request.args.get("get"):
-        return req.get("http://localhost:5000/api/categories").json()
-    return render_template("new_pack.html")
+        result = {"categories":[
+            {"public":[]},
+            {"private":[]}
+        ]}
+        public = req.get("http://localhost:5000/api/categories?id_user=public").json()
+        private = req.get(f"http://localhost:5000/api/categories?id_user={session['id']}").json()
+        result["categories"][0]["public"] = [{k:v for k,v in dicc.items()} for dicc in public["categories"]]
+        result["categories"][1]["private"] = [{k:v for k,v in dicc.items()} for dicc in private["categories"]]
+        return result
+    return render_template("new_pack.html", user_name=User.query.filter_by(id=session['id']).first().name)
 
 @app.route("/flash_cards", methods=["GET","POST"])
 @auth.authorize
 def choose_pack():
     if request.method == "POST":
         return req.get(f"http://localhost:5000/api/packages?filter_by=user&id={session.get('id')}").json()
-    return render_template("fc_choose_pack.html")
+    return render_template("fc_choose_pack.html", user_name=User.query.filter_by(id=session['id']).first().name)
 
 @app.route("/flash_cards/<name>")
 @auth.authorize
 def flash_cards(name):
-    return render_template("flash_cards.html")
+    return render_template("flash_cards.html", user_name=User.query.filter_by(id=session['id']).first().name)
 
 @app.route("/test")
 def test():
-    return render_template("test.html")
+    return render_template("test.html", user_name=User.query.filter_by(id=session['id']).first().name)
 
 
 if __name__ == "__main__":

@@ -1,44 +1,135 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:400,700,900,300);
+
+body {
+    color: #f5f9e9;
+}
+
+hr {
+    width: 75%;
+    margin: 1em auto 1em;
+    color: #f5f9e9;
+}
+
 .main-parts {
-    /* border: 1px solid #000; */
     text-align: center;
-    /* margin: fit-content; */
+}
+
+h3 {
+    display: none;
 }
 
 h1,h2 {
     text-align: center;
 }
 
-h3 {
-    display: inline;
-    margin: 0;
-    margin-left: 9px;
-}
+/* TARJETAS TABLA */
 
 .cards {
-    border: 1px solid #000;
-    width: 75%;
     margin: auto;
-    margin-top: 8px;
-    margin-bottom: 8px;
-    border-radius: 10px;
-    padding-top: 1%;
-    padding-bottom: 1%;
+    width: 60%;
+    border-bottom: 0.2em solid #404e5c;
+    display: flex;
+    flex-direction: row;
 }
 
-.cards > span {
-    margin-left: .5em;
-    margin-right: .5em;
-    font-size: 120%;
+
+/* left */
+.left {
+    border: 1px solid khaki;
+    width: 70%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 1%;
+    border: none;
 }
 
-#pack_header > span {
-    margin: 2px;
-    border: 1px solid #000;
-    padding: 1px;
+.left > div {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.left > div > p {
+    margin: 0.5em 0 0.5em;
+    padding: 0 10% 0;
+}
+
+.card_a {
+    justify-content: flex-end;
+}
+
+.card_b {
+    justify-content: flex-start;
+}
+
+.edit-div {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-grow: 2;
+    padding: 2% 0 2%;
+}
+
+.edit-div > form > input {
+    text-align: center;
+    background-color: #f5f9e9;
+    border: 1px solid #404e5c;
+    transform: scale(1);
+    margin-bottom: 1%;
+}
+
+.edit-div > form > button {
+    background-color: transparent;
+    border: 0.15em solid #f5f9e9;
+    color: #f5f9e9;
+}
+
+.edit-div > form > button:hover {
+    background-color: #404e5c;
+}
+
+
+/* right  */
+.right {
+    border-bottom: none;
+    width: 30%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.btn-edit-card {
+    color: #f5f9e9;
+    font-size: 80%;
+    border: none;
+    background-color: transparent;
+}
+
+.btn-edit-card:hover {
+    text-decoration: underline #f5f9e9;
 }
 
 .btn-delete-card {
-    background-color: #e63946;
+    font-family: "Roboto", sans-serif;
+    transform: scale(1.25);
+    background-color: transparent;
+    border: none;
+    color: #f5f9e9;
+    
+}
+
+.btn-delete-card:hover {
+    color: #db222a;
+
+}
+/* end  */
+
+#pack_header > span {
+    margin: 0 1em 0;
+    padding: 1px;
 }
 
 #btn-delete-pack {
@@ -49,7 +140,6 @@ h3 {
 #pack_footer {
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
 }
 
 #pack_footer > button {

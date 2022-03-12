@@ -1,0 +1,42 @@
+body {
+    color: #f5f9e9;
+    background-color: #4f6272;
+}
+
+h1 {
+    text-align: center;
+    margin: 1em 0 1em;
+}
+
+form {
+    border: 00.2em solid #404e5c;
+    width: fit-content;
+    margin: auto;
+    padding: 0.5em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input > input {
+    margin: 0.5em;
+    border: 2px solid #404e5c;
+    background-color: #f5f9e9;
+    text-align: center;
+}
+
+.btn-submit > button {
+    background-color: transparent;
+    border: 0.15em solid #f5f9e9;
+    color: #f5f9e9;
+}
+
+.btn-submit >  button:hover {
+    box-shadow: 0 0.5em 0.5em -0.4em #f5f9e9;
+}

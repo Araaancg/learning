@@ -25,8 +25,8 @@ window.onload = async function() {
         span_cat.innerText = `Categoria: ${pack.category.name}`
 
         const btn_cards = document.createElement("button");
-        btn_cards.innerText = "+";
-        sub_div.append(a,span_cat);
+        btn_cards.innerText = "tarjetas";
+        sub_div.append(a);
 
         const table = document.createElement("table");
         const thead = document.createElement("thead");
@@ -50,7 +50,12 @@ window.onload = async function() {
             tbody.append(tr);
             number_cards += 1
         };
-        sub_div.append(document.createElement("span").innerText = `Nº tarjetas: ${number_cards}`,btn_cards)
+        const number_span = document.createElement("span");
+        number_span.innerText = `Nº tarjetas: ${number_cards}`;
+        const info_pack = document.createElement("div");
+        info_pack.className = "info-pack";
+        info_pack.append(number_span,span_cat);
+        sub_div.append(info_pack,btn_cards);
         table.append(thead,tbody);
         sub_div.append(table);
         table.style.display = "none";

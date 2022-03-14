@@ -121,3 +121,23 @@ h3 {
     transform: scale(0.8);
 }
 
+.switch-side {
+    background-color: transparent;
+    border: 0.15em solid #f5f9e9;
+    color: #f5f9e9;
+}
+
+
+.switch-side:hover {
+    background-color: #404e5c;
+}
+
+.button-clicked, .button-clicked:hover {
+    background-color: #f5f9e9;
+    color: #404e5c;
+}
+
+#btn-start:hover {
+    color: green;
+}
+

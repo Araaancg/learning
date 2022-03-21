@@ -1,13 +1,9 @@
 .nav-item {
-    margin-left: 1em;
-    margin-right: 1em;
-    /* border: 1px solid #404e5c; */
-    /* background-color: #f5f9e9; */
-    border-radius: 7%;
+    margin: 0 1em 0;
 }
 
-.nav-item:hover {
-    text-decoration: underline #f5f9e9;
+.nav-item:active {
+    border: 0.15em solid #f5f9e9;
 }
 
 .x_nav-color  {
@@ -16,4 +12,25 @@
 
 body {
     background-color: #4f6272;
+}
+
+.dropdown-item:hover {
+    color: #404e5c;
+}
+
+@media screen and (min-width: 768px) {
+    .nav-item:active {
+        text-decoration: underline #f5f9e9;
+        border: none;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .nav-item:hover {
+        text-decoration: underline #f5f9e9;
+    }
+
+    .nav-item:active {
+        border: none
+    }
 }

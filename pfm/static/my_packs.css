@@ -7,13 +7,14 @@ h1 {
 
 #main {
     display: flex;
-    flex-direction: row;
+    flex-direction: column-reverse;
 }
 
 .aside {
-    width: 25%;
-    border-right: 1px solid #f5f9e9;
-    margin-top: 3em;
+    width: 100%;
+    /* border-right: 1px solid #f5f9e9; */
+    /* margin-top: 3em; */
+    margin: 1em 0 0.2em;
 }
 
 .section {
@@ -26,6 +27,7 @@ h1 {
 
 .section > p {
     color: #f5f9e9;
+    text-align: center;
 }
 
 #btn-create-new {
@@ -45,7 +47,7 @@ h2 {
 }
 
 .packages {
-    width: 75%;
+    width: 100%;
     display: flex;
     flex-direction: column;
 }
@@ -119,4 +121,34 @@ td, th {
 
 th {
     background-color: #404e5c;
+}
+
+@media  screen and (min-width:768px) {
+    #main {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .aside {
+        width: 25%;
+        margin-top: 2em;
+        border-right: 0.05em solid #f5f9e9;
+    }
+
+    .section {
+        width: 100%;
+        border: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .section > p {
+        text-align: center;
+    }
+
+    .packages {
+        width: 75%;
+    }
+    
 }

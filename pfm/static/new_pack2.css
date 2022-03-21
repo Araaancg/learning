@@ -7,39 +7,30 @@ html, body {
     height: 100%;
 }
 
-/* #main {
-    height: calc(100% - 120px);
-    margin-top: 1em;
-} */
-
 #main {
-    /* height: calc(100% - 120px); */
+    height: calc(100% - 120px);
     margin-top: 1em;
 }
 
 form {
-    height: auto;
+    height: 80%;
     display: flex;
-    flex-direction: column;
-    /* align-items: center; */
+    flex-direction: row;
+    justify-content: center;
 }
 
 /* LEFT SECTION */
 
 #left-section {
-    height: 100%;
-    width: fit-content;
-    margin: auto;
-    border-bottom: 0.1em solid #f5f9e9;
+    border-right: 1px solid #f5f9e9;
+    width: 35%;
     display: flex;
     flex-direction: column;
     align-items: center;
     color: #f5f9e9;
-    margin-bottom: 1em;
 }
 
 #left-section > div {
-    margin-bottom: 0.5em;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -108,12 +99,11 @@ hr {
 
 .btn-clicked:hover {
     background-color: #f5f9e9;
-} 
+}
 
 /* RIGHT SECTION */
-
 #right-section {
-    width: 100%;
+    width: 45%;
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -148,6 +138,7 @@ hr {
 /* BTN SUBMIT */
 #down-section {
     height: 20%;
+    /* border: 1px solid magenta; */
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -163,106 +154,6 @@ hr {
 }
 
 #down-section > button:hover {
+    /* transform: translateY(-0.25em); */
     box-shadow: 0 0.5em 0.5em -0.4em #f5f9e9;
 }
-
-@media screen and (min-width: 768px) {
-    #main {
-        height: calc(100% - 120px);
-        margin-top: 1em;
-        /* margin: 0 1em 0; */
-    }
-
-    form {
-        height: fit-content;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-    }
-
-    #left-section {
-        border-right: 1px solid #f5f9e9;
-        width: 35%;
-        margin: 0;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        color: #f5f9e9;
-        border-bottom: none;
-        padding: 0.5em;
-    }
-
-    #name-input {
-        height: 10%;
-    }
-    
-    #category-input {
-        height: 20%;
-    }
-    
-    #status-input {
-        height: 10%;
-    }
-}
-
-@media screen and (min-width: 1000px) {
-    #main {
-        height: calc(100% - 120px);
-        margin-top: none;
-        margin: none;
-    }
-
-    form {
-        height: 80%;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-    }
-
-    .cards {
-        overflow: auto;
-    }
-
-    #left-section {
-        border-right: 1px solid #f5f9e9;
-        width: 35%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        color: #f5f9e9;
-        border-bottom: none;
-        padding: none;
-    }
-
-    #name-input {
-        height: 25%;
-    }
-    
-    #category-input {
-        height: 50%;
-    }
-    
-    #status-input {
-        height: 25%;
-    }
-
-    #right-section {
-        width: 45%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .cards {
-        width: 100%;
-       overflow: auto;
-    }
-}
-
-
-
-
-
-
-
-

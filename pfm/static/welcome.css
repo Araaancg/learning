@@ -2,18 +2,19 @@ body {
     background-color: #4f6272;
 }
 
-.nav-item {
-    margin-left: 1em;
-    margin-right: 1em;
-    border: 1px solid #f5f9e9;
-    /* background-color: #f5f9e9; */
-    border-radius: 7%;
-    transition: 0.25s;
-}
-
 .x_nav-color  {
     background-color: #404e5c;
 }
+
+.nav-item {
+    margin-left: 1em;
+    margin-right: 1em;
+    /* border: 1px solid #f5f9e9; */
+    /* background-color: #f5f9e9; */
+    /* border-radius: 7%; */
+    /* transition: 0.25s; */
+}
+
 
 #login {
     margin-right: 2em;
@@ -23,3 +24,15 @@ body {
     box-shadow: 0 0.5em 0.5em -0.4em #f5f9e9;
 }
 
+@media screen and (min-width: 768px) {
+    .nav-item {
+        margin-left: 1em;
+        margin-right: 1em;
+        border: 1px solid #f5f9e9;
+        border-radius: 7%;  
+    }
+
+    .nav-item:active {
+        box-shadow: 0 0.5em 0.5em -0.4em #f5f9e9;
+    }
+}

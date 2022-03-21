@@ -6,9 +6,9 @@ import secrets
 from hashlib import sha256
 from functools import wraps
 
-def authenticate(f):
+def authenticate(f): #login
         @wraps(f)
-        def i():
+        def i(*args, **kwargs):
             email = request.form.get("email")
             pwd = request.form.get("pwd")
             
@@ -18,7 +18,8 @@ def authenticate(f):
                     session["token"] = api_res["token"]
                     session["id"] = api_res["id"]
                     return redirect(url_for("home"))
-            return f()
+                return f(msg=api_res["msg"])
+            return f(msg=False)
         return i
     
 def authorize(f):

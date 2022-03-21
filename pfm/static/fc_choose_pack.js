@@ -34,8 +34,8 @@ window.onload = async function() {
 
         const th_a = document.createElement("th");
         const th_b = document.createElement("th");
-        th_a.innerText = "Side A";
-        th_b.innerText = "Side B";
+        th_a.innerText = "Cara A";
+        th_b.innerText = "Cara B";
         thead.append(th_a,th_b)
         
         let number_cards = 0;

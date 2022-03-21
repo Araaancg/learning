@@ -156,7 +156,7 @@ window.onload = async function() {
     const btn_add_cards = document.createElement("button");
     btn_add_cards.setAttribute("type","button");
     btn_add_cards.setAttribute("id","btn-add-cards");
-    btn_add_cards.innerText = "+";
+    btn_add_cards.innerText = "añadir tarjetas";
     let count_new_cards = 1;
     btn_add_cards.onclick = function() {
         console.log("button used");
@@ -170,8 +170,10 @@ window.onload = async function() {
         new_side_b.setAttribute("name",`side_b_${count_new_cards}`)
         new_side_b.className = "new-card";
         const single_newcard_div = document.createElement("div");
+        single_newcard_div.className = "single-newcard-div"
         single_newcard_div.append(new_side_a,new_side_b);
         form_new_cards.append(single_newcard_div);
+        // form_new_cards.append(new_side_a,new_side_b);
         div_body.append(div_new_cards);
         count_new_cards += 1;
     };

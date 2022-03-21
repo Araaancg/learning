@@ -106,10 +106,10 @@ window.onload = async function() {
         const single_card_div = document.createElement("div");
         single_card_div.setAttribute("id",`card_${count}`);
         const input_a = document.createElement("input");
-        input_a.setAttribute("placeholder","side_a");
+        input_a.setAttribute("placeholder","cara a");
         input_a.setAttribute("name",`side_a_${count}`);
         const input_b = document.createElement("input");
-        input_b.setAttribute("placeholder","side_b");
+        input_b.setAttribute("placeholder","cara b");
         input_b.setAttribute("name",`side_b_${count}`);
         single_card_div.append(input_a,input_b);
         div_cards.append(single_card_div);

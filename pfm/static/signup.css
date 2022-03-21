@@ -40,3 +40,8 @@ form {
 .btn-submit >  button:hover {
     box-shadow: 0 0.5em 0.5em -0.4em #f5f9e9;
 }
+
+.msg {
+    margin: 0 0 1em;
+    color: #b3bfb8;
+}

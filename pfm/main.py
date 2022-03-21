@@ -1,4 +1,3 @@
-from pickle import NONE
 from flask import Flask,request,session,render_template,make_response,redirect, url_for
 from uuid import uuid4
 from hashlib import sha256
@@ -24,16 +23,24 @@ def token():
         pwd = request.form.get("pwd")
         token = request.form.get("token")
         user = User.query.filter_by(email=email).first()
-        user.token = token
-        db.session.commit()
-        if user.pwd == pwd:
-            return {"success": True, "id": user.id, "token": user.token}
-        return {"success": False, "msg": "User not found!"}
+        if user:
+            user.token = token
+            db.session.commit()
+            if user.pwd == pwd:
+                return {"success": True, "id": user.id, "token": user.token}
+            return {"success":False, "msg": "Incorrect password"}
+        return {"success": False, "msg": "User not found"}
 
     elif request.method == "GET":
         cookie_id = request.args.get("id")
         cookie_token = request.args.get("token")
         user = User.query.filter_by(id=cookie_id).first()    
+
+        if request.args.get("logout"):
+            user.token = None
+            db.session.commit()
+            return {"success":True}
+
         if user.token == cookie_token:
             return {"success": True}
     return {"success": False}
@@ -81,7 +88,7 @@ def package():
         category = category.json()
         #PAQUETE
         pack_id = uuid4().hex
-        new_pack = Pack(id=pack_id,name=form["pack_name"],id_category=category["id"],id_user=form["id_user"],status="private")
+        new_pack = Pack(id=pack_id,name=form["pack_name"],id_category=category["id"],id_user=form["id_user"],status=form["status"])
         db.session.add(new_pack)
         #TARJETAS
         side_a = [v for k,v in form.items() if k.find("side") >= 0 and k.find("a") >= 0]
@@ -163,28 +170,40 @@ def cards():
 
 @app.route("/signup", methods=["GET","POST"])
 def registration():
+    msg = {"msg": None, "error": None}
     if request.method == "POST":
         name = request.form.get("name")
         email = request.form.get("email")
         pwd = sha256(request.form.get("pwd").encode()).hexdigest()
+        pwd2 = sha256(request.form.get("pwd2").encode()).hexdigest()
+        print(dict(request.form))
 
-        if email and pwd:
+        name_not_exist = False if User.query.filter_by(name=name).first() else True
+        email_not_exist = False if User.query.filter_by(email=email).first() else True
+        same_pwd = True if pwd == pwd2 else False
+
+        print(name_not_exist,email_not_exist,same_pwd)
+
+        if name_not_exist and email_not_exist and same_pwd:
             id_u = str(uuid4())
-            # print(id_u)
             token = secrets.token_hex(16)
             new_user = User(id=id_u,name=name, email=email, pwd=pwd, token=token)
             db.session.add(new_user)
             db.session.commit()
             return redirect(url_for("login"), code=307)
         else:
-            return {"success":False}
-    return render_template("signup.html")
+            msg = {"msg":f"el usuario '{name}' ya existe","error":1} if not name_not_exist else {"msg":f"el email '{email}' ya está en uso","error":2}
+            if not same_pwd:
+                msg = {"msg":"las contraseñas tienen que ser iguales","error":3}
+            pass
+    return render_template("signup.html", msg=msg)
 
 
 @app.route("/login", methods=["GET","POST"])
 @auth.authenticate
-def login():
-    return render_template("login.html")
+def login(msg):
+    print(msg)
+    return render_template("login.html", msg=msg)
 
 @app.route("/welcome")
 def welcome():
@@ -193,6 +212,10 @@ def welcome():
 @app.route("/home")
 @auth.authorize
 def home():
+    if request.args.get("logout"):
+        res = req.get(f"http://localhost:5000/api/token?logout=true&token={session.get('token')}&id={session.get('id')}").json()
+        if res["success"]:
+            return redirect(url_for("welcome"))
     return render_template("home.html", user_name=User.query.filter_by(id=session['id']).first().name)
 
 @app.route("/my_packages", methods=["GET","POST"])

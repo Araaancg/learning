@@ -26,7 +26,7 @@ h1,h2 {
 
 .cards {
     margin: auto;
-    width: 60%;
+    width: 90%;
     border-bottom: 0.2em solid #404e5c;
     display: flex;
     flex-direction: row;
@@ -127,6 +127,8 @@ h1,h2 {
 }
 /* end  */
 
+/* FOOTER */
+
 #pack_header > span {
     margin: 0 1em 0;
     padding: 1px;
@@ -138,12 +140,55 @@ h1,h2 {
 }
 
 #pack_footer {
+    padding: 1em;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
 }
 
 #pack_footer > button {
     width: fit-content;
-    margin: auto;
-    margin-bottom: .5em;
+    margin: 0 0.5em 0;
+    background-color: transparent;
+    color: #f5f9e9;
+    border-style: solid;
+}
+
+#btn-add-cards:hover {
+    background-color: #404e5c;
+    /* box-shadow: 0 0.5em 0.5em -0.4em #f5f9e9; */
+}
+
+#btn-delete-pack:hover {
+    background-color: #404e5c;
+    box-shadow: 0 0.5em 0.5em -0.4em #ff0000;
+}
+
+/* ADD NEW CARDS DIV + INPUTS  */
+.new-card > button {
+    margin: 0.5em auto 1em;
+    width: fit-content;
+    background-color: transparent;
+    border: 0.15em solid #f5f9e9;
+    color: #f5f9e9;
+}
+
+.new-card > button:hover {
+    box-shadow: 0 0.5em 0.5em -0.4em #f5f9e9;
+}
+
+.single-newcard-div {
+    padding: 0.5em;
+}
+
+.single-newcard-div > input {
+    border: 0.15em solid #404e5c;
+    background-color: #f5f9e9;
+    text-align: center;
+    margin: 0 0.5em 0;
+}
+
+@media screen and (min-width: 1000px) {
+    .cards {
+        width: 70%;
+    }
 }

@@ -15,14 +15,25 @@
     <div class="input">
         <label for="name">Name</label>
         <input type="text" placeholder="example_1" required id="name" name="name">
+        {%if msg["error"] == 1%}
+            <span class="msg">{{msg["msg"]}}</span>
+        {%endif%}
     </div>
     <div class="input">
         <label for="email">Email</label>
         <input type="email" placeholder="example@email.com" required id="email" name="email">
+        {%if msg["error"] == 2%}
+            <span class="msg">{{msg["msg"]}}</span>
+        {%endif%}
     </div>
     <div class="input">
         <label for="pwd">Password</label>
         <input type="password" placeholder="password" required id="pwd" name="pwd">
+        <label for="pwd2">Repeat password</label>
+        <input type="password" placeholder="repeat password" required id="pwd2" name="pwd2">
+        {%if msg["error"] == 3%}
+            <span class="msg">{{msg["msg"]}}</span>
+        {%endif%}
     </div>
     <div class="btn-submit">
         <button type="submit">Submit</button>

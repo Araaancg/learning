@@ -20,7 +20,7 @@ h2 {
 
 .packages {
     margin: auto;
-    width: 70%;
+    width: 100%;
     display: flex;
     flex-direction: column;
 }
@@ -29,7 +29,7 @@ h2 {
     display: flex;
     flex-direction: column;
     border: 1px solid #000;
-    width: 75%;
+    width: 85%;
     margin-left: auto;
     margin-right: auto;
     margin-top: 10px;
@@ -94,4 +94,16 @@ td, th {
 
 th {
     background-color: #404e5c;
+}
+
+@media screen and (min-width: 768px) {
+    .packages {
+        width: 75%;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+   .single-package {
+       width: 75%;
+   }
 }

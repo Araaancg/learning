@@ -167,36 +167,36 @@ window.onload = async function() {
     p_shuffle.innerText = "Mezclar cartas: NO";
     // los botones del aside right
     btn_switcha.onclick = function(){
-        // count = 0;
-        // btn_next.classList.remove("dissabled");
-        // btn_prev.classList.add("dissabled");
-        // end_div.style.display = "none";
-        // ongoing_div.style.display = "none";
-        // start_div.style.display = "flex";
+        count = 0;
+        btn_next.classList.remove("dissabled");
+        btn_prev.classList.add("dissabled");
+        end_div.style.display = "none";
+        ongoing_div.style.display = "none";
+        start_div.style.display = "flex";
         priority_side = "a";
         p_side.innerText = `Front: A`;
         btn_switcha.classList.add("btn-clicked");
         btn_switchb.classList.remove("btn-clicked");
     };
     btn_switchb.onclick = function(){
-        // count = 0;
-        // btn_next.classList.remove("dissabled");
-        // btn_prev.classList.add("dissabled");
-        // end_div.style.display = "none";
-        // ongoing_div.style.display = "none";
-        // start_div.style.display = "flex";
+        count = 0;
+        btn_next.classList.remove("dissabled");
+        btn_prev.classList.add("dissabled");
+        end_div.style.display = "none";
+        ongoing_div.style.display = "none";
+        start_div.style.display = "flex";
         priority_side = "b";
         p_side.innerText = `Front: B`;
         btn_switchb.classList.add("btn-clicked");
         btn_switcha.classList.remove("btn-clicked");
     };
     btn_shuffle.onclick = function() {
-        // count = 0;
-        // btn_next.classList.remove("dissabled");
-        // btn_prev.classList.add("dissabled");
-        // end_div.style.display = "none";
-        // ongoing_div.style.display = "none";
-        // start_div.style.display = "flex";
+        count = 0;
+        btn_next.classList.remove("dissabled");
+        btn_prev.classList.add("dissabled");
+        end_div.style.display = "none";
+        ongoing_div.style.display = "none";
+        start_div.style.display = "flex";
         if (shuffle_cards) {
             p_shuffle.innerText = "Mezclar cartas: NO";
             btn_shuffle.innerText = "NO";
@@ -240,13 +240,17 @@ window.onload = async function() {
         ongoing_div.style.display = "block";
         if (priority_side === "a") {
             side_a.classList.add("front");
+            side_a.classList.remove("back");
             side_b.classList.add("back");
+            side_b.classList.remove("front");
             ongoing_div.append(side_a,side_b)
             console.log("funciona")
         }
         else {
             side_b.classList.add("front");
+            side_b.classList.remove("back");
             side_a.classList.add("back");
+            side_a.classList.remove("front");
             ongoing_div.append(side_b,side_a)
             console.log("funciona")
         };

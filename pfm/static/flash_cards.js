@@ -1,9 +1,15 @@
+function decodeHtmlCharCodes(str) { 
+    return str.replace(/(&#(\d+);)/g, function(match, capture, charCode) {
+      return String.fromCharCode(charCode);
+    });
+}
+
 window.onload = async function() {
     const uri = window.location.href;
     const pack_name = uri.split("/")[uri.split("/").length - 1];
 
     const res = await fetch(`http://localhost:5000/my_packages/${pack_name}`, {method:"POST"});
-    const data = await res.json();
+    let data = await res.json();
     console.log(data);
 
     // elementos principales. Esquema
@@ -71,6 +77,101 @@ window.onload = async function() {
 
     aside_right.append(h3,hr,switch_div,shuffle_div);
 
+    // ASIDE LEFT. En principio en el móvil y dispositivos pequeños no sé podrá ver. es adicional
+    // Dos botones, depende de a cual le des aparecerá una información u otra
+    // cards: botón que mostrará las tarjetas, side a y side b e iluminará la current card que esté en la flashcard
+    // other packs: nav bar simple para elegir otros paquetes directamente desde ahí. Cada link de la lista redirigirá hacia las flashcards de el paquete
+
+    // aside_left  html object
+    // div de botones de nav
+    const div_btn_left = document.createElement("div");
+    div_btn_left.className = "div-left";
+    div_btn_left.id = "div-btn-left";
+    const btn_show_cards = document.createElement("button");
+    const btn_show_packs = document.createElement("button");
+
+    btn_show_cards.innerText = "Tarjetas";
+    btn_show_packs.innerText = "Otros paquetes"
+    btn_show_cards.id = "btn-show-cards";
+    btn_show_packs.id = "btn-show-packs";
+    btn_show_cards.className = "btn-left";
+    btn_show_packs.className = "btn-left";
+
+    // div que cambiará según los botones
+    const changing_div = document.createElement("div");
+    changing_div.id = "changing-div";
+    changing_div.className = "div-left";
+
+    // show packs mostrará una lista con el nombre de los demás paquetes con un link para ir hacia las flashcards de dicho paquete
+    // const ldiv_show_cards = document.createElement("div");
+    //l de left
+    const lres = await fetch(`http://localhost:5000/flash_cards`, {
+        method:"POST"
+    });
+    const ldata = await lres.json();
+
+    // hacemos la lista
+    const div_show_packs = document.createElement("div");
+    const ul = document.createElement("ul");
+    for (let pack of ldata.packages) {
+        const li = document.createElement("li");
+        li.className = "list-item";
+        const a = document.createElement("a");
+        a.innerText = pack.name;
+        if (pack.name === data.data.packages.name) {
+            a.innerText = decodeHtmlCharCodes(`${pack.name} &#10059;`);
+            a.innerText = decodeHtmlCharCodes(`${pack.name} &#8678;`);
+        };
+        
+        a.href = `http://localhost:5000/flash_cards/${pack.name}`;
+
+
+        li.append(a);
+        ul.append(li);
+    };
+    div_show_packs.append(ul);
+
+
+    const div_show_cards = document.createElement("div");
+    div_show_cards.id = "div-show-cards"
+    for (let card of data.data.packages.cards) {
+        const lcard = document.createElement("div");
+        lcard.className = "lcard";
+        lcard.id = card.id // añadiremos un acceso directo a la carta al click. mas abajo
+        const pa = document.createElement("p");
+        const pb = document.createElement("p");
+
+        pa.innerText = card.side_a;
+        pb.innerText = card.side_b;
+
+        lcard.append(pa,pb);
+        div_show_cards.append(lcard)
+    };
+
+    // por defecto estará la lista de pakcs
+    div_show_cards.style.display = "none";
+    div_show_packs.style.display = "flex";
+    btn_show_packs.classList.add("lclicked")
+
+    changing_div.append(div_show_packs,div_show_cards);
+
+    btn_show_packs.onclick = function() {
+        div_show_packs.style.display = "block";
+        div_show_cards.style.display = "none";
+        btn_show_cards.classList.remove("lclicked");
+        btn_show_packs.classList.add("lclicked");
+    };
+    
+    btn_show_cards.onclick = function() {
+        div_show_cards.style.display = "flex";
+        div_show_packs.style.display = "none";
+        btn_show_packs.classList.remove("lclicked");
+        btn_show_cards.classList.add("lclicked");
+    };
+
+    div_btn_left.append(btn_show_packs,btn_show_cards);
+    aside_left.append(div_btn_left, changing_div);
+
 
     // CENTER DIV.
     // elementos: header, body, footer 
@@ -121,7 +222,8 @@ window.onload = async function() {
 
     btn_prev.innerText = "<";
     btn_next.innerText = ">";
-    btn_flip.innerText = "o";
+    // btn_flip.innerText = "o";
+    btn_flip.innerText = decodeHtmlCharCodes(`&#8635;`);
 
     cfooter.append(btn_prev,btn_flip,btn_next);
 
@@ -166,7 +268,7 @@ window.onload = async function() {
     const p_shuffle = document.createElement("p");
     p_shuffle.innerText = "Mezclar cartas: NO";
     // los botones del aside right
-    btn_switcha.onclick = function(){
+    btn_switcha.onclick  = function(){
         count = 0;
         btn_next.classList.remove("dissabled");
         btn_prev.classList.add("dissabled");
@@ -233,9 +335,9 @@ window.onload = async function() {
     };
     let cards = null;
 
+    // BTN START ///////////////////////////////////////////////////////////////
+
     $("#btn-start").click(function(){
-        console.log(priority_side)
-        console.log(shuffle_cards)
         start_div.style.display = "none";
         ongoing_div.style.display = "block";
         if (priority_side === "a") {
@@ -244,7 +346,6 @@ window.onload = async function() {
             side_b.classList.add("back");
             side_b.classList.remove("front");
             ongoing_div.append(side_a,side_b)
-            console.log("funciona")
         }
         else {
             side_b.classList.add("front");
@@ -252,24 +353,36 @@ window.onload = async function() {
             side_a.classList.add("back");
             side_a.classList.remove("front");
             ongoing_div.append(side_b,side_a)
-            console.log("funciona")
         };
         if (shuffle_cards) {
             // cards = beta_cards.sort((a, b) => 0.5 - Math.random());
             cards = beta_cards.sort(() => (Math.random() > .5) ? 1 : -1);
             p_side_a.innerText = cards[count].side_a;
             p_side_b.innerText = cards[count].side_b;
-            console.log("funciona")
         }
         else {
             cards = not_shuffled
             p_side_a.innerText = data.data.packages.cards[count].side_a;
             p_side_b.innerText = data.data.packages.cards[count].side_b;
-            console.log("funciona")
         };
-        // console.log(cards)
-        // console.log(data.data.packages.cards)
-        
+
+        // vaciamos el div del aside left de las cartas. en un principio mostrará las cartas del pack
+        // en orden pero si las mezclamos al empezar, se cambiaran de orden adaptandose al que te de el pc
+        $("#div-show-cards").empty();
+        for (let card of cards) {
+            const lcard = document.createElement("div");
+            lcard.className = "lcard";
+            lcard.id = card.id // añadiremos un acceso directo a la carta al click. mas abajo
+            const pa = document.createElement("p");
+            const pb = document.createElement("p");
+            
+            pa.innerText = card.side_a;
+            pb.innerText = card.side_b;
+            
+            lcard.append(pa,pb);
+            div_show_cards.append(lcard)
+        };
+        $(`#${cards[count].id}`).addClass("current-card");
     });
     
     
@@ -280,7 +393,13 @@ window.onload = async function() {
 
     btn_prev.classList.add("dissabled");
 
-    $("#btn-flip").click(function() {
+    // $(".lcard").click(function() {
+    //     console.log("hola")
+    //     text = $(".lcard > p").text()
+    //     console.log(text)
+    // });
+
+    $("#btn-flip").click(function () {
         if (ongoing_div.style.display !== "none") {
             if (ongoing_div.classList.contains("flipper")) {
                 ongoing_div.classList.remove("flipper");
@@ -301,11 +420,14 @@ window.onload = async function() {
                 btn_prev.classList.remove("dissabled"); // botón habilitado
                 p_side_a.innerText = cards[count].side_a;
                 p_side_b.innerText = cards[count].side_b;
+                $(`#${cards[count].id}`).addClass("current-card");
+                $(`#${cards[count-1].id}`).removeClass("current-card");
             }
             else {
                 btn_next.classList.add("dissabled");
                 ongoing_div.style.display = "none";
                 end_div.style.display = "flex";
+                $(`#${cards[count-1].id}`).removeClass("current-card");
             };
         };
     });
@@ -324,6 +446,10 @@ window.onload = async function() {
                 };
                 p_side_a.innerText = cards[count].side_a;
                 p_side_b.innerText = cards[count].side_b;
+                $(`#${cards[count].id}`).addClass("current-card");
+                if (count !== cards.length - 1) {
+                    $(`#${cards[count+1].id}`).removeClass("current-card");
+                };
             }
             else {
                 count += 1; // se anula la resta
@@ -374,7 +500,4 @@ window.onload = async function() {
     });
     
     end_div.append(btn_replay,btn_chpack,btn_reset);
-
-
-
 };

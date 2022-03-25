@@ -1,10 +1,11 @@
-from flask import Flask,request,session,render_template,make_response,redirect, url_for
+from flask import Flask,request,session,render_template,redirect, url_for
 from uuid import uuid4
 from hashlib import sha256
 from models import db, User, Category, Pack, Card
 import secrets
 import requests as req
 import auth
+import datetime as dt
 
 
 app = Flask(__name__)
@@ -13,8 +14,38 @@ app.config["SQLALCHEMY_DATABASE_URI"] = f"sqlite:///{DB_URI}"
 app.secret_key = secrets.token_hex()
 db.init_app(app)
 
-# 012cf1b5-629c-4fcc-80ce-5d7be629a772|test1|test1@email.com
-# 600da809-44fa-4cb3-979b-4bfdaaaa7b3e|test2|test2@email.com
+
+
+@app.route("/test")
+def test():
+    count = 0
+    while count < 5:
+        id = uuid4().hex
+        name = f"test{count}"
+        email = f"test{count}@email.com"
+        pwd = "1234"
+        pwd = sha256(pwd.encode()).hexdigest()
+        date = dt.datetime.now()
+        
+        user = User(id=id, name=name, email=email, pwd=pwd, date=date)
+        db.session.add(user)
+        db.session.commit()
+        count += 1
+    result = {"users":[]}
+    for user in User.query.all():
+        u = {
+            "id":user.id,
+            "name":user.name,
+            "email":user.email,
+            "pwd":user.pwd,
+            "date":user.date
+        }
+        result["users"].append(u)
+
+    return result
+    return render_template("test.html", user_name=User.query.filter_by(id=session['id']).first().name)
+
+################################### API #########################################
 
 @app.route("/api/token", methods=["PUT", "GET"])
 def token():
@@ -283,9 +314,6 @@ def choose_pack():
 def flash_cards(name):
     return render_template("flash_cards.html", user_name=User.query.filter_by(id=session['id']).first().name)
 
-@app.route("/test")
-def test():
-    return render_template("test.html", user_name=User.query.filter_by(id=session['id']).first().name)
 
 
 if __name__ == "__main__":

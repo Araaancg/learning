@@ -1,10 +1,9 @@
-from pydoc import render_doc
-from re import template
 import requests as req
-from flask import render_template, request, session, redirect, url_for
+from flask import request, session, redirect, url_for
 import secrets
 from hashlib import sha256
 from functools import wraps
+import datetime as dt
 
 def authenticate(f): #login
         @wraps(f)
@@ -13,7 +12,7 @@ def authenticate(f): #login
             pwd = request.form.get("pwd")
             
             if email and pwd:
-                api_res = req.put("http://localhost:5000/api/token", data={"email":email,"pwd":sha256(pwd.encode()).hexdigest(),"token":secrets.token_hex(16)}).json()
+                api_res = req.put("http://localhost:5000/api/token", data={"email":email,"pwd":sha256(pwd.encode()).hexdigest(),"token":secrets.token_hex(16), "date":dt.datetime.now()}).json()
                 if api_res["success"]:
                     session["token"] = api_res["token"]
                     session["id"] = api_res["id"]

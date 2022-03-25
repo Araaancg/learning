@@ -382,7 +382,7 @@ window.onload = async function() {
             lcard.append(pa,pb);
             div_show_cards.append(lcard)
         };
-        $(`#${cards[count].id}`).addClass("current-card");
+        $(`#${cards[0].id}`).addClass("current-card");
     });
     
     

@@ -1,4 +1,8 @@
 window.onload = async function() {
+    if (window.localStorage.getItem("theme") === "light") {
+        const body = document.querySelector("body");
+        body.className = "light"
+    };
 
     const res = await fetch(`http://localhost:5000/my_packages/create_new?get=categories`);
     const cat_list = await res.json();
@@ -35,6 +39,7 @@ window.onload = async function() {
     label_cat.setAttribute("for","category");
     label_cat.innerText = "Categoría"
     input_cat.setAttribute("id","category");
+    input_cat.setAttribute("required",true);
     input_cat.setAttribute("name","category")
     div_category.append(label_cat)
     div_category.append(input_cat)
@@ -54,29 +59,30 @@ window.onload = async function() {
             div_private_categories.append(btn_category);
     
             btn_category.onclick = function() {
-                console.log(category);
-                input_cat.setAttribute("value",category["name"])
+                input_cat.value = category['name'];
+                input_cat.setAttribute("value",category["name"]);
             };
         };
         const hr = document.createElement("hr");
         div_existing_categories.append(div_private_categories,hr);
     };
 
-
+    const div_public_categories = document.createElement("div");
+    div_public_categories.id = "public-categories"
     for (let category of cat_list.categories[0].public) {
         const btn_category = document.createElement("button");
         btn_category.setAttribute("type","button");
         btn_category.innerText = category["name"];
         btn_category.className = "cat-name";
-        div_existing_categories.append(btn_category);
+        div_public_categories.append(btn_category);
 
         btn_category.onclick = function() {
-            console.log(category);
             btn_category.style.border_color = "#dd7596";
+            input_cat.value = category['name'];
             input_cat.setAttribute("value",category["name"])
         };
     };
-
+    div_existing_categories.append(div_public_categories)
     div_category.append(div_existing_categories);
 
     const h2 = document.createElement("h2");
@@ -86,6 +92,7 @@ window.onload = async function() {
     let count = 1
     while (count < 6) {
         const single_card_div = document.createElement("div");
+        single_card_div.className = "card-input";
         single_card_div.setAttribute("id",`card_${count}`);
         const input_a = document.createElement("input");
         input_a.setAttribute("placeholder","cara a");
@@ -101,9 +108,9 @@ window.onload = async function() {
     btn_card.setAttribute("type","button");
     btn_card.setAttribute("id","btn-more-cards");
     btn_card.innerText = "añadir tarjeta";
-    console.log(count);
     btn_card.onclick = function() {
         const single_card_div = document.createElement("div");
+        single_card_div.className = "card-input";
         single_card_div.setAttribute("id",`card_${count}`);
         const input_a = document.createElement("input");
         input_a.setAttribute("placeholder","cara a");
@@ -129,7 +136,6 @@ window.onload = async function() {
     let status_value = null;
     btn_public.onclick = function() {
         status_value = "public";
-        console.log(status_value);
         btn_private.className = "btn-status";
         btn_public.classList.add("btn-clicked");
     };
@@ -138,9 +144,9 @@ window.onload = async function() {
     btn_private.setAttribute("id","btn-private");
     btn_private.setAttribute("type","button");
     btn_private.innerText = "privado";
+    btn_private.classList.add("btn-clicked"); // de primeras está el modo privado
     btn_private.onclick = function() {
         status_value = "private";
-        console.log(status_value);
         btn_public.className = "btn-status";
         btn_private.classList.add("btn-clicked");
     };
@@ -149,10 +155,81 @@ window.onload = async function() {
     div_status_btn.append(btn_public,btn_private);
     div_status.append(status_span,div_status_btn);
 
+    // POPUP  ////// con las tarjetas ya existentes que se pueden añadir
+    // le das a un botón y te sale una ventana emergente (un div) con un display de todas las tarjetas que ya están creadas
+    // se seleccionan las que se quieran y se añaden al paquete
+
+    const btn_existing_card = document.createElement("button");
+    btn_existing_card.className = "btn-existing-card";
+    btn_existing_card.type = "button";
+    btn_existing_card.innerText = "consultar mis tarjetas";
+
+    const overlay = document.createElement("div");
+    overlay.className = "overlay";
+
+    // aparte del titulo, el popup tendrá dos partes, las tarjetas y el boton de confimar
+    const popup = document.createElement("div");
+    popup.className = "popup"
+    const popres = await fetch(`http://localhost:5000/profile?get=mycards`);
+    const result = await popres.json();
+
+    for (let card of result.cards) {
+        const single_card = document.createElement("div");
+        const p_sidea = document.createElement("p");
+        const p_sideb = document.createElement("p");
+        const pophr = document.createElement("hr");
+        single_card.id = card.id
+
+        single_card.className = "single-card";
+        p_sidea.innerText = card.side_a;
+        p_sideb.innerText = card.side_b;
+
+        single_card.append(p_sidea,pophr,p_sideb);
+        popup.append(single_card);
+    };
+
+    // botón de confirmación y cerrar ventana
+    const btn_confirmation = document.createElement("button");
+    btn_confirmation.type = "button";
+    btn_confirmation.innerText = "confirmar";
+    btn_confirmation.className = "btn-confirm";
+
+    // popup.append(title,exisiting_cards, btn_confirmation);
+
+    btn_confirmation.onclick = function(){
+        overlay.style.display = "none";
+    };
+
+    let cards_to_add = [];
+
+    $(document).ready(function() {
+        $(".single-card").click(function(){
+            if ($(this).hasClass("card-selected")) {
+                $(this).removeClass("card-selected");
+                cards_to_add = cards_to_add.filter(card => card !== $(this).attr('id'));
+                console.log(cards_to_add);
+            }
+            else {
+                $(this).addClass("card-selected");
+                cards_to_add.push($(this).attr('id'));
+                console.log(cards_to_add);
+            };
+        });
+    });
+
+
+
+    overlay.style.display = "none";
+    btn_existing_card.onclick = function() {overlay.style.display = "flex"};
+    overlay.append(popup, btn_confirmation);
+
+    // btn submit, creamos el paquete haciendo el fetch con toda la info
+
     const btn_submit = document.createElement("button");
     btn_submit.setAttribute("id","btn-submit")
     btn_submit.setAttribute("type","button");
-    btn_submit.innerText = "Crear"
+    btn_submit.innerText = "Crear";
+
     btn_submit.onclick = async function() {
         const submit_form = new FormData();
         for (let elem of form) {
@@ -161,15 +238,52 @@ window.onload = async function() {
             };
         };
         submit_form.append("status",status_value);
+        let count = 0
+        for (let item of cards_to_add){
+            submit_form.append(`exist_${count}`,item);
+            count += 1
+        };
         console.log(submit_form)
-        await fetch(`http://localhost:5000/my_packages/create_new`, {
+        const answer = await fetch(`http://localhost:5000/my_packages/create_new`, {
             method: "POST",
             body: submit_form
         });
-        console.log("Works");
-        window.location.assign("http://localhost:5000/my_packages");
+        const result = await answer.json()
+        console.log(result)
+        if (result.success) {
+            window.location.assign("http://localhost:5000/my_packages");
+        }
+        else {
+            if (result.lasting_input === "category"){
+                if (input_cat.style.borderColor !== "red"){
+                    input_cat.style.borderColor = "red";
+                    const msg = document.createElement("p");
+                    msg.className = "msg";
+                    msg.innerText = result.msg;
+                    div_category.append(msg);
+                };
+            }
+            if (result.lasting_input === "card"){
+                if (div_cards.style.borderColor !== "red") {
+                    div_cards.style.borderColor = "red";
+                    const msg = document.createElement("p");
+                    msg.className = "msg";
+                    msg.innerText = result.msg;
+                    div_cards.append(msg);
+                };
+            }
+            if (result.lasting_input === "name") {
+                if (input_name.style.borderColor !== "red"){
+                    input_name.style.borderColor = "red";
+                    const msg = document.createElement("p");
+                    msg.className = "msg";
+                    msg.innerText = result.msg;
+                    div_name.append(msg);
+                };
+            };
+        };
     };
-    
+
     const left_div = document.createElement("section");
     left_div.setAttribute("id","left-section")
     const right_div = document.createElement("section");
@@ -178,11 +292,10 @@ window.onload = async function() {
     btn_div.setAttribute("id","down-section")
     
     left_div.append(div_name, div_category,div_status);
-    right_div.append(h2,div_cards,btn_card);
+    right_div.append(h2,div_cards,btn_card,btn_existing_card);
     btn_div.append(btn_submit);
-    form.append(left_div,right_div)
-    main.append(form,btn_div);
+    form.append(left_div,right_div);
 
-    
+    main.append(form,btn_div,overlay);
 };
 

@@ -7,28 +7,29 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="{{url_for('static',filename='signup.css')}}">
+    <script src="{{url_for('static',filename='base.js')}}"></script>
     <title>login</title>
     <title>Document</title>
 </head>
 <body>
-    <h1>LOG IN</h1>
+    <h1>Inicio de sesión</h1>
     <form method="post">
         <div class="input">
             <label for="email">Email</label>
-            <input type="email" placeholder="example@email.com" required id="email" name="email">
+            <input type="email" placeholder="ejemplo@email.com" required id="email" name="email">
             {%if msg == "User not found"%}
                 <span class="msg">{{msg}}</span>
             {%endif%}
         </div>
         <div class="input">
-            <label for="pwd">Password</label>
-            <input type="password" placeholder="password" required id="pwd" name="pwd">
+            <label for="pwd">Contraseña</label>
+            <input type="password" placeholder="contraseña" required id="pwd" name="pwd">
             {%if msg == "Incorrect password"%}
                 <span class="msg">{{msg}}</span>
             {%endif%}
         </div>
         <div class="btn-submit">
-            <button type="submit">Submit</button>
+            <button type="submit">Iniciar sesión</button>
         </div>
     </form>
 </body>

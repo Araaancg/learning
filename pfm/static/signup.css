@@ -1,6 +1,31 @@
+:root {
+    --purple-pastel: #ce97fd;
+    --green-pastel: #6bd59a;
+    --yellow-pastel: #fddf7e;
+    --main-bg-color: #2e2e2e;
+    --nav-bar-color: #1c1c1c;
+    --color-text: #f5f9e9;
+    --color-delete: #ff1930;
+    --msg-color: #b3bfb8;
+    --color-hover: #404e5c;
+    --input-color: #f5f9e9;
+}
+
+body.light {
+    --main-bg-color: #fff;
+    --color-text: #000;
+    --yellow-pastel: #ffb703;
+    --purple-pastel: #7b2cbf;
+    --green-pastel: #007200;
+    --msg-color: #474747;
+    --color-hover: #c4c4c4;
+    --input-color: #fff;
+    --nav-bar-color: #d1d1d1;
+}
+
 body {
-    color: #f5f9e9;
-    background-color: #4f6272;
+    color: var(--color-text);
+    background-color: var(--main-bg-color);
 }
 
 h1 {
@@ -9,7 +34,7 @@ h1 {
 }
 
 form {
-    border: 00.2em solid #404e5c;
+    border: 00.2em solid var(--nav-bar-color);
     width: fit-content;
     margin: auto;
     padding: 0.5em;
@@ -26,22 +51,22 @@ form {
 
 .input > input {
     margin: 0.5em;
-    border: 2px solid #404e5c;
-    background-color: #f5f9e9;
+    border: 2px solid var(--nav-bar-color);
+    background-color: var(--input-color);
     text-align: center;
 }
 
 .btn-submit > button {
     background-color: transparent;
-    border: 0.15em solid #f5f9e9;
-    color: #f5f9e9;
+    border: 0.15em solid var(--color-text);
+    color: var(--color-text);
 }
 
 .btn-submit >  button:hover {
-    box-shadow: 0 0.5em 0.5em -0.4em #f5f9e9;
+    box-shadow: 0 0.5em 0.5em -0.4em var(--color-text);
 }
 
-.msg {
+.msg {  
     margin: 0 0 1em;
-    color: #b3bfb8;
+    color: var(--msg-color);
 }

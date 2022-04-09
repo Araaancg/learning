@@ -5,10 +5,15 @@ function decodeHtmlCharCodes(str) {
 }
 
 window.onload = async function() {
-    const uri = window.location.href;
-    const pack_name = uri.split("/")[uri.split("/").length - 1];
+    if (window.localStorage.getItem("theme") === "light") {
+        const body = document.querySelector("body");
+        body.className = "light"
+    };
 
-    const res = await fetch(`http://localhost:5000/my_packages/${pack_name}`, {method:"POST"});
+    const uri = window.location.href;
+    const pack_id = uri.split("/")[uri.split("/").length - 1];
+
+    const res = await fetch(`http://localhost:5000/my_packages/${pack_id}`, {method:"POST"});
     let data = await res.json();
     console.log(data);
 
@@ -115,7 +120,7 @@ window.onload = async function() {
     const ul = document.createElement("ul");
     for (let pack of ldata.packages) {
         const li = document.createElement("li");
-        li.className = "list-item";
+        li.className = "list-item"
         const a = document.createElement("a");
         a.innerText = pack.name;
         if (pack.name === data.data.packages.name) {
@@ -123,7 +128,7 @@ window.onload = async function() {
             a.innerText = decodeHtmlCharCodes(`${pack.name} &#8678;`);
         };
         
-        a.href = `http://localhost:5000/flash_cards/${pack.name}`;
+        a.href = `http://localhost:5000/flash_cards/${pack.id}`;
 
 
         li.append(a);
@@ -392,13 +397,7 @@ window.onload = async function() {
     // botones next y prev estarán disabilitados cuando lleguen a ambos extremos, añadimos la clase "dissabled"
 
     btn_prev.classList.add("dissabled");
-
-    // $(".lcard").click(function() {
-    //     console.log("hola")
-    //     text = $(".lcard > p").text()
-    //     console.log(text)
-    // });
-
+    
     $("#btn-flip").click(function () {
         if (ongoing_div.style.display !== "none") {
             if (ongoing_div.classList.contains("flipper")) {

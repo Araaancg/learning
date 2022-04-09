@@ -1,4 +1,9 @@
 window.onload = async function() {
+    if (window.localStorage.getItem("theme") === "light") {
+        const body = document.querySelector("body");
+        body.className = "light"
+    };
+
     res = await fetch(`http://localhost:5000/flash_cards`, {
         method:"POST"
     });
@@ -15,9 +20,11 @@ window.onload = async function() {
         sub_div.className = "single-package"
         sub_div.setAttribute("id",pack.id);
         const a = document.createElement("a");
-        a.href = `http://localhost:5000/flash_cards/${pack.name}`
+        a.href = `http://localhost:5000/flash_cards/${pack.id}`
         const h2 = document.createElement("h2");
         h2.innerText = pack.name
+
+        const hr = document.createElement("hr");
 
         a.append(h2)
 
@@ -26,7 +33,7 @@ window.onload = async function() {
 
         const btn_cards = document.createElement("button");
         btn_cards.innerText = "tarjetas";
-        sub_div.append(a);
+        sub_div.append(a,hr);
 
         const table = document.createElement("table");
         const thead = document.createElement("thead");

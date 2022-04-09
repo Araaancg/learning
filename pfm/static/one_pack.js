@@ -1,201 +1,320 @@
-window.onload = async function() {
-    const uri = window.location.href;
-    const pack_name = uri.split("/")[uri.split("/").length - 1];
-    console.log(pack_name);
-    const res = await fetch(`http://localhost:5000/my_packages/${pack_name}`, {
-        method:"POST"
+function decodeHtmlCharCodes(str) { 
+    return str.replace(/(&#(\d+);)/g, function(match, capture, charCode) {
+      return String.fromCharCode(charCode);
     });
-    const data = await res.json();
-    console.log(data)
+}
 
-    const main = document.querySelector("#main");
+window.onload = async function() {
+  if (window.localStorage.getItem("theme") === "light") {
+    const body = document.querySelector("body");
+    body.className = "light";
+  };
 
-    //header
-    const div_header = document.createElement("section");
-    div_header.setAttribute("id","pack_header");
-    div_header.className = "main-parts";
-    const h1 = document.createElement("h1");
-    h1.innerText = data["data"]["packages"].name;
-    const cat_span = document.createElement("span");
-    cat_span.innerText = `Categoría: ${data.data.packages.category.name}`;
+  const main = document.querySelector("#main");
+  const uri = window.location.href;
+  const pack_name = uri.split("/")[uri.split("/").length - 1];
+  // console.log(pack_name);
+  const res = await fetch(`http://localhost:5000/my_packages/${pack_name}`, {
+      method:"POST"
+  });
+  const data = await res.json();
+  console.log(data)
 
-    //body
-    const div_body = document.createElement("section");
-    div_body.setAttribute("id","pack_body");
-    div_body.className = "main-parts"
-    const h2 = document.createElement("h2");
-    h2.innerText = "Tarjetas";
-    const h3_a = document.createElement("h3");
-    h3_a.innerText = "Cara A";
-    const h3_b = document.createElement("h3");
-    h3_b.innerText = "Cara B";
+  // habrá tres partes:
+  // top: tendrá el título, categoría y número de tarjetas
+  // center: tendrá las tarjetas
+  // bottom: botones para eliminar paquete, crear tarjetas...
 
-    let number_cards = 0;
 
-    div_body.append(h2,h3_a,h3_b);
-    // tarjetas
-    for (let card of data.data.packages.cards) {
-        const section_card = document.createElement("section");
-        section_card.setAttribute("id",card.id);
-        section_card.className = "cards";
-        // const span_a = document.createElement("span");
-        // span_a.innerText = card.side_a;
-        // const span_b = document.createElement("span");
-        // span_b.innerText = card.side_b;
-        // section_card.append(span_a,span_b);
-        const s_cards_left = document.createElement("div");
-        const card_a = document.createElement("div");
-        const card_b = document.createElement("div");
-        card_a.className = "left card_a";
-        card_b.className = "left card_b";
-        s_cards_left.className = "cards left";
-        const content_a = document.createElement("p");
-        content_a.innerText = card.side_a;
-        const content_b = document.createElement("p");
-        content_b.innerText = card.side_b;
-        card_a.append(content_a);
-        card_b.append(content_b);
-        s_cards_left.append(card_a,card_b);
+  // TOP
+  const top = document.createElement("section");
+  top.className = "main-parts top";
 
-        //hid div to edit
-        const edit_div = document.createElement("div");
-        edit_div.className = "edit-div";
+  const h1 = document.createElement("h1");
+  h1.innerText = data.data.packages.name;
 
-        const editing_form = document.createElement("form");
-        const einput_a = document.createElement("input");
-        const einput_b = document.createElement("input");
-        //input side_a
-        einput_a.setAttribute("id","side_a");
-        einput_a.setAttribute("type","text");
-        einput_a.setAttribute("name","side_a");
-        einput_a.setAttribute("placeholder","cara a");
-        //input side_b
-        einput_b.setAttribute("id","side_b");
-        einput_b.setAttribute("type","text");
-        einput_b.setAttribute("name","side_b");
-        einput_b.setAttribute("placeholder","cara b");        
-        
-        //button for deleting card
-        const btn_delete = document.createElement("button");
-        btn_delete.innerText = "x";
-        btn_delete.className = "btn-delete-card";
-        btn_delete.setAttribute("type","button");
-        const delete_form = new FormData();
-        delete_form.append("card_id",card.id);
-        btn_delete.onclick = async function() {
-            await fetch(`http://localhost:5000/my_packages/${data.data.packages.name}?delete_card=${card.id}`);
-            window.location.reload();
-        };
-        
-        //button for editing
-        const btn_edit = document.createElement("button");
-        btn_edit.setAttribute("type","button");
-        btn_edit.className = "btn-edit-card";
-        btn_edit.innerText = "editar";
-        btn_edit.onclick = function() {
-            if (edit_div.style.display !== "none") {
-                edit_div.style.display = "none";
-            }
-            else {
-                edit_div.style.display = "block";
-            };
-        };
-        //button saving what's edited
-        const btn_save = document.createElement("button");
-        btn_save.setAttribute("type","button");
-        btn_save.innerText = "guardar";
-        editing_form.append(einput_a,einput_b,btn_save);
-        edit_div.append(editing_form);
-        edit_div.style.display = "none";
-        btn_save.onclick = async function() {
-            const form = new FormData(editing_form);
-            await fetch(`http://localhost:5000/my_packages/${data.data.packages.name}?edit_card=${card.id}`, {
-                method:"PUT",
-                body:form
-            });
-            window.location.reload();
-        };
-        const s_cards_right = document.createElement("div");
-        s_cards_right.className = "cards right";
-        s_cards_right.append(btn_edit,btn_delete);
-        s_cards_left.append(edit_div);
-        section_card.append(s_cards_left,s_cards_right);
-        div_body.append(section_card);
-        number_cards += 1;
+  const pack_info = document.createElement("div"); //category and number of cards
+  pack_info.className = "pack-info";
+  const cat_span = document.createElement("span");
+  let number_span = document.createElement("span");
+  cat_span.innerText = `Categoría: ${data.data.packages.category.name}`;
+  number_span.innerText = `Nº de tarjetas: `
+  let number_cards = 0;
+  
+  pack_info.append(cat_span, number_span);
+  top.append(h1,pack_info);
+
+  // CENTER
+  const edit_overlay = document.createElement("div"); 
+  edit_overlay.style.display = "none";
+  edit_overlay.className = "edit-overlay";
+  const center = document.createElement("section");
+  center.className = "main-parts center";
+  for (let card of data.data.packages.cards) {
+    const single_card = document.createElement("div");
+    single_card.className = "single-card";
+
+    // main part
+    const center_card = document.createElement("div");
+    center_card.className = "center-card";
+    const hr = document.createElement("hr");
+    const p_sidea = document.createElement("p");
+    const p_sideb = document.createElement("p");
+    p_sidea.innerText = card.side_a;
+    p_sideb.innerText = card.side_b;
+    center_card.append(p_sidea,hr,p_sideb);
+
+    // top part with btn-delete
+    const top_card = document.createElement("div");
+    top_card.className = "top-card";
+    const btn_delete = document.createElement("button");
+    btn_delete.className = "btn-delete";
+    btn_delete.type = "button";
+    btn_delete.title = "eliminar del paquete"
+    btn_delete.innerText = "x";
+    btn_delete.onclick = async function() {
+      await fetch(`http://localhost:5000/my_packages/${data.data.packages.id}?delete_card=${card.id}`);
+      window.location.reload();
     };
+    top_card.append(btn_delete);
 
-    const div_new_cards = document.createElement("div");
-    div_new_cards.className = "new-card";
-    const form_new_cards = document.createElement("form");
-    div_new_cards.append(form_new_cards);
-    const btn_save_new_cards = document.createElement("button");
-    btn_save_new_cards.setAttribute("type","button");
-    btn_save_new_cards.innerText = "guardar";
-    btn_save_new_cards.style.display = "none";
+    // bottom part with btn-edit
+    const bottom_card = document.createElement("div");
+    bottom_card.className = "bottom-card";
+    const btn_edit = document.createElement("button");
+    btn_edit.className = "btn-edit";
+    btn_edit.innerText = "editar";
+    btn_edit.onclick = function(){
+      // for editing will create an overlay
+      edit_overlay.style.display = "flex";
+      const edit_popup =  document.createElement("div");
+      edit_popup.className = "edit-popup";
 
-    //footer
-    const div_footer = document.createElement("section");
-    div_footer.setAttribute("id","pack_footer");
-    // delete pack
-    const btn_delete_pack = document.createElement("button");
-    btn_delete_pack.setAttribute("type","button");
-    btn_delete_pack.setAttribute("id","btn-delete-pack")
-    btn_delete_pack.innerText = "eliminar paquete";
-    btn_delete_pack.onclick = async function() {
-        confirmation = confirm("el paquete se eliminará de la base de datos");
-        if (confirmation) {
-            await fetch(`http://localhost:5000/my_packages/${data.data.packages.name}?delete_pack=${data.data.packages.id}`);
-            window.location.assign("http://localhost:5000/my_packages");
-            console.log("paquete eliminardo");
-        }
-        else {
-            console.log("acción cancelada");
-        };
-    };
-    // add new cards
-    const btn_add_cards = document.createElement("button");
-    btn_add_cards.setAttribute("type","button");
-    btn_add_cards.setAttribute("id","btn-add-cards");
-    btn_add_cards.innerText = "añadir tarjetas";
-    let count_new_cards = 1;
-    btn_add_cards.onclick = function() {
-        console.log("button used");
-        btn_save_new_cards.style.display = "block";
-        const new_side_a = document.createElement("input");
-        new_side_a.setAttribute("placeholder","cara a");
-        new_side_a.setAttribute("name",`side_a_${count_new_cards}`)
-        new_side_a.className = "new-card";
-        const new_side_b = document.createElement("input");
-        new_side_b.setAttribute("placeholder","cara b");
-        new_side_b.setAttribute("name",`side_b_${count_new_cards}`)
-        new_side_b.className = "new-card";
-        const single_newcard_div = document.createElement("div");
-        single_newcard_div.className = "single-newcard-div"
-        single_newcard_div.append(new_side_a,new_side_b);
-        form_new_cards.append(single_newcard_div);
-        // form_new_cards.append(new_side_a,new_side_b);
-        div_body.append(div_new_cards);
-        count_new_cards += 1;
-    };
+      const edit_cards = document.createElement("div");
+      edit_cards.className = "edit-cards";
 
-    //add function btn save new cards
-    btn_save_new_cards.onclick = async function() {
-        const form = new FormData(form_new_cards);
-        await fetch(`http://localhost:5000/my_packages/${data.data.packages.name}?new_card=${data.data.packages.id}`, {
+      const right_card = document.createElement("div");
+      right_card.className = "popup-card right-card";
+      const left_card = document.createElement("div");
+      left_card.className = "popup-card left-card";
+
+      // left card: current card
+      const p_sidea_edit = document.createElement("p");
+      const p_sideb_edit = document.createElement("p");
+      const edit_hr1 = document.createElement("hr");
+      p_sidea_edit.innerText = card.side_a;
+      p_sideb_edit.innerText = card.side_b;
+      left_card.append(p_sidea_edit,edit_hr1,p_sideb_edit);
+
+      // right card: card with inputs to edit
+      const textareaa = document.createElement("textarea");
+      const textareab =  document.createElement("textarea");
+      const edit_hr2 = document.createElement("hr");
+      textareaa.placeholder = "cara a";
+      textareab.placeholder = "cara b";
+      right_card.append(textareaa,edit_hr2,textareab);
+
+      // bottom part: buttons
+      const edit_buttons_div = document.createElement("div");
+      edit_buttons_div.className = "edit-buttons-div";
+      const btn_cancel_edit = document.createElement("button");
+      btn_cancel_edit.type = "button";
+      btn_cancel_edit.innerText = "cancelar";
+      btn_cancel_edit.className = "edit-buttons btn-cancel";
+      btn_cancel_edit.onclick = function() {
+        edit_overlay.style.display = "none";
+        edit_overlay.innerText = "";
+      };
+      const btn_save_edit = document.createElement("button");
+      btn_save_edit.type = "button";
+      btn_save_edit.innerText = "guardar";
+      btn_save_edit.className = "edit-buttons btn-save";
+      btn_save_edit.onclick = async function() {
+        const form = new FormData();
+        form.append("side_a",textareaa.value);
+        form.append("side_b",textareab.value);
+        await fetch(`http://localhost:5000/my_packages/${data.data.packages.name}?edit_card=${card.id}`, {
             method:"PUT",
             body:form
         });
-        window.location.reload()
-        console.log("cards added");
+        window.location.reload();
+      };
+      edit_buttons_div.append(btn_cancel_edit,btn_save_edit);
+      
+      edit_cards.append(left_card,right_card);
+      edit_popup.append(edit_cards,edit_buttons_div);
+      edit_overlay.append(edit_popup);
+    };
+    
+    bottom_card.append(btn_edit);
+
+    
+    single_card.append(top_card,center_card,bottom_card);
+    center.append(single_card);
+    number_cards += 1;
+  };
+  number_span.innerText += number_cards;
+
+  // BOTTOM: eliminar paquete y añadir tarjetas
+  const bottom = document.createElement("section");
+  bottom.className = "bottom";
+  const btn_delete_pack = document.createElement("button");
+  btn_delete_pack.id = "btn-delete-pack";
+  btn_delete_pack.type = "button";
+  btn_delete_pack.innerText = "eliminar paquete";
+  btn_delete_pack.onclick = async function(){
+    confirmation = confirm("El paquete se eliminará de la base de datos pero las tarjetas se te quedarán en el perfil. Para eliminarlas vete a tu perfil.");
+      if (confirmation) {
+          await fetch(`http://localhost:5000/my_packages/${data.data.packages.name}?delete_pack=${data.data.packages.id}`);
+          window.location.assign("http://localhost:5000/my_packages");
+          console.log("paquete eliminardo");
+      }
+      else {
+          console.log("acción cancelada");
+      }
+  };
+
+  const btn_create_card  = document.createElement("button");
+  btn_create_card.className = "btn-create-cards";
+  btn_create_card.innerText = "crear tarjeta";
+  btn_create_card.type = "button";
+  btn_create_card.onclick = function() {
+    edit_overlay.style.display = "flex";
+
+    const card_to_create = document.createElement("div");
+    card_to_create.className = "card-to-create";
+
+    const create_sidea = document.createElement("textarea");
+    const create_sideb = document.createElement("textarea");
+    const create_hr = document.createElement("hr");
+    create_sidea.placeholder = "cara a";
+    create_sideb.placeholder = "cara b";
+    card_to_create.append(create_sidea,create_hr,create_sideb);
+
+    //buttons
+    const div_buttons_create = document.createElement("div");
+    div_buttons_create.className = "div-buttons-create";
+
+    const btn_cancel_create = document.createElement("button");
+    btn_cancel_create.type = "button";
+    btn_cancel_create.innerText = "cancel";
+    btn_cancel_create.className = "btn-cancel-create"
+    btn_cancel_create.onclick = function() {
+      edit_overlay.style.display = "none";
+      edit_overlay.innerText = "";
+    }
+
+    const btn_save_create = document.createElement("button");
+    btn_save_create.type = "button";
+    btn_save_create.innerText = "guardar";
+    btn_save_create.className = "btn-save-create";
+    btn_save_create.onclick = async function() {
+      const form = new FormData();
+      form.append("side_a",create_sidea.value);
+      form.append("side_b",create_sideb.value);
+      await fetch(`http://localhost:5000/my_packages/${data.data.packages.name}?new_card=${data.data.packages.id}`, {
+          method:"PUT",
+          body:form
+      });
+      window.location.reload()
     };
 
-    div_new_cards.append(btn_save_new_cards)
-    div_footer.append(btn_add_cards,btn_delete_pack);
+      div_buttons_create.append(btn_cancel_create,btn_save_create)
+      edit_overlay.append(card_to_create,div_buttons_create);
+    };
 
-    const hr = document.createElement("hr");
+    const btn_add_currentcard = document.createElement("button");
+    btn_add_currentcard.className = "btn-add-currentcard";
+    btn_add_currentcard.innerText = "añadir tarjetas de mi biblioteca";
+    btn_add_currentcard.type = "button";
 
-    const nc_span = document.createElement("span");
-    nc_span.innerText = `Nº tarjetas: ${number_cards}`;
-    div_header.append(h1,cat_span,nc_span);
-    main.append(div_header,hr,div_body,div_footer);
+    btn_add_currentcard.onclick = async function() {
+      const popres = await fetch(`http://localhost:5000/profile?get=mycards`);
+      const result = await popres.json();
+
+      edit_overlay.style.display = "flex";
+      
+      const existing_cards = document.createElement("div");
+      existing_cards.className = "existing-cards";
+      
+      for (let card of result.cards) {
+        let card_isin_pack = "no";
+        for (let pack of card.packages) {
+            if (pack.id === data.data.packages.id && card_isin_pack === "no") {
+                card_isin_pack = "yes";
+            };
+        };
+        if (card_isin_pack === "no"){
+            const single_card = document.createElement("div");
+            const p_sidea = document.createElement("p");
+            const p_sideb = document.createElement("p");
+            const pophr = document.createElement("hr");
+            single_card.id = card.id
+
+            single_card.className = "single-existing-card";
+            p_sidea.innerText = card.side_a;
+            p_sideb.innerText = card.side_b;
+
+            single_card.append(p_sidea,pophr,p_sideb);
+            existing_cards.append(single_card);
+        };
+      };
+
+      // bottom with two buttons
+      const div_existing_buttons = document.createElement("div");
+      div_existing_buttons.className = "existing-cards-btns"
+      // botón de confirmación y cerrar ventana
+      const btn_confirmation = document.createElement("button");
+      btn_confirmation.type = "button";
+      btn_confirmation.innerText = "añadir";
+      btn_confirmation.className = "btn-confirm";
+
+      const btn_close_ex = document.createElement("button");
+      btn_close_ex.type = "button";
+      btn_close_ex.innerText = "cerrar";
+      btn_close_ex.className = "btn-close-ex";
+      btn_close_ex.onclick = function() {
+        edit_overlay.innerText = "";
+        edit_overlay.style.display = "none";
+      };
+
+      let cards_to_add = [];
+
+      $(document).ready(function() {
+          $(".single-existing-card").click(function(){
+              if ($(this).hasClass("card-selected")) {
+                  $(this).removeClass("card-selected");
+                  cards_to_add = cards_to_add.filter(card => card !== $(this).attr('id'));
+                  console.log(cards_to_add);
+              }
+              else {
+                  $(this).addClass("card-selected");
+                  cards_to_add.push($(this).attr('id'));
+                  console.log(cards_to_add);
+              };
+          });
+      });
+
+      btn_confirmation.onclick = async function() {
+        const form = new FormData();
+        let count = 0
+        for (let item of cards_to_add){
+            form.append(`exist_${count}`,item);
+            count += 1
+        };
+        await fetch(`http://localhost:5000/my_packages/${data.data.packages.name}?existing_cards=${data.data.packages.id}`, {
+            method:"PUT",
+            body:form
+        });
+        window.location.reload();
+      };
+
+      div_existing_buttons.append(btn_close_ex,btn_confirmation)
+      edit_overlay.append(existing_cards,div_existing_buttons);
+    };
+
+    bottom.append(btn_create_card,btn_add_currentcard,btn_delete_pack);
+
+
+    main.append(top,center,bottom,edit_overlay);
 };

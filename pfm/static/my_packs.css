@@ -1,6 +1,31 @@
+:root {
+    --purple-pastel: #ce97fd;
+    --green-pastel: #6bd59a;
+    --yellow-pastel: #fddf7e;
+    --main-bg-color: #2e2e2e;
+    --nav-bar-color: #1c1c1c;
+    --color-text: #f5f9e9;
+}
+
+body.light {
+    --main-bg-color: #fff;
+    --color-text: #000;
+    --yellow-pastel: #ffb703;
+    --purple-pastel: #7b2cbf;
+    --green-pastel: #007200;
+    --msg-color: #474747;
+    --color-hover: #c4c4c4;
+    --input-color: #fff;
+    --nav-bar-color: #d1d1d1;
+}
+
+html, body {
+    height: 100%;
+    color: var(--color-text);
+}
+
 h1 {
     text-align: center;
-    color: #f5f9e9;
     margin-bottom: 1em;
     margin-top: 0.5em;
 }
@@ -12,8 +37,6 @@ h1 {
 
 .aside {
     width: 100%;
-    /* border-right: 1px solid #f5f9e9; */
-    /* margin-top: 3em; */
     margin: 1em 0 0.2em;
 }
 
@@ -26,20 +49,38 @@ h1 {
 }
 
 .section > p {
-    color: #f5f9e9;
     text-align: center;
 }
 
 #btn-create-new {
-    border: 2px solid #f5f9e9;
-    color: #f5f9e9;
+    border: 2px solid var(--yellow-pastel);
+    color: var(--color-text);
     width: fit-content;
     padding: 1%;
     background-color: transparent;
 }
 
 #btn-create-new:hover {
-    box-shadow: 0 0.5em 0.5em -0.4em #f5f9e9;
+    box-shadow: 0 0.5em 0.5em -0.4em var(--yellow-pastel);
+}
+
+#btn-filter {
+    border: 2px solid var(--green-pastel);
+    color: var(--color-text);
+    width: fit-content;
+    padding: 1%;
+    background-color: transparent;
+}
+
+#btn-filter:hover {
+    box-shadow: 0 0.5em 0.5em -0.4em var(--green-pastel);
+}
+
+.filter-input {
+    background-color: var(--main-bg-color);
+    color: var(--color-text);
+    border: .15em solid var(--green-pastel);
+    margin: 0 0 .5em;
 }
 
 h2 {
@@ -55,20 +96,18 @@ h2 {
 .single-package {
     display: flex;
     flex-direction: column;
-    border: 1px solid #000;
     width: 75%;
     margin-left: auto;
     margin-right: auto;
     margin-top: 10px;
     margin-bottom: 10px;
-    border-radius: 15px;
     padding: 2px;
-    border-color: #f5f9e9;
+    border: .15em solid var(--purple-pastel);
 }
 
 .single-package > button {
-    border: 1px solid #f5f9e9;
-    color: #f5f9e9;
+    border: .15em solid var(--purple-pastel);
+    color: var(--color-text);
     background: none;
     width: fit-content;
     margin: auto;
@@ -77,17 +116,16 @@ h2 {
 }
 
 .single-package > button:hover {
-    /* box-shadow: 0 0.5em 0.5em -0.4em #f5f9e9; */
-    background-color: #404e5c;
+    background-color: var(--color-hover);
 }
 
 .single-package > a {
-    color: #f5f9e9;
+    color: var(--color-text);
     text-decoration: none;
 }
 
 .single-package > a:hover {
-    text-decoration: underline #f5f9e9;
+    text-decoration: underline var(--color-text);
 }
 
 .info-pack {
@@ -95,13 +133,9 @@ h2 {
     justify-content: space-around;
 }
 
-.info-pack > span {
-    color: #f5f9e9;
-}
-
 hr {
     margin: 0 1em 0.5em 1em;
-    color: #f5f9e9;
+    color: var(--purple-pastel);
 }
 
 table {
@@ -111,28 +145,52 @@ table {
 }
 
 th, td, tr {
-    border: 1px solid #f5f9e9;
+    border: 1px solid var(--color-text);
     padding: 0.5em;
 }
 
+th {
+    border: 1px solid var(--color-text);
+}
+
 td, th {
-    color: #f5f9e9;
+    color: var(--color-text);
 }
 
 th {
-    background-color: #404e5c;
+    background-color: var(--purple-pastel);
+    color: var(--nav-bar-color);
 }
 
 @media  screen and (min-width:768px) {
     #main {
         display: flex;
         flex-direction: row;
+        height: 87%;
     }
 
     .aside {
         width: 25%;
         margin-top: 2em;
-        border-right: 0.05em solid #f5f9e9;
+        border-right: 0.05em solid var(--color-text);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #create {
+        border: .3em solid var(--yellow-pastel);
+        border-radius: 2%;
+        width: 80%;
+        padding: 2em 0;
+    }
+
+    #filter {
+        border: .3em solid var(--green-pastel);
+        border-radius: 2%;
+        width: 80%;
+        padding: 2em 0;
     }
 
     .section {
@@ -149,6 +207,12 @@ th {
 
     .packages {
         width: 75%;
+        height: 100%;
+    }
+
+    .all-packages {
+        height: 87%;
+        overflow: auto;
     }
     
 }

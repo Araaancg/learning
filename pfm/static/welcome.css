@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Quicksand&display=swap');
+
 :root {
     --purple-pastel: #ce97fd;
     --green-pastel: #6bd59a;
@@ -14,13 +17,19 @@
 body.light {
     --main-bg-color: #fff;
     --color-text: #000;
-    --yellow-pastel: #ffb703;
-    --purple-pastel: #7b2cbf;
-    --green-pastel: #007200;
+    /* --yellow-pastel: #ffb703; */
+    /* --purple-pastel: #7b2cbf; */
+    /* --green-pastel: #007200; */
     --msg-color: #474747;
     --color-hover: #c4c4c4;
     --input-color: #fff;
     --nav-bar-color: #d1d1d1;
+}
+
+
+html, body {
+    height: 100%;
+    color: var(--color-text);
 }
 
 body {
@@ -43,6 +52,57 @@ body {
 
 .nav-item:hover {
     box-shadow: 0 0.5em 0.5em -0.4em var(--color-text);
+}
+
+/* NUEVO  */
+#main {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 80%;
+}
+
+.main {
+    width: 25%;
+    margin: 1em;
+    height: 80%;
+    padding: 2em;
+    border-radius: 10%;
+}
+
+.create {
+    border: .3em solid var(--yellow-pastel);
+    background-color: var(--yellow-pastel);
+}
+
+.study {
+    border: .3em solid var(--green-pastel);
+    background-color: var(--green-pastel);
+}
+.share {
+    border: .3em solid var(--purple-pastel);
+    background-color: var(--purple-pastel);
+}
+
+.main > h2, .main > p {
+    font-family: 'Muli', sans-serif;
+    color: #000;
+    text-align: center;
+}
+
+.main > p {
+    font-family: 'Quicksand', sans-serif;
+}
+
+.prox {
+    position: fixed;
+    color: red;
+    padding: .2em;
+    background-color: red;
+    color: white;
+    border: .15em solid red;
+    transform: translate(-50px) rotate(-45deg);
 }
 
 @media screen and (min-width: 768px) {

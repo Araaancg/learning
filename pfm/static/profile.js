@@ -221,7 +221,7 @@ window.onload = async function() {
     btn_filter.innerText = "Filtrar";
 
     const filter_info = document.createElement("p");
-    filter_info.innerText = "Filtrar por categoría"
+    filter_info.innerText = "Filtrar por paquete"
 
     const filter_input = document.createElement("select");
     filter_input.className = "filter-input"

@@ -1,7 +1,7 @@
 from flask import Flask,request,session,render_template,redirect, url_for
 from uuid import uuid4
 from hashlib import sha256
-from models import db, User, Category, Pack, Card, mailbox
+# from models import db, User, Category, Pack, Card, mailbox
 import secrets
 import requests as req
 import auth
@@ -12,7 +12,57 @@ app = Flask(__name__)
 DB_URI = "test.db"
 app.config["SQLALCHEMY_DATABASE_URI"] = f"sqlite:///{DB_URI}"
 app.secret_key = secrets.token_hex()
-db.init_app(app)
+# db.init_app(app)
+
+from flask_sqlalchemy import SQLAlchemy
+
+db = SQLAlchemy(app)
+
+class User(db.Model):
+    id =  db.Column(db.String(32), primary_key=True, unique=True)
+    date = db.Column(db.Date, nullable=False)
+    name = db.Column(db.String(20), nullable=False, unique=True)
+    email = db.Column(db.String(100), nullable=False, unique=True)
+    pwd = db.Column(db.String(255), nullable=False)
+    token = db.Column(db.String(255), nullable=True)
+
+    categories = db.relationship("Category", backref="user", lazy=True, cascade="all, delete")
+    packs = db.relationship("Pack", backref="user", lazy=True, cascade="all, delete")
+    cards = db.relationship("Card", backref="user", lazy=True, cascade="all, delete")
+
+class Category(db.Model):
+    id = db.Column(db.String(32), primary_key=True, unique=True)
+    date = db.Column(db.Date, nullable=False)
+    name = db.Column(db.String(255), nullable=False, unique=False)
+    id_user = db.Column(db.String(32), db.ForeignKey("user.id"))
+
+    packs = db.relationship("Pack", back_populates="category", lazy=True)
+
+mailbox = db.Table('mailbox',
+        db.Column('pack_id', db.String(32), db.ForeignKey('pack.id')),
+        db.Column('card_id', db.String(32), db.ForeignKey('card.id'))
+    )
+
+class Pack(db.Model):
+    id = db.Column(db.String(32), primary_key=True, unique=True)
+    date = db.Column(db.Date, nullable=False)
+    name = db.Column(db.String(255), nullable=False, unique=False)
+    status = db.Column(db.String(255), nullable=False, unique=False)
+    id_user = db.Column(db.String(32), db.ForeignKey("user.id"))
+    id_cat = db.Column(db.String(32), db.ForeignKey("category.id"))
+
+    cards = db.relationship("Card", secondary=mailbox, back_populates="packs", lazy=True)
+    category = db.relationship("Category", back_populates="packs", lazy=True)
+
+class Card(db.Model):
+    id = db.Column(db.String(32), primary_key=True, unique=True)
+    date = db.Column(db.Date, nullable=False)
+    side_a = db.Column(db.String(32), nullable=False, unique=False)
+    side_b = db.Column(db.String(32), nullable=False, unique=False)
+    id_user = db.Column(db.String(32), db.ForeignKey("user.id"))
+
+    packs = db.relationship("Pack", secondary=mailbox, back_populates="cards", lazy=True)
+
 
 @app.route("/test")
 def test():
@@ -62,6 +112,7 @@ def category():
         if request.args.get("get"):
             category = Category.query.filter_by(name=request.args.get("get")).first()
             if category:
+                return {"id":category.id,"name":category.name,"id_user":"hola","date":dt.date.isoformat(category.date)} 
                 return {"id":category.id,"name":category.name,"id_user":category.id_user,"date":dt.date.isoformat(category.date)} 
             return None
         
@@ -292,13 +343,9 @@ def registration():
         pwd = sha256(request.form.get("pwd").encode()).hexdigest()
         pwd2 = sha256(request.form.get("pwd2").encode()).hexdigest()
 
-        print(dict(request.form))
-
         name_not_exist = False if User.query.filter_by(name=name).first() else True
         email_not_exist = False if User.query.filter_by(email=email).first() else True
         same_pwd = True if pwd == pwd2 else False
-
-        print(name_not_exist,email_not_exist,same_pwd)
 
         if name_not_exist and email_not_exist and same_pwd:
             id_u = str(uuid4())
@@ -311,7 +358,6 @@ def registration():
             msg = {"msg":f"el usuario '{name}' ya existe","error":1} if not name_not_exist else {"msg":f"el email '{email}' ya está en uso","error":2}
             if not same_pwd:
                 msg = {"msg":"las contraseñas tienen que ser iguales","error":3}
-            pass
     return render_template("signup.html", msg=msg)
 
 
@@ -450,6 +496,10 @@ def profile():
 
     return render_template("profile.html", user_name=User.query.filter_by(id=session['id']).first().name)
 
+@app.route("/comunidad")
+@auth.authorize
+def comunity():
+    return render_template("comunity.html", user_name=User.query.filter_by(id=session['id']).first().name)
 
 
 if __name__ == "__main__":

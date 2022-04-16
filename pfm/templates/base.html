@@ -24,7 +24,7 @@
                 <a class="nav-link" style="color: var(--color-text);" aria-current="page" href="http://localhost:5000/home">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" style="color: var(--color-text);" href="http://localhost:5000/my_packages">Mis paquetes</a>
+                <a class="nav-link" style="color: var(--color-text);" href="http://localhost:5000/mis_paquetes">Mis paquetes</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" style="color: var(--color-text);" href="http://localhost:5000/flash_cards">Flash cards</a>
@@ -32,14 +32,25 @@
               <li class="nav-item">
                 <a class="nav-link" style="color: var(--color-text);" href="http://localhost:5000/comunidad">Comunidad</a>
               </li>
+              <ul class="nav navbar-nav e-auto mb-2 mb-lg-0" style="margin-right: 0.5em;" id="left">
+                <li class="nav-item dropdown navbar-end">
+                  <a class="nav-link dropdown-toggle" style="color: var(--color-text);" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    {{user_name}}
+                  </a>
+                  <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
+                    <li><a class="dropdown-item" href="http://localhost:5000/ajustes?perfil">Perfíl</a></li>
+                    <li><a class="dropdown-item" href="http://localhost:5000/home?logout=true">Cerrar sesión</a></li>
+                  </ul>
+                </li>
+              </ul>
             </ul>
-            <ul class="nav navbar-nav e-auto mb-2 mb-lg-0 justify-content-end" style="margin-right: 0.5em;">
+            <ul class="nav navbar-nav e-auto mb-2 mb-lg-0" style="margin-right: 0.5em;" id="right">
               <li class="nav-item dropdown ms-auto">
                 <a class="nav-link dropdown-toggle" style="color: var(--color-text);" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   {{user_name}}
                 </a>
                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
-                  <li><a class="dropdown-item" href="http://localhost:5000/profile?profile">Perfíl</a></li>
+                  <li><a class="dropdown-item" href="http://localhost:5000/ajustes?perfil">Ajustes</a></li>
                   <li><a class="dropdown-item" href="http://localhost:5000/home?logout=true">Cerrar sesión</a></li>
                 </ul>
               </li>

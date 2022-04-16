@@ -87,18 +87,20 @@ form {
 #private-categories {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
 #public-categories {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
 #public-categories > button, #private-categories > button {
     background-color: transparent;
     color: var(--color-text);
     border: 0.15em solid var(--green-pastel);
-    margin: 0em 0.5em 0em;
+    margin: .25em 0.5em 0em;
     border-radius: 0.5em
 }
 

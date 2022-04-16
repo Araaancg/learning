@@ -13,7 +13,7 @@ window.onload = async function() {
     const uri = window.location.href;
     const pack_id = uri.split("/")[uri.split("/").length - 1];
 
-    const res = await fetch(`http://localhost:5000/my_packages/${pack_id}`, {method:"POST"});
+    const res = await fetch(`http://localhost:5000/mis_paquetes/${pack_id}`, {method:"POST"});
     let data = await res.json();
     console.log(data);
 

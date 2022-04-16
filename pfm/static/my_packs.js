@@ -4,7 +4,7 @@ window.onload = async function() {
         body.className = "light"
     };
 
-    res = await fetch(`http://localhost:5000/my_packages`, {
+    res = await fetch(`http://localhost:5000/mis_paquetes`, {
         method:"POST"
     });
     const data = await res.json();
@@ -19,7 +19,14 @@ window.onload = async function() {
     main_div.append(h1);
 
     const all_packages = document.createElement("div");
-    all_packages.className = "all-packages"
+    all_packages.className = "all-packages";
+
+    if (data.packages.length === 0) {
+        const p_404 = document.createElement("p");
+        p_404.className = "no-packs";
+        p_404.innerText = "Vaya parece que aún no tienes ningún paquete. Pincha en el botón de 'nuevo paquete' para crear uno";
+        all_packages.append(p_404);
+    };
 
     for (pack of data.packages) {
         const sub_div = document.createElement("div");
@@ -27,7 +34,7 @@ window.onload = async function() {
         sub_div.setAttribute("id",pack.id);
         const a = document.createElement("a");
         a.className = "link-a"
-        a.href = `http://localhost:5000/my_packages/${pack.id}`
+        a.href = `http://localhost:5000/mis_paquetes/${pack.id}`
         const h2 = document.createElement("h2");
         h2.innerText = pack.name
 
@@ -95,7 +102,7 @@ window.onload = async function() {
     div_create.id = "create";
     const btn_create_new = document.querySelector("#btn-create-new");
     btn_create_new.onclick = function() {
-        window.location.assign("http://localhost:5000/my_packages/create_new");
+        window.location.assign("http://localhost:5000/mis_paquetes/nuevo");
     };
     const create_info = document.createElement("p");
     create_info.innerText = "¡Añade un paquete a la colección!"
@@ -116,7 +123,7 @@ window.onload = async function() {
 
     const filter_input = document.createElement("select");
     filter_input.className = "filter-input"
-    const filter_res = await fetch(`http://localhost:5000/my_packages/create_new?get=categories`);
+    const filter_res = await fetch(`http://localhost:5000/mis_paquetes/nuevo?get=categories`);
     const categories = await filter_res.json();
 
     for (let category of categories.categories[0].public) {
@@ -140,7 +147,7 @@ window.onload = async function() {
     filter_input.append(no_option)
 
     btn_filter.onclick = async function(){
-        const filtered_res = await fetch(`http://localhost:5000/my_packages?filter=${filter_input.value}`);
+        const filtered_res = await fetch(`http://localhost:5000/mis_paquetes?filter=${filter_input.value}`);
         const filtered_data = await filtered_res.json();
         console.log(filtered_data);
 
@@ -152,7 +159,7 @@ window.onload = async function() {
             sub_div.setAttribute("id",pack.id);
             const a = document.createElement("a");
             a.className = "link-a"
-            a.href = `http://localhost:5000/my_packages/${pack.id}`
+            a.href = `http://localhost:5000/mis_paquetes/${pack.id}`
             const h2 = document.createElement("h2");
             h2.innerText = pack.name
     

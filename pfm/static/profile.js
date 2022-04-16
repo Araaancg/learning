@@ -28,7 +28,7 @@ window.onload = async function() {
     const ph1 = document.createElement("h1"); //name of div //p de profile
     ph1.innerText = "Mi perfil";
     // para conseguir la info del user hacemos fetch a la pag, lo demás lo manejamos con python
-    const res = await fetch(`http://localhost:5000/profile?get=user`)
+    const res = await fetch(`http://localhost:5000/ajustes?get=user`)
     const data = await res.json()
     // console.log(data);
 
@@ -70,14 +70,14 @@ window.onload = async function() {
     div_change_e.append(einput,btn_save_e)
     btn_save_e.onclick = async function() {
         const eform = new FormData(div_change_e);
-        const eres = await fetch(`http://localhost:5000/profile?change=email`, {
+        const eres = await fetch(`http://localhost:5000/ajustes?change=email`, {
             method:"POST",
             body: eform
         })
         const edata = await eres.json()
         if (edata.success) {
             // window.location.reload()
-            window.location.assign(`http://localhost:5000/profile?profile`);
+            window.location.assign(`http://localhost:5000/ajustes?profile`);
         }
         else {
             console.log(edata)
@@ -138,7 +138,7 @@ window.onload = async function() {
     // save new password
     btn_save_pw.onclick = async function() {
         const pwform = new FormData(div_change_pw);
-        const pwres = await fetch(`http://localhost:5000/profile?change=password`, {
+        const pwres = await fetch(`http://localhost:5000/ajustes?change=password`, {
             method:"POST",
             body: pwform
         })
@@ -176,7 +176,7 @@ window.onload = async function() {
     btn_delete_user.onclick = async function() {
         confirmation = confirm("¿seguro que desea eliminar este usuario? se eliminarán también los paquetes y tarjetas asociados");
         if (confirmation) {
-            const res = await fetch(`http://localhost:5000/profile?delete_user=true`);
+            const res = await fetch(`http://localhost:5000/ajustes?delete_user=true`);
             const delete_res = await res.json()
             if (delete_res.success) {
                 window.location.assign("http://localhost:5000/welcome");
@@ -225,7 +225,7 @@ window.onload = async function() {
 
     const filter_input = document.createElement("select");
     filter_input.className = "filter-input"
-    const filter_res = await fetch(`http://localhost:5000/profile?get_pack_names=true`);
+    const filter_res = await fetch(`http://localhost:5000/ajustes?get_pack_names=true`);
     const packages = await filter_res.json();
     console.log(packages);
 
@@ -244,9 +244,9 @@ window.onload = async function() {
 
     btn_filter.onclick = async function(){
 
-        let uri = `http://localhost:5000/profile?filter_by_pack=${filter_input.value}`;
+        let uri = `http://localhost:5000/ajustes?filter_by_pack=${filter_input.value}`;
         if (filter_input.value === "null") {
-            uri = `http://localhost:5000/profile?get=mycards`;
+            uri = `http://localhost:5000/ajustes?get=mycards`;
         };
 
 
@@ -270,9 +270,9 @@ window.onload = async function() {
             btn_delete_card.className = "btn-delete-card";
             btn_delete_card.type = "button";
             btn_delete_card.onclick = async function() {
-                await fetch(`http://localhost:5000/profile?delete_card=${card.id}`)
+                await fetch(`http://localhost:5000/ajustes?delete_card=${card.id}`)
                 // window.location.reload()
-                window.location.assign(`http://localhost:5000/profile?cards`);
+                window.location.assign(`http://localhost:5000/ajustes?cards`);
             };
 
             div_delete_card.append(btn_delete_card);
@@ -380,7 +380,7 @@ window.onload = async function() {
                 btn_add_pack.className = "btn-add-pack"; 
 
                 btn_add_pack.onclick = async function(){
-                    const res = await fetch(`http://localhost:5000/profile?get_pack_names=true`);
+                    const res = await fetch(`http://localhost:5000/ajustes?get_pack_names=true`);
                     const data = await res.json();
                     // console.log(data);
                     if (data.packages.length != card.packages.length){
@@ -466,14 +466,14 @@ window.onload = async function() {
                             };
                         };
                     };
-                    const prueba = await fetch(`http://localhost:5000/profile?edit_card=${card.id}`, {
+                    const prueba = await fetch(`http://localhost:5000/ajustes?edit_card=${card.id}`, {
                         method:"PUT",
                         body:form
                     });
                     const prueba_json = await prueba.json();
                     // console.log(prueba_json);
                     // window.location.reload()
-                    window.location.assign(`http://localhost:5000/profile?cards`);
+                    window.location.assign(`http://localhost:5000/ajustes?cards`);
                 };
 
                 div_edit_buttons.append(btn_save,btn_cancel);
@@ -494,10 +494,26 @@ window.onload = async function() {
 
 
     // cada tarjeta será un div con el side_a y side_b, lista de paquetes asociados y botones de editar y eliminar
-    const cres = await fetch(`http://localhost:5000/profile?get=mycards`);
+    const cres = await fetch(`http://localhost:5000/ajustes?get=mycards`);
     const cdata = await cres.json();
     // console.log(cdata);
-    let count = 0
+    let count = 0;
+
+    if (cdata.cards.length === 0) {
+        cards_main.className = "no-cards";
+        const p_404 = document.createElement("p");
+        p_404.className = "no-cards";
+        p_404.innerText = "Vaya parece que aún no tienes ninguna tarjeta. Pincha en el botón para crear una paquete.";
+        const create_new = document.createElement("button");
+        create_new.innerText = "Crear paquete";
+        create_new.type = "button";
+        create_new.onclick = function() {
+            window.location.assign(`http://localhost:5000/mis_paquetes/nuevo`)
+        };
+        create_new.className = "no-cards"
+        cards_main.append(p_404,create_new);
+    };
+
     for (let card of cdata.cards) {
         const single_card = document.createElement("div");
         single_card.className = "single-card"
@@ -511,9 +527,9 @@ window.onload = async function() {
         btn_delete_card.className = "btn-delete-card";
         btn_delete_card.type = "button";
         btn_delete_card.onclick = async function() {
-            await fetch(`http://localhost:5000/profile?delete_card=${card.id}`)
+            await fetch(`http://localhost:5000/ajustes?delete_card=${card.id}`)
             // window.location.reload()
-            window.location.assign(`http://localhost:5000/profile?cards`);
+            window.location.assign(`http://localhost:5000/ajustes?cards`);
         };
 
         div_delete_card.append(btn_delete_card);
@@ -621,7 +637,7 @@ window.onload = async function() {
             btn_add_pack.className = "btn-add-pack"; 
 
             btn_add_pack.onclick = async function(){
-                const res = await fetch(`http://localhost:5000/profile?get_pack_names=true`);
+                const res = await fetch(`http://localhost:5000/ajustes?get_pack_names=true`);
                 const data = await res.json();
                 // console.log(data);
                 if (data.packages.length != card.packages.length){
@@ -707,14 +723,14 @@ window.onload = async function() {
                         };
                     };
                 };
-                const prueba = await fetch(`http://localhost:5000/profile?edit_card=${card.id}`, {
+                const prueba = await fetch(`http://localhost:5000/ajustes?edit_card=${card.id}`, {
                     method:"PUT",
                     body:form
                 });
                 const prueba_json = await prueba.json();
                 // console.log(prueba_json);
                 // window.location.reload()
-                window.location.assign(`http://localhost:5000/profile?cards`);
+                window.location.assign(`http://localhost:5000/ajustes?tarjetas`);
             };
 
             div_edit_buttons.append(btn_save,btn_cancel);
@@ -804,7 +820,7 @@ window.onload = async function() {
     btn_aside_theme.innerText = "TEMAS";
 
     const uri = window.location.href;
-    if (uri.split("?")[uri.split("?").length - 1] === "cards") {
+    if (uri.split("?")[uri.split("?").length - 1] === "tarjetas") {
         profile_div.style.display = "none";
         cards_div.style.display = "flex";
         theme_div.style.display = "none";
@@ -812,7 +828,7 @@ window.onload = async function() {
         btn_aside_profile.classList.remove("showing");
         btn_aside_cards.classList.add("showing");
     }
-    else if (uri.split("?")[uri.split("?").length - 1] === "profile") {
+    else if (uri.split("?")[uri.split("?").length - 1] === "perfil") {
         profile_div.style.display = "block";
         cards_div.style.display = "none";
         theme_div.style.display = "none";
@@ -820,7 +836,7 @@ window.onload = async function() {
         btn_aside_theme.classList.remove("showing");
         btn_aside_cards.classList.remove("showing");
     }
-    else if (uri.split("?")[uri.split("?").length - 1] === "theme") {
+    else if (uri.split("?")[uri.split("?").length - 1] === "temas") {
         profile_div.style.display = "none";
         cards_div.style.display = "none";
         theme_div.style.display = "flex";
@@ -831,13 +847,13 @@ window.onload = async function() {
 
 
     btn_aside_profile.onclick = function() {
-        window.location.assign('http://localhost:5000/profile?profile');
+        window.location.assign('http://localhost:5000/ajustes?perfil');
     };
     btn_aside_cards.onclick = function() {
-        window.location.assign('http://localhost:5000/profile?cards');
+        window.location.assign('http://localhost:5000/ajustes?tarjetas');
     };
     btn_aside_theme.onclick = function() {
-        window.location.assign('http://localhost:5000/profile?theme');
+        window.location.assign('http://localhost:5000/ajustes?temas');
     };
 
     

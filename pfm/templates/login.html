@@ -8,8 +8,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="{{url_for('static',filename='signup.css')}}">
     <script src="{{url_for('static',filename='base.js')}}"></script>
-    <title>login</title>
-    <title>Document</title>
+    <title>PFM | Inico de sesión</title>
 </head>
 <body>
     <h1>Inicio de sesión</h1>
@@ -17,14 +16,14 @@
         <div class="input">
             <label for="email">Email</label>
             <input type="email" placeholder="ejemplo@email.com" required id="email" name="email">
-            {%if msg == "User not found"%}
+            {%if msg == "usuario no encontrado"%}
                 <span class="msg">{{msg}}</span>
             {%endif%}
         </div>
         <div class="input">
             <label for="pwd">Contraseña</label>
             <input type="password" placeholder="contraseña" required id="pwd" name="pwd">
-            {%if msg == "Incorrect password"%}
+            {%if msg == "contraseña incorrecta"%}
                 <span class="msg">{{msg}}</span>
             {%endif%}
         </div>

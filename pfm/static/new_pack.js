@@ -4,7 +4,7 @@ window.onload = async function() {
         body.className = "light"
     };
 
-    const res = await fetch(`http://localhost:5000/my_packages/create_new?get=categories`);
+    const res = await fetch(`http://localhost:5000/mis_paquetes/nuevo?get=categories`);
     const cat_list = await res.json();
     console.log(cat_list);
 
@@ -170,7 +170,7 @@ window.onload = async function() {
     // aparte del titulo, el popup tendrá dos partes, las tarjetas y el boton de confimar
     const popup = document.createElement("div");
     popup.className = "popup"
-    const popres = await fetch(`http://localhost:5000/profile?get=mycards`);
+    const popres = await fetch(`http://localhost:5000/ajustes?get=mycards`);
     const result = await popres.json();
 
     for (let card of result.cards) {
@@ -244,14 +244,14 @@ window.onload = async function() {
             count += 1
         };
         console.log(submit_form)
-        const answer = await fetch(`http://localhost:5000/my_packages/create_new`, {
+        const answer = await fetch(`http://localhost:5000/mis_paquetes/nuevo`, {
             method: "POST",
             body: submit_form
         });
         const result = await answer.json()
         console.log(result)
         if (result.success) {
-            window.location.assign("http://localhost:5000/my_packages");
+            window.location.assign("http://localhost:5000/mis_paquetes");
         }
         else {
             if (result.lasting_input === "category"){

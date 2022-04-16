@@ -1,7 +1,7 @@
-from flask import Flask,request,session,render_template,redirect, url_for
+from flask import Flask, request,session, render_template, redirect, url_for
 from uuid import uuid4
 from hashlib import sha256
-# from models import db, User, Category, Pack, Card, mailbox
+from models import db, User, Category, Pack, Card
 import secrets
 import requests as req
 import auth
@@ -9,66 +9,44 @@ import datetime as dt
 
 
 app = Flask(__name__)
-DB_URI = "test.db"
+DB_URI = "pfm.db"
 app.config["SQLALCHEMY_DATABASE_URI"] = f"sqlite:///{DB_URI}"
 app.secret_key = secrets.token_hex()
-# db.init_app(app)
-
-from flask_sqlalchemy import SQLAlchemy
-
-db = SQLAlchemy(app)
-
-class User(db.Model):
-    id =  db.Column(db.String(32), primary_key=True, unique=True)
-    date = db.Column(db.Date, nullable=False)
-    name = db.Column(db.String(20), nullable=False, unique=True)
-    email = db.Column(db.String(100), nullable=False, unique=True)
-    pwd = db.Column(db.String(255), nullable=False)
-    token = db.Column(db.String(255), nullable=True)
-
-    categories = db.relationship("Category", backref="user", lazy=True, cascade="all, delete")
-    packs = db.relationship("Pack", backref="user", lazy=True, cascade="all, delete")
-    cards = db.relationship("Card", backref="user", lazy=True, cascade="all, delete")
-
-class Category(db.Model):
-    id = db.Column(db.String(32), primary_key=True, unique=True)
-    date = db.Column(db.Date, nullable=False)
-    name = db.Column(db.String(255), nullable=False, unique=False)
-    id_user = db.Column(db.String(32), db.ForeignKey("user.id"))
-
-    packs = db.relationship("Pack", back_populates="category", lazy=True)
-
-mailbox = db.Table('mailbox',
-        db.Column('pack_id', db.String(32), db.ForeignKey('pack.id')),
-        db.Column('card_id', db.String(32), db.ForeignKey('card.id'))
-    )
-
-class Pack(db.Model):
-    id = db.Column(db.String(32), primary_key=True, unique=True)
-    date = db.Column(db.Date, nullable=False)
-    name = db.Column(db.String(255), nullable=False, unique=False)
-    status = db.Column(db.String(255), nullable=False, unique=False)
-    id_user = db.Column(db.String(32), db.ForeignKey("user.id"))
-    id_cat = db.Column(db.String(32), db.ForeignKey("category.id"))
-
-    cards = db.relationship("Card", secondary=mailbox, back_populates="packs", lazy=True)
-    category = db.relationship("Category", back_populates="packs", lazy=True)
-
-class Card(db.Model):
-    id = db.Column(db.String(32), primary_key=True, unique=True)
-    date = db.Column(db.Date, nullable=False)
-    side_a = db.Column(db.String(32), nullable=False, unique=False)
-    side_b = db.Column(db.String(32), nullable=False, unique=False)
-    id_user = db.Column(db.String(32), db.ForeignKey("user.id"))
-
-    packs = db.relationship("Pack", secondary=mailbox, back_populates="cards", lazy=True)
-
-
-@app.route("/test")
-def test():
-    return render_template("test.html", user_name=User.query.filter_by(id=session['id']).first().name)
+db.init_app(app)
 
 ################################### API #########################################
+
+'''
+RUTAS API
+- /api/token: maneja todo el tema de las cookies, autentificación, autorización y el logout en toda la página web
+- /api/categories: maneja la parte de categorias de la base de datos
+        crear categoria (method POST):  ?post=<nombre_categoria>&id_user=<id_user> (id user puede ser "public" o un id de verdad)
+        buscar categoria (method GET):  ningun argumento, devuelve la info de todas las categorias
+                                        ?id_user=<id_user> devuelve info de todas las categorias de ese usuario (si pones public delvuelve info de las categorias pùblicas)
+                                        ?get=<nombre_categoria>&id_user=<id_user> devuelve info de una categoria
+- /api/packages: maneja la parte de paquetes de la base de datos
+        crear paquete (method POST):    toda la info viene por formulario
+        buscar paquete (mehtod GET):    ningún argumento, devuelve la info de todos los paquetes
+                                        ?get=<id_pack> devuelve info del paquete indicado
+                                        ?filter_by=<id_categoria / id_usuario / id_categoria & id_usuario> se filtra en base a lo que pongas. usuario, categoria o ambas
+        eliminar paquete (method DELETE): se elimina el paquete pero no las tarjetas
+        editar paquete (method PUT):    ?new_card=<id_pack> se añaden tarjetas al paquete del id. la info de las tarjetas viene por form
+                                        ?existing_cards=<id_pack> se añaden tarjetas ya existentes de otros paquetes. los ID's vienen por form
+                                        ?delete_card=<id_pack> se elimina la tarjeta del paquete indicado, el id de la tarjeta viene por form
+- /api/cards: maneja la parte de tarjetas de la base de datos
+        buscar tarjeta (method GET):    ningun argumento, devuelve todas las tarjetas de la base de datos
+                                        ?id_user=<id_user> devuelve las tarjetas de ese usuario
+                                        ?filter_by_pack=<id_pack> devuelve las tarjetas de ese paquete
+        eliminar tarjeta (method DELETE) ?id=<id_card> elimina la tarjeta completamente de la base de datos
+        editar tarjeta (method PUT):    ?edit_card=<id_card> editar tarjeta, info de cara a y cara b en form
+                                        ?edit_card=<id_card>&add_packs=true, añadir la tarjeta a otros paquetes (lista de ids en el form)
+                                        ?edit_card=<id_card>&delete_packs=true, eliminar la tarjeta de otros paquetes (lista de ids en el form)
+- /api/user: maneja la parte del usuario e la base de datos
+        buscar user (method GET):       ?id_user=<id_user>, devuelve info básica del usuario
+        eliminar user (method DELETE):  ?id_user=<id_user>, elimina el usuario por completo, además de sus paquetes, tarjetas y categorías
+        editar user (method PUT):       ?id_user=<id_user>&email=true, edita el email del usuario (info del email en el form)
+        editar user (method PUT):       ?id_user=<id_user>&pwd=true, edita la contraseña del usuario (info de la pwd en el form)
+'''
 
 @app.route("/api/token", methods=["PUT", "GET"])
 def token():
@@ -82,8 +60,8 @@ def token():
             db.session.commit()
             if user.pwd == pwd:
                 return {"success": True, "id": user.id, "token": user.token}
-            return {"success":False, "msg": "Incorrect password"}
-        return {"success": False, "msg": "User not found"}
+            return {"success":False, "msg": "contraseña incorrecta"}
+        return {"success": False, "msg": "usuario no encontrado"}
 
     elif request.method == "GET":
         cookie_id = request.args.get("id")
@@ -110,9 +88,9 @@ def category():
 
     if request.method == "GET":
         if request.args.get("get"):
-            category = Category.query.filter_by(name=request.args.get("get")).first()
+            category = None
+            category = Category.query.filter_by(name=request.args.get("get")).filter_by(id_user=request.args.get("id_user")).first()
             if category:
-                return {"id":category.id,"name":category.name,"id_user":"hola","date":dt.date.isoformat(category.date)} 
                 return {"id":category.id,"name":category.name,"id_user":category.id_user,"date":dt.date.isoformat(category.date)} 
             return None
         
@@ -125,7 +103,7 @@ def category():
             return result
 
         for cat in Category.query.filter_by():
-            category = {"id":cat.id,"name":cat.name,"date":dt.date.isoformat(cat.date)}
+            category = {"id":cat.id,"name":cat.name,"date":dt.date.isoformat(cat.date),"id_user":cat.id_user}
             result["categories"].append(category)
         return result
 
@@ -133,7 +111,7 @@ def category():
 def package():
     result = {"packages":[]}
     form = dict(request.form)
-    if request.method == "POST":
+    if request.method == "POST": #CREAR PAQUETES
         # COMPROBAMOS QUE EL FORMULARIO ESTÁ COMPLETO
         print(form)
         if not form.get('pack_name'):
@@ -141,7 +119,9 @@ def package():
         if not form.get('category'):
             return {"success":False,"msg":"¡Añade una categoría al paquete!","lasting_input":"category"}
         #CATEGORIA
-        category = req.get(f"http://localhost:5000/api/categories?get={form['category']}") #comprobamos si existe la categoria
+        category = req.get(f"http://localhost:5000/api/categories?get={form['category']}&id_user={form['id_user']}") #comprobamos si existe la categoria
+        if not category: 
+            category = req.get(f"http://localhost:5000/api/categories?get={form['category']}&id_user=public")
         if not category:
             category = req.post(f"http://localhost:5000/api/categories?post={form['category']}&id_user={form['id_user']}")
         category = category.json()
@@ -196,7 +176,7 @@ def package():
         
         for pack in obj:
             package = {"id":pack.id,"name":pack.name,"category":{"id":pack.id_cat},"id_user":pack.id_user}
-            package["category"]["name"] = Category.query.filter_by(id=pack.id_cat).first().name ##!!
+            package["category"]["name"] = Category.query.filter_by(id=pack.id_cat).first().name
             package["cards"] = [{"id":card.id,"side_a":card.side_a,"side_b":card.side_b} for card in pack.cards]
             result["packages"].append(package)
         return result
@@ -379,7 +359,7 @@ def home():
             return redirect(url_for("welcome"))
     return render_template("home.html", user_name=User.query.filter_by(id=session['id']).first().name)
 
-@app.route("/my_packages", methods=["GET","POST"])
+@app.route("/mis_paquetes", methods=["GET","POST"])
 @auth.authorize
 def my_packages():
     if request.method == "POST":
@@ -393,40 +373,35 @@ def my_packages():
 
     return render_template("my_packs.html", user_name=User.query.filter_by(id=session['id']).first().name)
 
-@app.route("/my_packages/<id>", methods=["GET","POST","PUT"])
+@app.route("/mis_paquetes/<id>", methods=["GET","POST","PUT"])
 @auth.authorize
 def get_package(id):
     if request.method == "POST":
-        print(id)
         id_pack = Pack.query.filter_by(id=id).first().id
         package = req.get(f"http://localhost:5000/api/packages?get={id_pack}").json()
         return {"data":package}
 
     if request.args.get("delete_card"):
         #solo se quita la relación entre le paquete y la tarjeta, la tarjeta en sí no se elimina
-        req.put(f"http://localhost:5000/api/packages?delete_card=true&id_pack={id}", data={"id":request.args.get("delete_card")}) 
+        return req.put(f"http://localhost:5000/api/packages?delete_card=true&id_pack={id}", data={"id":request.args.get("delete_card")}).json()
         return {"succes":True}
 
     if request.args.get("edit_card"):
-        print(request.form)
-        req.put(f"http://localhost:5000/api/cards", data={"id":request.args.get("edit_card"),"side_a":request.form['side_a'],"side_b":request.form['side_b']})
-        return {"succes":True}
+        #editamos una tarjeta
+        return req.put(f"http://localhost:5000/api/cards", data={"id":request.args.get("edit_card"),"side_a":request.form['side_a'],"side_b":request.form['side_b']}).json()
     
     if request.args.get("delete_pack"):
-        req.delete(f"http://localhost:5000/api/packages", data={"id":request.args.get("delete_pack")})
-        return {"succes":True}  
+        return req.delete(f"http://localhost:5000/api/packages", data={"id":request.args.get("delete_pack")}).json() 
     
     if request.args.get("new_card"):
-        req.put(f"http://localhost:5000/api/packages?new_card={request.args.get('new_card')}", data=request.form)
-        return {"success":True}
+        return req.put(f"http://localhost:5000/api/packages?new_card={request.args.get('new_card')}", data=request.form).json()
 
     if request.args.get("existing_cards"):
-        print(request.form)
         return req.put(f"http://localhost:5000/api/packages?existing_cards={request.args.get('existing_cards')}", data=request.form).json()
 
     return render_template("one_pack.html", user_name=User.query.filter_by(id=session['id']).first().name)
 
-@app.route("/my_packages/create_new", methods=["GET","POST"])
+@app.route("/mis_paquetes/nuevo", methods=["GET","POST"])
 @auth.authorize
 def new_pack():
     if request.method == "POST":
@@ -457,13 +432,13 @@ def choose_pack():
 @app.route("/flash_cards/<id>")
 @auth.authorize
 def flash_cards(id):
-    return render_template("flash_cards.html", user_name=User.query.filter_by(id=session['id']).first().name)
+    pack_name = Pack.query.filter_by(id=id).first().name
+    return render_template("flash_cards.html", user_name=User.query.filter_by(id=session['id']).first().name, pack_name=pack_name)
 
-@app.route("/profile", methods=["GET","POST","PUT"])
+@app.route("/ajustes", methods=["GET","POST","PUT"])
 @auth.authorize
 def profile():
     if request.method == "POST":
-        print(request.form)
         return req.put(f"http://localhost:5000/api/user?id_user={session.get('id')}", data=request.form).json()
 
     if request.args.get("get") == "user":

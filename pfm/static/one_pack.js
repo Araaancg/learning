@@ -14,11 +14,17 @@ window.onload = async function() {
   const uri = window.location.href;
   const pack_name = uri.split("/")[uri.split("/").length - 1];
   // console.log(pack_name);
-  const res = await fetch(`http://localhost:5000/my_packages/${pack_name}`, {
+  const res = await fetch(`http://localhost:5000/mis_paquetes/${pack_name}`, {
       method:"POST"
   });
   const data = await res.json();
-  console.log(data)
+  console.log(data);
+
+  // ponemos título
+  const head_html = document.querySelector("head");
+  const title = document.createElement("title");
+  title.innerText = `PFM | Mis paquetes: ${data.data.packages.name}`;
+  head_html.append(title);
 
   // habrá tres partes:
   // top: tendrá el título, categoría y número de tarjetas
@@ -73,7 +79,7 @@ window.onload = async function() {
     btn_delete.title = "eliminar del paquete"
     btn_delete.innerText = "x";
     btn_delete.onclick = async function() {
-      await fetch(`http://localhost:5000/my_packages/${data.data.packages.id}?delete_card=${card.id}`);
+      await fetch(`http://localhost:5000/mis_paquetes/${data.data.packages.id}?delete_card=${card.id}`);
       window.location.reload();
     };
     top_card.append(btn_delete);
@@ -133,7 +139,7 @@ window.onload = async function() {
         const form = new FormData();
         form.append("side_a",textareaa.value);
         form.append("side_b",textareab.value);
-        await fetch(`http://localhost:5000/my_packages/${data.data.packages.name}?edit_card=${card.id}`, {
+        await fetch(`http://localhost:5000/mis_paquetes/${data.data.packages.name}?edit_card=${card.id}`, {
             method:"PUT",
             body:form
         });
@@ -165,8 +171,8 @@ window.onload = async function() {
   btn_delete_pack.onclick = async function(){
     confirmation = confirm("El paquete se eliminará de la base de datos pero las tarjetas se te quedarán en el perfil. Para eliminarlas vete a tu perfil.");
       if (confirmation) {
-          await fetch(`http://localhost:5000/my_packages/${data.data.packages.name}?delete_pack=${data.data.packages.id}`);
-          window.location.assign("http://localhost:5000/my_packages");
+          await fetch(`http://localhost:5000/mis_paquetes/${data.data.packages.name}?delete_pack=${data.data.packages.id}`);
+          window.location.assign("http://localhost:5000/mis_paquetes");
           console.log("paquete eliminardo");
       }
       else {
@@ -212,7 +218,7 @@ window.onload = async function() {
       const form = new FormData();
       form.append("side_a",create_sidea.value);
       form.append("side_b",create_sideb.value);
-      await fetch(`http://localhost:5000/my_packages/${data.data.packages.name}?new_card=${data.data.packages.id}`, {
+      await fetch(`http://localhost:5000/mis_paquetes/${data.data.packages.name}?new_card=${data.data.packages.id}`, {
           method:"PUT",
           body:form
       });
@@ -229,7 +235,7 @@ window.onload = async function() {
     btn_add_currentcard.type = "button";
 
     btn_add_currentcard.onclick = async function() {
-      const popres = await fetch(`http://localhost:5000/profile?get=mycards`);
+      const popres = await fetch(`http://localhost:5000/ajustes?get=mycards`);
       const result = await popres.json();
 
       edit_overlay.style.display = "flex";
@@ -302,7 +308,7 @@ window.onload = async function() {
             form.append(`exist_${count}`,item);
             count += 1
         };
-        await fetch(`http://localhost:5000/my_packages/${data.data.packages.name}?existing_cards=${data.data.packages.id}`, {
+        await fetch(`http://localhost:5000/mis_paquetes/${data.data.packages.name}?existing_cards=${data.data.packages.id}`, {
             method:"PUT",
             body:form
         });

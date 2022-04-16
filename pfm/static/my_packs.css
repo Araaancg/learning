@@ -38,6 +38,8 @@ h1 {
 .aside {
     width: 100%;
     margin: 1em 0 0.2em;
+    display: flex;
+    flex-direction: column-reverse;
 }
 
 .section {
@@ -87,6 +89,13 @@ h2 {
     text-align: center;
 }
 
+.no-packs {
+    text-align: center;
+    color: var(--msg-color);
+    width: fit-content;
+    margin: auto;
+}
+
 .packages {
     width: 100%;
     display: flex;
@@ -130,7 +139,10 @@ h2 {
 
 .info-pack {
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: .5em;
 }
 
 hr {
@@ -162,7 +174,7 @@ th {
     color: var(--nav-bar-color);
 }
 
-@media  screen and (min-width:768px) {
+@media  screen and (min-width:770px) {
     #main {
         display: flex;
         flex-direction: row;
@@ -193,6 +205,10 @@ th {
         padding: 2em 0;
     }
 
+    .filter-input {
+        width: 90%;
+    }
+
     .section {
         width: 100%;
         border: none;
@@ -213,6 +229,13 @@ th {
     .all-packages {
         height: 87%;
         overflow: auto;
+    }
+
+    
+    .info-pack {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
     }
     
 }

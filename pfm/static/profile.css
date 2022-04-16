@@ -180,16 +180,35 @@ aside {
 }
 
 /* CARDS DIV */
-.cards-div {
-    height: 100%;
+#cards-main.no-cards {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-/* .card-parts {
-    border: 1px solid black;
-} */
+p.no-cards {
+    text-align: center;
+    width: fit-content;
+    color: var(--msg-color);
+}
 
-#cards-aside {
-    width: 25%;
+button.no-cards {
+    border: .15em solid var(--yellow-pastel);
+    background-color: transparent;
+    color: var(--color-text);
+}
+
+button.no-cards:hover {
+    box-shadow: 0 0.5em 0.5em -0.4em var(--yellow-pastel);
+}
+
+.cards-div {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 #cards-main {
@@ -203,8 +222,7 @@ aside {
 
 .single-card {
     border: .3em solid var(--yellow-pastel);
-    min-width: 25%;
-    max-width: 50%;
+    width: 90%;
     margin: .5em;
 }
 
@@ -282,23 +300,25 @@ aside {
 }
 
 .edit-card-popup {
-    width: 60%;
-    height: 60%;
+    width: 90%;
+    height: 90%;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 /* left card edit */
 .left-card {
     background-color: var(--main-bg-color);
     border: .3em solid var(--purple-pastel);
-    width: fit-content;
-    min-width: 30%;
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 90%;
+    margin: .8em;
 }
 
 .left-card > p {
@@ -315,19 +335,23 @@ aside {
 .right-card {
     border: .3em solid var(--purple-pastel);
     background-color: var(--main-bg-color);
-    width: fit-content;
-    min-width: 60%;
     display: flex;
     height: 100%;
+    
+    flex-direction: column;
+    width: 90%;
+    overflow: auto;
 }
 
 .edit-card-div {
-    border-right: .15em solid var(--purple-pastel);
-    width: 50%;
+    border-bottom: .15em solid var(--purple-pastel);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    
+    width: 100%;
+    padding: .5em 0;
 }
 
 .edit-card-div > hr {
@@ -340,11 +364,12 @@ aside {
 }
 
 .edit-pack-div {
-    width: 50%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+    padding: .5em 0;
 }
 
 /* div with buttons from edit div */
@@ -415,7 +440,7 @@ li > button:hover {
     color: var(--msg-color);
 }
 
-/* SISTEMA DE FILTRADIO */
+/* SISTEMA DE FILTRADO */
 .section {
     width: 100%;
     border: none;
@@ -428,21 +453,9 @@ li > button:hover {
     text-align: center;
 }
 
-/* #btn-create-new {
-    border: 2px solid var(--yellow-pastel);
-    color: var(--color-text);
-    width: fit-content;
-    padding: 1%;
-    background-color: transparent;
-}
-
-#btn-create-new:hover {
-    box-shadow: 0 0.5em 0.5em -0.4em var(--yellow-pastel);
-} */
-
 #cards-aside {
-    width: 25%;
-    border-right: 0.05em solid var(--color-text);
+    width: 90%;
+    border-bottom: 0.05em solid var(--color-text);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -450,10 +463,16 @@ li > button:hover {
 }
 
 #filter {
-    border: .3em solid var(--green-pastel);
     border-radius: 2%;
+    padding: .5em;
     width: 80%;
-    padding: 2em 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+}
+#filter > p {
+    display: none;
 }
 
 #btn-filter {
@@ -479,8 +498,9 @@ li > button:hover {
 /* THEME DIV */
 .theme-div {
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .themes {
@@ -511,4 +531,122 @@ li > button:hover {
 
 #light.theme-selected > p {
     color: var(--yellow-pastel);
+}
+
+@media screen and (min-width: 600px) {
+    .theme-div {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .cards-div {
+        height: 100%;
+    }
+
+    /* #cards-aside {
+        width: 25%;
+        border-right: 0.05em solid var(--color-text);
+        border-bottom: none;
+    }
+
+    #filter {
+        border: .3em solid var(--green-pastel);
+        flex-direction: column;
+        padding: 2em 0;
+    }
+
+    #filter > p {
+        display: block;
+    }
+
+    .cards-div {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .single-card {
+        border: .3em solid var(--yellow-pastel);
+        width: fit-content;
+        min-width: 45%;
+        max-width: 50%;
+        margin: .5em;
+    } */
+}
+
+@media screen and (min-width: 900px) {
+    #cards-aside {
+        width: 25%;
+        height: 100%;
+        border-right: 0.05em solid var(--color-text);
+        border-bottom: none;
+    }
+
+    #filter {
+        border: .3em solid var(--green-pastel);
+        flex-direction: column;
+        padding: 2em 0;
+    }
+
+    #filter > p {
+        display: block;
+    }
+
+    .cards-div {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .single-card {
+        border: .3em solid var(--yellow-pastel);
+        width: fit-content;
+        min-width: 45%;
+        max-width: 50%;
+        margin: .5em;
+    }
+    .single-card {
+        min-width: 25%;
+    }
+
+    .edit-pack-div { 
+        padding: 0;
+    }
+
+    .edit-card-popup {
+        width: 60%;
+        height: 60%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .left-card {
+        width: fit-content;
+        min-width: 30%;
+        height: 100%;
+        margin: 1em;
+    }
+
+    .right-card {
+        width: fit-content;
+        min-width: 60%;
+        flex-direction: row;
+        overflow: none;
+    }
+
+    .edit-card-div {
+        width: 50%;
+        padding: 0;
+    }
+
+    .edit-pack-div {
+        width: 50%;
+        padding: 0;
+    }
 }

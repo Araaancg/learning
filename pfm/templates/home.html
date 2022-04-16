@@ -2,7 +2,6 @@
 
 {%block head%}
 <title>Home</title>
-<!-- <script src="{{url_for('static',filename='home.js')}}"></script> -->
 <link rel="stylesheet" href="{{url_for('static',filename='home.css')}}">
 {%endblock%}
 
@@ -19,8 +18,8 @@
                 Empieza creando tu primer paquete de vocabulario. Necitarás un nombre, una categoría y tus tarjetas.
             </p>
             <div class="buttons">
-                <a href="http://localhost:5000/my_packages/create_new"><button type="button" id="new_pack">Crear nuevo paquete</button></a>
-                <a href="http://localhost:5000/my_packages"><button type="button">Consultar MIS PAQUETES</button></a>
+                <a href="http://localhost:5000/mis_paquetes/nuevo"><button type="button">Crear nuevo paquete</button></a>
+                <a href="http://localhost:5000/mis_paquetes"><button type="button">Consultar MIS PAQUETES</button></a>
             </div>
         </div>
     </container>
@@ -56,14 +55,10 @@
                 <a href="http://localhost:5000/flash_cards"><button type="button">Probar las flash-cards</button></a>
             </p>
         </div>
-        <div class="right">
-            <img src="../static/img/ajustes.png" alt="flash_cards">
-        </div>
     </container>
     <container class="containers" id="fourth">
         <div class="left">
             <img src="../static/img/myprofile.png" alt="categorias del formulario">
-            <!-- <img src="../static/img/mycards.png" alt=""> -->
             <img src="../static/img/mytheme.png" alt="dos temas a elegir">
         </div>
         <div class="right">

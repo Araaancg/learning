@@ -28,10 +28,6 @@ body.light {
     margin: 0 1em 0;
 }
 
-.nav-item:active {
-    border: 0.15em solid var(--color-text);
-}
-
 .x_nav-color  {
     background-color: var(--nav-bar-color);
 }
@@ -52,10 +48,22 @@ body {
     color: var(--color-hover);
 }
 
+#right {
+    display: none;
+}
+
 @media screen and (min-width: 768px) {
     .nav-item:active {
         text-decoration: underline var(--color-text);
         border: none;
+    }
+
+    #left {
+        display: none;
+    }
+
+    #right {
+        display: block;
     }
 }
 

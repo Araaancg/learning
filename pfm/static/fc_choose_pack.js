@@ -15,6 +15,21 @@ window.onload = async function() {
     const main_div = document.createElement("div");
     main_div.className = "packages";
 
+    if (data.packages.length === 0) {
+        main.className = "no-packs"
+        const p_404 = document.createElement("p");
+        p_404.className = "no-packs";
+        p_404.innerText = "Vaya parece que aún no tienes ningún paquete. Pincha en el botón para crear uno";
+        const create_new = document.createElement("button");
+        create_new.innerText = "Crear paquete";
+        create_new.type = "button";
+        create_new.onclick = function() {
+            window.location.assign(`http://localhost:5000/mis_paquetes/nuevo`)
+        };
+        create_new.className = "no-packs"
+        main.append(p_404,create_new);
+    };
+
     for (pack of data.packages) {
         const sub_div = document.createElement("div");
         sub_div.className = "single-package"

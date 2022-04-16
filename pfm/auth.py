@@ -3,7 +3,6 @@ from flask import request, session, redirect, url_for
 import secrets
 from hashlib import sha256
 from functools import wraps
-import datetime as dt
 
 def authenticate(f): #login
         @wraps(f)

@@ -13,7 +13,7 @@ estudiar en un solo sitio y bien ordenados.
 
 ### LIBRERIAS EXTERNAS A INSTALAR
 
-Nos creamos un entorno virtual (python3 -m venv venv) e instalamos las siguientes librerías necesarias para que el proyecto se pueda ejecutar:
+Nos creamos un entorno virtual (python3 -m venv venv) e instalamos (pip install <librería>) las siguientes librerías necesarias para que el proyecto se pueda ejecutar:
 - flask
 - requests
 - flask_sqlalchemy

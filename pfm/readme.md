@@ -25,3 +25,7 @@ archivo main.py. Una vez ejecutado accedemos a un navegador y ponemos en la barr
     http://locahost:5000/welcome
 
 Desde ahí ya podemos acceder al proyeto entero
+
+### USUARIOS YA CREADOS
+- test1: test1@email.com, contraseña: 1234
+- test2: test2@email.com, contraseña: 1234

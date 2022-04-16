@@ -7,6 +7,22 @@ import requests as req
 import auth
 import datetime as dt
 
+'''
+LIBRERÍAS NECESARIAS
+- requests
+- flask
+- flask_sqlalchemy
+'''
+
+'''
+USUARIOS
+- test1
+    email: test1@email.com
+    pwd: 1234
+- test2
+    email: test2@email.com
+    pwd: 1234
+'''
 
 app = Flask(__name__)
 DB_URI = "pfm.db"

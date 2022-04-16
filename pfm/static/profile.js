@@ -77,7 +77,7 @@ window.onload = async function() {
         const edata = await eres.json()
         if (edata.success) {
             // window.location.reload()
-            window.location.assign(`http://localhost:5000/ajustes?profile`);
+            window.location.assign(`http://localhost:5000/ajustes?perfil`);
         }
         else {
             console.log(edata)
@@ -272,7 +272,7 @@ window.onload = async function() {
             btn_delete_card.onclick = async function() {
                 await fetch(`http://localhost:5000/ajustes?delete_card=${card.id}`)
                 // window.location.reload()
-                window.location.assign(`http://localhost:5000/ajustes?cards`);
+                window.location.assign(`http://localhost:5000/ajustes?tarjetas`);
             };
 
             div_delete_card.append(btn_delete_card);
@@ -529,7 +529,7 @@ window.onload = async function() {
         btn_delete_card.onclick = async function() {
             await fetch(`http://localhost:5000/ajustes?delete_card=${card.id}`)
             // window.location.reload()
-            window.location.assign(`http://localhost:5000/ajustes?cards`);
+            window.location.assign(`http://localhost:5000/ajustes?tarjetas`);
         };
 
         div_delete_card.append(btn_delete_card);

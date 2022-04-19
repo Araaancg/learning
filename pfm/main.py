@@ -129,7 +129,6 @@ def package():
     form = dict(request.form)
     if request.method == "POST": #CREAR PAQUETES
         # COMPROBAMOS QUE EL FORMULARIO ESTÁ COMPLETO
-        print(form)
         if not form.get('pack_name'):
             return {"success":False,"msg":"¡ponle un nombre al paquete!","lasting_input":"name"}
         if not form.get('category'):
@@ -144,7 +143,6 @@ def package():
         #PAQUETE
         pack_id = uuid4().hex
         status = form["status"] if form.get('status') != "null" else "private"
-        print(status)
         new_pack = Pack(id=pack_id,name=form["pack_name"],id_cat=category["id"],id_user=form["id_user"],status=status,date=dt.date.today())
 
         #TARJETAS
@@ -210,7 +208,7 @@ def package():
             side_b = [v for k,v in form.items() if k.find("side") >= 0 and k.find("b") >= 0]
             for element in zip(side_a,side_b):
                 card_id = uuid4().hex
-                new_card = Card(id=card_id,side_a=element[0],side_b=element[1],date=dt.date.today())
+                new_card = Card(id=card_id,side_a=element[0],side_b=element[1],date=dt.date.today(),id_user=request.args.get('id_user'))
                 db.session.add(new_card)
                 pack_to_edit.cards.append(new_card)
             db.session.commit()
@@ -229,6 +227,18 @@ def package():
             card = Card.query.filter_by(id=form['id']).first()
             pack.cards.remove(card)
             db.session.commit()
+
+        if request.args.get("change_info"):
+            pack = Pack.query.filter_by(id=request.args.get('change_info')).first()
+            for k,v in form.items():
+                if k == "new_name":
+                    pack.name = v
+                if k == "new_cat":
+                    pack.id_cat = v
+            db.session.add(pack)
+            db.session.commit()
+
+            return {"success":True}
 
         return {"success":True}
 
@@ -297,7 +307,6 @@ def api_user():
     if request.method == "PUT":
         form = dict(request.form)
         change_email = True if form.get("email") else False
-        print(change_email)
         user = User.query.filter_by(id=request.args.get("id_user")).first()
         if change_email: #se cambia el email
             if not User.query.filter_by(email=form.get('email')).first():
@@ -400,7 +409,6 @@ def get_package(id):
     if request.args.get("delete_card"):
         #solo se quita la relación entre le paquete y la tarjeta, la tarjeta en sí no se elimina
         return req.put(f"http://localhost:5000/api/packages?delete_card=true&id_pack={id}", data={"id":request.args.get("delete_card")}).json()
-        return {"succes":True}
 
     if request.args.get("edit_card"):
         #editamos una tarjeta
@@ -410,10 +418,13 @@ def get_package(id):
         return req.delete(f"http://localhost:5000/api/packages", data={"id":request.args.get("delete_pack")}).json() 
     
     if request.args.get("new_card"):
-        return req.put(f"http://localhost:5000/api/packages?new_card={request.args.get('new_card')}", data=request.form).json()
+        return req.put(f"http://localhost:5000/api/packages?new_card={request.args.get('new_card')}&id_user={session.get('id')}", data=request.form).json()
 
     if request.args.get("existing_cards"):
         return req.put(f"http://localhost:5000/api/packages?existing_cards={request.args.get('existing_cards')}", data=request.form).json()
+    
+    if request.args.get("change_info"):
+        return req.put(f"http://localhost:5000/api/packages?change_info={request.args.get('change_info')}", data=request.form).json()
 
     return render_template("one_pack.html", user_name=User.query.filter_by(id=session['id']).first().name)
 
@@ -423,7 +434,6 @@ def new_pack():
     if request.method == "POST":
         new_form = {k:v for k,v in request.form.items()}
         new_form["id_user"] = session.get("id")
-        print(new_form)
         return req.post("http://localhost:5000/api/packages", data=new_form).json()
 
     if request.args.get("get"):

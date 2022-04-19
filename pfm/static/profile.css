@@ -435,6 +435,10 @@ li > button:hover {
     text-decoration: underline var(--msg-color);
 }
 
+.div-list-pack > select {
+    width: 90%;
+}
+
 .msg {
     text-align: center;
     color: var(--msg-color);

@@ -47,7 +47,98 @@ window.onload = async function() {
   number_span.innerText = `Nº de tarjetas: `
   let number_cards = 0;
   
-  pack_info.append(cat_span, number_span);
+  const btn_edit_info = document.createElement("button");
+  btn_edit_info.innerText = "editar";
+  btn_edit_info.className = "btn-edit-info";
+  btn_edit_info.onclick = async function() {
+      edit_overlay.style.display = "flex";
+      const edit_popup =  document.createElement("div");
+      edit_popup.className = "edit-info-popup";
+
+      const edit_name_div = document.createElement("div");
+      edit_name_div.className = "edit-name-div";
+      const edit_name_h2 = document.createElement("h2");
+      edit_name_h2.innerText = "Nombre";
+      const edit_name_name = document.createElement("h4");
+      edit_name_name.innerText = data.data.packages.name;
+      const edit_name_input = document.createElement("input");
+      edit_name_input.placeholder = "nuevo nombre";
+
+      const edit_info_hr = document.createElement("hr");
+
+      const edit_cat_div = document.createElement("div");
+      edit_cat_div.className = "edit-cat-div";
+      const edit_cat_h2 = document.createElement("h2");
+      edit_cat_h2.innerText = "Categoría";
+      const edit_cat_cat = document.createElement("h4");
+      edit_cat_cat.innerText = data.data.packages.category.name;
+      const edit_cat_button = document.createElement("button");
+      edit_cat_button.innerText = "cambiar categoria";
+
+      edit_cat_div.append(edit_cat_h2,edit_cat_cat,edit_cat_button);
+
+      const edit_cat_input = document.createElement("select");
+      const res = await fetch(`http://localhost:5000/mis_paquetes/nuevo?get=categories`);
+      const cat_list = await res.json();
+      for (let category of cat_list.categories[1].private) {
+        const option = document.createElement("option");
+        option.innerText = category.name;
+        option.value = category.id;
+        edit_cat_input.append(option);
+      };
+      for (let category of cat_list.categories[0].public) {
+        const option = document.createElement("option");
+        option.innerText = category.name;
+        option.value = category.id;
+        edit_cat_input.append(option);
+      };
+
+      edit_cat_button.onclick = async function() {
+        edit_cat_cat.style.display = "none";
+        edit_cat_button.style.display = "none";
+        const cancel_cat = document.createElement("button");
+        cancel_cat.innerText = "cancelar";
+        cancel_cat.onclick = function() {
+          edit_cat_div.innerText = "";
+          edit_cat_div.append(edit_cat_h2,edit_cat_cat,edit_cat_button);
+          edit_cat_cat.style.display = "block";
+          edit_cat_button.style.display = "block";
+        };
+
+        edit_cat_div.append(edit_cat_input,cancel_cat);
+      };
+
+      const info_btn_div = document.createElement("div");
+      info_btn_div.className = "info-btn-div";
+      const btn_save_info = document.createElement("button");
+      btn_save_info.innerText = "guardar";
+      const btn_cancel_info = document.createElement("button");
+      btn_cancel_info.innerText = "cancelar";
+      btn_cancel_info.onclick = function() {
+        edit_overlay.innerText = "";
+        
+        edit_overlay.style.display = "none";
+      };
+      info_btn_div.append(btn_cancel_info,btn_save_info);
+
+      edit_name_div.append(edit_name_h2,edit_name_name,edit_name_input);
+      edit_popup.append(edit_name_div,edit_info_hr,edit_cat_div);
+
+      edit_overlay.append(edit_popup,info_btn_div);
+
+      btn_save_info.onclick = async function(){
+        const form = new FormData();
+        if (edit_name_input.value.length > 0) {form.append("new_name", edit_name_input.value);}
+        if (edit_cat_input.value.length > 0) {form.append("new_cat",edit_cat_input.value);};
+        await fetch(`http://localhost:5000/mis_paquetes/${data.data.packages.id}?change_info=${data.data.packages.id}`,{
+          method:"PUT",
+          body:form
+        });
+        window.location.reload();
+      };
+  };
+  
+  pack_info.append(cat_span,number_span,btn_edit_info);
   top.append(h1,pack_info);
 
   // CENTER

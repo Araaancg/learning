@@ -1,4 +1,4 @@
-#Juego de piedra papel tijeras
+#Juego de piedra papel y tijeras
 
 from random import choice
 

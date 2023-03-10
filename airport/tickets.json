@@ -1,3 +1,12 @@
 {
-    "tickets": []
+    "tickets": [
+        {
+            "id": "368414",
+            "purchase_time": "2022-12-14T20:53:28.767914",
+            "origin": "Sao Paulo",
+            "destination": "Lima",
+            "departure_hour": "06:00",
+            "flight_time": 4.9
+        }
+    ]
 }

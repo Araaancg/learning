@@ -9,8 +9,8 @@ def authenticate(f): #login
         def i(*args, **kwargs):
             email = request.form.get("email")
             pwd = request.form.get("pwd")
-            
             if email and pwd:
+                print(email,pwd,"----------------------------")
                 api_res = req.put("http://localhost:5000/api/token", data={"email":email,"pwd":sha256(pwd.encode()).hexdigest(),"token":secrets.token_hex(16)}).json()
                 if api_res["success"]:
                     session["token"] = api_res["token"]

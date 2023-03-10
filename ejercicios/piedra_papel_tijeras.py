@@ -1,6 +1,6 @@
 #Juego de piedra papel tijeras
 
-import random
+from random import choice
 
 options = ["piedra", "papel", "tijeras"] #opciones para elegir
 print("Tienes tres opciones a elegir: piedra, papel o tijeras")
@@ -12,7 +12,7 @@ pc_score = 0 #marcador del pc
 while rounds < 6:
     user = input("Elige la opcion que quieras de las tres: ")
     user_index = options.index(user)
-    pc = random.choice(options)
+    pc = choice(options)
     print(f"El pc ha elegido: {pc}") #imprimimos la opción del pc
     pc_index = options.index(pc)
     
@@ -21,7 +21,7 @@ while rounds < 6:
         rounds -= 1 #se repite la ronda y el marcador se queda igual
     else: 
         if user_index == 2:
-            if pc == 1:
+            if pc_index == 1:
                 print("Has perdido")
                 pc_score += 1
             else:

@@ -70,7 +70,9 @@ def token():
         email = request.form.get("email")
         pwd = request.form.get("pwd")
         token = request.form.get("token")
+        print(email,pwd,token,"--------------------------------")
         user = User.query.filter_by(email=email).first()
+        print(user,"--------------------------------")
         if user:
             user.token = token
             db.session.commit()
@@ -502,6 +504,8 @@ def profile():
 def comunity():
     return render_template("comunity.html", user_name=User.query.filter_by(id=session['id']).first().name)
 
+with app.app_context():
+    db.create_all()
 
 if __name__ == "__main__":
     app.run(debug=True)

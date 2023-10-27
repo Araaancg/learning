@@ -1,0 +1,30 @@
+{
+    "routes":[
+        {
+            "name":"dashboard",
+            "subroutes":[
+                {
+                    "name":"projects",
+                    "subroutes":[]
+                }
+            ]
+        },
+        {
+            "name":"auth",
+            "subroutes":[
+                {
+                    "name":"login",
+                    "subroutes":[]
+                },
+                {
+                    "name":"register",
+                    "subroutes":[]
+                }
+            ]
+        }
+    ],
+    "components":{
+        "atoms":["Modal","Button","ProgressBar"],
+        "dashboard":["Sidebar","Newsletter"]
+    }
+}

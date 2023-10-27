@@ -1,0 +1,74 @@
+{
+    "data": [
+        {
+            "id": "cf_1",
+            "title": "El hombre bicentenario",
+            "author": "Isaac Asimov",
+            "genre": "Ciencia ficción",
+            "stock": 16
+        },
+        {
+            "id": "ne_1",
+            "title": "Lobo de mar",
+            "author": "Jack London",
+            "genre": "Narrativa extranjera",
+            "stock": 14
+        },
+        {
+            "id": "np_1",
+            "title": "El legado de los huesos",
+            "author": "Dolores Redondo",
+            "genre": "Narrativa policíaca",
+            "stock": 15
+        },
+        {
+            "id": "dc_1",
+            "title": "El error de Descartes",
+            "author": "Antonio Damasio",
+            "genre": "Divulgación científica",
+            "stock": 12
+        },
+        {
+            "id": "dc_2",
+            "title": "El ingenio de los pájaros",
+            "author": "Jennifer Ackerman",
+            "genre": "Divulgación científica",
+            "stock": 18
+        },
+        {
+            "id": "ne_4",
+            "title": "El corazón de las tinieblas",
+            "author": "Joseph Conrad",
+            "genre": "Narrativa extranjera",
+            "stock": 10
+        },
+        {
+            "id": "dc_5",
+            "title": "Metro 2033",
+            "author": "Dmitri Glujovski",
+            "genre": "Divulgación científica",
+            "stock": 10
+        },
+        {
+            "id": "dc_6",
+            "title": "Sidharta",
+            "author": "Hermann Hesse",
+            "genre": "Narrativa extranjera",
+            "stock": 10
+        },
+        {
+            "id": "el_1",
+            "title": "Andres Trapiello",
+            "author": "Las armas y las letras",
+            "genre": "Narrativa extranjera",
+            "stock": 12
+        },
+        {
+            "id": "aa_1",
+            "title": "El poder del ahora",
+            "author": "Ekhart Tolle",
+            "genre": "Narrativa extranjera",
+            "stock": 14
+        }
+    ]
+}

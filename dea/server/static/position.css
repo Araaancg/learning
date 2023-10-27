@@ -1,0 +1,10 @@
+#heading1 {
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.card {
+    margin: 10px;
+    width: 30%;
+}

@@ -1,0 +1,38 @@
+.top_part {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+/* .top_part {
+    display: flex; 
+    justify-content: end;
+    flex-direction: row;
+    align-items: center;
+} */
+
+/* .x_btn {
+    align-self: flex-end; comentar
+    justify-self: flex-end;
+    margin-left: 30%;
+} */
+
+.x_gb-primary {
+    background-color: #ffe14c;
+}
+
+table a:link {
+    text-decoration: none;
+    color: black;
+}
+
+table a:visited {
+    text-decoration: none;
+    color: black;
+}
+
+table a:hover {
+    font-weight: bold
+}
+

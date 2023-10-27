@@ -1,0 +1,241 @@
+{
+    "BLOCK_EXAMPLE": [
+    {
+        "question": "some q",
+        "options": [
+            "op1","op2 (CORRECTA)","op3"
+        ],
+        "answer": 0
+    },
+    {
+        "question": "What is an abstract class?",
+        "options": [
+            "An abstract class is the name for any class from which you can instantiate an object.",
+            "Abstract classes must be redefined any time an object is instantiated from them.",
+            "Abstract classes must inherit from concrete classes.",
+            "An abstract class exists only so that other 'concrete' classes can inherit from the abstract class."
+        ],
+        "answer": 3
+    }
+    ],
+    "1_Computer_Programming_and_Python_Fundamentals": [
+        {
+            "question": "Which symbols are used for single line comments and multiple line comments?",
+            "options": [
+                "#",
+                "//",
+                "-/h/-",
+                ">---"
+            ],
+            "answer": 0   
+        },
+        {
+            "question": "What do you mean by keywords in python?",
+            "options": [
+                "Keywords are important concepts used in programming.",
+                "Keywords are important variables and cannot be used in functions.",
+                "Keywords are reserved words. We can not use keywords for variable name or any other identifier.",
+                "Keywords are reserved words, but can be used also for variable name."
+            ],
+            "answer": 2   
+        },
+        {
+            "question": "What is the purpose of type() function?",
+            "options": [
+                "It's used to change the type of a variable.",
+                "type() does not exist in Python.",
+                "It's used to set the type of a variable.",
+                "It's used to tell us about the data type of a variable."
+            ],
+            "answer": 3   
+        },
+        {
+            "question": "What is the purpose of input function?",
+            "options": [
+                "input() function is used to assign values to variables",
+                "input() function is deprecated and no longer in use.",
+                "input() function is used to take/accept data from the user.",
+                "input() function is used to send data to an object."
+            ],
+            "answer": 2   
+        }
+
+
+    ],
+    "2_Control_Flow_Conditional_Blocks_and_Loops": [
+        {
+            "question": "What is the purpose of an if/else statement?",
+            "options": [
+                "It tells the computer which chunk of code to run if the instructions you coded are incorrect.",
+                "It runs one chunk of code if all the imports were successful, and another chunk of code if the imports were not successful.",
+                "It executes one chunk of code if a condition is true, but a different chunk of code if the condition is false.",
+                "It tells the computer which chunk of code to run if the is enough memory to handle it, and which chunk of code to run if there is not enough memory to handle it."
+            ],
+            "answer": 2
+        },
+        {
+            "question": "When does a for loop stop iterating?",
+            "options": [
+                "when it encounters an infinite loop",
+                "when it encounters an if/else statement that contains a break keyword",
+                "when it has assessed each item in the iterable it is working on or a break keyword is encountered",
+                "when the runtime for the loop exceeds O(n^2)"
+            ],
+            "answer": 2
+        },
+        {
+            "question": "What is the proper way to write a list comprehension that represents all the keys in this dictionary?\n\tfruits = {'Apples': 5, 'Oranges': 3, 'Bananas': 4}",
+            "options": [
+                    "fruit_names = [x in fruits.keys() for x]",
+                    "fruit_names = [x for x in fruits.keys()]",
+                    "fruit_names = for x in fruits.keys() *",
+                    "fruit_names = x for x in fruits.keys()"
+            ],
+            "answer": 1
+        },
+        {
+            "question": "When would you use a for loop?",
+            "options": [
+                    "Only in some situations, as loops are used only for certain type of programming.",
+                    "When you want to minimize the use of strings in your code.",
+                    "When you want to run code in one file for a function in another file.",
+                    "When you need to check every element in an iterable of known length."
+            ],
+            "answer": 3
+        },
+        {
+            "question": "When would you use a while loop?",
+            "options": [
+                "when you want some code to continue running as long as some condition is true",
+                "when you want to minimize the use of strings in your code",
+                "when you want to run code in one file while code in another file is also running",
+                "when you need to run two or more chunks of code at once within the same file"
+            ],
+            "answer": 0
+        },
+        {
+            "question": "What is the correct term to call one execution of a loop",
+            "options": [
+                "Counter",
+                "Function",
+                "Run",
+                "Iteration"
+            ],
+            "answer": 3
+        },
+        {
+            "question": "Which of the following pieces of code defines a list of all the numbers from 1 to 10?",
+            "options": [
+                "range (1,10)",
+                "range (1,11)",
+                "range (0,9)+1",
+                "range (1,2,3,4,5,6,7,8,9,10)"
+            ],
+            "answer": 1
+        }
+    ],
+    "3_Data_Collections_Tuples_Dictionaries_Lists_and_Strings": [
+        {
+            "question": "Which syntax correctly creates a variable that is bound to a tuple?",
+            "options": [
+                "my_tuple tup(2, 'apple', 3.5) %D",
+                "my_tuple [2, 'apple', 3.5].tuple() %D",
+                "my_tuple = (2, 'apple', 3.5)",
+                "my_tuple = [2, 'apple', 3.5]"
+            ],
+            "answer": 2
+        },
+        {
+            "question":"What built-in list method would you use to remove items from a list?",
+            "options": [
+                ".delete() method",
+                "pop(my_list)",
+                "del(my_list)",
+                ".pop() method"
+            ],
+            "answer": 3
+        },
+        {
+            "question":"What built-in Python data type is best suited for implementing a queue?",
+            "options":[
+                "dictionary",
+                "set",
+                "None. You can only build a queue from scratch.",
+                "list"
+            ],
+            "answer":3
+        },
+        {
+            "question":"What is the proper way to write a list comprehension that represents all the keys in this dictionary? fruits = {'Apples': 5, 'Oranges': 3, 'Bananas': 4}",
+            "options":[
+                "fruit_names = [x in fruits.keys() for x]",
+                "fruit_names = for x in fruits.keys() *",
+                "fruit_names = [x for x in fruits.keys()]",
+                "fruit_names = x for x in fruits.keys()"
+            ],
+            "answer": 2
+        },
+        {
+            "question":"What is the primary difference between lists and tuples?",
+            "options":[
+                "You can access a specifc element in a list by indexing to its position, but you cannot access a specific element in a tuple unless you iterate through the tuple",
+                "Lists are mutable, meaning you can change the data that is inside them at any time. Tuples are immutable, meaning you cannot change the data that is inside them once you have created the tuple.",
+                "Lists are immutable, meaning you cannot change the data that is inside them once you have created the list. Tuples are mutable, meaning you can change the data that is inside them at any time.",
+                "Lists can hold several data types inside them at once, but tuples can only hold the same data type if multiple elements are present."
+            ],
+            "answer": 1
+        }
+    ],
+    "4_Functions_and_Exceptions": [{
+        "question": "Which of the following statements regarding functions definition are correct?",
+        "options": [
+            "A parameter is the value that is sent to the function when it is called",
+            "Parameters are specified after the function name, inside the parentheses.",
+            "A parameter is the variable listed inside the parentheses in the function definition.",
+            "In Python a function is defined using the define keyword."
+        ],
+        "answer": 2
+    },
+    {
+        "question": "How many arguments can be passed into functions?",
+        "options": [
+            "Only one.",
+            "Up to two arguments.",
+            "At least 1 argument.",
+            "As many arguments as you want."
+        ],
+        "answer": 3
+    },
+    {
+        "question": "If you do not know the number of arguments that will be passed into your function, there is a prefix you can add in the function definition, which prefix?.",
+        "options": [
+            "?",
+            "*",
+            "**",
+            "/"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "Which of the following statements regarding Exceptions are True?",
+        "options": [
+            "If a statement or expression is syntactically correct, it won´t cause an Exception.",
+            "Excetions need to be handled, otherwise no error messages are shown in terminal.",
+            "Most exceptions are not handled by programs, and result in error messages shown in terminal:",
+            "Exceptions are related to statements sintax"
+        ],
+        "answer": 2
+    },
+    {
+        "question": "It is possible to write programs that handle selected exceptions. What are the correct statements to do so?",
+        "options": [
+            "If / pass",
+            "Try / Exception",
+            "raise / else",
+            "Try / Except"
+        ],
+        "answer": 3
+    }
+    
+    ]
+}

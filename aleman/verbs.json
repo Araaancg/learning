@@ -1,0 +1,3235 @@
+{
+    "verbs": [
+        {
+            "infinitiv": "sein",
+            "übersetzung": "ser/estar",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": "bin",
+                "du": "bist",
+                "er/sie/es": "ist",
+                "wir": "sind",
+                "ihr": "seid",
+                "sie/Sie": "sind"
+            },
+            "perfekt": {
+                "konjugation": ": ",
+                "verb": "sein"
+            },
+            "präteritum": "waren"
+        },
+        {
+            "infinitiv": "haben",
+            "übersetzung": "tener",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": "habe",
+                "du": "hast",
+                "er/sie/es": "hat",
+                "wir": "haben",
+                "ihr": "habt",
+                "sie/Sie": "haben"
+            },
+            "perfekt": {
+                "konjugation": "gehabt",
+                "verb": "haben"
+            },
+            "präteritum": "hatten"
+        },
+        {
+            "infinitiv": "lesen",
+            "übersetzung": "leer",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": "lese",
+                "du": "liest",
+                "er/sie/es": "liest",
+                "wir": "lesen",
+                "ihr": "lest",
+                "sie/Sie": "lesen"
+            },
+            "perfekt": {
+                "konjugation": "gelesen",
+                "verb": "haben"
+            },
+            "präteritum": "las"
+        },
+        {
+            "infinitiv": "trinken",
+            "übersetzung": "beber",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": "trinke",
+                "du": "trinkst",
+                "er/sie/es": "trinkt",
+                "wir": "trinken",
+                "ihr": "trinkt",
+                "sie/Sie": "trinken"
+            },
+            "perfekt": {
+                "konjugation": "getrunken",
+                "verb": "haben"
+            },
+            "präteritum": "trank"
+        },
+        {
+            "infinitiv": "schreiben",
+            "übersetzung": "escribir",
+            "merkmals": "inrunregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": "schreibe",
+                "du": "schreibst",
+                "er/sie/es": "schreibt",
+                "wir": "schreiben",
+                "ihr": "schreibt",
+                "sie/Sie": "schreiben"
+            },
+            "perfekt": {
+                "konjugation": "geschrieben",
+                "verb": "haben"
+            },
+            "präteritum": "schrieb"
+        },
+        {
+            "infinitiv": "gehen",
+            "übersetzung": "ir",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": "gehe",
+                "du": "gehst",
+                "er/sie/es": "geht",
+                "wir": "gehen",
+                "ihr": "geht",
+                "sie/Sie": "gehen"
+            },
+            "perfekt": {
+                "konjugation": "gegangen",
+                "verb": "sein"
+            },
+            "präteritum": "ging"
+        },
+        {
+            "infinitiv": "essen",
+            "übersetzung": "comer",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": "esse",
+                "du": "isst",
+                "er/sie/es": "isst",
+                "wir": "essen",
+                "ihr": "esst",
+                "sie/Sie": "essen"
+            },
+            "perfekt": {
+                "konjugation": "gegessen",
+                "verb": "haben"
+            },
+            "präteritum": "aẞ"
+        },
+        {
+            "infinitiv": "beschreiben",
+            "übersetzung": "describir",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": "beschreibe",
+                "du": "beschreibst",
+                "er/sie/es": "beschreibt",
+                "wir": "beschreiben",
+                "ihr": "beschreibt",
+                "sie/Sie": "beschreiben"
+            },
+            "perfekt": {
+                "konjugation": "beschrieben",
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "sprechen",
+            "übersetzung": "hablar",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": "spreche",
+                "du": "sprichst",
+                "er/sie/es": "spricht",
+                "wir": "sprechen",
+                "ihr": "sprecht",
+                "sie/Sie": "sprechen"
+            },
+            "perfekt": {
+                "konjugation": "gesprochen",
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "bleiben",
+            "übersetzung": "quedarse",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": "bleibe",
+                "du": "bleibt",
+                "er/sie/es": "bleibt",
+                "wir": "bleiben",
+                "ihr": "bleibt",
+                "sie/Sie": "bleiben"
+            },
+            "perfekt": {
+                "konjugation": "geblieben",
+                "verb": "sein"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "kommen",
+            "übersetzung": "venir",
+            "merkmals": null,
+            "präsens": {
+                "ich": "komme",
+                "du": "kommst",
+                "er/sie/es": "kommt",
+                "wir": "kommen",
+                "ihr": "kommt",
+                "sie/Sie": "kommen"
+            },
+            "perfekt": {
+                "konjugation": "gekkommen",
+                "verb": "sein"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "kennen",
+            "übersetzung": "conocer",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": "kenne",
+                "du": "kennst",
+                "er/sie/es": "kennt",
+                "wir": "kennen",
+                "ihr": "kennt",
+                "sie/Sie": "kennen"
+            },
+            "perfekt": {
+                "konjugation": "gekannt",
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "raten",
+            "übersetzung": "adivinar",
+            "merkmals": null,
+            "präsens": {
+                "ich": "rate",
+                "du": "rätst",
+                "er/sie/es": "rät",
+                "wir": "raten",
+                "ihr": "ratet",
+                "sie/Sie": "raten"
+            },
+            "perfekt": {
+                "konjugation": "geraten",
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "nehmen",
+            "übersetzung": "tomar",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": "nehme",
+                "du": "nimmst",
+                "er/sie/es": "nimmt",
+                "wir": "nehmen",
+                "ihr": "nehmt",
+                "sie/Sie": "nehmen"
+            },
+            "perfekt": {
+                "konjugation": "genommen",
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "heißen",
+            "übersetzung": "llamarse",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": "heiße",
+                "du": "heißt",
+                "er/sie/es": "heißt",
+                "wir": "heißen",
+                "ihr": "heißt",
+                "sie/Sie": "heißen"
+            },
+            "perfekt": {
+                "konjugation": "geheißten",
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "schließen",
+            "übersetzung": "cerrar",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": "schließe",
+                "du": "schließt",
+                "er/sie/es": "schließt",
+                "wir": "schließen",
+                "ihr": "schließt",
+                "sie/Sie": "schließen"
+            },
+            "perfekt": {
+                "konjugation": "geschloßen",
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "singen",
+            "übersetzung": "cantar",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": "singe",
+                "du": "singst",
+                "er/sie/es": "singt",
+                "wir": "singen",
+                "ihr": "singt",
+                "sie/Sie": "singen"
+            },
+            "perfekt": {
+                "konjugation": "gesungen",
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "spielen",
+            "übersetzung": "jugar",
+            "merkmals": null,
+            "präsens": {
+                "ich": "spiele",
+                "du": "spielst",
+                "er/sie/es": "spielt",
+                "wir": "spielen",
+                "ihr": "spielt",
+                "sie/Sie": "spielen"
+            },
+            "perfekt": {
+                "konjugation": "gespielt",
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "reden",
+            "übersetzung": "hablar",
+            "merkmals": null,
+            "präsens": {
+                "ich": "rede",
+                "du": "redest",
+                "er/sie/es": "redet",
+                "wir": "reden",
+                "ihr": "redet",
+                "sie/Sie": "reden"
+            },
+            "perfekt": {
+                "konjugation": "geredet",
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "schwimmen",
+            "übersetzung": "nadar",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": "schwimme",
+                "du": "schwimmst",
+                "er/sie/es": "schwimmt",
+                "wir": "schwimmen",
+                "ihr": "schwimmt",
+                "sie/Sie": "schwimmen"
+            },
+            "perfekt": {
+                "konjugation": "geschwommen",
+                "verb": "sein"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "tanzen",
+            "übersetzung": "bailar",
+            "merkmals": null,
+            "präsens": {
+                "ich": "tanze",
+                "du": "tanzt",
+                "er/sie/es": "tanzt",
+                "wir": "tanzen",
+                "ihr": "tanzt",
+                "sie/Sie": "tanzen"
+            },
+            "perfekt": {
+                "konjugation": "getanzt",
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "spülen",
+            "übersetzung": "fregar",
+            "merkmals": null,
+            "präsens": {
+                "ich": "spüle",
+                "du": "spülst",
+                "er/sie/es": "spült",
+                "wir": "spülen",
+                "ihr": "spült",
+                "sie/Sie": "spülen"
+            },
+            "perfekt": {
+                "konjugation": "gespült",
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "arbeiten",
+            "übersetzung": "trabajar",
+            "merkmals": null,
+            "präsens": {
+                "ich": "arbeite",
+                "du": "arbeitest",
+                "er/sie/es": "arbeitet",
+                "wir": "arbeiten",
+                "ihr": "arbeitet",
+                "sie/Sie": "arbeiten"
+            },
+            "perfekt": {
+                "konjugation": "gearbeitet",
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "machen",
+            "übersetzung": "hacer",
+            "merkmals": null,
+            "präsens": {
+                "ich": "mache",
+                "du": "machst",
+                "er/sie/es": "macht",
+                "wir": "machen",
+                "ihr": "macht",
+                "sie/Sie": "machen"
+            },
+            "perfekt": {
+                "konjugation": "gemacht",
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "anrufen",
+            "übersetzung": "llamar por telf",
+            "merkmals": null,
+            "präsens": {
+                "ich": "rufe an",
+                "du": "rufst an",
+                "er/sie/es": "ruft an",
+                "wir": "rufen an",
+                "ihr": "ruft an",
+                "sie/Sie": "rufen an"
+            },
+            "perfekt": {
+                "konjugation": "angerufen",
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "rufen",
+            "übersetzung": "llamar",
+            "merkmals": null,
+            "präsens": {
+                "ich": "rufe",
+                "du": "rufst",
+                "er/sie/es": "ruft",
+                "wir": "rufen",
+                "ihr": "ruft",
+                "sie/Sie": "rufen"
+            },
+            "perfekt": {
+                "konjugation": "gerufen",
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "kochen",
+            "übersetzung": "cocinar",
+            "merkmals": null,
+            "präsens": {
+                "ich": "koche",
+                "du": "kochst",
+                "er/sie/es": "kocht",
+                "wir": "kochen",
+                "ihr": "kocht",
+                "sie/Sie": "kochen"
+            },
+            "perfekt": {
+                "konjugation": "gekocht",
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "pfeifen",
+            "übersetzung": "silbar",
+            "merkmals": null,
+            "präsens": {
+                "ich": "pfeife",
+                "du": "pfeifst",
+                "er/sie/es": "pfeift",
+                "wir": "pfeifen",
+                "ihr": "pfeift",
+                "sie/Sie": "pfeifen"
+            },
+            "perfekt": {
+                "konjugation": "gepfiffen",
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "wohnen",
+            "übersetzung": "vivir",
+            "merkmals": null,
+            "präsens": {
+                "ich": "wohne",
+                "du": "wohnst",
+                "er/sie/es": "wohnt",
+                "wir": "wohnen",
+                "ihr": "wohnt",
+                "sie/Sie": "wohnen"
+            },
+            "perfekt": {
+                "konjugation": "gewohnt",
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "lernen",
+            "übersetzung": "aprender",
+            "merkmals": null,
+            "präsens": {
+                "ich": "lerne",
+                "du": "lernst",
+                "er/sie/es": "lernt",
+                "wir": "lernen",
+                "ihr": "lernt",
+                "sie/Sie": "lernen"
+            },
+            "perfekt": {
+                "konjugation": "gelernt",
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "buchstabieren",
+            "übersetzung": "deletrear",
+            "merkmals": null,
+            "präsens": {
+                "ich": "buchstabiere",
+                "du": "buchstabierst",
+                "er/sie/es": "buchstabiert",
+                "wir": "buchstabieren",
+                "ihr": "buchstabiert",
+                "sie/Sie": "buchstabieren"
+            },
+            "perfekt": {
+                "konjugation": "buchstabiert",
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "wissen",
+            "übersetzung": "saber",
+            "merkmals": null,
+            "präsens": {
+                "ich": "weiß",
+                "du": "weißt",
+                "er/sie/es": "weiß",
+                "wir": "wissen",
+                "ihr": "wisst",
+                "sie/Sie": "wissen"
+            },
+            "perfekt": {
+                "konjugation": "gewusst",
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "antworten",
+            "übersetzung": "contestar/responder",
+            "merkmals": "unrregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": "antworte",
+                "du": "antwortest",
+                "er/sie/es": "antwortet",
+                "wir": "antworten",
+                "ihr": "antwortet",
+                "sie/Sie": "antworten"
+            },
+            "perfekt": {
+                "konjugation": "geantwortet",
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "vermieten",
+            "übersetzung": "alquilar",
+            "merkmals": null,
+            "präsens": {
+                "ich": "vermiete",
+                "du": "vermietest",
+                "er/sie/es": "vermietet",
+                "wir": "vermieten",
+                "ihr": "vermietet",
+                "sie/Sie": "vermieten"
+            },
+            "perfekt": {
+                "konjugation": "vermietet",
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "kosten",
+            "übersetzung": "costar",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": "koste",
+                "du": "kostest",
+                "er/sie/es": "kostet",
+                "wir": "kosten",
+                "ihr": "kostet",
+                "sie/Sie": "kosten"
+            },
+            "perfekt": {
+                "konjugation": "gekostet",
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "einkaufen",
+            "übersetzung": "hacer la compra (supermercado)",
+            "merkmals": "regelmäẞige,trennbare",
+            "präsens": {
+                "ich": "kaufe ein",
+                "du": "kaufst ein",
+                "er/sie/es": "kauft ein",
+                "wir": "kaufen ein",
+                "ihr": "kauft ein",
+                "sie/Sie": "kaufen ein"
+            },
+            "perfekt": {
+                "konjugation": "eingekauft",
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "frühstücken",
+            "übersetzung": "desayunar",
+            "merkmals": "regelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": "frühstücke",
+                "du": "frühstückst",
+                "er/sie/es": "frühstückt",
+                "wir": "frühstücken",
+                "ihr": "frühstückt",
+                "sie/Sie": "frühstücken"
+            },
+            "perfekt": {
+                "konjugation": "gefrühstück",
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "finden",
+            "übersetzung": "encontrar",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": "finde",
+                "du": "findest",
+                "er/sie/es": "findet",
+                "wir": "finden",
+                "ihr": "findet",
+                "sie/Sie": "finden"
+            },
+            "perfekt": {
+                "konjugation": "gefunden",
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "gefallen",
+            "übersetzung": "gustar",
+            "merkmals": null,
+            "präsens": {
+                "ich": "gefalle",
+                "du": "gefällst",
+                "er/sie/es": "gefällt",
+                "wir": "gefallen",
+                "ihr": "gefallt",
+                "sie/Sie": "gefallen"
+            },
+            "perfekt": {
+                "konjugation": "gefallen",
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "schmecken",
+            "übersetzung": "saber/tener sabor",
+            "merkmals": null,
+            "präsens": {
+                "ich": "schmecke",
+                "du": "schmeckst",
+                "er/sie/es": "schmeckt",
+                "wir": "schmecken",
+                "ihr": "schmeckt",
+                "sie/Sie": "schmeken"
+            },
+            "perfekt": {
+                "konjugation": "geschmeckt",
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "besuchen",
+            "übersetzung": "visitar",
+            "merkmals": null,
+            "präsens": {
+                "ich": "besuche",
+                "du": "besuchst",
+                "er/sie/es": "besucht",
+                "wir": "besuchen",
+                "ihr": "besucht",
+                "sie/Sie": "besuchen"
+            },
+            "perfekt": {
+                "konjugation": "besucht",
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "spazieren gehen",
+            "übersetzung": "pasear",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": "gehe spazieren",
+                "du": "gehst spazieren",
+                "er/sie/es": "geht spazieren",
+                "wir": "gehen spazieren",
+                "ihr": "geht spazieren",
+                "sie/Sie": "gehen spazieren"
+            },
+            "perfekt": {
+                "konjugation": "spazieren gegangen",
+                "verb": "sein"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "möchten",
+            "übersetzung": "querer (deseo)",
+            "merkmals": "modal",
+            "präsens": {
+                "ich": "möchte",
+                "du": "möchtest",
+                "er/sie/es": "möchtet",
+                "wir": "möchten",
+                "ihr": "möchtet",
+                "sie/Sie": "möchten"
+            },
+            "perfekt": {
+                "konjugation": "gemocht",
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "schneiden",
+            "übersetzung": "cortar",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": "schneide",
+                "du": "schneidest",
+                "er/sie/es": "schneidet",
+                "wir": "schneiden",
+                "ihr": "schneidet",
+                "sie/Sie": "schneiden"
+            },
+            "perfekt": {
+                "konjugation": "geschnitten",
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "fernsehen",
+            "übersetzung": "ver la tv",
+            "merkmals": "unregelmäẞige,trennbare",
+            "präsens": {
+                "ich": "sehe fern",
+                "du": "siehst",
+                "er/sie/es": "sieht fern",
+                "wir": "sehen fern",
+                "ihr": "seht fern",
+                "sie/Sie": "sehen fern"
+            },
+            "perfekt": {
+                "konjugation": "ferngesehen",
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "ergänzen",
+            "übersetzung": "completar/añadir",
+            "merkmals": null,
+            "präsens": {
+                "ich": "ergänze",
+                "du": "ergänzt",
+                "er/sie/es": "ergänzt",
+                "wir": "ergänzen",
+                "ihr": "ergänzt",
+                "sie/Sie": "ergänzen"
+            },
+            "perfekt": {
+                "konjugation": "ergänzt",
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "aufstehen",
+            "übersetzung": "ponerse de pie/levantarse",
+            "merkmals": "unregelmäẞige,trennbare",
+            "präsens": {
+                "ich": "stehe auf",
+                "du": "stehst auf",
+                "er/sie/es": "steht auf",
+                "wir": "stehen auf",
+                "ihr": "steht auf",
+                "sie/Sie": "stehen auf"
+            },
+            "perfekt": {
+                "konjugation": "augestanden",
+                "verb": "sein"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "bezahlen",
+            "übersetzung": "pagar",
+            "merkmals": null,
+            "präsens": {
+                "ich": "bezahle",
+                "du": "bezalst",
+                "er/sie/es": "bezahlt",
+                "wir": "bezahlen",
+                "ihr": "bezahlt",
+                "sie/Sie": "bezahlen"
+            },
+            "perfekt": {
+                "konjugation": "bezahlt",
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "erzählen",
+            "übersetzung": "contar/narrar",
+            "merkmals": "u: regelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": "erzähle",
+                "du": "erzählst",
+                "er/sie/es": "erzählt",
+                "wir": "erzählen",
+                "ihr": "erzählt",
+                "sie/Sie": "erzählen"
+            },
+            "perfekt": {
+                "konjugation": "erzählt",
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "anfangen",
+            "übersetzung": "empezar",
+            "merkmals": "unregelmäẞige,trennbare",
+            "präsens": {
+                "ich": "fange an",
+                "du": "fängst an",
+                "er/sie/es": "fängt an",
+                "wir": "fangen an",
+                "ihr": "fangt an",
+                "sie/Sie": "fangen an"
+            },
+            "perfekt": {
+                "konjugation": "angefangen",
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "kaufen",
+            "übersetzung": "comprar",
+            "merkmals": "regelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": "kaufe",
+                "du": "kaufst",
+                "er/sie/es": "kauft",
+                "wir": "kaufen",
+                "ihr": "kauft",
+                "sie/Sie": "kaufen"
+            },
+            "perfekt": {
+                "konjugation": "gekauft",
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "ausgehen",
+            "übersetzung": "salir (por ahí)",
+            "merkmals": "regelmäẞige,trennbare",
+            "präsens": {
+                "ich": "gehe aus",
+                "du": "gehst aus",
+                "er/sie/es": "geht aus",
+                "wir": "gehen aus",
+                "ihr": "geht aus",
+                "sie/Sie": "gehen aus"
+            },
+            "perfekt": {
+                "konjugation": "ausgegangen",
+                "verb": "sein"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "beginnen",
+            "übersetzung": "empezar",
+            "merkmals": null,
+            "präsens": {
+                "ich": "beginne",
+                "du": "beginnst",
+                "er/sie/es": "beginnt",
+                "wir": "beginnen",
+                "ihr": "beginnt",
+                "sie/Sie": "beginnen"
+            },
+            "perfekt": {
+                "konjugation": "begonnen",
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "bedienen",
+            "übersetzung": "atender/servir",
+            "merkmals": null,
+            "präsens": {
+                "ich": "bediene",
+                "du": "bedienst",
+                "er/sie/es": "bedient",
+                "wir": "bedienen",
+                "ihr": "bedient",
+                "sie/Sie": "bedienen"
+            },
+            "perfekt": {
+                "konjugation": "bedient",
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "bestellen",
+            "übersetzung": "pedir/encargar",
+            "merkmals": null,
+            "präsens": {
+                "ich": "bestelle",
+                "du": "bestellst",
+                "er/sie/es": "bestellt",
+                "wir": "bestellen",
+                "ihr": "bestellt",
+                "sie/Sie": "bestellen"
+            },
+            "perfekt": {
+                "konjugation": "bestellt",
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "entwickeln",
+            "übersetzung": "desarrollar",
+            "merkmals": null,
+            "präsens": {
+                "ich": "entwickle",
+                "du": "entwickelst",
+                "er/sie/es": "entwickelt",
+                "wir": "entwickeln",
+                "ihr": "entiwickelt",
+                "sie/Sie": "entwickeln"
+            },
+            "perfekt": {
+                "konjugation": "entwickelt",
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "unterrichten",
+            "übersetzung": "dar clase/educar",
+            "merkmals": null,
+            "präsens": {
+                "ich": "unterrichte",
+                "du": "unterrichtest",
+                "er/sie/es": "unterrichtet",
+                "wir": "unterrichten",
+                "ihr": "unterrichtet",
+                "sie/Sie": "unterrichten"
+            },
+            "perfekt": {
+                "konjugation": "unterrichtet",
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "untersuchen",
+            "übersetzung": "investigar/indagar",
+            "merkmals": null,
+            "präsens": {
+                "ich": "unteruche",
+                "du": "untersuchst",
+                "er/sie/es": "untersucht",
+                "wir": "untersuchen",
+                "ihr": "untersucht",
+                "sie/Sie": "untesuchen"
+            },
+            "perfekt": {
+                "konjugation": "untersucht",
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "übernachten",
+            "übersetzung": "pernoctar",
+            "merkmals": null,
+            "präsens": {
+                "er/sie/es": "übernachtet"
+            },
+            "perfekt": {
+                "konjugation": "übernachtet",
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "treiben",
+            "übersetzung": "hacer avanzar",
+            "merkmals": null,
+            "präsens": {
+                "ich": "treibe",
+                "du": "treibst",
+                "er/sie/es": "treibt",
+                "wir": "treiben",
+                "ihr": "treibt",
+                "sie/Sie": "treiben"
+            },
+            "perfekt": {
+                "konjugation": "getrieben",
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "feiern",
+            "übersetzung": "celebrar",
+            "merkmals": null,
+            "präsens": {
+                "ich": "feiere",
+                "du": "feirst",
+                "er/sie/es": "feiert",
+                "wir": "feieren",
+                "ihr": "feiert",
+                "sie/Sie": "feieren"
+            },
+            "perfekt": {
+                "konjugation": "gefeiert",
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "hören",
+            "übersetzung": "oír",
+            "merkmals": "regelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": "höre",
+                "du": "hörst",
+                "er/sie/es": "hört",
+                "wir": "hören",
+                "ihr": "hört",
+                "sie/Sie": "hören"
+            },
+            "perfekt": {
+                "konjugation": "gehört",
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "fahren",
+            "übersetzung": "conducir/ir en tpte",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": "fahre",
+                "du": "fährst",
+                "er/sie/es": "fährt",
+                "wir": "fahren",
+                "ihr": "fahrt",
+                "sie/Sie": "fahren"
+            },
+            "perfekt": {
+                "konjugation": "gefahren",
+                "verb": "sein"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "analysieren",
+            "übersetzung": "analizar",
+            "merkmals": "regelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": "analysiere",
+                "du": "analysierst",
+                "er/sie/es": "analysiert",
+                "wir": "analysieren",
+                "ihr": "analysiert",
+                "sie/Sie": "analysieren"
+            },
+            "perfekt": {
+                "konjugation": "analysiert",
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "dauern",
+            "übersetzung": "durar/tardar",
+            "merkmals": null,
+            "präsens": {
+                "ich": "dauere",
+                "du": "dauerst",
+                "er/sie/es": "dauert",
+                "wir": "dauern",
+                "ihr": "dauert",
+                "sie/Sie": "dauern"
+            },
+            "perfekt": {
+                "konjugation": "gedauert",
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "stehen",
+            "übersetzung": "estar de pie",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": "stehe",
+                "du": "stehst",
+                "er/sie/es": "steht",
+                "wir": "stehen",
+                "ihr": "steht",
+                "sie/Sie": "stehen"
+            },
+            "perfekt": {
+                "konjugation": "gestanden",
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "passen",
+            "übersetzung": "sentar (o estar) bien",
+            "merkmals": null,
+            "präsens": {
+                "ich": "passe",
+                "du": "passt",
+                "er/sie/es": "passt",
+                "wir": "passen",
+                "ihr": "passt",
+                "sie/Sie": "passen"
+            },
+            "perfekt": {
+                "konjugation": "gepasst",
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "helfen",
+            "übersetzung": "ayudar",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": "helfe",
+                "du": "hilfst",
+                "er/sie/es": "hilft",
+                "wir": "helfen",
+                "ihr": "helft",
+                "sie/Sie": "helfen"
+            },
+            "perfekt": {
+                "konjugation": "geholfen",
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "gehören",
+            "übersetzung": "pertenecer",
+            "merkmals": "regelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": "gehöre",
+                "du": "gehörst",
+                "er/sie/es": "gehört",
+                "wir": "gehören",
+                "ihr": "gehört",
+                "sie/Sie": "gehören"
+            },
+            "perfekt": {
+                "konjugation": "gehört",
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "lieben",
+            "übersetzung": "querer/amar",
+            "merkmals": null,
+            "präsens": {
+                "ich": "liebe",
+                "du": "liebst",
+                "er/sie/es": "liebt",
+                "wir": "lieben",
+                "ihr": "liebt",
+                "sie/Sie": "lieben"
+            },
+            "perfekt": {
+                "konjugation": "geliebt",
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "verstehen",
+            "übersetzung": "entender/comprender",
+            "merkmals": null,
+            "präsens": {
+                "ich": "verstehe",
+                "du": "verstehst",
+                "er/sie/es": "versteht",
+                "wir": "verstehen",
+                "ihr": "versteht",
+                "sie/Sie": "verstehen"
+            },
+            "perfekt": {
+                "konjugation": "verstanden",
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "sehen",
+            "übersetzung": "ver/mirar",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": "sehe",
+                "du": "siehst",
+                "er/sie/es": "sieht",
+                "wir": "sehen",
+                "ihr": "seht",
+                "sie/Sie": "sehen"
+            },
+            "perfekt": {
+                "konjugation": "gesehen",
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "abholen",
+            "übersetzung": "recoger",
+            "merkmals": null,
+            "präsens": {
+                "ich": "hole ab",
+                "du": "holst ab",
+                "er/sie/es": "holt ab",
+                "wir": "holen ab",
+                "ihr": "holt ab",
+                "sie/Sie": "holen ab"
+            },
+            "perfekt": {
+                "konjugation": "abgeholt",
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "können",
+            "übersetzung": "poder/saber",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": "kann",
+                "du": "kannst",
+                "er/sie/es": "kann",
+                "wir": "können",
+                "ihr": "könnt",
+                "sie/Sie": "können"
+            },
+            "perfekt": {
+                "konjugation": "gekonnt",
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "vereinbaren",
+            "übersetzung": "concertar",
+            "merkmals": null,
+            "präsens": {
+                "ich": "vereinbare",
+                "du": "vereinbarst",
+                "er/sie/es": "vereinbart",
+                "wir": "vereinbaren",
+                "ihr": "vereinbart",
+                "sie/Sie": "vereinbaren"
+            },
+            "perfekt": {
+                "konjugation": "vereinbart",
+                "verb": "habe"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "erwarten",
+            "übersetzung": "esperar",
+            "merkmals": null,
+            "präsens": {
+                "ich": "erwarte",
+                "du": "erwartest",
+                "er/sie/es": "erwartet",
+                "wir": "erwarten",
+                "ihr": "erwartet",
+                "sie/Sie": "erwarten"
+            },
+            "perfekt": {
+                "konjugation": "erwartet",
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "brauchen",
+            "übersetzung": "necesitar",
+            "merkmals": "regelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": "bruache",
+                "du": "brauchst",
+                "er/sie/es": "braucht",
+                "wir": "brauchen",
+                "ihr": "braucht",
+                "sie/Sie": "brauchen"
+            },
+            "perfekt": {
+                "konjugation": "gebraucht",
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "warten",
+            "übersetzung": "esperar",
+            "merkmals": null,
+            "präsens": {
+                "ich": "warte",
+                "du": "wartest",
+                "er/sie/es": "wartet",
+                "wir": "warten",
+                "ihr": "wartet",
+                "sie/Sie": "warten"
+            },
+            "perfekt": {
+                "konjugation": "gewartet",
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "organisieren",
+            "übersetzung": "organizar",
+            "merkmals": "regelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": "organisiere",
+                "du": "organisierst",
+                "er/sie/es": "organisiert",
+                "wir": "organisieren",
+                "ihr": "organisiert",
+                "sie/Sie": "organisieren"
+            },
+            "perfekt": {
+                "konjugation": "organisiert",
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "führen",
+            "übersetzung": "dirigir/llevar",
+            "merkmals": null,
+            "präsens": {
+                "ich": "führe",
+                "du": "führst",
+                "er/sie/es": "führt",
+                "wir": "führen",
+                "ihr": "führt",
+                "sie/Sie": "führen"
+            },
+            "perfekt": {
+                "konjugation": "geführt",
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "präsentieren",
+            "übersetzung": "presentar",
+            "merkmals": "regelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": "präsentiere",
+                "du": "präsentierst",
+                "er/sie/es": "präsentiert",
+                "wir": "präsentieren",
+                "ihr": "präsentiert",
+                "sie/Sie": "präsentieren"
+            },
+            "perfekt": {
+                "konjugation": "präsentiert",
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "diskutieren",
+            "übersetzung": "discutir",
+            "merkmals": "regelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": "diskutiere",
+                "du": "diskutierst",
+                "er/sie/es": "diskutiert",
+                "wir": "diskutieren",
+                "ihr": "diskutiert",
+                "sie/Sie": "diskutierst"
+            },
+            "perfekt": {
+                "konjugation": "diskutiert",
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "müssen",
+            "übersetzung": "tener que/deber (obligación)",
+            "merkmals": "modal",
+            "präsens": {
+                "ich": "muss",
+                "du": "musst",
+                "er/sie/es": "muss",
+                "wir": "müssen",
+                "ihr": "müsst",
+                "sie/Sie": "müssen"
+            },
+            "perfekt": {
+                "konjugation": "gemusst",
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "beantworten",
+            "übersetzung": "contestar/responder",
+            "merkmals": null,
+            "präsens": {
+                "ich": "beantworte",
+                "du": "beantwortest",
+                "er/sie/es": "beantwortet",
+                "wir": "beantworten",
+                "ihr": "beantwortet",
+                "sie/Sie": "beantworten"
+            },
+            "perfekt": {
+                "konjugation": "beantwortet",
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "studieren",
+            "übersetzung": "studiar",
+            "merkmals": "regelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": "studiere",
+                "du": "studierst",
+                "er/sie/es": "studiert",
+                "wir": "studieren",
+                "ihr": "studiert",
+                "sie/Sie": "studieren"
+            },
+            "perfekt": {
+                "konjugation": "studiert",
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "unternehmen",
+            "übersetzung": "realizar/hacer",
+            "merkmals": null,
+            "präsens": {
+                "ich": "unternehme",
+                "du": "unternimmst",
+                "er/sie/es": "unternimmt",
+                "wir": "unternehmen",
+                "ihr": "unternehmt",
+                "sie/Sie": "unternehmen"
+            },
+            "perfekt": {
+                "konjugation": "unternommen",
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "rauchen",
+            "übersetzung": "fumar",
+            "merkmals": null,
+            "präsens": {
+                "ich": "rauche",
+                "du": "rauchst",
+                "er/sie/es": "raucht",
+                "wir": "rauchen",
+                "ihr": "raucht",
+                "sie/Sie": "rauchen"
+            },
+            "perfekt": {
+                "konjugation": "geraucht",
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "schlafen",
+            "übersetzung": "dormir",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": "schlafe",
+                "du": "schläfst",
+                "er/sie/es": "schläft",
+                "wir": "schlafen",
+                "ihr": "schlaft",
+                "sie/Sie": "schlafen"
+            },
+            "perfekt": {
+                "konjugation": "geschlafen",
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "verbringen",
+            "übersetzung": "None",
+            "merkmals": null,
+            "präsens": {
+                "ich": "verbringe",
+                "du": "verbringst",
+                "er/sie/es": "verbringt",
+                "wir": "verbringen",
+                "ihr": "verbringt",
+                "sie/Sie": "verbringen"
+            },
+            "perfekt": {
+                "konjugation": "verbracht",
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "sollen",
+            "übersetzung": "deber (should)",
+            "merkmals": "modal",
+            "präsens": {
+                "ich": "soll",
+                "du": "sollst",
+                "er/sie/es": "soll",
+                "wir": "sollen",
+                "ihr": "sollt",
+                "sie/Sie": "sollen"
+            },
+            "perfekt": {
+                "konjugation": "gesollt",
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "bringen",
+            "übersetzung": "traer",
+            "merkmals": null,
+            "präsens": {
+                "ich": "bringe",
+                "du": "bringst",
+                "er/sie/es": "bringt",
+                "wir": "bringen",
+                "ihr": "bringt",
+                "sie/Sie": "bringen"
+            },
+            "perfekt": {
+                "konjugation": "gebracht",
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "träumen",
+            "übersetzung": "soñar",
+            "merkmals": null,
+            "präsens": {
+                "ich": "träume",
+                "du": "träumst",
+                "er/sie/es": "träumt",
+                "wir": "träumen",
+                "ihr": "träumt",
+                "sie/Sie": "träumen"
+            },
+            "perfekt": {
+                "konjugation": "geträumt",
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "messen",
+            "übersetzung": "medir",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": "messe",
+                "du": "misst",
+                "er/sie/es": "misst",
+                "wir": "messen",
+                "ihr": "messt",
+                "sie/Sie": "messen"
+            },
+            "perfekt": {
+                "konjugation": "gemessen",
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "anziehen",
+            "übersetzung": "vestir",
+            "merkmals": "unregelmäẞige,trennbare",
+            "präsens": {
+                "ich": "ziehe an",
+                "du": "ziehst an",
+                "er/sie/es": "zieht an",
+                "wir": "ziehen an",
+                "ihr": "zieht an",
+                "sie/Sie": "ziehen an"
+            },
+            "perfekt": {
+                "konjugation": "angezogen",
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "ausziehen",
+            "übersetzung": "desvestir",
+            "merkmals": "unregelmäẞige,trennbare",
+            "präsens": {
+                "ich": "ziehe aus",
+                "du": "ziehst aus",
+                "er/sie/es": "zieht aus",
+                "wir": "ziehen aus",
+                "ihr": "zieht aus",
+                "sie/Sie": "ziehen aus"
+            },
+            "perfekt": {
+                "konjugation": "ausgezogen",
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "treffen",
+            "übersetzung": "quedar",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": "treffe",
+                "du": "triffst",
+                "er/sie/es": "trifft",
+                "wir": "treffen",
+                "ihr": "trefft",
+                "sie/Sie": "treffen"
+            },
+            "perfekt": {
+                "konjugation": "getroffen",
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "backen",
+            "übersetzung": "hornear",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": "backe",
+                "du": "bäckst",
+                "er/sie/es": "bäckt",
+                "wir": "backen",
+                "ihr": "backt",
+                "sie/Sie": "backen"
+            },
+            "perfekt": {
+                "konjugation": "gebacken",
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "befehlen",
+            "übersetzung": "dar una orden",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": "befehle",
+                "du": "befiehlst",
+                "er/sie/es": "befiehlt",
+                "wir": "befehlen",
+                "ihr": "befehlt",
+                "sie/Sie": "befehlen"
+            },
+            "perfekt": {
+                "konjugation": "befohlen",
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "betrügen",
+            "übersetzung": "engañar",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": "betrüge",
+                "du": "betrügst",
+                "er/sie/es": "betrügt",
+                "wir": "betrügen",
+                "ihr": "betrügt",
+                "sie/Sie": "betrügen"
+            },
+            "perfekt": {
+                "konjugation": "betrogen",
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "bieten",
+            "übersetzung": "ofrecer",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": "biete",
+                "du": "bietest",
+                "er/sie/es": "bietet",
+                "wir": "bieten",
+                "ihr": "bietet",
+                "sie/Sie": "bieten"
+            },
+            "perfekt": {
+                "konjugation": "geboten",
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "bitten",
+            "übersetzung": "pedir un favor",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": "bitte",
+                "du": "bittest",
+                "er/sie/es": "bittet",
+                "wir": "bitten",
+                "ihr": "bittet",
+                "sie/Sie": "bitten"
+            },
+            "perfekt": {
+                "konjugation": "gebeten",
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "braten",
+            "übersetzung": "asar",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": "brate",
+                "du": "brätst",
+                "er/sie/es": "brät",
+                "wir": "braten",
+                "ihr": "bratet",
+                "sie/Sie": "braten"
+            },
+            "perfekt": {
+                "konjugation": "gebraten",
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "brechen",
+            "übersetzung": "romper",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": "breche",
+                "du": "brichst",
+                "er/sie/es": "bricht",
+                "wir": "brechen",
+                "ihr": "brecht",
+                "sie/Sie": "brechen"
+            },
+            "perfekt": {
+                "konjugation": "gebrochen",
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "brennen",
+            "übersetzung": "quemar",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": "brenne",
+                "du": "brennst",
+                "er/sie/es": "brennt",
+                "wir": "brennen",
+                "ihr": "brennt",
+                "sie/Sie": "brennen"
+            },
+            "perfekt": {
+                "konjugation": "gebrannt",
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "denken",
+            "übersetzung": "pensar",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": "denke",
+                "du": "denkst",
+                "er/sie/es": "denkt",
+                "wir": "denken",
+                "ihr": "denkt",
+                "sie/Sie": "denken"
+            },
+            "perfekt": {
+                "konjugation": "gedacht",
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "dürfen",
+            "übersetzung": "poder/tener permiso",
+            "merkmals": "modal",
+            "präsens": {
+                "ich": "därf",
+                "du": "därfst",
+                "er/sie/es": "därft",
+                "wir": "dürfen",
+                "ihr": "dürfet",
+                "sie/Sie": "dürfen"
+            },
+            "perfekt": {
+                "konjugation": "gedurft",
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "empfangen",
+            "übersetzung": "recibir",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": "empfange",
+                "du": "empfängst",
+                "er/sie/es": "empfängt",
+                "wir": "empfangen",
+                "ihr": "empfangt",
+                "sie/Sie": "empfangen"
+            },
+            "perfekt": {
+                "konjugation": "empfangen",
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "empfehlen",
+            "übersetzung": "recomendar",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": "empfehle",
+                "du": "empfehlst",
+                "er/sie/es": "empfehlt",
+                "wir": "empfehlen",
+                "ihr": "empfehlt",
+                "sie/Sie": "empfehlen"
+            },
+            "perfekt": {
+                "konjugation": "empfohlen",
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "empfinden",
+            "übersetzung": "considerar",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": "empfinde",
+                "du": "empfindest",
+                "er/sie/es": "empfindet",
+                "wir": "empfinden",
+                "ihr": "empfindet",
+                "sie/Sie": "empfinden"
+            },
+            "perfekt": {
+                "konjugation": "empfunden",
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "erkennen",
+            "übersetzung": "ver/distinguir",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": "erkenne",
+                "du": "erkennst",
+                "er/sie/es": "erkennt",
+                "wir": "erkennen",
+                "ihr": "erkennt",
+                "sie/Sie": "erknennen"
+            },
+            "perfekt": {
+                "konjugation": "erkannt",
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "fallen",
+            "übersetzung": "caer",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": "falle",
+                "du": "fällst",
+                "er/sie/es": "fällt",
+                "wir": "fallen",
+                "ihr": "fallt",
+                "sie/Sie": "fallen"
+            },
+            "perfekt": {
+                "konjugation": "gefallen",
+                "verb": "sein"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "fangen",
+            "übersetzung": "atrapar",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": "fange",
+                "du": "fängst",
+                "er/sie/es": "fängt",
+                "wir": "fangen",
+                "ihr": "fangt",
+                "sie/Sie": "fangen"
+            },
+            "perfekt": {
+                "konjugation": "gefangen",
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "fliegen",
+            "übersetzung": "volar",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": "fliege",
+                "du": "fliegst",
+                "er/sie/es": "fliegt",
+                "wir": "fliegen",
+                "ihr": "fliegt",
+                "sie/Sie": "fliegen"
+            },
+            "perfekt": {
+                "konjugation": "geflogen",
+                "verb": "sein"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "fressen",
+            "übersetzung": "comer (para animales)",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": "fresse",
+                "du": "frisst",
+                "er/sie/es": "frisst",
+                "wir": "fressen",
+                "ihr": "fresst",
+                "sie/Sie": "fressen"
+            },
+            "perfekt": {
+                "konjugation": "gefressen",
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "geben",
+            "übersetzung": "dar",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": "gebe",
+                "du": "gibst",
+                "er/sie/es": "gibt",
+                "wir": "geben",
+                "ihr": "gebt",
+                "sie/Sie": "geben"
+            },
+            "perfekt": {
+                "konjugation": "gegeben",
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "gelingen",
+            "übersetzung": "salir bien",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": "gelinge",
+                "du": "gelingst",
+                "er/sie/es": "gelingt",
+                "wir": "gelingen",
+                "ihr": "gelingt",
+                "sie/Sie": "gelingen"
+            },
+            "perfekt": {
+                "konjugation": "gelungen",
+                "verb": "sein"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "genießen",
+            "übersetzung": "disfrutar",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": "genieße",
+                "du": "genießt",
+                "er/sie/es": "genießt",
+                "wir": "genießen",
+                "ihr": "genießt",
+                "sie/Sie": "genießen"
+            },
+            "perfekt": {
+                "konjugation": "genossen",
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "geschehen",
+            "übersetzung": "pasar/ocurrir/suceder",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "er/sie/es": "geschieht",
+                "sie/Sie": "geschehen"
+            },
+            "perfekt": {
+                "konjugation": "geschehen",
+                "verb": "sein"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "gewinnen",
+            "übersetzung": "ganar",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": "gewinne",
+                "du": "gewinnst",
+                "er/sie/es": "gewinnt",
+                "wir": "gewinnen",
+                "ihr": "gewinnt",
+                "sie/Sie": "gewinnen"
+            },
+            "perfekt": {
+                "konjugation": "gewonnen",
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "greifen",
+            "übersetzung": "agarrar/tomar",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": "greife",
+                "du": "greifst",
+                "er/sie/es": "greift",
+                "wir": "greifen",
+                "ihr": "greift",
+                "sie/Sie": "greifen"
+            },
+            "perfekt": {
+                "konjugation": "gegriffen",
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "halten",
+            "übersetzung": "parar/detenerse",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": "halte",
+                "du": "hälst",
+                "er/sie/es": "hält",
+                "wir": "halten",
+                "ihr": "haltet",
+                "sie/Sie": "halten"
+            },
+            "perfekt": {
+                "konjugation": "gehalten",
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "hängen",
+            "übersetzung": "colgar",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": "hänge",
+                "du": "hängst",
+                "er/sie/es": "hängt",
+                "wir": "hängen",
+                "ihr": "hängt",
+                "sie/Sie": "hängen"
+            },
+            "perfekt": {
+                "konjugation": "gehangen",
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "klingen",
+            "übersetzung": "sonar",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": "klinge",
+                "du": "klingst",
+                "er/sie/es": "klingt",
+                "wir": "klingen",
+                "ihr": "klingt",
+                "sie/Sie": "klingen"
+            },
+            "perfekt": {
+                "konjugation": "geklungen",
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "laden",
+            "übersetzung": "cargar",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": "lade",
+                "du": "lädst",
+                "er/sie/es": "lädt",
+                "wir": "laden",
+                "ihr": "ladet",
+                "sie/Sie": "laden"
+            },
+            "perfekt": {
+                "konjugation": "geladen",
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "lassen",
+            "übersetzung": "dejar",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": "lasse",
+                "du": "lässt",
+                "er/sie/es": "lässt",
+                "wir": "lassen",
+                "ihr": "lasst",
+                "sie/Sie": "lassen"
+            },
+            "perfekt": {
+                "konjugation": "gelassen",
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "laufen",
+            "übersetzung": "correr",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": "laufe",
+                "du": "läufst",
+                "er/sie/es": "läuft",
+                "wir": "laufen",
+                "ihr": "lauft",
+                "sie/Sie": "laufen"
+            },
+            "perfekt": {
+                "konjugation": "gelaufen",
+                "verb": "sein"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "leiden",
+            "übersetzung": "sufrir",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": "leide",
+                "du": "leidest",
+                "er/sie/es": "leidet",
+                "wir": "leiden",
+                "ihr": "leidet",
+                "sie/Sie": "leiden"
+            },
+            "perfekt": {
+                "konjugation": "gelitten",
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "leihen",
+            "übersetzung": "prestar",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": "leihe",
+                "du": "leihst",
+                "er/sie/es": "leiht",
+                "wir": "leihen",
+                "ihr": "leiht",
+                "sie/Sie": "leihen"
+            },
+            "perfekt": {
+                "konjugation": "geliehen",
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "liegen",
+            "übersetzung": "yacer",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": "liege",
+                "du": "legst",
+                "er/sie/es": "liegt",
+                "wir": "liegen",
+                "ihr": "liegt",
+                "sie/Sie": "liegen"
+            },
+            "perfekt": {
+                "konjugation": "gelegen",
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "lügen",
+            "übersetzung": "mentir",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": "lüge",
+                "du": "lügst",
+                "er/sie/es": "lügt",
+                "wir": "lügen",
+                "ihr": "lügt",
+                "sie/Sie": "lügen"
+            },
+            "perfekt": {
+                "konjugation": "gelogen",
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "mißlingen",
+            "übersetzung": "fracasar",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": "mißlinge",
+                "du": "mißlingest",
+                "er/sie/es": "mißlingt",
+                "wir": "mißlingen",
+                "ihr": "mißlingt",
+                "sie/Sie": "mißlingen"
+            },
+            "perfekt": {
+                "konjugation": "mißlungen",
+                "verb": "sein"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "mögen",
+            "übersetzung": "gustar",
+            "merkmals": "unrmodal",
+            "präsens": {
+                "ich": "mag",
+                "du": "magst",
+                "er/sie/es": "mag",
+                "wir": "mögen",
+                "ihr": "mögt",
+                "sie/Sie": "mögen"
+            },
+            "perfekt": {
+                "konjugation": "gemocht",
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "nennen",
+            "übersetzung": "nombrar",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": "nennne",
+                "du": "nennst",
+                "er/sie/es": "nennt",
+                "wir": "nennen",
+                "ihr": "nennt",
+                "sie/Sie": "nennen"
+            },
+            "perfekt": {
+                "konjugation": "genannt",
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "reißen",
+            "übersetzung": "romperse",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": "reiße",
+                "du": "reißt",
+                "er/sie/es": "reißt",
+                "wir": "reißen",
+                "ihr": "reißt",
+                "sie/Sie": "reißen"
+            },
+            "perfekt": {
+                "konjugation": "gerissen",
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "rennen",
+            "übersetzung": "correr",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": "renne",
+                "du": "rennst",
+                "er/sie/es": "rennt",
+                "wir": "rennen",
+                "ihr": "rennt",
+                "sie/Sie": "rennen"
+            },
+            "perfekt": {
+                "konjugation": "gerannt",
+                "verb": "sein"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "riechen",
+            "übersetzung": "oler",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": "rieche",
+                "du": "riechst",
+                "er/sie/es": "riecht",
+                "wir": "riechen",
+                "ihr": "riecht",
+                "sie/Sie": "riechen"
+            },
+            "perfekt": {
+                "konjugation": "gerochen",
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "scheiden",
+            "übersetzung": "divorciarse",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": "scheide",
+                "du": "scheidest",
+                "er/sie/es": "scheidet",
+                "wir": "scheiden",
+                "ihr": "scheidet",
+                "sie/Sie": "scheiden"
+            },
+            "perfekt": {
+                "konjugation": "geschieden",
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "schieben",
+            "übersetzung": "empujar/arrastrar",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": "schiebe",
+                "du": "schiebst",
+                "er/sie/es": "schiebt",
+                "wir": "schieben",
+                "ihr": "schiebt",
+                "sie/Sie": "schieben"
+            },
+            "perfekt": {
+                "konjugation": "geschoben",
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "schlagen",
+            "übersetzung": "disparar",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": "schlage",
+                "du": "schlägst",
+                "er/sie/es": "scschlägt",
+                "wir": "schlagen",
+                "ihr": "schlagt",
+                "sie/Sie": "schlagen"
+            },
+            "perfekt": {
+                "konjugation": "geschlagen",
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "schwören",
+            "übersetzung": "jurar",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": "schwöre",
+                "du": "schwörst",
+                "er/sie/es": "schwört",
+                "wir": "schwören",
+                "ihr": "schwört",
+                "sie/Sie": "schwören"
+            },
+            "perfekt": {
+                "konjugation": "geschworen",
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "senden",
+            "übersetzung": "mandar/enviar",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": "sende",
+                "du": "sendest",
+                "er/sie/es": "sendet",
+                "wir": "senden",
+                "ihr": "sendet",
+                "sie/Sie": "senden"
+            },
+            "perfekt": {
+                "konjugation": "gesandt",
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "sitzen",
+            "übersetzung": "estar sentado",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": "sitze",
+                "du": "sitzt",
+                "er/sie/es": "sitzt",
+                "wir": "sitzen",
+                "ihr": "sitzt",
+                "sie/Sie": "stizen"
+            },
+            "perfekt": {
+                "konjugation": "gesessen",
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "springen",
+            "übersetzung": "saltar",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": "springe",
+                "du": "springst",
+                "er/sie/es": "sprigt",
+                "wir": "springen",
+                "ihr": "springt",
+                "sie/Sie": "springen"
+            },
+            "perfekt": {
+                "konjugation": "gesprugen",
+                "verb": "sein"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "stehlen",
+            "übersetzung": "robar",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": "stehle",
+                "du": "stiehlst",
+                "er/sie/es": "stiehlt",
+                "wir": "stehlen",
+                "ihr": "stehlt",
+                "sie/Sie": "stehlen"
+            },
+            "perfekt": {
+                "konjugation": "gestohlen",
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "steigen",
+            "übersetzung": "subir",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": "steige",
+                "du": "steigst",
+                "er/sie/es": "steigt",
+                "wir": "steigen",
+                "ihr": "steigt",
+                "sie/Sie": "steigen"
+            },
+            "perfekt": {
+                "konjugation": "gestiegen",
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "sterben",
+            "übersetzung": "morir",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": "sterbe",
+                "du": "stirbst",
+                "er/sie/es": "stirbt",
+                "wir": "sterben",
+                "ihr": "sterbt",
+                "sie/Sie": "sterben"
+            },
+            "perfekt": {
+                "konjugation": "gestorben",
+                "verb": "sein"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "stinken",
+            "übersetzung": "oler mal/apestar",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": "stinke",
+                "du": "stinkst",
+                "er/sie/es": "stinkt",
+                "wir": "stinken",
+                "ihr": "stinkt",
+                "sie/Sie": "stinken"
+            },
+            "perfekt": {
+                "konjugation": "gestunken",
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "streichen",
+            "übersetzung": "pintar",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": "ssteriche",
+                "du": "streichst",
+                "er/sie/es": "streicht",
+                "wir": "streichen",
+                "ihr": "streicht",
+                "sie/Sie": "streichen"
+            },
+            "perfekt": {
+                "konjugation": "gestrichen",
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "streiten",
+            "übersetzung": "pelearse",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": "streite",
+                "du": "streitest",
+                "er/sie/es": "streitet",
+                "wir": "streiten",
+                "ihr": "streitet",
+                "sie/Sie": "streiten"
+            },
+            "perfekt": {
+                "konjugation": "gestritten",
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "tragen",
+            "übersetzung": "llevar puesto/llevar consigo",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": "trage",
+                "du": "trägst",
+                "er/sie/es": "trägt",
+                "wir": "tragen",
+                "ihr": "tragt",
+                "sie/Sie": "tragen"
+            },
+            "perfekt": {
+                "konjugation": "getragen",
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "tun",
+            "übersetzung": "hacer",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": "tue",
+                "du": "tust",
+                "er/sie/es": "tut",
+                "wir": "tun",
+                "ihr": "tut",
+                "sie/Sie": "tun"
+            },
+            "perfekt": {
+                "konjugation": "getan",
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "verlieren",
+            "übersetzung": "perder",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": "verliere",
+                "du": "verlierst",
+                "er/sie/es": "verliert",
+                "wir": "verlieren",
+                "ihr": "verliert",
+                "sie/Sie": "verlieren"
+            },
+            "perfekt": {
+                "konjugation": "verloren",
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "wachsen",
+            "übersetzung": "crecer",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": "wachse",
+                "du": "wächst",
+                "er/sie/es": "wächst",
+                "wir": "waschen",
+                "ihr": "wascht",
+                "sie/Sie": "waschen"
+            },
+            "perfekt": {
+                "konjugation": "gewachsen",
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "waschen",
+            "übersetzung": "lavar",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": "wasche",
+                "du": "waschst",
+                "er/sie/es": "wascht",
+                "wir": "waschen",
+                "ihr": "wascht",
+                "sie/Sie": "waschen"
+            },
+            "perfekt": {
+                "konjugation": "gewaschen",
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "werden",
+            "übersetzung": "llegar a ser",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": "werde",
+                "du": "wirst",
+                "er/sie/es": "wird",
+                "wir": "werden",
+                "ihr": "werdet",
+                "sie/Sie": "werden"
+            },
+            "perfekt": {
+                "konjugation": "geworden",
+                "verb": "sein"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "werfen",
+            "übersetzung": "tirar",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": "werfe",
+                "du": "wirfst",
+                "er/sie/es": "wirft",
+                "wir": "werfen",
+                "ihr": "werft",
+                "sie/Sie": "werfen"
+            },
+            "perfekt": {
+                "konjugation": "geworfen",
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "wiegen",
+            "übersetzung": "pesar",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": "wiege",
+                "du": "wiegst",
+                "er/sie/es": "wiegt",
+                "wir": "wiegen",
+                "ihr": "wiegt",
+                "sie/Sie": "wiegen"
+            },
+            "perfekt": {
+                "konjugation": "gewogen",
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "wollen",
+            "übersetzung": "querer  (aquí y ahora)",
+            "merkmals": "unrmodalunr",
+            "präsens": {
+                "ich": "will",
+                "du": "willst",
+                "er/sie/es": "will",
+                "wir": "wollen",
+                "ihr": "wollt",
+                "sie/Sie": "wollen"
+            },
+            "perfekt": {
+                "konjugation": "gewollt",
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "ziehen",
+            "übersetzung": "tirar de algo",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": "ziehe",
+                "du": "ziehst",
+                "er/sie/es": "zieht",
+                "wir": "ziehen",
+                "ihr": "zieht",
+                "sie/Sie": "ziehen"
+            },
+            "perfekt": {
+                "konjugation": "gezogen",
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "zwingen",
+            "übersetzung": "obligar",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": "zwinge",
+                "du": "zwingst",
+                "er/sie/es": "zwingt",
+                "wir": "zwingen",
+                "ihr": "zwingt",
+                "sie/Sie": "zwingen"
+            },
+            "perfekt": {
+                "konjugation": "gezwungen",
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "surfen",
+            "übersetzung": "surfear",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": "surfe",
+                "du": "surfst",
+                "er/sie/es": "surft",
+                "wir": "surfen",
+                "ihr": "surft",
+                "sie/Sie": "surfen"
+            },
+            "perfekt": {
+                "konjugation": "gesurft",
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "einladen",
+            "übersetzung": "invitar",
+            "merkmals": "unregelmäẞige,trennbare",
+            "präsens": {
+                "ich": "lade ein",
+                "du": "lädst ein",
+                "er/sie/es": "lädt ein",
+                "wir": "laden ein",
+                "ihr": "ladet ein",
+                "sie/Sie": "laden ein"
+            },
+            "perfekt": {
+                "konjugation": "eingeladen",
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "wehtun",
+            "übersetzung": "doler",
+            "merkmals": "unregelmäẞige,trennbare",
+            "präsens": {
+                "ich": "",
+                "du": "",
+                "er/sie/es": "tut weh",
+                "wir": "",
+                "ihr": "",
+                "sie/Sie": "tun weh"
+            },
+            "perfekt": {
+                "konjugation": "wehgetan",
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "übergeben",
+            "übersetzung": "vomitar (formal)",
+            "merkmals": null,
+            "präsens": {
+                "ich": "übergebe",
+                "du": "übergibst",
+                "er/sie/es": "übergibt",
+                "wir": "übergebt",
+                "ihr": "übergebt",
+                "sie/Sie": "übergeben"
+            },
+            "perfekt": {
+                "konjugation": "übergeben",
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "kotzen",
+            "übersetzung": "vomitar (inforaml)",
+            "merkmals": null,
+            "präsens": {
+                "ich": "kotze",
+                "du": "kotzst",
+                "er/sie/es": "kotzt",
+                "wir": "kotzen",
+                "ihr": "kotzt",
+                "sie/Sie": "kotzen"
+            },
+            "perfekt": {
+                "konjugation": "gekotzt",
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "meinen",
+            "übersetzung": "decir,pensar,creer",
+            "merkmals": null,
+            "präsens": {
+                "ich": "meine",
+                "du": "meinst",
+                "er/sie/es": "meint",
+                "wir": "meinen",
+                "ihr": "meint",
+                "sie/Sie": "meinen"
+            },
+            "perfekt": {
+                "konjugation": "gemeint",
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "zeigen",
+            "übersetzung": "demostrar,emnseñar",
+            "merkmals": null,
+            "präsens": {
+                "ich": "zeige",
+                "du": "zeigst",
+                "er/sie/es": "zeigt",
+                "wir": "zeigen",
+                "ihr": "zeigt",
+                "sie/Sie": "zeigen"
+            },
+            "perfekt": {
+                "konjugation": "gezeigt",
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "erklären",
+            "übersetzung": "aclarar",
+            "merkmals": "regelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": "erkläre",
+                "du": "erklärst",
+                "er/sie/es": "erklärt",
+                "wir": "erklären",
+                "ihr": "erklärt",
+                "sie/Sie": "erklären"
+            },
+            "perfekt": {
+                "konjugation": "erklärt",
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "leben",
+            "übersetzung": "vivir",
+            "merkmals": "unregelmäẞige,nicht_trennbare",
+            "präsens": {
+                "ich": "lebe",
+                "du": "lebst",
+                "er/sie/es": "lebt",
+                "wir": "leben",
+                "ihr": "lebt",
+                "sie/Sie": "leben"
+            },
+            "perfekt": {
+                "konjugation": "gelebt",
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "putzen",
+            "übersetzung": "limpiar",
+            "merkmals": null,
+            "präsens": {
+                "ich": "putze",
+                "du": "putzt",
+                "er/sie/es": "putzt",
+                "wir": "putzen",
+                "ihr": "putzt",
+                "sie/Sie": "putzen"
+            },
+            "perfekt": {
+                "konjugation": "geputzt",
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "boxen",
+            "übersetzung": "boxear",
+            "merkmals": null,
+            "präsens": {
+                "ich": "boxe",
+                "du": "boxt",
+                "er/sie/es": "boxt",
+                "wir": "boxen",
+                "ihr": "boxt",
+                "sie/Sie": "boxen"
+            },
+            "perfekt": {
+                "konjugation": "geboxt",
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "abschließen",
+            "übersetzung": "cerrar con llave",
+            "merkmals": "unregelmäẞige,trennbare",
+            "präsens": {
+                "ich": "schlieeße ab",
+                "du": "schließt ab",
+                "er/sie/es": "schließt ab",
+                "wir": "schießen ab",
+                "ihr": "schließt ab",
+                "sie/Sie": "schließen ab"
+            },
+            "perfekt": {
+                "konjugation": "abgeschlossen",
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "gehorchen",
+            "übersetzung": "obedecer",
+            "merkmals": null,
+            "präsens": {
+                "ich": "gehorche",
+                "du": "gehorchst",
+                "er/sie/es": "gehorcht",
+                "wir": "gehorchen",
+                "ihr": "gehorcht",
+                "sie/Sie": "gehorchen"
+            },
+            "perfekt": {
+                "konjugation": "gehorcht",
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "zerreißen",
+            "übersetzung": "romper",
+            "merkmals": null,
+            "präsens": {
+                "ich": "zerreiße",
+                "du": "zerreißt",
+                "er/sie/es": "zerreißt",
+                "wir": "zerreißen",
+                "ihr": "zerreißt",
+                "sie/Sie": "zerreißen"
+            },
+            "perfekt": {
+                "konjugation": "zerrissen",
+                "verb": "sein/haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "zuhören",
+            "übersetzung": "escuchar,prestar atención",
+            "merkmals": "regelmäẞige,trennbare",
+            "präsens": {
+                "ich": "höre zu",
+                "du": "hörst zu",
+                "er/sie/es": "hört zu",
+                "wir": "hören zu",
+                "ihr": "hört zu",
+                "sie/Sie": "hören zu"
+            },
+            "perfekt": {
+                "konjugation": "zegehört",
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "aufmachen",
+            "übersetzung": "abrir,desabrochar",
+            "merkmals": "regelmäẞige,trennbare",
+            "präsens": {
+                "ich": "mache auf",
+                "du": "machst auf",
+                "er/sie/es": "macht auf",
+                "wir": "machen auf",
+                "ihr": "macht auf",
+                "sie/Sie": "machen auf"
+            },
+            "perfekt": {
+                "konjugation": "aufgemacht",
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "herstellen",
+            "übersetzung": "fabricar",
+            "merkmals": null,
+            "präsens": {
+                "ich": "stelle her",
+                "du": "stellst her",
+                "er/sie/es": "stellt her",
+                "wir": "stellen her",
+                "ihr": "stellt her",
+                "sie/Sie": "stellen her"
+            },
+            "perfekt": {
+                "konjugation": "hergestellt",
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "mitbringen",
+            "übersetzung": "traer consigo",
+            "merkmals": null,
+            "präsens": {
+                "ich": "bringe mit",
+                "du": "bringst",
+                "er/sie/es": "bringt mit",
+                "wir": "bringen mit",
+                "ihr": "bringt mit",
+                "sie/Sie": "bringen mit"
+            },
+            "perfekt": {
+                "konjugation": "mitgebracht",
+                "verb": "haben"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "zurückkommen",
+            "übersetzung": "volver",
+            "merkmals": "unregelmäẞige,trennbare",
+            "präsens": {
+                "ich": "komme zurück",
+                "du": "kommst zurück",
+                "er/sie/es": "kommt zurück",
+                "wir": "kommen zurück",
+                "ihr": "kommt zurück",
+                "sie/Sie": "kommen zurück"
+            },
+            "perfekt": {
+                "konjugation": "zurückgekommen",
+                "verb": "sein"
+            },
+            "präteritum": null
+        },
+        {
+            "infinitiv": "einsteigen",
+            "übersetzung": "subirse a",
+            "merkmals": "unregelmäẞige,trennbare",
+            "präsens": {
+                "ich": "steige ein",
+                "du": "steigst ein",
+                "er/sie/es": "steigt ein",
+                "wir": "steigen ein",
+                "ihr": "steigt ein",
+                "sie/Sie": "steigen ein"
+            },
+            "perfekt": {
+                "konjugation": "enigesteigen",
+                "verb": "sein"
+            },
+            "präteritum": null
+        }
+    ]
+}

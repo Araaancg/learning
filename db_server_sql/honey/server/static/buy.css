@@ -1,0 +1,52 @@
+h1 {
+    text-align: center;
+    padding: 10px;
+}
+
+form {
+    text-align: center;
+}
+
+select {
+    width: 200px;
+    padding: 4px;
+    margin: 8px 0;
+    text-align: center;
+    background-color: white;
+    border-width: 1px;
+    border-color: grey;
+    border-radius: 4px;
+}
+
+input[type=date]{
+    width: 150px;
+    padding: 4px;
+    margin: 8px 0;
+    text-align: center;
+    border-radius: 4px;
+    border-width: 1px;
+    border-color: grey;
+}   
+
+input[type=number]{
+    width: 40px;
+    padding: 4px;
+    margin: 8px 0;
+    text-align: center;
+    border-radius: 4px;
+    border-width: 1px;
+    border-color: grey;
+}
+
+button {
+    border-color: black;
+    width:max-content;
+    padding: 5px;
+    border-radius: 8px;
+    background-color: lightgrey;
+    border-width: 1px;
+}
+
+.x_gb-primary {
+    background-color: #ffe14c;
+}

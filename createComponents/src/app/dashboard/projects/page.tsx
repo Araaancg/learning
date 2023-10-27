@@ -1,1 +1,0 @@
-import styles from "./Projects.module.scss"; export default function Projects():JSX.Element {return (<main><p>Projects</p></main>)}

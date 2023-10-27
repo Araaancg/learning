@@ -1,1 +1,0 @@
-import templateButton from "./Button.template";const Button =()=>{ return templateButton();}export default Button;

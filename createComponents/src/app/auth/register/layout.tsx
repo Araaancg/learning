@@ -1,1 +1,0 @@
-export default function RootLayout({children,}: {children: React.ReactNode;}): JSX.Element {return <main className="register-main-container">{ children }</main>;}

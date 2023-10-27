@@ -1,1 +1,0 @@
-import templateSidebar from "./Sidebar.template";const Sidebar =()=>{ return templateSidebar();}export default Sidebar;

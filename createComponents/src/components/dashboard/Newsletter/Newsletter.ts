@@ -1,1 +1,0 @@
-import templateNewsletter from "./Newsletter.template";const Newsletter =()=>{ return templateNewsletter();}export default Newsletter;

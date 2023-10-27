@@ -1,0 +1,1 @@
+import React from "react";import "./Progressbar.module.scss";const templateProgressbar = (): JSX.Element => {return <div></div>;};export default templateProgressbar;

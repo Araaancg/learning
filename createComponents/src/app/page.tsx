@@ -1,0 +1,1 @@
+import styles from "./Home.module.scss"; export default function Home():JSX.Element {return (<main><p>Home</p></main>)}

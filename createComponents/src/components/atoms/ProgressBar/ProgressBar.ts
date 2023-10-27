@@ -1,0 +1,1 @@
+import templateProgressbar from "./Progressbar.template";const Progressbar =()=>{ return templateProgressbar();}export default Progressbar;

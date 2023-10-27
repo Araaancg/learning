@@ -1,0 +1,1 @@
+import styles from "./Auth.module.scss"; export default function Auth():JSX.Element {return (<main><p>Auth</p></main>)}

@@ -1,0 +1,1 @@
+import styles from "./Register.module.scss"; export default function Register():JSX.Element {return (<main><p>Register</p></main>)}

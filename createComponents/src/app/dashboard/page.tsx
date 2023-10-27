@@ -1,0 +1,1 @@
+import styles from "./Dashboard.module.scss"; export default function Dashboard():JSX.Element {return (<main><p>Dashboard</p></main>)}

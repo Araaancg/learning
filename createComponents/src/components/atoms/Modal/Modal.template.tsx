@@ -1,0 +1,1 @@
+import React from "react";import "./Modal.module.scss";const templateModal = (): JSX.Element => {return <div></div>;};export default templateModal;

@@ -1,0 +1,1 @@
+import React from "react";import "./Sidebar.module.scss";const templateSidebar = (): JSX.Element => {return <div></div>;};export default templateSidebar;

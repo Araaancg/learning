@@ -1,0 +1,1 @@
+import React from "react";import "./Newsletter.module.scss";const templateNewsletter = (): JSX.Element => {return <div></div>;};export default templateNewsletter;
